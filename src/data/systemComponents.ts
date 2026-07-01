@@ -1,6 +1,5 @@
 /**
- * System Components Data
- * Detailed component specifications for each system
+ * System component data for complete solar roof systems.
  */
 
 export interface Component {
@@ -18,89 +17,73 @@ export interface SystemComponents {
 
 export const luminaSlateComponents: Component[] = [
   {
-    id: "lumina-roof-base",
-    name: "Roof Base Layer",
-    description: "Structural foundation for the BIPV system with waterproofing and insulation",
-    function: "Provides structural support and weatherproofing",
-    material: "Waterproofing membrane and thermal insulation",
+    id: "lumina-base-layer",
+    name: "Roof Base and Waterproof Layer",
+    description: "The roof base and waterproofing layer support the solar roof package and help define the interface with the building structure.",
+    function: "Provides a coordinated base for the roofing system"
   },
   {
     id: "lumina-active-tiles",
-    name: "Active PV Glass Tiles",
-    description: "Double-glass photovoltaic roofing tiles with integrated solar cells",
-    function: "Generate electrical power from sunlight",
-    material: "Tempered glass with monocrystalline silicon cells",
+    name: "Active Glass PV Roof Tiles",
+    description: "AG-etched frameless double-glass PV roof tiles that generate electricity while keeping a premium slate-like roof appearance.",
+    function: "Generates solar electricity"
   },
   {
     id: "lumina-inactive-tiles",
-    name: "Matching Inactive Glass Tiles",
-    description: "Non-PV glass tiles matching active tiles for complete roof coverage",
-    function: "Complete roof coverage with consistent aesthetics",
-    material: "Tempered glass",
+    name: "Matching Glass Inactive Tiles",
+    description: "Non-PV glass roof tiles that match the active tiles and cover non-generating roof areas.",
+    function: "Completes roof coverage and visual continuity"
   },
   {
-    id: "lumina-ridge-edge",
-    name: "Ridge & Edge Tiles",
-    description: "Specialized tiles for roof edges and ridges",
-    function: "Weatherproof edges and provide clean aesthetics",
-    material: "Tempered glass with aluminum frame",
+    id: "lumina-flashing-accessories",
+    name: "Flashing and Accessories",
+    description: "Ridge, edge, flashing and accessory components are selected according to roof layout and project details.",
+    function: "Supports roof edge treatment and integration details"
   },
   {
-    id: "lumina-electrical",
-    name: "Electrical System",
-    description: "Power generation and management system",
-    function: "Convert solar power to usable electricity",
-    material: "Copper wiring and aluminum enclosures",
-  },
+    id: "lumina-electrical-coordination",
+    name: "Electrical Coordination",
+    description: "Electrical configuration is discussed by project and may include PV string planning, cable routes and system interface requirements.",
+    function: "Connects the active roof elements to the project electrical design"
+  }
 ];
 
 export const stormGuardComponents: Component[] = [
   {
-    id: "storm-roof-base",
-    name: "Roof Base Layer",
-    description: "Structural foundation for the metal BIPV system with waterproofing and insulation",
-    function: "Provides structural support and weatherproofing",
-    material: "Waterproofing membrane and thermal insulation",
+    id: "storm-base-layer",
+    name: "Roof Base and Waterproof Layer",
+    description: "The roof base and waterproofing layer support the metal solar roof system and help coordinate the roof assembly.",
+    function: "Provides a coordinated base for the roofing system"
   },
   {
     id: "storm-active-sheets",
     name: "Active Metal Solar Roof Sheets",
-    description: "Metal solar roof sheets with integrated photovoltaic cells",
-    function: "Generate electrical power while providing roof protection",
-    material: "Aluminum-Magnesium-Manganese alloy with solar cells",
+    description: "Low-standing-seam metal solar roof sheets that combine metal roofing appearance with photovoltaic generation.",
+    function: "Generates solar electricity while forming the roof surface"
   },
   {
-    id: "storm-inactive-sheets",
+    id: "storm-inactive-elements",
     name: "Matching Inactive Metal Roof Elements",
-    description: "Non-PV metal sheets matching active sheets for complete coverage",
-    function: "Complete roof coverage with consistent appearance",
-    material: "Aluminum-Magnesium-Manganese alloy",
+    description: "Non-PV metal roof elements that match the active sheets and complete roof areas without solar generation.",
+    function: "Completes roof coverage and visual consistency"
   },
   {
-    id: "storm-ridge-edge",
-    name: "Ridge & Edge Pieces",
-    description: "Specialized metal pieces for roof edges and ridges",
-    function: "Weatherproof edges and provide clean aesthetics",
-    material: "Aluminum-Magnesium-Manganese alloy with stainless steel fasteners",
+    id: "storm-flashing-accessories",
+    name: "Flashing and Accessories",
+    description: "Ridge, edge, flashing, drainage and accessory components are selected according to roof layout and project scope.",
+    function: "Supports roof edge treatment and integration details"
   },
   {
-    id: "storm-electrical",
-    name: "Electrical System",
-    description: "Power generation and management system",
-    function: "Convert solar power to usable electricity",
-    material: "Copper wiring and aluminum enclosures",
-  },
+    id: "storm-electrical-coordination",
+    name: "Electrical Coordination",
+    description: "Electrical configuration is discussed by project and depends on active roof layout, target capacity and local electrical requirements.",
+    function: "Connects the active roof sheets to the project electrical design"
+  }
 ];
 
 export const allSystemComponents: SystemComponents[] = [
-  {
-    system: "Lumina Slate",
-    components: luminaSlateComponents,
-  },
-  {
-    system: "Storm Guard",
-    components: stormGuardComponents,
-  },
+  { system: "Lumina Slate", components: luminaSlateComponents },
+  { system: "Storm Guard", components: stormGuardComponents }
 ];
 
 export const getComponentsBySystem = (system: string): Component[] => {
