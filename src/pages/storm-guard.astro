@@ -1,0 +1,245 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getProductBySlug } from '../data/products';
+import { getComponentsBySystem } from '../data/systemComponents';
+import { productFAQs, generalFAQs } from '../data/faqs';
+
+const product = getProductBySlug('storm-guard-metal-solar-roof-system');
+const components = getComponentsBySystem('Storm Guard');
+const displayFaqs = [...productFAQs, ...generalFAQs];
+---
+
+<Layout title="Storm Guard - Metal Solar Roof System">
+  <!-- Breadcrumb -->
+  <section class="border-b border-gray-200">
+    <div class="container mx-auto px-4 py-4">
+      <div class="flex items-center gap-2 text-sm text-gray-600">
+        <a href="/" class="hover:text-gray-900">Home</a>
+        <span>/</span>
+        <span class="text-gray-900 font-medium">Storm Guard</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero -->
+  <section class="py-16 md:py-24 bg-gradient-to-br from-amber-50 to-transparent">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight">
+          {product?.name}
+        </h1>
+        <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+          {product?.description}
+        </p>
+        <div class="flex gap-4">
+          <a href="/contact/" class="px-6 py-3 bg-green-700 hover:bg-green-800 text-white font-semibold rounded-lg transition">
+            Request Quotation →
+          </a>
+          <a href="#faq" class="px-6 py-3 border-2 border-green-700 text-green-700 hover:bg-green-50 font-semibold rounded-lg transition">
+            View FAQ
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What This System Is -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <h2 class="text-3xl font-bold mb-6 text-gray-900">What This System Is</h2>
+      <p class="text-lg text-gray-600 leading-relaxed mb-6">
+        {product?.positioning}
+      </p>
+      <p class="text-gray-600 leading-relaxed">
+        Storm Guard is a complete Building Integrated Photovoltaic (BIPV) system designed for projects where durability, cost-effectiveness, and power generation are priorities. The system combines metal roof sheets with integrated solar cells, creating a complete roof solution suitable for diverse applications and climates.
+      </p>
+    </div>
+  </section>
+
+  <!-- System Package / Components -->
+  <section class="py-16 md:py-24 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-12 text-gray-900 text-center">System Package</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-5xl mx-auto">
+        {components.map((component) => (
+          <div class="bg-white rounded-lg p-6 border border-gray-200">
+            <h3 class="font-bold text-gray-900 mb-2 text-sm">{component.name}</h3>
+            <p class="text-xs text-gray-600 leading-relaxed">{component.description}</p>
+            {component.material && (
+              <p class="text-xs text-gray-500 mt-3 pt-3 border-t border-gray-200">
+                <strong>Material:</strong> {component.material}
+              </p>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Active & Inactive Elements -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-3xl font-bold mb-12 text-gray-900">Active & Inactive Elements</h2>
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h3 class="text-2xl font-bold mb-4 text-gray-900">Active Element</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            {product?.activeElement.name}
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            {product?.activeElement.description}
+          </p>
+          <p class="text-sm text-gray-500 mt-6">
+            Detailed specifications available upon request. Contact us for technical documentation.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold mb-4 text-gray-900">Inactive Element</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            {product?.inactiveElement.name}
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            {product?.inactiveElement.description}
+          </p>
+          <p class="text-sm text-gray-500 mt-6">
+            Matching inactive sheets ensure complete roof coverage and consistent appearance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Specifications -->
+  <section class="py-16 md:py-24 bg-gray-50">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <h2 class="text-3xl font-bold mb-6 text-gray-900">Technical Specifications</h2>
+      <div class="bg-white rounded-lg p-8 border border-gray-200">
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Storm Guard is a complete system including roof base layer, active and inactive metal sheets, ridge and edge components, and electrical generation system.
+        </p>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+          <p class="text-blue-900">
+            <strong>Detailed specifications, warranty terms, and electrical configuration depend on project scope and requirements.</strong> Please contact us to discuss your specific project needs and receive comprehensive technical documentation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Suitable Project Types -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <h2 class="text-3xl font-bold mb-12 text-gray-900">Suitable Project Types</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        {product?.applications.map((app) => (
+          <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+            <p class="font-semibold text-gray-900">{app}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Buyers Choose This System -->
+  <section class="py-16 md:py-24 bg-green-50">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <h2 class="text-3xl font-bold mb-12 text-gray-900">Why Buyers Choose Storm Guard</h2>
+      <div class="space-y-4">
+        {product?.bestFor.map((reason) => (
+          <div class="flex gap-4">
+            <span class="text-green-700 font-bold text-xl">✓</span>
+            <p class="text-gray-600">{reason}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Project References -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-6 text-gray-900 text-center">Project References</h2>
+      <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+        Storm Guard has been installed in commercial, industrial, hospitality, and infrastructure projects worldwide.
+      </p>
+      <div class="text-center">
+        <a href="/projects/" class="inline-block px-8 py-3 border-2 border-green-700 text-green-700 font-semibold rounded-lg hover:bg-green-50 transition">
+          View Project References →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Requirements -->
+  <section class="py-16 md:py-24 bg-gray-50">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <h2 class="text-3xl font-bold mb-6 text-gray-900">Quote Requirements</h2>
+      <p class="text-gray-600 leading-relaxed mb-8">
+        To prepare an accurate quotation, we need the following project information:
+      </p>
+      <ul class="space-y-3 mb-8">
+        <li class="flex gap-3">
+          <span class="text-green-700 font-bold">•</span>
+          <span class="text-gray-600">Roof drawing or sketch</span>
+        </li>
+        <li class="flex gap-3">
+          <span class="text-green-700 font-bold">•</span>
+          <span class="text-gray-600">Project location and country</span>
+        </li>
+        <li class="flex gap-3">
+          <span class="text-green-700 font-bold">•</span>
+          <span class="text-gray-600">Estimated roof area (m²)</span>
+        </li>
+        <li class="flex gap-3">
+          <span class="text-green-700 font-bold">•</span>
+          <span class="text-gray-600">Target solar capacity (kW)</span>
+        </li>
+        <li class="flex gap-3">
+          <span class="text-green-700 font-bold">•</span>
+          <span class="text-gray-600">Project timeline</span>
+        </li>
+      </ul>
+      <a href="/contact/" class="inline-block px-8 py-3 bg-green-700 hover:bg-green-800 text-white font-semibold rounded-lg transition">
+        Submit Project Information →
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <h2 class="text-3xl font-bold mb-12 text-gray-900">Frequently Asked Questions</h2>
+      <div class="space-y-6">
+        {displayFaqs.slice(0, 5).map((faq) => (
+          <div class="border-b border-gray-200 pb-6">
+            <h3 class="font-bold text-gray-900 mb-3">{faq.question}</h3>
+            <p class="text-gray-600 leading-relaxed">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-8 text-center">
+        <a href="/#faq" class="text-green-700 hover:text-green-800 font-semibold">
+          View All FAQs →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-16 md:py-20 bg-green-700 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Get Started?</h2>
+      <p class="text-lg mb-8 text-green-100 max-w-2xl mx-auto">
+        Send your roof drawing and project details. Our team will help you evaluate Storm Guard for your project and provide a detailed quotation.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact/" class="px-8 py-3 bg-white text-green-700 font-semibold rounded-lg hover:bg-gray-100 transition">
+          Submit Project Inquiry →
+        </a>
+        <a href="/resources/" class="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition">
+          Download Resources
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
