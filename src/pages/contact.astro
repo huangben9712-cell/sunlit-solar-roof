@@ -2,196 +2,35 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Contact Us - Submit Project Inquiry">
-  <!-- Breadcrumb -->
-  <section class="border-b border-gray-200">
-    <div class="container mx-auto px-4 py-4">
-      <div class="flex items-center gap-2 text-sm text-gray-600">
-        <a href="/" class="hover:text-gray-900">Home</a>
-        <span>/</span>
-        <span class="text-gray-900 font-medium">Contact</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Hero -->
-  <section class="py-12 md:py-16 bg-gradient-to-br from-green-50 to-transparent">
-    <div class="container mx-auto px-4">
-      <div class="max-w-3xl">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight">
-          Submit Your Project Inquiry
-        </h1>
-        <p class="text-lg text-gray-600 leading-relaxed">
-          Send your roof drawing, project details, and requirements. Our team will help you evaluate the right system and provide a quotation.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="py-16 md:py-24 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
-        <!-- Contact Info -->
+<Layout title="Contact Sunlit Solar Roof">
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h1 class="text-4xl font-bold mb-6">Request a Solar Roof Project Quote</h1>
+      <p class="text-lg text-gray-600 mb-8">
+        Send your project country, roof area, preferred system and roof drawing if available. We will help discuss system choice, product scope and quotation direction.
+      </p>
+      <div class="grid md:grid-cols-2 gap-8">
         <div>
-          <h2 class="text-2xl font-bold mb-6 text-gray-900">Contact Information</h2>
-          <div class="space-y-6">
-            <div>
-              <h3 class="font-bold text-gray-900 mb-2">Email</h3>
-              <a href="mailto:info@sunlitsolarroof.com" class="text-green-700 hover:text-green-800 font-semibold">
-                info@sunlitsolarroof.com
-              </a>
-            </div>
-            <div>
-              <h3 class="font-bold text-gray-900 mb-2">Location</h3>
-              <p class="text-gray-600">Changzhou, Jiangsu, China</p>
-            </div>
-            <div>
-              <h3 class="font-bold text-gray-900 mb-2">Response Time</h3>
-              <p class="text-gray-600">We typically respond within 1-2 business days</p>
-            </div>
-            <div class="pt-6 border-t border-gray-200">
-              <h3 class="font-bold text-gray-900 mb-3">What We Need</h3>
-              <ul class="space-y-2 text-sm text-gray-600">
-                <li>✓ Roof drawing or sketch</li>
-                <li>✓ Project location/country</li>
-                <li>✓ Estimated roof area</li>
-                <li>✓ Project type</li>
-                <li>✓ Timeline</li>
-              </ul>
-            </div>
-          </div>
+          <h2 class="text-2xl font-bold mb-4">Contact</h2>
+          <p class="mb-2"><a href="mailto:info@sunlitsolarroof.com" class="text-green-700 font-semibold">info@sunlitsolarroof.com</a></p>
+          <p class="text-gray-600">Changzhou, Jiangsu, China</p>
         </div>
-
-        <!-- Contact Form -->
-        <div class="md:col-span-2 bg-gray-50 rounded-lg p-8">
-          <h2 class="text-2xl font-bold mb-6 text-gray-900">Project Inquiry Form</h2>
-          <form class="space-y-6" method="POST" action="#" enctype="multipart/form-data" id="inquiry-form">
-            <!-- Required Fields -->
-            <div class="border-b border-gray-200 pb-6">
-              <h3 class="font-bold text-gray-900 mb-4 text-sm">Required Information</h3>
-              
-              <div class="grid md:grid-cols-2 gap-4 mb-4">
-                <div>
-                  <label class="block text-sm font-semibold text-gray-900 mb-2">Name *</label>
-                  <input type="text" name="name" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-700" placeholder="Your name" />
-                </div>
-                <div>
-                  <label class="block text-sm font-semibold text-gray-900 mb-2">Email *</label>
-                  <input type="email" name="email" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-700" placeholder="Your email" />
-                </div>
-              </div>
-
-              <div class="grid md:grid-cols-2 gap-4 mb-4">
-                <div>
-                  <label class="block text-sm font-semibold text-gray-900 mb-2">Company *</label>
-                  <input type="text" name="company" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-700" placeholder="Your company" />
-                </div>
-                <div>
-                  <label class="block text-sm font-semibold text-gray-900 mb-2">Country / Region *</label>
-                  <input type="text" name="country" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-700" placeholder="Project location" />
-                </div>
-              </div>
-
-              <div>
-                <label class="block text-sm font-semibold text-gray-900 mb-2">Buyer Type *</label>
-                <select name="buyerType" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-700">
-                  <option value="">Select buyer type...</option>
-                  <option value="distributor">Distributor</option>
-                  <option value="installer">Installer</option>
-                  <option value="developer">Developer</option>
-                  <option value="contractor">Contractor</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div>
-                <label class="block text-sm font-semibold text-gray-900 mb-2">WhatsApp Number (Optional)</label>
-                <input type="tel" name="whatsapp" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-700" placeholder="+1 (555) 000-0000" />
-              </div>
-            </div>
-
-            <!-- Optional Fields -->
-            <div class="border-b border-gray-200 pb-6">
-              <h3 class="font-bold text-gray-900 mb-4 text-sm">Project Details (Optional)</h3>
-              
-              <div class="grid md:grid-cols-2 gap-4 mb-4">
-                <div>
-                  <label class="block text-sm font-semibold text-gray-900 mb-2">Project Type</label>
-                  <select name="projectType" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-700">
-                    <option value="">Select project type...</option>
-                    <option value="residential">Residential</option>
-                    <option value="commercial">Commercial</option>
-                    <option value="hospitality">Hospitality</option>
-                    <option value="infrastructure">Infrastructure</option>
-                    <option value="community">Community</option>
-                    <option value="industrial">Industrial</option>
-                  </select>
-                </div>
-                <div>
-                  <label class="block text-sm font-semibold text-gray-900 mb-2">Preferred System</label>
-                  <select name="projectType" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-700">
-                    <option value="">Select system...</option>
-                    <option value="lumina-slate">Lumina Slate</option>
-                    <option value="storm-guard">Storm Guard</option>
-                    <option value="not-sure">Not sure yet</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="grid md:grid-cols-2 gap-4 mb-4">
-                <div>
-                  <label class="block text-sm font-semibold text-gray-900 mb-2">Estimated Roof Area (m²)</label>
-                  <input type="number" name="roofArea" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-700" placeholder="e.g., 100" />
-                </div>
-                <div>
-                  <label class="block text-sm font-semibold text-gray-900 mb-2">Target Solar Capacity (kW)</label>
-                  <input type="number" name="roofArea" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-700" placeholder="e.g., 10" />
-                </div>
-              </div>
-
-              <div>
-                <label class="block text-sm font-semibold text-gray-900 mb-2">Project Timeline</label>
-                <select name="projectType" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-700">
-                  <option value="">Select timeline...</option>
-                  <option value="immediate">Immediate (within 1 month)</option>
-                  <option value="short-term">Short-term (1-3 months)</option>
-                  <option value="medium-term">Medium-term (3-6 months)</option>
-                  <option value="long-term">Long-term (6+ months)</option>
-                </select>
-              </div>
-            </div>
-
-            <!-- Message -->
-            <div>
-              <label class="block text-sm font-semibold text-gray-900 mb-2">Message / Project Description *</label>
-              <textarea name="message" required class="w-full border border-gray-300 rounded-lg px-4 py-2 h-32 focus:outline-none focus:ring-2 focus:ring-green-700" placeholder="Tell us about your project, requirements, and any specific challenges..."></textarea>
-            </div>
-
-            <!-- File Upload -->
-            <div>
-              <label class="block text-sm font-semibold text-gray-900 mb-2">Roof Drawing or Sketch (Optional)</label>
-              <input type="file" name="roofDrawing" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-700" accept=".pdf,.jpg,.jpeg,.png,.dwg" />
-              <p class="text-xs text-gray-500 mt-2">Accepted formats: PDF, JPG, PNG, DWG</p>
-            </div>
-
-            <!-- Submission Note -->
-            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
-              <p class="text-sm text-blue-900">
-                <strong>Thank you for your inquiry.</strong> We'll review your information and contact you within 1-2 business days with next steps.
-              </p>
-            </div>
-
-            <!-- Submit Button -->
-            <button type="submit" class="w-full bg-green-700 hover:bg-green-800 text-white font-semibold py-3 rounded-lg transition">
-              Submit Project Inquiry →
-            </button>
-
-            <p class="text-xs text-gray-600 text-center">
-              We respect your privacy. Your information will only be used to respond to your inquiry.
-            </p>
-          </form>
-        </div>
+        <form class="space-y-4" method="POST" action="/thank-you/">
+          <input name="name" required placeholder="Full Name" class="w-full border rounded-lg px-4 py-3" />
+          <input name="email" type="email" required placeholder="Email" class="w-full border rounded-lg px-4 py-3" />
+          <input name="company" required placeholder="Company" class="w-full border rounded-lg px-4 py-3" />
+          <input name="country" required placeholder="Country / Region" class="w-full border rounded-lg px-4 py-3" />
+          <select name="buyerType" required class="w-full border rounded-lg px-4 py-3">
+            <option value="">Buyer Type</option>
+            <option value="distributor">Distributor / Importer</option>
+            <option value="installer">Solar Installer</option>
+            <option value="contractor">Roofing Contractor</option>
+            <option value="developer">Developer</option>
+            <option value="other">Other</option>
+          </select>
+          <textarea name="message" required placeholder="Message / Project Description" class="w-full border rounded-lg px-4 py-3 h-32"></textarea>
+          <button type="submit" class="w-full bg-green-700 text-white font-semibold py-3 rounded-lg">Submit Inquiry</button>
+        </form>
       </div>
     </div>
   </section>
