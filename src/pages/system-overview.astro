@@ -1,237 +1,118 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const systemComponents = [
-  "Base / waterproof layer",
-  "Active PV tiles or solar sheets",
-  "Matching inactive roof elements",
-  "Flashing and drainage details",
-  "Fixings and fasteners",
-  "Ridge, edge and roof accessories",
-  "Project quotation and layout support",
+const components = [
+  { title: "Base and Waterproof Layer", desc: "The interface between the building structure and the solar roof package." },
+  { title: "Active PV Elements", desc: "Solar-generating glass tiles or metal sheets depending on the selected system." },
+  { title: "Inactive Roof Elements", desc: "Matching non-PV elements for roof areas that do not generate electricity." },
+  { title: "Flashing and Drainage Details", desc: "Edge, transition and water-management details selected according to roof layout." },
+  { title: "Fixings and Accessories", desc: "Fasteners, ridge pieces, edge pieces and other roof integration components." },
+  { title: "Project Documents", desc: "Datasheets, installation notes and quotation documents based on project stage." }
 ];
 
-const componentDetails = [
-  { name: "Base / Waterproof Layer", desc: "Foundation protection and moisture barrier" },
-  { name: "Active PV Tiles or Solar Sheets", desc: "Solar-generating elements for energy production" },
-  { name: "Matching Inactive Roof Elements", desc: "Non-solar coverage for complete roof coverage" },
-  { name: "Flashing & Drainage Details", desc: "Edge sealing and water management" },
-  { name: "Fixings & Fasteners", desc: "Secure attachment and structural integrity" },
-  { name: "Ridge / Edge / Accessories", desc: "Finishing elements and integration components" },
-];
-
-const benefits = [
-  { title: "Fewer Missing Parts", desc: "One coordinated package means fewer compatibility issues and simpler project planning." },
-  { title: "Better Roof Integration", desc: "Active and inactive elements are designed to work together, creating a unified roof system." },
-  { title: "Clearer Quotation", desc: "Complete system scope makes project quotation and cost estimation more straightforward." },
-  { title: "Easier Local Installation Discussion", desc: "Clear component list and documentation help local installers understand system requirements." },
-  { title: "Better B2B Procurement", desc: "Simplified sourcing and inventory management when all components come from one supplier." },
-  { title: "Project Support", desc: "Sunlit provides layout review, accessory coordination, and technical guidance throughout the project." },
-];
-
-const supportSteps = [
-  { num: "1", title: "System Selection", desc: "Review your project requirements and help you choose between Lumina Slate (premium glass) or Storm Guard (cost-effective metal)." },
-  { num: "2", title: "Roof Drawing Review", desc: "Analyze your roof drawings to understand layout, dimensions, and integration points." },
-  { num: "3", title: "Active + Inactive Layout", desc: "Plan the placement of active PV tiles/sheets and matching inactive roof elements for optimal coverage and appearance." },
-  { num: "4", title: "Accessories & Packaging", desc: "Determine flashing, fixings, ridge elements, and other accessories needed for your specific roof design." },
-  { num: "5", title: "Documents & Local Installation", desc: "Provide product specifications, installation guidance, and technical documentation for your local installation team." },
+const buyerBenefits = [
+  { title: "Clearer Scope", desc: "The buyer can see what is included in the roof package instead of comparing isolated PV tiles only." },
+  { title: "Better Roof Coverage", desc: "Active and inactive elements are discussed together, which is essential for a complete roof." },
+  { title: "Easier Quotation", desc: "Roof drawing, active layout, inactive coverage and accessories can be discussed as one project scope." },
+  { title: "Better Local Installation Discussion", desc: "Local roof and electrical teams can review a clearer system package and document set." }
 ];
 
 const comparison = [
-  ["System Type", "Premium glass solar roof system", "Cost-effective metal solar roof system"],
-  ["Active Element", "AG-etched glass double-glass PV tiles", "Al-Mg-Mn metal solar sheets"],
-  ["Inactive Element", "Matching glass inactive tiles", "Matching metal inactive elements"],
-  ["Appearance", "Premium slate-like aesthetics", "Modern metal roof appearance"],
-  ["Best Fit", "High-end residential, luxury commercial", "Broad range: residential to industrial"],
-  ["Cost Position", "Premium investment", "Cost-effective value"],
-  ["Buyer Focus", "Aesthetics, premium positioning", "Performance, broad applicability"],
+  ["Positioning", "Premium slate-look glass system", "Modern metal solar roof system"],
+  ["Active Element", "AG-etched glass PV roof tile", "Metal solar roof sheet"],
+  ["Inactive Element", "Matching glass inactive tile", "Matching inactive metal element"],
+  ["Appearance", "Premium slate-like glass roof", "Contemporary metal roof profile"],
+  ["Best Fit", "Villas and architectural projects", "Residential, commercial and large roof projects"],
+  ["Cost Position", "Premium", "More cost-effective"]
 ];
 ---
 
-<Layout title="System Overview - Complete Solar Roof Systems">
-  <!-- Breadcrumb -->
-  <section class="border-b border-gray-200">
-    <div class="container mx-auto px-4 py-4">
-      <div class="flex items-center gap-2 text-sm text-gray-600">
-        <a href="/" class="hover:text-gray-900">Home</a>
-        <span>/</span>
-        <span class="text-gray-900 font-medium">System Overview</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Hero -->
-  <section class="py-12 md:py-16 bg-gradient-to-br from-green-50 to-transparent">
-    <div class="container mx-auto px-4 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight">
-        Complete Solar Roof Systems, Not Just Solar Tiles
-      </h1>
-      <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto">
-        Understand how Sunlit combines active PV tiles or solar sheets, matching inactive roof elements, flashing, fixings and accessories into one roof package for overseas B2B projects.
+<Layout title="Complete Solar Roof System Overview">
+  <section class="bg-[#f8faf8] py-14 md:py-20">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <p class="sunlit-overline mb-4">System Overview</p>
+      <h1 class="sunlit-section-title text-4xl md:text-6xl mb-6">Complete Solar Roof Systems, Not Just Solar Tiles</h1>
+      <p class="text-lg md:text-xl text-[var(--slate)] leading-relaxed">
+        A real solar roof project needs more than active PV tiles. It needs a coordinated roof package with active elements, matching inactive coverage, flashing, fixings, accessories and project documentation.
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/system-overview/" class="px-6 py-3 bg-green-700 text-white font-semibold rounded-lg hover:bg-green-800 transition flex items-center justify-center gap-2">
-          Compare Lumina & Storm Guard →
-        </a>
-        <a href="/resources/" class="px-6 py-3 bg-amber-500 text-white font-semibold rounded-lg hover:bg-amber-600 transition flex items-center justify-center gap-2">
-          Request System Catalog →
-        </a>
-        <a href="/contact/" class="px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:border-gray-400 hover:bg-gray-50 transition">
-          Send Roof Drawing
-        </a>
-      </div>
     </div>
   </section>
 
-  <!-- System Definition -->
-  <section class="py-20 bg-white border-b border-gray-200">
-    <div class="container max-w-3xl mx-auto px-4">
-      <h2 class="text-4xl font-bold mb-8 text-gray-900">What is a Complete Solar Roof System?</h2>
-      
-      <div class="space-y-6 text-gray-600 leading-relaxed">
-        <p class="text-lg text-gray-700">
-          A <strong class="text-gray-900">complete solar roof system</strong> is a coordinated roof package, not a single solar tile. It combines solar-generating elements, non-solar matching roof elements, waterproofing details, flashing, fixings and accessories so the roof can work as both a building envelope and a power-generating surface.
-        </p>
-        
-        <div class="bg-green-50 border border-green-200 rounded-lg p-8">
-          <p class="text-gray-900 font-semibold mb-4">A Sunlit solar roof system may include:</p>
-          <ul class="space-y-3">
-            {systemComponents.map((item) => (
-              <li class="flex items-start gap-3">
-                <span class="text-green-700 font-bold">✓</span>
-                <span class="text-gray-900">{item}</span>
-              </li>
-            ))}
-          </ul>
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="grid lg:grid-cols-3 gap-10 items-start">
+        <div>
+          <p class="sunlit-overline mb-3">Definition</p>
+          <h2 class="sunlit-section-title text-3xl md:text-4xl mb-4">What Makes a Solar Roof Complete?</h2>
+          <p class="text-[var(--slate)] leading-relaxed">
+            A complete solar roof system is a coordinated roof package. It combines solar-generating elements, non-solar matching roof elements and roof integration components so the finished roof can protect the building and generate electricity.
+          </p>
+        </div>
+        <div class="lg:col-span-2 grid sm:grid-cols-2 gap-5">
+          {components.map((item, index) => (
+            <div class="sunlit-card p-6">
+              <div class="text-xs font-extrabold text-[var(--deep-green)] mb-3">0{index + 1}</div>
+              <h3 class="font-extrabold text-[var(--charcoal)] mb-2">{item.title}</h3>
+              <p class="text-sm text-[var(--slate)] leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Components Breakdown -->
-  <section class="py-20 bg-gray-50">
-    <div class="container max-w-3xl mx-auto px-4">
-      <h2 class="text-4xl font-bold mb-12 text-gray-900 text-center">What Goes Into a Complete Solar Roof System</h2>
-
-      <div class="space-y-4">
-        {componentDetails.map((item, idx) => (
-          <div key={idx}>
-            <div class="p-6 border border-gray-200 bg-white rounded-lg">
-              <div class="flex items-start gap-4">
-                <div class="w-12 h-12 rounded-full bg-green-700 text-white flex items-center justify-center font-bold flex-shrink-0 text-sm">
-                  {idx + 1}
-                </div>
-                <div class="flex-1">
-                  <h4 class="font-semibold text-gray-900 mb-2">{item.name}</h4>
-                  <p class="text-sm text-gray-600">{item.desc}</p>
-                </div>
-              </div>
-            </div>
-            {idx < 5 && <div class="text-center py-2 text-green-700 font-bold">+</div>}
+  <section class="py-16 md:py-24 bg-[#f8faf8]">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="sunlit-overline mb-3">B2B Buying Logic</p>
+        <h2 class="sunlit-section-title text-3xl md:text-5xl mb-4">Why Complete Systems Matter</h2>
+        <p class="text-[var(--slate)]">For distributors, installers, contractors and developers, the main decision is not only wattage. The roof package, installation logic and accessory scope also matter.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        {buyerBenefits.map((item) => (
+          <div class="sunlit-card p-6">
+            <h3 class="font-extrabold text-[var(--charcoal)] mb-3">{item.title}</h3>
+            <p class="text-sm text-[var(--slate)] leading-relaxed">{item.desc}</p>
           </div>
         ))}
-        
-        <div class="text-center py-4 text-green-700 font-bold text-2xl">=</div>
-        
-        <div class="p-8 border-2 border-green-700 bg-green-50 rounded-lg">
-          <h4 class="text-2xl font-bold text-gray-900 text-center">Complete Solar Roof System</h4>
-          <p class="text-center text-gray-600 mt-3">Integrated, coordinated, and ready for local installation</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mb-10">
+        <p class="sunlit-overline mb-3">System Comparison</p>
+        <h2 class="sunlit-section-title text-3xl md:text-5xl mb-4">Lumina Slate or Storm Guard?</h2>
+        <p class="text-[var(--slate)]">The right choice depends on roof appearance, buyer role, project size and budget position.</p>
+      </div>
+      <div class="sunlit-card overflow-hidden">
+        <div class="grid grid-cols-3 bg-[var(--deep-green)] text-white font-extrabold">
+          <div class="p-4">Decision Point</div>
+          <div class="p-4">Lumina Slate</div>
+          <div class="p-4">Storm Guard</div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Benefits -->
-  <section class="py-20 bg-white border-b border-gray-200">
-    <div class="container max-w-3xl mx-auto px-4">
-      <h2 class="text-4xl font-bold mb-12 text-gray-900">Why Complete Systems Matter for B2B Buyers</h2>
-
-      <div class="grid md:grid-cols-2 gap-8">
-        {benefits.map((item, idx) => (
-          <div key={idx} class="p-6 border border-gray-200 bg-white rounded-lg">
-            <h4 class="font-semibold text-gray-900 mb-3">{item.title}</h4>
-            <p class="text-sm text-gray-600">{item.desc}</p>
+        {comparison.map((row) => (
+          <div class="grid grid-cols-3 border-b border-[var(--border)] last:border-b-0">
+            <div class="p-4 font-extrabold text-[var(--charcoal)]">{row[0]}</div>
+            <div class="p-4 text-[var(--slate)]">{row[1]}</div>
+            <div class="p-4 text-[var(--slate)]">{row[2]}</div>
           </div>
         ))}
       </div>
-    </div>
-  </section>
-
-  <!-- Support Process -->
-  <section class="py-20 bg-gray-50">
-    <div class="container max-w-3xl mx-auto px-4">
-      <h2 class="text-4xl font-bold mb-12 text-gray-900">How Sunlit Supports a Solar Roof Project</h2>
-
-      <div class="space-y-8">
-        {supportSteps.map((item, idx) => (
-          <div key={idx} class="flex gap-6">
-            <div class="flex-shrink-0">
-              <div class="w-12 h-12 rounded-full bg-green-700 text-white flex items-center justify-center font-bold">
-                {item.num}
-              </div>
-            </div>
-            <div class="flex-1">
-              <h4 class="font-semibold text-gray-900 mb-2">{item.title}</h4>
-              <p class="text-gray-600">{item.desc}</p>
-            </div>
-          </div>
-        ))}
+      <div class="flex flex-col sm:flex-row gap-4 mt-8">
+        <a href="/lumina-slate/" class="sunlit-btn-secondary">View Lumina Slate</a>
+        <a href="/storm-guard/" class="sunlit-btn-secondary">View Storm Guard</a>
+        <a href="/contact/" class="sunlit-btn-primary">Send Roof Drawing</a>
       </div>
     </div>
   </section>
 
-  <!-- System Comparison -->
-  <section class="py-20 bg-white border-b border-gray-200">
-    <div class="container max-w-4xl mx-auto px-4">
-      <h2 class="text-4xl font-bold mb-12 text-gray-900 text-center">Sunlit's Two Complete Systems</h2>
-
-      <div class="overflow-x-auto mb-8">
-        <table class="w-full text-sm">
-          <thead>
-            <tr class="border-b-2 border-green-700">
-              <th class="text-left py-4 px-4 font-semibold text-gray-900">Decision Point</th>
-              <th class="text-left py-4 px-4 font-semibold text-gray-900">Lumina Slate</th>
-              <th class="text-left py-4 px-4 font-semibold text-gray-900">Storm Guard</th>
-            </tr>
-          </thead>
-          <tbody>
-            {comparison.map((row, idx) => (
-              <tr key={idx} class="border-b border-gray-200 hover:bg-gray-50">
-                <td class="py-4 px-4 text-gray-900 font-medium">{row[0]}</td>
-                <td class="py-4 px-4 text-gray-600">{row[1]}</td>
-                <td class="py-4 px-4 text-gray-600">{row[2]}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-6">
-        <a href="/lumina-slate/" class="block w-full px-6 py-3 bg-green-700 text-white font-semibold rounded-lg hover:bg-green-800 transition text-center">
-          Learn About Lumina Slate →
-        </a>
-        <a href="/storm-guard/" class="block w-full px-6 py-3 bg-green-700 text-white font-semibold rounded-lg hover:bg-green-800 transition text-center">
-          Learn About Storm Guard →
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Final CTA -->
-  <section class="py-16 md:py-20 bg-green-700 text-white">
+  <section class="py-16 md:py-20 dark-green-gradient text-white">
     <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Evaluate a Complete Solar Roof System?</h2>
-      <p class="text-lg mb-8 text-green-100 max-w-2xl mx-auto">
-        Send your roof drawing, project country and estimated roof area. We will help you discuss system choice, product scope and quotation direction.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact/" class="px-8 py-3 bg-white text-green-700 font-semibold rounded-lg hover:bg-gray-100 transition">
-          Send Roof Drawing →
-        </a>
-        <a href="/resources/" class="px-8 py-3 bg-amber-500 text-white font-semibold rounded-lg hover:bg-amber-600 transition">
-          Request System Catalog →
-        </a>
-      </div>
+      <h2 class="text-3xl md:text-5xl font-extrabold mb-5">Start with Your Roof Drawing</h2>
+      <p class="text-lg text-white/75 max-w-2xl mx-auto mb-8">Send project country, roof area and drawings. We will help discuss system choice, product scope and quotation direction.</p>
+      <a href="/contact/" class="sunlit-btn-primary">Request Project Review</a>
     </div>
   </section>
 </Layout>
