@@ -1,10 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { projects } from '../data/projects';
-import { resources } from '../data/resources';
 import { generalFAQs } from '../data/faqs';
 
-const faqs = generalFAQs;
+const faqs = generalFAQs.slice(0, 5);
 
 const ASSETS = {
   luminaSlateHero: "https://d2xsxph8kpxj0f.cloudfront.net/310519663705242844/mtvS4X69r9pvLdqcQTXPeQ/lumina-slate-hero-dFoW7mbWnUAgHmoQ6n9iPk.webp",
@@ -12,233 +11,218 @@ const ASSETS = {
 };
 
 const trustItems = [
-  { label: "Factory Supply", desc: "Direct from our manufacturing facility" },
-  { label: "Active + Inactive Elements", desc: "Complete system components" },
-  { label: "Samples Available", desc: "Quality verification before commitment" },
-  { label: "Export Support", desc: "Shipping & technical documentation" },
-  { label: "Project Quotation Support", desc: "Expert guidance for your projects" },
-  { label: "Distributor Cooperation", desc: "Dedicated partnership support" },
+  { label: "Factory Supply", desc: "Export-ready solar roof system supply from China" },
+  { label: "Active + Inactive Elements", desc: "PV roof elements plus matching non-PV coverage" },
+  { label: "Samples Available", desc: "Product evaluation before project orders" },
+  { label: "Export Support", desc: "Packaging, shipping and document coordination" },
+  { label: "Project Quotation Support", desc: "Roof drawing review and quotation direction" },
+];
+
+const components = [
+  "Base Layer",
+  "Active PV Elements",
+  "Inactive Roof Elements",
+  "Flashing",
+  "Fixings",
+  "Accessories",
 ];
 
 const audiences = [
-  {
-    title: "For Distributors",
-    desc: "Competitive pricing, marketing support, and dedicated account management for your business growth",
-  },
-  {
-    title: "For Solar Installers",
-    desc: "Complete systems with installation documents and project support for your team",
-  },
-  {
-    title: "For Roofing Contractors",
-    desc: "Complete systems with detailed installation notes and technical guidance",
-  },
-  {
-    title: "For Developers",
-    desc: "Premium aesthetics with technical documentation and reliable product supply",
-  },
+  { title: "For Distributors", desc: "Add differentiated solar roofing systems to your local product portfolio." },
+  { title: "For Solar Installers", desc: "Offer integrated solar roof options when clients do not want standard panels." },
+  { title: "For Roofing Contractors", desc: "Work with matching active and inactive roof elements for complete roof coverage." },
+  { title: "For Developers", desc: "Evaluate solar roofing systems for residential, commercial and hospitality projects." },
 ];
 ---
 
-<Layout title="Sunlit Solar Roof - BIPV Solar Roof Systems">
-  <!-- Hero Section -->
-  <section class="relative pt-16 pb-12 md:pt-24 md:pb-16 overflow-hidden">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-        <div class="flex flex-col space-y-6">
-          <div class="inline-flex items-center px-3 py-1 bg-green-50 border border-green-200 rounded-full w-fit">
-            <span class="text-sm font-medium text-green-700">Complete Integrated Systems</span>
-          </div>
-
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-            BIPV Solar Roof Systems for Distributors, Installers & Developers
+<Layout title="Sunlit Solar Roof - Complete BIPV Solar Roof Systems">
+  <section class="relative overflow-hidden bg-[#f8faf8]">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(15,77,58,0.10),transparent_28%),radial-gradient(circle_at_85%_15%,rgba(245,166,35,0.14),transparent_24%)]"></div>
+    <div class="container mx-auto px-4 py-16 md:py-24 relative">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="sunlit-overline mb-4">Complete Integrated Solar Roofing Systems</p>
+          <h1 class="sunlit-section-title text-4xl md:text-6xl mb-6 max-w-2xl">
+            Solar Roof Systems, Not Just Solar Roof Tiles.
           </h1>
-
-          <p class="text-xl text-gray-700 font-semibold leading-relaxed">
-            Not just solar roof tiles. A complete roof system.
+          <p class="text-xl text-[var(--charcoal)] font-bold mb-4">
+            A complete roof package for overseas B2B projects.
+          </p>
+          <p class="text-lg text-[var(--slate)] leading-relaxed mb-8 max-w-xl">
+            Sunlit supplies complete solar roof systems with active PV tiles or sheets, matching inactive roof elements, flashing, fixings and accessories — for distributors, installers, contractors and developers.
           </p>
 
-          <p class="text-lg text-gray-600 leading-relaxed max-w-md">
-            Sunlit supplies complete integrated solar roofing systems with active PV tiles or sheets, matching inactive roof elements, flashing, fixings and accessories — for roofing distributors, building material importers, solar installers, roofing contractors and developers.
-          </p>
-
-          <div class="grid grid-cols-3 gap-4 pt-4">
-            <div>
-              <div class="text-sm font-semibold text-green-700">Factory Supply</div>
-              <div class="text-xs text-gray-600">Direct manufacturing</div>
-            </div>
-            <div>
-              <div class="text-sm font-semibold text-green-700">Project Support</div>
-              <div class="text-xs text-gray-600">Quotation assistance</div>
-            </div>
-            <div>
-              <div class="text-sm font-semibold text-green-700">Samples Available</div>
-              <div class="text-xs text-gray-600">Quality verification</div>
-            </div>
+          <div class="flex flex-col sm:flex-row gap-3 mb-10">
+            <a href="/system-overview/" class="sunlit-btn-green">Explore Solar Roof Systems <span>→</span></a>
+            <a href="/contact/" class="sunlit-btn-primary">Get Distributor Pricing <span>→</span></a>
+            <a href="/contact/" class="sunlit-btn-secondary">Send Roof Drawing</a>
           </div>
 
-          <div class="flex flex-col sm:flex-row gap-3 pt-4">
-            <a href="/system-overview/" class="px-6 py-3 bg-green-700 text-white font-semibold rounded-lg hover:bg-green-800 transition-all duration-200 flex items-center justify-center gap-2 shadow-md hover:shadow-lg">
-              Explore Solar Roof Systems
-              <span>→</span>
-            </a>
-            <a href="/contact/" class="px-6 py-3 bg-amber-500 text-white font-semibold rounded-lg hover:bg-amber-600 transition-all duration-200 flex items-center justify-center gap-2 shadow-md hover:shadow-lg">
-              Get Distributor Pricing
-              <span>→</span>
-            </a>
-            <a href="/contact/" class="px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 flex items-center justify-center gap-2">
-              Send Roof Drawing
-            </a>
+          <div class="grid grid-cols-3 gap-3 max-w-xl">
+            <div class="stat-pill p-4">
+              <div class="font-extrabold text-[var(--deep-green)]">2 Systems</div>
+              <div class="text-xs text-[var(--slate)]">Glass + Metal</div>
+            </div>
+            <div class="stat-pill p-4">
+              <div class="font-extrabold text-[var(--deep-green)]">B2B Supply</div>
+              <div class="text-xs text-[var(--slate)]">Export focused</div>
+            </div>
+            <div class="stat-pill p-4">
+              <div class="font-extrabold text-[var(--deep-green)]">Project Quote</div>
+              <div class="text-xs text-[var(--slate)]">Drawing based</div>
+            </div>
           </div>
         </div>
 
-        <div class="relative h-96 md:h-full rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-          <img src={ASSETS.luminaSlateHero} alt="Premium Solar Roof System" class="w-full h-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+        <div class="relative">
+          <div class="sunlit-card overflow-hidden p-3 bg-white">
+            <img src={ASSETS.luminaSlateHero} alt="Integrated solar roof system on modern building" class="w-full h-[420px] object-cover rounded-2xl" />
+          </div>
+          <div class="absolute -bottom-6 -left-4 bg-white border border-[var(--border)] rounded-2xl shadow-xl p-5 max-w-xs hidden md:block">
+            <p class="font-extrabold text-[var(--charcoal)] mb-1">Active + Inactive Layout</p>
+            <p class="text-sm text-[var(--slate)]">PV roof elements and matching inactive elements are evaluated as one roof package.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Trust Bar -->
-  <section class="bg-gray-50 py-12 md:py-16">
+  <section class="py-10 bg-white border-y border-[var(--border)]">
     <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid md:grid-cols-5 gap-4">
         {trustItems.map((item) => (
-          <div class="flex items-start gap-4 p-5 bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-            <div class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-              <span class="text-green-700 font-bold">✓</span>
-            </div>
-            <div>
-              <h3 class="font-semibold text-gray-900">{item.label}</h3>
-              <p class="text-sm text-gray-600">{item.desc}</p>
-            </div>
+          <div class="p-5 rounded-2xl bg-[#f8faf8] border border-[var(--border)]">
+            <div class="w-9 h-9 rounded-full bg-[var(--deep-green)] text-white flex items-center justify-center font-bold mb-4">✓</div>
+            <h3 class="font-extrabold text-[var(--charcoal)] mb-1">{item.label}</h3>
+            <p class="text-sm text-[var(--slate)] leading-relaxed">{item.desc}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Our Solar Roof Systems -->
-  <section class="py-16 md:py-24">
+  <section class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">Our Solar Roof Systems</h2>
-      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Two engineered systems for different aesthetic and performance requirements</p>
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="sunlit-overline mb-3">Two Solar Roof Systems</p>
+        <h2 class="sunlit-section-title text-3xl md:text-5xl mb-4">Choose the System That Fits the Project</h2>
+        <p class="text-[var(--slate)] text-lg">Lumina Slate focuses on premium glass slate aesthetics. Storm Guard focuses on modern metal roofing, scale and cost efficiency.</p>
+      </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <!-- Lumina Slate -->
-        <div class="overflow-hidden border-0 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 rounded-lg">
-          <div class="h-64 overflow-hidden bg-gray-100">
-            <img src={ASSETS.luminaSlateHero} alt="Lumina Slate System" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+      <div class="grid lg:grid-cols-2 gap-8">
+        <article class="sunlit-card overflow-hidden">
+          <img src={ASSETS.luminaSlateHero} alt="Lumina Slate glass solar roof system" class="w-full h-72 object-cover" />
+          <div class="p-8">
+            <p class="sunlit-overline mb-3">Premium Glass System</p>
+            <h3 class="text-2xl font-extrabold mb-3 text-[var(--charcoal)]">Lumina Slate Glass Solar Roof System</h3>
+            <p class="text-[var(--slate)] leading-relaxed mb-6">AG-etched glass, frameless double-glass PV roof tiles with matching inactive glass tiles. Designed for villas, premium residential roofs and architectural projects where appearance matters.</p>
+            <a href="/lumina-slate/" class="sunlit-btn-secondary">Explore Lumina Slate <span>→</span></a>
           </div>
-          <div class="p-6 md:p-8">
-            <div class="inline-block px-3 py-1 bg-blue-50 border border-blue-200 rounded-full mb-4">
-              <span class="text-sm font-medium text-blue-700">Premium Glass System</span>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-3">Lumina Slate Glass Solar Roof System</h3>
-            <p class="text-gray-600 mb-6">
-              AG-etched glass, frameless double-glass PV roof tiles with matching glass inactive tiles. Premium slate-like aesthetics with integrated solar generation.
-            </p>
-            <a href="/lumina-slate/" class="w-full px-4 py-2 bg-blue-50 text-blue-700 font-semibold rounded-lg hover:bg-blue-100 transition-all duration-200 flex items-center justify-center gap-2">
-              Learn More
-              <span>→</span>
-            </a>
+        </article>
+
+        <article class="sunlit-card overflow-hidden">
+          <img src={ASSETS.stormGuardHero} alt="Storm Guard metal solar roof system" class="w-full h-72 object-cover" />
+          <div class="p-8">
+            <p class="sunlit-overline mb-3">Modern Metal System</p>
+            <h3 class="text-2xl font-extrabold mb-3 text-[var(--charcoal)]">Storm Guard Metal Solar Roof System</h3>
+            <p class="text-[var(--slate)] leading-relaxed mb-6">Low-standing-seam Al-Mg-Mn metal solar roof sheets with matching inactive metal roof elements. A practical choice for modern residential, commercial, public and large-area roofs.</p>
+            <a href="/storm-guard/" class="sunlit-btn-secondary">Explore Storm Guard <span>→</span></a>
           </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-[#f8faf8]">
+    <div class="container mx-auto px-4">
+      <div class="grid lg:grid-cols-3 gap-10 items-start">
+        <div>
+          <p class="sunlit-overline mb-3">Complete System Package</p>
+          <h2 class="sunlit-section-title text-3xl md:text-4xl mb-4">What Makes a Real Solar Roof System?</h2>
+          <p class="text-[var(--slate)] leading-relaxed">A solar roof is not only the active PV element. Buyers need the complete roof package: waterproofing, inactive coverage, flashing, fixing details and export-ready accessories.</p>
         </div>
-
-        <!-- Storm Guard -->
-        <div class="overflow-hidden border-0 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 rounded-lg">
-          <div class="h-64 overflow-hidden bg-gray-100">
-            <img src={ASSETS.stormGuardHero} alt="Storm Guard System" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-          </div>
-          <div class="p-6 md:p-8">
-            <div class="inline-block px-3 py-1 bg-green-50 border border-green-200 rounded-full mb-4">
-              <span class="text-sm font-medium text-green-700">Modern Metal System</span>
+        <div class="lg:col-span-2 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {components.map((component, index) => (
+            <div class="sunlit-card-soft p-6 bg-white">
+              <div class="text-xs font-extrabold text-[var(--deep-green)] mb-3">0{index + 1}</div>
+              <h3 class="font-extrabold text-[var(--charcoal)]">{component}</h3>
             </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-3">Storm Guard Metal Solar Roof System</h3>
-            <p class="text-gray-600 mb-6">
-              Low-standing-seam Al-Mg-Mn metal solar roof sheets with matching inactive metal roof elements. Modern metal roof aesthetics with lower cost and broad application range.
-            </p>
-            <a href="/storm-guard/" class="w-full px-4 py-2 bg-green-50 text-green-700 font-semibold rounded-lg hover:bg-green-100 transition-all duration-200 flex items-center justify-center gap-2">
-              Learn More
-              <span>→</span>
-            </a>
-          </div>
+          ))}
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Who We Work With -->
-  <section class="bg-gray-50 py-16 md:py-24">
+  <section class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">Who We Work With</h2>
-      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Tailored solutions for every role in the solar roof supply chain</p>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="sunlit-overline mb-3">Built for Professionals</p>
+        <h2 class="sunlit-section-title text-3xl md:text-5xl mb-4">Designed Around B2B Project Decisions</h2>
+        <p class="text-[var(--slate)] text-lg">For buyers who need product scope, project quotation support and export-ready communication.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
         {audiences.map((audience) => (
-          <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-            <h3 class="text-xl font-bold text-gray-900 mb-3">{audience.title}</h3>
-            <p class="text-gray-600">{audience.desc}</p>
+          <div class="sunlit-card p-6">
+            <h3 class="font-extrabold text-lg text-[var(--charcoal)] mb-3">{audience.title}</h3>
+            <p class="text-sm text-[var(--slate)] leading-relaxed">{audience.desc}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Featured Projects -->
-  <section class="py-16 md:py-24">
+  <section class="py-16 md:py-24 bg-[#f8faf8]">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">Featured Projects</h2>
-      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Real-world implementations of Lumina Slate and Storm Guard systems</p>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+        <div>
+          <p class="sunlit-overline mb-3">Project References</p>
+          <h2 class="sunlit-section-title text-3xl md:text-5xl">Featured Projects</h2>
+        </div>
+        <a href="/projects/" class="sunlit-btn-secondary w-fit">View All Projects <span>→</span></a>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {projects.slice(0, 4).map((project) => (
-          <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
-            <div class="h-40 bg-gray-200"></div>
-            <div class="p-4">
-              <p class="font-semibold text-gray-900">{project.name}</p>
-              <p class="text-sm text-gray-600">{project.location}</p>
-              <div class="flex gap-2 mt-3">
-                <span class="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-1 rounded">{project.system}</span>
-                <span class="inline-block bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">{project.application}</span>
+          <a href={`/projects/${project.slug}/`} class="sunlit-card overflow-hidden block hover:-translate-y-1 transition">
+            <div class="h-44 image-placeholder"></div>
+            <div class="p-5">
+              <h3 class="font-extrabold text-[var(--charcoal)] mb-2 line-clamp-2">{project.name}</h3>
+              <p class="text-sm text-[var(--slate)] mb-4">{project.location}</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="text-xs font-bold px-3 py-1 rounded-full bg-blue-50 text-blue-700">{project.system}</span>
+                <span class="text-xs font-bold px-3 py-1 rounded-full bg-green-50 text-green-700">{project.application}</span>
               </div>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="bg-gray-50 py-16 md:py-24">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">Frequently Asked Questions</h2>
-      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Common questions about our solar roof systems</p>
-
-      <div class="max-w-3xl mx-auto space-y-6">
+  <section id="faq" class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <div class="text-center mb-12">
+        <p class="sunlit-overline mb-3">FAQ</p>
+        <h2 class="sunlit-section-title text-3xl md:text-5xl">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-4">
         {faqs.map((faq) => (
-          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-            <h3 class="font-semibold text-gray-900 mb-2">{faq.question}</h3>
-            <p class="text-gray-600">{faq.answer}</p>
+          <div class="border border-[var(--border)] rounded-2xl p-6 bg-white">
+            <h3 class="font-extrabold text-[var(--charcoal)] mb-2">{faq.question}</h3>
+            <p class="text-[var(--slate)] leading-relaxed">{faq.answer}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Final CTA -->
-  <section class="bg-green-700 text-white py-16 md:py-24">
+  <section class="py-16 md:py-20 dark-green-gradient text-white">
     <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Partner with Sunlit?</h2>
-      <p class="text-lg mb-10 max-w-2xl mx-auto">Send your roof drawing, project country and estimated roof area. We will help discuss system choice, product scope and quotation direction.</p>
+      <p class="uppercase tracking-[0.16em] text-white/70 font-extrabold text-xs mb-4">Start with a roof drawing</p>
+      <h2 class="text-3xl md:text-5xl font-extrabold mb-5">Let’s Build Your Next Solar Roof Project</h2>
+      <p class="text-lg text-white/75 max-w-2xl mx-auto mb-8">Send your project country, roof area and drawings. We will help discuss system choice, product scope and quotation direction.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact/" class="px-8 py-4 bg-white text-green-700 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-200">
-          Send Roof Drawing
-        </a>
-        <a href="/resources/" class="px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-all duration-200">
-          Request Catalog
-        </a>
+        <a href="/contact/" class="sunlit-btn-primary">Get Distributor Pricing <span>→</span></a>
+        <a href="/contact/" class="border border-white/60 text-white rounded-full px-6 py-3 font-extrabold hover:bg-white/10">Send Roof Drawing</a>
       </div>
     </div>
   </section>
