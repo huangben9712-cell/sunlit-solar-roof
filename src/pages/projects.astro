@@ -1,55 +1,33 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { projects } from '../data/projects';
-
-const systemTypes = ['Lumina Slate', 'Storm Guard'];
-const applicationTypes = ['Residential', 'Commercial', 'Hospitality', 'Infrastructure', 'Community', 'Industrial'];
 ---
 
-<Layout title="Project References - Solar Roof Systems">
-  <!-- Breadcrumb -->
-  <section class="border-b border-gray-200">
-    <div class="container mx-auto px-4 py-4">
-      <div class="flex items-center gap-2 text-sm text-gray-600">
-        <a href="/" class="hover:text-gray-900">Home</a>
-        <span>/</span>
-        <span class="text-gray-900 font-medium">Projects</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Hero -->
-  <section class="py-12 md:py-16 bg-gradient-to-br from-green-50 to-transparent">
-    <div class="container mx-auto px-4 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight">
-        Project References
-      </h1>
-      <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto">
-        26 completed projects worldwide using Lumina Slate and Storm Guard systems across residential, commercial, and infrastructure applications.
+<Layout title="Project References - Sunlit Solar Roof">
+  <section class="bg-[#f8faf8] py-14 md:py-20">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <p class="sunlit-overline mb-4">Project References</p>
+      <h1 class="sunlit-section-title text-4xl md:text-6xl mb-6">Solar Roof Project References</h1>
+      <p class="text-lg text-[var(--slate)] leading-relaxed">
+        Reference projects showing how Lumina Slate and Storm Guard systems can be used across residential, commercial, hospitality, community and infrastructure applications. Detailed project data is shared during quotation discussion when available.
       </p>
     </div>
   </section>
 
-  <!-- Projects Grid -->
   <section class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-4">
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project) => (
-          <a href={`/projects/${project.slug}/`} class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition block">
-            <div class="h-40 bg-gradient-to-br from-gray-200 to-gray-300"></div>
+          <a href={`/projects/${project.slug}/`} class="sunlit-card overflow-hidden block hover:-translate-y-1 transition">
+            <div class="h-52 image-placeholder"></div>
             <div class="p-6">
-              <h3 class="font-bold text-gray-900 mb-2 line-clamp-2 hover:text-green-700">{project.name}</h3>
-              <p class="text-sm text-gray-600 mb-4 flex items-center gap-1">
-                📍 {project.location}
-              </p>
-              <div class="flex gap-2 flex-wrap">
-                <span class="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">
-                  {project.system}
-                </span>
-                <span class="inline-block bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full">
-                  {project.application}
-                </span>
+              <div class="flex gap-2 flex-wrap mb-4">
+                <span class="inline-block bg-blue-50 text-blue-700 text-xs font-extrabold px-3 py-1 rounded-full">{project.system}</span>
+                <span class="inline-block bg-green-50 text-green-700 text-xs font-extrabold px-3 py-1 rounded-full">{project.application}</span>
               </div>
+              <h3 class="text-xl font-extrabold text-[var(--charcoal)] mb-3 line-clamp-2">{project.name}</h3>
+              <p class="text-sm text-[var(--slate)] mb-5">{project.location}</p>
+              <div class="text-[var(--deep-green)] font-extrabold text-sm">View Project</div>
             </div>
           </a>
         ))}
@@ -57,21 +35,13 @@ const applicationTypes = ['Residential', 'Commercial', 'Hospitality', 'Infrastru
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="py-16 md:py-20 bg-green-700 text-white">
+  <section class="py-16 md:py-20 dark-green-gradient text-white">
     <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Have a Similar Project?</h2>
-      <p class="text-lg mb-8 text-green-100 max-w-2xl mx-auto">
-        Send your roof drawing and project details. We'll help you evaluate the right system.
+      <h2 class="text-3xl md:text-5xl font-extrabold mb-5">Have a Similar Project?</h2>
+      <p class="text-lg text-white/75 max-w-2xl mx-auto mb-8">
+        Send your roof drawing and project details. We will help you evaluate the right system and quotation direction.
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact/" class="px-8 py-3 bg-white text-green-700 font-semibold rounded-lg hover:bg-gray-100 transition">
-          Send Roof Drawing →
-        </a>
-        <a href="/resources/" class="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition">
-          Request Catalog
-        </a>
-      </div>
+      <a href="/contact/" class="sunlit-btn-primary">Send Roof Drawing</a>
     </div>
   </section>
 </Layout>
