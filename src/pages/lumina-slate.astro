@@ -1,244 +1,159 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { getProductBySlug } from '../data/products';
 import { getComponentsBySystem } from '../data/systemComponents';
 import { productFAQs, generalFAQs } from '../data/faqs';
 
-const product = getProductBySlug('lumina-slate-glass-solar-roof-system');
 const components = getComponentsBySystem('Lumina Slate');
-const displayFaqs = [...productFAQs, ...generalFAQs];
+const displayFaqs = [...productFAQs, ...generalFAQs].slice(0, 5);
+const heroImage = "https://d2xsxph8kpxj0f.cloudfront.net/310519663705242844/mtvS4X69r9pvLdqcQTXPeQ/lumina-slate-hero-dFoW7mbWnUAgHmoQ6n9iPk.webp";
+
+const specs = [
+  ["System Type", "Slate-look glass solar roof system"],
+  ["Active Element", "AG-etched frameless double-glass PV roof tiles"],
+  ["Inactive Element", "Matching glass inactive roof tiles"],
+  ["Roof Appearance", "Premium slate-like glass roof"],
+  ["Best Fit", "Villas, premium residential roofs, architectural projects"],
+  ["Documents", "Datasheets and warranty documents available upon request"],
+];
+
+const applications = ["Premium villas", "High-end residential roofs", "Architectural projects", "Developers and distributors"];
 ---
 
-<Layout title="Lumina Slate - Premium Glass Solar Roof System">
-  <!-- Breadcrumb -->
-  <section class="border-b border-gray-200">
-    <div class="container mx-auto px-4 py-4">
-      <div class="flex items-center gap-2 text-sm text-gray-600">
-        <a href="/" class="hover:text-gray-900">Home</a>
-        <span>/</span>
-        <span class="text-gray-900 font-medium">Lumina Slate</span>
-      </div>
+<Layout title="Lumina Slate Glass Solar Roof System">
+  <section class="border-b border-[var(--border)] bg-white">
+    <div class="container mx-auto px-4 py-4 text-sm text-[var(--slate)]">
+      <a href="/" class="hover:text-[var(--deep-green)]">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/system-overview/" class="hover:text-[var(--deep-green)]">Solar Roof Systems</a>
+      <span class="mx-2">/</span>
+      <span class="font-bold text-[var(--charcoal)]">Lumina Slate</span>
     </div>
   </section>
 
-  <!-- Hero -->
-  <section class="py-16 md:py-24 bg-gradient-to-br from-green-50 to-transparent">
+  <section class="bg-[#f8faf8] py-14 md:py-20">
     <div class="container mx-auto px-4">
-      <div class="max-w-3xl">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight">
-          {product?.name}
-        </h1>
-        <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-          {product?.description}
-        </p>
-        <div class="flex gap-4">
-          <a href="/contact/" class="px-6 py-3 bg-green-700 hover:bg-green-800 text-white font-semibold rounded-lg transition">
-            Request Quotation →
-          </a>
-          <a href="#faq" class="px-6 py-3 border-2 border-green-700 text-green-700 hover:bg-green-50 font-semibold rounded-lg transition">
-            View FAQ
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- What This System Is -->
-  <section class="py-16 md:py-24 bg-white">
-    <div class="container mx-auto px-4 max-w-3xl">
-      <h2 class="text-3xl font-bold mb-6 text-gray-900">What This System Is</h2>
-      <p class="text-lg text-gray-600 leading-relaxed mb-6">
-        {product?.positioning}
-      </p>
-      <p class="text-gray-600 leading-relaxed">
-        Lumina Slate is a complete Building Integrated Photovoltaic (BIPV) system designed for projects where roof aesthetics and power generation work together. The system combines glass tiles with integrated solar cells, creating a cohesive roof that generates electricity while maintaining architectural elegance.
-      </p>
-    </div>
-  </section>
-
-  <!-- System Package / Components -->
-  <section class="py-16 md:py-24 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-12 text-gray-900 text-center">System Package</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-5xl mx-auto">
-        {components.map((component) => (
-          <div class="bg-white rounded-lg p-6 border border-gray-200">
-            <h3 class="font-bold text-gray-900 mb-2 text-sm">{component.name}</h3>
-            <p class="text-xs text-gray-600 leading-relaxed">{component.description}</p>
-            {component.material && (
-              <p class="text-xs text-gray-500 mt-3 pt-3 border-t border-gray-200">
-                <strong>Material:</strong> {component.material}
-              </p>
-            )}
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Active & Inactive Elements -->
-  <section class="py-16 md:py-24 bg-white">
-    <div class="container mx-auto px-4 max-w-4xl">
-      <h2 class="text-3xl font-bold mb-12 text-gray-900">Active & Inactive Elements</h2>
-      <div class="grid md:grid-cols-2 gap-12">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <h3 class="text-2xl font-bold mb-4 text-gray-900">Active Element</h3>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            {product?.activeElement.name}
+          <p class="sunlit-overline mb-4">Premium Glass Solar Roof System</p>
+          <h1 class="sunlit-section-title text-4xl md:text-6xl mb-6">Lumina Slate Glass Solar Roof System</h1>
+          <p class="text-lg md:text-xl text-[var(--slate)] leading-relaxed mb-8">
+            A premium slate-look glass solar roofing system with AG-etched frameless double-glass PV roof tiles, matching glass inactive tiles, flashing, fixings and accessories — for projects where roof appearance matters.
           </p>
-          <p class="text-gray-600 leading-relaxed">
-            {product?.activeElement.description}
-          </p>
-          <p class="text-sm text-gray-500 mt-6">
-            Detailed specifications available upon request. Contact us for technical documentation.
-          </p>
-        </div>
-        <div>
-          <h3 class="text-2xl font-bold mb-4 text-gray-900">Inactive Element</h3>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            {product?.inactiveElement.name}
-          </p>
-          <p class="text-gray-600 leading-relaxed">
-            {product?.inactiveElement.description}
-          </p>
-          <p class="text-sm text-gray-500 mt-6">
-            Matching inactive tiles ensure complete roof coverage and consistent aesthetics.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Technical Specifications -->
-  <section class="py-16 md:py-24 bg-gray-50">
-    <div class="container mx-auto px-4 max-w-3xl">
-      <h2 class="text-3xl font-bold mb-6 text-gray-900">Technical Specifications</h2>
-      <div class="bg-white rounded-lg p-8 border border-gray-200">
-        <p class="text-gray-600 leading-relaxed mb-6">
-          Lumina Slate is a complete system including roof base layer, active and inactive glass tiles, ridge and edge components, and electrical generation system.
-        </p>
-        <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
-          <p class="text-blue-900">
-            <strong>Detailed specifications, warranty terms, and electrical configuration depend on project scope and requirements.</strong> Please contact us to discuss your specific project needs and receive comprehensive technical documentation.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Suitable Project Types -->
-  <section class="py-16 md:py-24 bg-white">
-    <div class="container mx-auto px-4 max-w-3xl">
-      <h2 class="text-3xl font-bold mb-12 text-gray-900">Suitable Project Types</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        {product?.applications.map((app) => (
-          <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
-            <p class="font-semibold text-gray-900">{app}</p>
+          <div class="flex flex-col sm:flex-row gap-3 mb-8">
+            <a href="/contact/" class="sunlit-btn-primary">Request Lumina Quote <span>→</span></a>
+            <a href="/resources/" class="sunlit-btn-secondary">Request Datasheet</a>
           </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Buyers Choose This System -->
-  <section class="py-16 md:py-24 bg-green-50">
-    <div class="container mx-auto px-4 max-w-3xl">
-      <h2 class="text-3xl font-bold mb-12 text-gray-900">Why Buyers Choose Lumina Slate</h2>
-      <div class="space-y-4">
-        {product?.bestFor.map((reason) => (
-          <div class="flex gap-4">
-            <span class="text-green-700 font-bold text-xl">✓</span>
-            <p class="text-gray-600">{reason}</p>
+          <div class="grid grid-cols-3 gap-3">
+            <div class="stat-pill p-4"><div class="font-extrabold text-[var(--deep-green)]">Glass</div><div class="text-xs text-[var(--slate)]">Slate-like finish</div></div>
+            <div class="stat-pill p-4"><div class="font-extrabold text-[var(--deep-green)]">Active + Inactive</div><div class="text-xs text-[var(--slate)]">Complete coverage</div></div>
+            <div class="stat-pill p-4"><div class="font-extrabold text-[var(--deep-green)]">Premium</div><div class="text-xs text-[var(--slate)]">Aesthetic focus</div></div>
           </div>
-        ))}
+        </div>
+        <div class="sunlit-card overflow-hidden p-3">
+          <img src={heroImage} alt="Lumina Slate glass solar roof system" class="w-full h-[420px] object-cover rounded-2xl" />
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Project References -->
   <section class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-6 text-gray-900 text-center">Project References</h2>
-      <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-        Lumina Slate has been installed in premium residential, commercial, and architectural projects worldwide.
-      </p>
-      <div class="text-center">
-        <a href="/projects/" class="inline-block px-8 py-3 border-2 border-green-700 text-green-700 font-semibold rounded-lg hover:bg-green-50 transition">
-          View Project References →
-        </a>
+      <div class="grid lg:grid-cols-3 gap-10 items-start">
+        <div>
+          <p class="sunlit-overline mb-3">What This System Is</p>
+          <h2 class="sunlit-section-title text-3xl md:text-4xl mb-4">Premium Solar Roof, Not Ordinary Solar Tiles</h2>
+          <p class="text-[var(--slate)] leading-relaxed">
+            Lumina Slate combines active glass PV roof tiles and matching inactive glass roof tiles into one coordinated roof package. It is designed for projects where architectural appearance, product scope and procurement clarity are all important.
+          </p>
+        </div>
+        <div class="lg:col-span-2 grid sm:grid-cols-2 gap-5">
+          <div class="sunlit-card p-6">
+            <div class="h-32 image-placeholder rounded-2xl mb-5"></div>
+            <h3 class="font-extrabold text-xl mb-2">Active PV Roof Tile</h3>
+            <p class="text-[var(--slate)] leading-relaxed">AG-etched frameless double-glass PV roof tiles provide solar generation while keeping a slate-like roof appearance.</p>
+          </div>
+          <div class="sunlit-card p-6">
+            <div class="h-32 image-placeholder rounded-2xl mb-5"></div>
+            <h3 class="font-extrabold text-xl mb-2">Matching Inactive Tile</h3>
+            <p class="text-[var(--slate)] leading-relaxed">Matching glass inactive tiles cover non-generating roof areas and help the full roof keep a consistent appearance.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Quote Requirements -->
-  <section class="py-16 md:py-24 bg-gray-50">
-    <div class="container mx-auto px-4 max-w-3xl">
-      <h2 class="text-3xl font-bold mb-6 text-gray-900">Quote Requirements</h2>
-      <p class="text-gray-600 leading-relaxed mb-8">
-        To prepare an accurate quotation, we need the following project information:
-      </p>
-      <ul class="space-y-3 mb-8">
-        <li class="flex gap-3">
-          <span class="text-green-700 font-bold">•</span>
-          <span class="text-gray-600">Roof drawing or sketch</span>
-        </li>
-        <li class="flex gap-3">
-          <span class="text-green-700 font-bold">•</span>
-          <span class="text-gray-600">Project location and country</span>
-        </li>
-        <li class="flex gap-3">
-          <span class="text-green-700 font-bold">•</span>
-          <span class="text-gray-600">Estimated roof area (m²)</span>
-        </li>
-        <li class="flex gap-3">
-          <span class="text-green-700 font-bold">•</span>
-          <span class="text-gray-600">Target solar capacity (kW)</span>
-        </li>
-        <li class="flex gap-3">
-          <span class="text-green-700 font-bold">•</span>
-          <span class="text-gray-600">Project timeline</span>
-        </li>
-      </ul>
-      <a href="/contact/" class="inline-block px-8 py-3 bg-green-700 hover:bg-green-800 text-white font-semibold rounded-lg transition">
-        Submit Project Information →
-      </a>
+  <section class="py-16 md:py-24 bg-[#f8faf8]">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="sunlit-overline mb-3">System Package</p>
+        <h2 class="sunlit-section-title text-3xl md:text-5xl mb-4">What the Lumina Slate Package Includes</h2>
+        <p class="text-[var(--slate)]">Component details are evaluated by project. The following structure helps overseas buyers understand the product scope.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-5">
+        {components.map((component, index) => (
+          <div class="sunlit-card p-5">
+            <div class="text-xs font-extrabold text-[var(--deep-green)] mb-3">0{index + 1}</div>
+            <h3 class="font-extrabold text-[var(--charcoal)] mb-2">{component.name}</h3>
+            <p class="text-sm text-[var(--slate)] leading-relaxed">{component.description}</p>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
-  <!-- FAQ -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-10">
+        <div>
+          <p class="sunlit-overline mb-3">Technical Snapshot</p>
+          <h2 class="sunlit-section-title text-3xl md:text-4xl mb-4">Key Information for Early Evaluation</h2>
+          <p class="text-[var(--slate)] mb-6">Final specifications depend on project configuration, roof layout and selected components. Detailed datasheets are available upon request.</p>
+          <a href="/contact/" class="sunlit-btn-green">Send Roof Drawing <span>→</span></a>
+        </div>
+        <div class="sunlit-card overflow-hidden">
+          {specs.map(([label, value]) => (
+            <div class="grid grid-cols-3 gap-4 p-4 border-b border-[var(--border)] last:border-b-0">
+              <div class="font-extrabold text-[var(--charcoal)]">{label}</div>
+              <div class="col-span-2 text-[var(--slate)]">{value}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[#f8faf8]">
+    <div class="container mx-auto px-4">
+      <p class="sunlit-overline text-center mb-3">Suitable Projects</p>
+      <div class="grid md:grid-cols-4 gap-4">
+        {applications.map((app) => (
+          <div class="sunlit-card-soft p-6 text-center font-extrabold text-[var(--charcoal)]">{app}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <section id="faq" class="py-16 md:py-24 bg-white">
-    <div class="container mx-auto px-4 max-w-3xl">
-      <h2 class="text-3xl font-bold mb-12 text-gray-900">Frequently Asked Questions</h2>
-      <div class="space-y-6">
-        {displayFaqs.slice(0, 5).map((faq) => (
-          <div class="border-b border-gray-200 pb-6">
-            <h3 class="font-bold text-gray-900 mb-3">{faq.question}</h3>
-            <p class="text-gray-600 leading-relaxed">{faq.answer}</p>
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="sunlit-section-title text-3xl md:text-5xl mb-10 text-center">Lumina Slate FAQ</h2>
+      <div class="space-y-4">
+        {displayFaqs.map((faq) => (
+          <div class="border border-[var(--border)] rounded-2xl p-6">
+            <h3 class="font-extrabold text-[var(--charcoal)] mb-2">{faq.question}</h3>
+            <p class="text-[var(--slate)] leading-relaxed">{faq.answer}</p>
           </div>
         ))}
-      </div>
-      <div class="mt-8 text-center">
-        <a href="/#faq" class="text-green-700 hover:text-green-800 font-semibold">
-          View All FAQs →
-        </a>
       </div>
     </div>
   </section>
 
-  <!-- Final CTA -->
-  <section class="py-16 md:py-20 bg-green-700 text-white">
+  <section class="py-16 md:py-20 dark-green-gradient text-white">
     <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Get Started?</h2>
-      <p class="text-lg mb-8 text-green-100 max-w-2xl mx-auto">
-        Send your roof drawing and project details. Our team will help you evaluate Lumina Slate for your project and provide a detailed quotation.
-      </p>
+      <h2 class="text-3xl md:text-5xl font-extrabold mb-5">Evaluate Lumina Slate for Your Project</h2>
+      <p class="text-lg text-white/75 max-w-2xl mx-auto mb-8">Send your roof drawing, country and estimated roof area. We will help discuss active and inactive coverage, product scope and quotation direction.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact/" class="px-8 py-3 bg-white text-green-700 font-semibold rounded-lg hover:bg-gray-100 transition">
-          Submit Project Inquiry →
-        </a>
-        <a href="/resources/" class="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition">
-          Download Resources
-        </a>
+        <a href="/contact/" class="sunlit-btn-primary">Request Lumina Quote <span>→</span></a>
+        <a href="/projects/" class="border border-white/60 text-white rounded-full px-6 py-3 font-extrabold hover:bg-white/10">View Projects</a>
       </div>
     </div>
   </section>
