@@ -1,80 +1,52 @@
 ---
-/**
- * Global Footer Component - Astro Version
- * Consistent footer across all pages
- */
 ---
 
-<footer class="bg-gray-900 text-white py-16">
-  <div class="container max-w-7xl mx-auto px-4">
-    {/* Footer Grid */}
-    <div class="grid md:grid-cols-4 gap-8 mb-12">
-      {/* Brand */}
+<footer class="dark-green-gradient text-white py-16">
+  <div class="container mx-auto px-4">
+    <div class="grid md:grid-cols-4 gap-10 mb-12">
       <div>
-        <div class="flex items-center gap-2 mb-4">
-          <div class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
-            S
-          </div>
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-10 h-10 rounded-full bg-[var(--amber)] text-[#111827] flex items-center justify-center font-extrabold">S</div>
           <div>
-            <h4 class="font-bold text-sm leading-none">SUNLIT</h4>
-            <p class="text-xs text-white/60">Solar Roof Systems</p>
+            <h4 class="font-extrabold text-lg leading-none">Sunlit</h4>
+            <p class="text-xs text-white/60 uppercase tracking-[0.16em]">Solar Roof</p>
           </div>
         </div>
-        <p class="text-sm text-white/70">Complete integrated solar roofing systems for distributors, installers, and developers.</p>
-      </div>
-
-      {/* Products */}
-      <div>
-        <h4 class="font-semibold mb-4 text-sm">Products</h4>
-        <ul class="space-y-2 text-sm text-white/70">
-          <li>
-            <a href="/lumina-slate/" class="hover:text-orange-500 transition">Lumina Slate</a>
-          </li>
-          <li>
-            <a href="/storm-guard/" class="hover:text-orange-500 transition">Storm Guard</a>
-          </li>
-          <li>
-            <a href="/system-overview/" class="hover:text-orange-500 transition">System Overview</a>
-          </li>
-        </ul>
-      </div>
-
-      {/* Company */}
-      <div>
-        <h4 class="font-semibold mb-4 text-sm">Company</h4>
-        <ul class="space-y-2 text-sm text-white/70">
-          <li>
-            <a href="/projects/" class="hover:text-orange-500 transition">Projects</a>
-          </li>
-          <li>
-            <a href="/about/" class="hover:text-orange-500 transition">About Us</a>
-          </li>
-          <li>
-            <a href="/contact/" class="hover:text-orange-500 transition">Contact</a>
-          </li>
-        </ul>
-      </div>
-
-      {/* Contact */}
-      <div>
-        <h4 class="font-semibold mb-4 text-sm">Contact</h4>
-        <p class="text-sm text-white/70 mb-2">
-          <a href="mailto:info@sunlitsolarroof.com" class="hover:text-orange-500 transition">
-            info@sunlitsolarroof.com
-          </a>
+        <p class="text-sm text-white/70 leading-relaxed">
+          Complete integrated solar roofing systems for distributors, installers, contractors and project developers.
         </p>
-        <p class="text-xs text-white/50">Changzhou, Jiangsu, China</p>
+      </div>
+
+      <div>
+        <h4 class="font-extrabold mb-4 text-sm uppercase tracking-[0.12em] text-white/80">Solar Roof Systems</h4>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="/system-overview/" class="hover:text-[var(--amber)]">System Overview</a></li>
+          <li><a href="/lumina-slate/" class="hover:text-[var(--amber)]">Lumina Slate</a></li>
+          <li><a href="/storm-guard/" class="hover:text-[var(--amber)]">Storm Guard</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-extrabold mb-4 text-sm uppercase tracking-[0.12em] text-white/80">Company</h4>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="/projects/" class="hover:text-[var(--amber)]">Projects</a></li>
+          <li><a href="/resources/" class="hover:text-[var(--amber)]">Resources</a></li>
+          <li><a href="/about/" class="hover:text-[var(--amber)]">About Us</a></li>
+          <li><a href="/contact/" class="hover:text-[var(--amber)]">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-extrabold mb-4 text-sm uppercase tracking-[0.12em] text-white/80">Contact</h4>
+        <p class="text-sm text-white/70 mb-2"><a href="mailto:info@sunlitsolarroof.com" class="hover:text-[var(--amber)]">info@sunlitsolarroof.com</a></p>
+        <p class="text-sm text-white/60 mb-6">Changzhou, Jiangsu, China</p>
+        <a href="/contact/" class="inline-flex bg-[var(--amber)] text-[#111827] rounded-full px-5 py-2.5 font-extrabold text-sm">Get Distributor Pricing →</a>
       </div>
     </div>
 
-    {/* Bottom Bar */}
-    <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-white/50">
+    <div class="border-t border-white/15 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-white/50 gap-4">
       <p>&copy; 2026 Sunlit Solar Roof. All rights reserved.</p>
-      <div class="flex gap-6 mt-4 md:mt-0">
-        <a href="#" class="hover:text-orange-500 transition">Privacy Policy</a>
-        <a href="#" class="hover:text-orange-500 transition">Terms of Service</a>
-        <a href="#" class="hover:text-orange-500 transition">Sitemap</a>
-      </div>
+      <p>Complete solar roof systems for overseas B2B projects.</p>
     </div>
   </div>
 </footer>
