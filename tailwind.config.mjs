@@ -4,12 +4,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: 'oklch(0.35 0.15 150)',
-        accent: 'rgb(255, 102, 0)',
+        'deep-green': '#0f4d3a',
+        'deep-green-2': '#073b30',
+        'soft-green': '#edf6f1',
+        amber: '#D4A056',
+        'amber-dark': '#C0904D',
+        charcoal: '#17232b',
+        slate: '#68757d',
+        'light-gray': '#f8faf8',
+        border: '#e5e8e6',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        heading: ['Poppins', 'system-ui', 'sans-serif'],
+        heading: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
       },
     },
   },

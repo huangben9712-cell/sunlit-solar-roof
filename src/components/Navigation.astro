@@ -1,110 +1,238 @@
 ---
 const navItems = [
-  { label: "Home", href: "/" },
   {
     label: "Solar Roof Systems",
     href: "/system-overview/",
     submenu: [
-      { label: "Supply Scope", href: "/system-overview/" },
+      { label: "System Overview", href: "/system-overview/" },
       { label: "Lumina Slate", href: "/lumina-slate/" },
       { label: "Storm Guard", href: "/storm-guard/" },
     ],
   },
   { label: "Projects", href: "/projects/" },
   { label: "Resources", href: "/resources/" },
-  { label: "Articles", href: "/articles/" },
-  { label: "About Us", href: "/about/" },
-  { label: "Contact", href: "/contact/" },
+  { label: "About", href: "/about/" },
 ];
+
+const contactItem = { label: "Request a Quote", href: "/contact/" };
 ---
 
-<nav class="sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm">
-  <div class="container max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-2">
-      <div class="w-8 h-8 bg-green-700 rounded-full flex items-center justify-center text-white font-bold text-sm">S</div>
-      <div class="flex flex-col">
-        <span class="font-bold text-lg text-gray-900 leading-none">SUNLIT</span>
-        <span class="text-xs text-gray-600 font-medium">SOLAR ROOF FACTORY</span>
-      </div>
+<header
+  class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-white/20"
+>
+  <div
+    class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20"
+  >
+    <a href="/" class="flex items-center gap-3">
+      <svg
+        width="32"
+        height="32"
+        viewBox="0 0 32 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="text-deep-green-2"
+      >
+        <rect width="32" height="32" rx="8" fill="currentColor"></rect>
+        <path
+          d="M10 16L13.5355 12.4645C14.3166 11.6834 15.5829 11.6834 16.364 12.4645L19.8995 16L22 13.8995M10 22V16M16 22V16"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
+        <path
+          d="M19 22L19 19"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
+        <path
+          d="M22 22L22 16.1213"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
+      </svg>
+
+      <span
+        class="font-heading font-bold text-xl tracking-tighter text-charcoal"
+        >Sunlit</span
+      >
     </a>
 
-    <div class="hidden lg:flex items-center gap-1">
-      {navItems.map((item) => (
-        <div class="relative group">
-          {item.submenu ? (
-            <a href={item.href} class="px-3 py-2 text-sm font-medium text-gray-900 hover:text-green-700 transition flex items-center gap-1">
-              {item.label}
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </a>
-          ) : (
-            <a href={item.href} class="px-3 py-2 text-sm font-medium text-gray-900 hover:text-green-700 transition">{item.label}</a>
-          )}
-          {item.submenu && (
-            <div class="absolute left-0 mt-0 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-              {item.submenu.map((subitem) => (
-                <a href={subitem.href} class="block px-4 py-2.5 text-sm text-gray-900 hover:bg-gray-100 hover:text-green-700 transition first:rounded-t-lg last:rounded-b-lg">{subitem.label}</a>
-              ))}
-            </div>
-          )}
-        </div>
-      ))}
+    <div class="hidden lg:flex items-center gap-2">
+      {
+        navItems.map((item) => (
+          <div class="relative group">
+            {item.submenu ? (
+              <a
+                href={item.href}
+                class="px-4 py-2 text-base font-medium text-slate hover:text-charcoal transition-colors flex items-center gap-1.5"
+              >
+                {item.label}
+                <svg
+                  class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </a>
+            ) : (
+              <a
+                href={item.href}
+                class="px-4 py-2 text-base font-medium text-slate hover:text-charcoal transition-colors"
+              >
+                {item.label}
+              </a>
+            )}
+            {item.submenu && (
+              <div class="absolute left-0 mt-2 w-56 bg-white border border-border rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
+                <div class="p-2">
+                  {item.submenu.map((subitem) => (
+                    <a
+                      href={subitem.href}
+                      class="block px-4 py-2.5 text-base text-slate hover:bg-soft-green hover:text-charcoal transition-colors rounded-lg"
+                    >
+                      {subitem.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        ))
+      }
     </div>
 
     <div class="flex items-center gap-3">
-      <a href="/contact/" class="hidden lg:flex bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-lg font-medium text-sm gap-2 transition items-center">
-        Get Factory Pricing <span>→</span>
+      <a href={contactItem.href} class="sunlit-btn-primary hidden lg:flex">
+        {contactItem.label}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+        >
+          <path
+            d="M9.62012 3.9668L14.6668 7.99947L9.62012 12.0328"
+            stroke="#111827"
+            stroke-width="1.5"
+            stroke-miterlimit="10"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+          <path
+            d="M1.33325 8H14.5333"
+            stroke="#111827"
+            stroke-width="1.5"
+            stroke-miterlimit="10"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        </svg>
       </a>
-      <button class="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition" id="mobile-menu-btn">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      <button
+        class="lg:hidden p-2 -mr-2"
+        id="mobile-menu-btn"
+        aria-label="Open menu"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          ><path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path></svg
+        >
       </button>
     </div>
   </div>
 
-  <div class="lg:hidden bg-white border-t border-gray-200 hidden" id="mobile-menu">
-    <div class="container max-w-7xl mx-auto px-4 py-4 space-y-2">
-      {navItems.map((item) => (
+  <!-- Mobile Menu -->
+  <div
+    class="lg:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-md shadow-lg hidden"
+    id="mobile-menu"
+  >
+    <div
+      class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-2"
+    >
+      {[...navItems, { label: "Contact", href: "/contact" }].map((item) => (
         <div>
           {item.submenu ? (
             <>
-              <button class="w-full text-left px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 rounded-lg transition flex items-center justify-between submenu-toggle">
+              <button class="w-full text-left px-4 py-3 text-base font-bold text-charcoal hover:bg-soft-green rounded-lg transition-colors flex items-center justify-between submenu-toggle">
                 {item.label}
-                <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                <svg
+                  class="w-5 h-5 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"></path></svg
+                >
               </button>
-              <div class="pl-4 space-y-1 hidden submenu-items">
+              <div class="pl-4 pt-1 space-y-1 hidden submenu-items">
                 {item.submenu.map((subitem) => (
-                  <a href={subitem.href} class="block px-4 py-2 text-sm text-gray-600 hover:text-green-700 transition rounded-lg hover:bg-gray-100">{subitem.label}</a>
+                  <a
+                    href={subitem.href}
+                    class="block px-4 py-2.5 text-base text-slate hover:text-charcoal transition-colors rounded-lg hover:bg-soft-green"
+                  >
+                    {subitem.label}
+                  </a>
                 ))}
               </div>
             </>
           ) : (
-            <a href={item.href} class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 rounded-lg transition">{item.label}</a>
+            <a
+              href={item.href}
+              class="block px-4 py-3 text-base font-bold text-charcoal hover:bg-soft-green rounded-lg transition-colors"
+            >
+              {item.label}
+            </a>
           )}
         </div>
       ))}
-      <div class="pt-4 border-t border-gray-200">
-        <a href="/contact/" class="block w-full bg-orange-500 hover:bg-orange-600 text-white py-2.5 rounded-lg font-medium text-sm transition text-center">Get Factory Pricing</a>
+      <div class="pt-6">
+        <a href={contactItem.href} class="sunlit-btn-primary w-full">
+          {contactItem.label}
+        </a>
       </div>
     </div>
   </div>
-</nav>
+</header>
 
 <script>
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const submenuToggles = document.querySelectorAll('.submenu-toggle');
+  const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const submenuToggles = document.querySelectorAll(".submenu-toggle");
 
   if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+    mobileMenuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      document.body.classList.toggle("overflow-hidden", !mobileMenu.classList.contains('hidden'));
     });
   }
 
   submenuToggles.forEach((toggle) => {
-    toggle.addEventListener('click', () => {
-      const submenuItems = toggle.parentElement?.querySelector('.submenu-items');
-      if (submenuItems) submenuItems.classList.toggle('hidden');
+    toggle.addEventListener("click", (e) => {
+      e.preventDefault();
+      const submenuItems = toggle.parentElement?.querySelector(".submenu-items");
+      const arrow = toggle.querySelector("svg");
+      if (submenuItems) {
+        submenuItems.classList.toggle("hidden");
+        arrow?.classList.toggle("rotate-180");
+      }
     });
   });
 </script>

@@ -1,52 +1,147 @@
 ---
+const footerNav = {
+  systems: [
+    { label: "System Overview", href: "/system-overview/" },
+    { label: "Lumina Slate", href: "/lumina-slate/" },
+    { label: "Storm Guard", href: "/storm-guard/" },
+  ],
+  company: [
+    { label: "Projects", href: "/projects/" },
+    { label: "Resources", href: "/resources/" },
+    { label: "About", href: "/about/" },
+  ],
+};
+
+const socialLinks = [
+  // Add social links here if needed in the future
+  // { label: "LinkedIn", href: "#" },
+];
 ---
 
-<footer class="dark-green-gradient text-white py-16">
-  <div class="container mx-auto px-4">
-    <div class="grid md:grid-cols-4 gap-10 mb-12">
-      <div>
-        <div class="flex items-center gap-3 mb-5">
-          <div class="w-10 h-10 rounded-full bg-[var(--amber)] text-[#111827] flex items-center justify-center font-extrabold">S</div>
-          <div>
-            <h4 class="font-extrabold text-lg leading-none">Sunlit</h4>
-            <p class="text-xs text-white/60 uppercase tracking-[0.16em]">Solar Roof</p>
-          </div>
-        </div>
-        <p class="text-sm text-white/70 leading-relaxed">
-          Complete integrated solar roofing systems for distributors, installers, contractors and project developers.
+<footer class="bg-charcoal text-white/80 pt-20 pb-12">
+  <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16"
+    >
+      <div class="md:col-span-2 lg:col-span-1">
+        <a href="/" class="flex items-center gap-3 mb-5">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="text-soft-green"
+          >
+            <rect width="32" height="32" rx="8" fill="currentColor"></rect>
+            <path
+              d="M10 16L13.5355 12.4645C14.3166 11.6834 15.5829 11.6834 16.364 12.4645L19.8995 16L22 13.8995M10 22V16M16 22V16"
+              stroke="#17232b"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+            <path
+              d="M19 22L19 19"
+              stroke="#17232b"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+            <path
+              d="M22 22L22 16.1213"
+              stroke="#17232b"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+
+          <span class="font-heading font-bold text-xl tracking-tighter text-white"
+            >Sunlit</span
+          >
+        </a>
+        <p class="text-base text-slate leading-relaxed">
+          Complete BIPV systems for distributors, installers, and project
+          developers.
         </p>
       </div>
 
       <div>
-        <h4 class="font-extrabold mb-4 text-sm uppercase tracking-[0.12em] text-white/80">Solar Roof Systems</h4>
-        <ul class="space-y-2 text-sm text-white/70">
-          <li><a href="/system-overview/" class="hover:text-[var(--amber)]">System Overview</a></li>
-          <li><a href="/lumina-slate/" class="hover:text-[var(--amber)]">Lumina Slate</a></li>
-          <li><a href="/storm-guard/" class="hover:text-[var(--amber)]">Storm Guard</a></li>
+        <h4
+          class="font-heading font-bold mb-5 text-base text-white tracking-tight"
+        >
+          Systems
+        </h4>
+        <ul class="space-y-3 text-base text-slate">
+          {
+            footerNav.systems.map((item) => (
+              <li>
+                <a href={item.href} class="hover:text-amber transition-colors"
+                  >{item.label}</a
+                >
+              </li>
+            ))
+          }
         </ul>
       </div>
 
       <div>
-        <h4 class="font-extrabold mb-4 text-sm uppercase tracking-[0.12em] text-white/80">Company</h4>
-        <ul class="space-y-2 text-sm text-white/70">
-          <li><a href="/projects/" class="hover:text-[var(--amber)]">Projects</a></li>
-          <li><a href="/resources/" class="hover:text-[var(--amber)]">Resources</a></li>
-          <li><a href="/about/" class="hover:text-[var(--amber)]">About Us</a></li>
-          <li><a href="/contact/" class="hover:text-[var(--amber)]">Contact</a></li>
+        <h4
+          class="font-heading font-bold mb-5 text-base text-white tracking-tight"
+        >
+          Company
+        </h4>
+        <ul class="space-y-3 text-base text-slate">
+          {
+            footerNav.company.map((item) => (
+              <li>
+                <a href={item.href} class="hover:text-amber transition-colors"
+                  >{item.label}</a
+                >
+              </li>
+            ))
+          }
         </ul>
       </div>
 
       <div>
-        <h4 class="font-extrabold mb-4 text-sm uppercase tracking-[0.12em] text-white/80">Contact</h4>
-        <p class="text-sm text-white/70 mb-2"><a href="mailto:info@sunlitsolarroof.com" class="hover:text-[var(--amber)]">info@sunlitsolarroof.com</a></p>
-        <p class="text-sm text-white/60 mb-6">Changzhou, Jiangsu, China</p>
-        <a href="/contact/" class="inline-flex bg-[var(--amber)] text-[#111827] rounded-full px-5 py-2.5 font-extrabold text-sm">Get Distributor Pricing →</a>
+        <h4
+          class="font-heading font-bold mb-5 text-base text-white tracking-tight"
+        >
+          Get in Touch
+        </h4>
+        <div class="space-y-4">
+          <p class="text-base text-slate">
+            <a href="mailto:info@sunlitsolarroof.com" class="hover:text-amber transition-colors"
+              >info@sunlitsolarroof.com</a
+            >
+          </p>
+          <p class="text-base text-slate/70">Changzhou, Jiangsu, China</p>
+          <a href="/contact/" class="sunlit-btn-primary text-sm mt-2">
+            Request a Quote
+          </a>
+        </div>
       </div>
     </div>
 
-    <div class="border-t border-white/15 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-white/50 gap-4">
-      <p>&copy; 2026 Sunlit Solar Roof. All rights reserved.</p>
-      <p>Complete solar roof systems for overseas B2B projects.</p>
+    <div
+      class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between text-base text-slate/70 gap-6"
+    >
+      <p>&copy; {new Date().getFullYear()} Sunlit. All rights reserved.</p>
+      <div class="flex items-center gap-6">
+        {
+          socialLinks.length > 0 && (
+            <div class="flex items-center gap-4">
+              {socialLinks.map((link) => (
+                <a href={link.href} class="hover:text-amber transition-colors">
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          )
+        }
+        <a href="/privacy-policy/" class="hover:text-amber transition-colors"
+          >Privacy Policy</a
+        >
+      </div>
     </div>
   </div>
 </footer>
