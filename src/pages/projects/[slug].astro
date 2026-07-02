@@ -3,14 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import { projects } from '../../data/projects.ts';
 
 export function getStaticPaths() {
-  return projects.map((project) => ({
-    params: { slug: project.slug },
-    props: { project },
-  }));
-}
-
-interface Props {
-  project: typeof projects[0];
+  return projects.map((project) => ({ params: { slug: project.slug }, props: { project } }));
 }
 
 const { project } = Astro.props;
@@ -21,114 +14,50 @@ const relatedProjects = projects.filter((p) => p.system === project.system && p.
 <Layout title={project.name}>
   <section class="border-b border-[var(--border)] bg-white">
     <div class="container mx-auto px-4 py-4 text-sm text-[var(--slate)]">
-      <a href="/" class="hover:text-[var(--deep-green)]">Home</a>
-      <span class="mx-2">/</span>
-      <a href="/projects/" class="hover:text-[var(--deep-green)]">Projects</a>
-      <span class="mx-2">/</span>
-      <span class="font-bold text-[var(--charcoal)]">{project.name}</span>
+      <a href="/">Home</a><span class="mx-2">/</span><a href="/projects/">Projects</a><span class="mx-2">/</span><span>{project.name}</span>
     </div>
   </section>
 
   <section class="bg-[#f8faf8] py-14 md:py-20">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl">
-        <p class="sunlit-overline mb-4">Project Reference</p>
-        <h1 class="sunlit-section-title text-4xl md:text-6xl mb-6">{project.name}</h1>
-        <div class="flex gap-2 flex-wrap">
-          <span class="inline-block bg-blue-50 text-blue-700 text-sm font-extrabold px-4 py-2 rounded-full">{project.system}</span>
-          <span class="inline-block bg-green-50 text-green-700 text-sm font-extrabold px-4 py-2 rounded-full">{project.application}</span>
-          <span class="inline-block bg-white text-[var(--slate)] text-sm font-extrabold px-4 py-2 rounded-full border border-[var(--border)]">{project.location}</span>
-        </div>
+    <div class="container mx-auto px-4 max-w-4xl">
+      <p class="sunlit-overline mb-4">Project Reference</p>
+      <h1 class="sunlit-section-title text-4xl md:text-6xl mb-6">{project.name}</h1>
+      <div class="flex gap-2 flex-wrap">
+        <span class="inline-block bg-blue-50 text-blue-700 text-sm font-extrabold px-4 py-2 rounded-full">{project.system}</span>
+        <span class="inline-block bg-green-50 text-green-700 text-sm font-extrabold px-4 py-2 rounded-full">{project.application}</span>
+        <span class="inline-block bg-white text-[var(--slate)] text-sm font-extrabold px-4 py-2 rounded-full border border-[var(--border)]">{project.location}</span>
       </div>
     </div>
   </section>
 
   <section class="py-16 md:py-24 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="grid lg:grid-cols-3 gap-10">
-        <div class="lg:col-span-2">
-          {project.images?.[0] ? (
-            <img src={project.images[0]} alt={project.name} class="w-full h-80 object-cover rounded-3xl mb-8" />
-          ) : (
-            <div class="h-80 image-placeholder rounded-3xl mb-8"></div>
-          )}
+    <div class="container mx-auto px-4 grid lg:grid-cols-3 gap-10">
+      <div class="lg:col-span-2">
+        {project.images?.[0] ? <img src={project.images[0]} alt={project.name} class="w-full h-80 object-cover rounded-3xl mb-8" /> : <div class="h-80 image-placeholder rounded-3xl mb-8"></div>}
+        {project.images && project.images.length > 1 && <div class="grid md:grid-cols-3 gap-4 mb-8">{project.images.slice(1).map((image) => <img src={image} alt={project.name} class="w-full h-36 object-cover rounded-2xl" loading="lazy" />)}</div>}
 
-          {project.images && project.images.length > 1 && (
-            <div class="grid md:grid-cols-3 gap-4 mb-8">
-              {project.images.slice(1).map((image) => (
-                <img src={image} alt={project.name} class="w-full h-36 object-cover rounded-2xl" loading="lazy" />
-              ))}
-            </div>
-          )}
-
-          <div class="sunlit-card p-8 mb-8">
-            <h2 class="text-2xl font-extrabold text-[var(--charcoal)] mb-4">Project Overview</h2>
-            <p class="text-[var(--slate)] leading-relaxed">{project.overview}</p>
-          </div>
-
-          {clean(project.challenge) && (
-            <div class="sunlit-card p-8 mb-8">
-              <h2 class="text-2xl font-extrabold text-[var(--charcoal)] mb-4">Project Challenge</h2>
-              <p class="text-[var(--slate)] leading-relaxed whitespace-pre-line">{project.challenge}</p>
-            </div>
-          )}
-
-          {clean(project.sunlitSolution) && (
-            <div class="sunlit-card p-8 mb-8">
-              <h2 class="text-2xl font-extrabold text-[var(--charcoal)] mb-4">Sunlit Solution</h2>
-              <p class="text-[var(--slate)] leading-relaxed whitespace-pre-line">{project.sunlitSolution}</p>
-            </div>
-          )}
-
-          {project.technicalHighlights && project.technicalHighlights.length > 0 && (
-            <div class="sunlit-card p-8 mb-8">
-              <h2 class="text-2xl font-extrabold text-[var(--charcoal)] mb-4">Technical Notes</h2>
-              <ul class="space-y-3 text-[var(--slate)]">
-                {project.technicalHighlights.map((item) => <li>• {item}</li>)}
-              </ul>
-            </div>
-          )}
-
-          {clean(project.projectLog) && (
-            <div class="sunlit-card-soft p-8 mb-8 border-l-4 border-[var(--amber)]">
-              <h2 class="text-2xl font-extrabold text-[var(--charcoal)] mb-4">Legacy Project Note</h2>
-              <p class="text-[var(--slate)] leading-relaxed whitespace-pre-line">{project.projectLog}</p>
-            </div>
-          )}
-        </div>
-
-        <aside>
-          <div class="sunlit-card p-6 sticky top-24">
-            <h3 class="font-extrabold text-[var(--charcoal)] mb-5">Project Details</h3>
-            <div class="space-y-4">
-              <div class="pb-4 border-b border-[var(--border)]"><p class="text-sm text-[var(--slate)] mb-1">Location</p><p class="font-extrabold text-[var(--charcoal)]">{project.location}</p></div>
-              <div class="pb-4 border-b border-[var(--border)]"><p class="text-sm text-[var(--slate)] mb-1">System</p><p class="font-extrabold text-[var(--charcoal)]">{project.system}</p></div>
-              <div class="pb-4 border-b border-[var(--border)]"><p class="text-sm text-[var(--slate)] mb-1">Application</p><p class="font-extrabold text-[var(--charcoal)]">{project.application}</p></div>
-              {clean(project.projectDate) && <div class="pb-4 border-b border-[var(--border)]"><p class="text-sm text-[var(--slate)] mb-1">Project Date</p><p class="font-extrabold text-[var(--charcoal)]">{project.projectDate}</p></div>}
-              {clean(project.roofArea) && <div class="pb-4 border-b border-[var(--border)]"><p class="text-sm text-[var(--slate)] mb-1">Roof Area</p><p class="font-extrabold text-[var(--charcoal)]">{project.roofArea}</p></div>}
-              {clean(project.capacity) && <div class="pb-4 border-b border-[var(--border)]"><p class="text-sm text-[var(--slate)] mb-1">Capacity</p><p class="font-extrabold text-[var(--charcoal)]">{project.capacity}</p></div>}
-              {project.sourceUrl && <div><p class="text-sm text-[var(--slate)] mb-1">Legacy Source</p><a href={project.sourceUrl} class="text-[var(--deep-green)] font-extrabold text-sm break-all">Old project page</a></div>}
-            </div>
-            <a href="/contact/" class="sunlit-btn-primary w-full mt-6">Discuss Similar Project</a>
-          </div>
-        </aside>
+        <div class="sunlit-card p-8 mb-8"><h2 class="text-2xl font-extrabold text-[var(--charcoal)] mb-4">Project Overview</h2><p class="text-[var(--slate)] leading-relaxed">{project.overview}</p></div>
+        {clean(project.challenge) && <div class="sunlit-card p-8 mb-8"><h2 class="text-2xl font-extrabold text-[var(--charcoal)] mb-4">Project Challenge</h2><p class="text-[var(--slate)] leading-relaxed whitespace-pre-line">{project.challenge}</p></div>}
+        {clean(project.sunlitSolution) && <div class="sunlit-card p-8 mb-8"><h2 class="text-2xl font-extrabold text-[var(--charcoal)] mb-4">Sunlit Solution</h2><p class="text-[var(--slate)] leading-relaxed whitespace-pre-line">{project.sunlitSolution}</p></div>}
+        {project.technicalHighlights && project.technicalHighlights.length > 0 && <div class="sunlit-card p-8 mb-8"><h2 class="text-2xl font-extrabold text-[var(--charcoal)] mb-4">Technical Notes</h2><ul class="space-y-3 text-[var(--slate)]">{project.technicalHighlights.map((item) => <li>• {item}</li>)}</ul></div>}
       </div>
+
+      <aside>
+        <div class="sunlit-card p-6 sticky top-24">
+          <h3 class="font-extrabold text-[var(--charcoal)] mb-5">Project Details</h3>
+          <div class="space-y-4">
+            <div class="pb-4 border-b border-[var(--border)]"><p class="text-sm text-[var(--slate)] mb-1">Location</p><p class="font-extrabold text-[var(--charcoal)]">{project.location}</p></div>
+            <div class="pb-4 border-b border-[var(--border)]"><p class="text-sm text-[var(--slate)] mb-1">System</p><p class="font-extrabold text-[var(--charcoal)]">{project.system}</p></div>
+            <div class="pb-4 border-b border-[var(--border)]"><p class="text-sm text-[var(--slate)] mb-1">Application</p><p class="font-extrabold text-[var(--charcoal)]">{project.application}</p></div>
+            {clean(project.roofArea) && <div class="pb-4 border-b border-[var(--border)]"><p class="text-sm text-[var(--slate)] mb-1">Roof Area</p><p class="font-extrabold text-[var(--charcoal)]">{project.roofArea}</p></div>}
+            {clean(project.capacity) && <div class="pb-4 border-b border-[var(--border)]"><p class="text-sm text-[var(--slate)] mb-1">Capacity</p><p class="font-extrabold text-[var(--charcoal)]">{project.capacity}</p></div>}
+            {project.sourceUrl && <div><p class="text-sm text-[var(--slate)] mb-1">Legacy Source</p><a href={project.sourceUrl} class="text-[var(--deep-green)] font-extrabold text-sm">Old project page</a></div>}
+          </div>
+          <a href="/contact/" class="sunlit-btn-primary w-full mt-6">Discuss Similar Project</a>
+        </div>
+      </aside>
     </div>
   </section>
 
-  {relatedProjects.length > 0 && (
-    <section class="py-16 md:py-24 bg-[#f8faf8]">
-      <div class="container mx-auto px-4">
-        <h2 class="sunlit-section-title text-3xl md:text-5xl mb-10 text-center">Related Projects</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-          {relatedProjects.map((relatedProject) => (
-            <a href={`/projects/${relatedProject.slug}/`} class="sunlit-card overflow-hidden block">
-              {relatedProject.images?.[0] ? <img src={relatedProject.images[0]} alt={relatedProject.name} class="h-40 w-full object-cover" loading="lazy" /> : <div class="h-40 image-placeholder"></div>}
-              <div class="p-5"><h3 class="font-extrabold text-[var(--charcoal)] mb-2 line-clamp-2">{relatedProject.name}</h3><p class="text-sm text-[var(--slate)]">{relatedProject.location}</p></div>
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
-  )}
+  {relatedProjects.length > 0 && <section class="py-16 md:py-24 bg-[#f8faf8]"><div class="container mx-auto px-4"><h2 class="sunlit-section-title text-3xl md:text-5xl mb-10 text-center">Related Projects</h2><div class="grid md:grid-cols-3 gap-6">{relatedProjects.map((relatedProject) => <a href={`/projects/${relatedProject.slug}/`} class="sunlit-card p-6 block"><h3 class="font-extrabold text-[var(--charcoal)] mb-2">{relatedProject.name}</h3><p class="text-sm text-[var(--slate)]">{relatedProject.location}</p></a>)}</div></div></section>}
 </Layout>
