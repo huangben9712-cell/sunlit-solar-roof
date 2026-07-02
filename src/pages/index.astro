@@ -151,128 +151,369 @@ const audiences = [
     </div>
   </section>
 
-  <section class="py-16 md:py-24 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <p class="sunlit-overline mb-3">Two Factory Supply Lines</p>
-        <h2 class="sunlit-section-title text-3xl md:text-5xl mb-4">Choose the Product Line That Fits the Project</h2>
-        <p class="text-[var(--slate)] text-lg">Lumina Slate is the premium glass slate-look line. Storm Guard is the modern metal roof line with a more practical cost position.</p>
+  <section class="py-16 md:py-24 bg-light-gray border-y border-border">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <p class="sunlit-overline mb-4">Two Systems, One Factory</p>
+        <h2 class="sunlit-section-title text-4xl md:text-5xl">
+          A Product Line for Every Project
+        </h2>
       </div>
 
-      <div class="grid lg:grid-cols-2 gap-8">
-        <article class="sunlit-card overflow-hidden">
-          <img src={ASSETS.luminaSlateHero} alt="Lumina Slate glass solar roof tiles" class="w-full h-72 object-cover" />
+      <div class="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <a href="/lumina-slate/" class="sunlit-card block group overflow-hidden">
+          <img
+            src={ASSETS.luminaSlateHero}
+            alt="Lumina Slate glass solar roof tiles"
+            class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105"
+          />
           <div class="p-8">
-            <p class="sunlit-overline mb-3">Glass Solar Roof Tile Line</p>
-            <h3 class="text-2xl font-extrabold mb-3 text-[var(--charcoal)]">Lumina Slate Glass Solar Roof Tiles</h3>
-            <p class="text-[var(--slate)] leading-relaxed mb-6">AG-etched frameless double-glass PV roof tiles with matching inactive glass tiles. Factory supplied for villas, premium residential roofs and architectural projects where appearance matters.</p>
-            <a href="/lumina-slate/" class="sunlit-btn-secondary">Explore Lumina Slate <span>鈫?/span></a>
+            <p class="sunlit-overline mb-3">Glass BIPV Tile</p>
+            <h3 class="font-heading text-2xl font-bold mb-3 text-charcoal">
+              Lumina Slate
+            </h3>
+            <p class="text-slate leading-relaxed mb-6">
+              AG-etched frameless double-glass PV roof tiles with matching
+              inactive glass tiles for premium architectural projects.
+            </p>
+            <span class="font-bold text-deep-green group-hover:text-amber transition-colors flex items-center gap-2">
+              Explore Lumina Slate
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                class="transition-transform duration-300 group-hover:translate-x-1"
+              >
+                <path
+                  d="M9.62012 3.9668L14.6668 7.99947L9.62012 12.0328"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+                <path
+                  d="M1.33325 8H14.5333"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </span>
           </div>
-        </article>
+        </a>
 
-        <article class="sunlit-card overflow-hidden">
-          <img src={ASSETS.stormGuardHero} alt="Storm Guard metal solar roof sheets" class="w-full h-72 object-cover" />
+        <a href="/storm-guard/" class="sunlit-card block group overflow-hidden">
+          <img
+            src={ASSETS.stormGuardHero}
+            alt="Storm Guard metal solar roof sheets"
+            class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105"
+          />
           <div class="p-8">
-            <p class="sunlit-overline mb-3">Metal Solar Roof Sheet Line</p>
-            <h3 class="text-2xl font-extrabold mb-3 text-[var(--charcoal)]">Storm Guard Metal Solar Roof Sheets</h3>
-            <p class="text-[var(--slate)] leading-relaxed mb-6">Low-standing-seam Al-Mg-Mn metal solar roof sheets with matching inactive metal roof elements. A practical supply option for modern residential, commercial, public and large-area roofs.</p>
-            <a href="/storm-guard/" class="sunlit-btn-secondary">Explore Storm Guard <span>鈫?/span></a>
+            <p class="sunlit-overline mb-3">Metal BIPV Sheet</p>
+            <h3 class="font-heading text-2xl font-bold mb-3 text-charcoal">
+              Storm Guard
+            </h3>
+            <p class="text-slate leading-relaxed mb-6">
+              Low-standing-seam Al-Mg-Mn metal solar roof sheets with
+              matching inactive elements for large-area roofs.
+            </p>
+            <span class="font-bold text-deep-green group-hover:text-amber transition-colors flex items-center gap-2">
+              Explore Storm Guard
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                class="transition-transform duration-300 group-hover:translate-x-1"
+              >
+                <path
+                  d="M9.62012 3.9668L14.6668 7.99947L9.62012 12.0328"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+                <path
+                  d="M1.33325 8H14.5333"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </span>
           </div>
-        </article>
+        </a>
       </div>
     </div>
   </section>
 
-  <section class="py-16 md:py-24 bg-[#f8faf8]">
-    <div class="container mx-auto px-4">
-      <div class="grid lg:grid-cols-3 gap-10 items-start">
-        <div>
-          <p class="sunlit-overline mb-3">Factory Supply Scope</p>
-          <h2 class="sunlit-section-title text-3xl md:text-4xl mb-4">What We Can Supply as a Manufacturer</h2>
-          <p class="text-[var(--slate)] leading-relaxed">A project quote should not compare active solar tiles alone. We help buyers define the factory supply scope: active elements, inactive coverage, flashing, fixings, roof accessories and export documents.</p>
+  <section class="py-16 md:py-24 bg-light-gray border-y border-border">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-4">
+          <p class="sunlit-overline mb-4">Factory Supply Scope</p>
+          <h2 class="sunlit-section-title text-3xl md:text-4xl mb-4">
+            A Complete System, Not Just Panels.
+          </h2>
+          <p class="text-slate leading-relaxed">
+            We supply all components for a fully integrated BIPV system:
+            active elements, inactive coverage, flashing, fixings, and all
+            necessary roof accessories.
+          </p>
         </div>
-        <div class="lg:col-span-2 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {components.map((component, index) => (
-            <div class="sunlit-card-soft p-6 bg-white">
-              <div class="text-xs font-extrabold text-[var(--deep-green)] mb-3">0{index + 1}</div>
-              <h3 class="font-extrabold text-[var(--charcoal)]">{component}</h3>
+        <div class="lg:col-span-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {
+            components.map((component) => (
+              <div class="sunlit-card p-6 flex flex-col items-start gap-4">
+                <div class="w-12 h-12 rounded-full bg-soft-green text-deep-green flex items-center justify-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-box"
+                  >
+                    <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" />
+                    <path d="m3.3 7 8.7 5 8.7-5" />
+                    <path d="M12 22V12" />
+                  </svg>
+                </div>
+                <h3 class="font-heading font-bold text-charcoal text-lg">
+                  {component}
+                </h3>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <p class="sunlit-overline mb-4">Built for Professional B2B Buyers</p>
+        <h2 class="sunlit-section-title text-4xl md:text-5xl">
+          A Supply Partner You Can Trust
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        {
+          audiences.map((audience, index) => (
+            <div class="bg-soft-green rounded-2xl p-8 text-center">
+              <div class="w-16 h-16 rounded-full bg-white text-deep-green flex items-center justify-center mb-5 mx-auto">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-users"
+                >
+                  {index === 0 && <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />}
+                  {index === 0 && <circle cx="9" cy="7" r="4" />}
+                  {index === 0 && <path d="M22 21v-2a4 4 0 0 0-3-3.87" />}
+                  {index === 0 && <path d="M16 3.13a4 4 0 0 1 0 7.75" />}
+                  
+                  {index === 1 && <path d="m12 14 4-4" />}
+                  {index === 1 && <path d="M13.294 2.13a4.423 4.423 0 0 1 5.576 5.576" />}
+                  {index === 1 && <path d="M2.13 13.294a4.423 4.423 0 0 1 5.576 5.576" />}
+                  {index === 1 && <path d="m15 18-3-3" />}
+                  {index === 1 && <path d="M4.929 4.929 9 9" />}
+                  {index === 1 && <path d="M18 15 15 12" />}
+                  {index === 1 && <path d="M9 4.929 4.929 9" />}
+
+                  {index === 2 && <path d="m18 16 4-4-7.5-7.5-1.5 1.5L9 4 2 11l4 4 4-4 4 4Z" />}
+                  {index === 2 && <path d="m2 16 6 6" />}
+                  {index === 2 && <path d="M12 8 8 12" />}
+
+                  {index === 3 && <rect width="18" height="18" x="3" y="3" rx="2" />}
+                  {index === 3 && <path d="M3 9h18" />}
+                  {index === 3 && <path d="M3 15h18" />}
+                  {index === 3 && <path d="M9 3v18" />}
+                  {index === 3 && <path d="M15 3v18" />}
+                </svg>
+              </div>
+              <h3 class="font-heading font-bold text-xl text-charcoal mb-3">
+                {audience.title}
+              </h3>
+              <p class="text-slate leading-relaxed">{audience.desc}</p>
             </div>
-          ))}
-        </div>
+          ))
+        }
       </div>
     </div>
   </section>
 
   <section class="py-16 md:py-24 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <p class="sunlit-overline mb-3">Built for Professional Buyers</p>
-        <h2 class="sunlit-section-title text-3xl md:text-5xl mb-4">Designed Around B2B Sourcing Decisions</h2>
-        <p class="text-[var(--slate)] text-lg">For buyers who need factory price, product scope, samples, documents, packaging and export-ready communication.</p>
-      </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-        {audiences.map((audience) => (
-          <div class="sunlit-card p-6">
-            <h3 class="font-extrabold text-lg text-[var(--charcoal)] mb-3">{audience.title}</h3>
-            <p class="text-sm text-[var(--slate)] leading-relaxed">{audience.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="py-16 md:py-24 bg-[#f8faf8]">
-    <div class="container mx-auto px-4">
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
         <div>
-          <p class="sunlit-overline mb-3">Project References</p>
-          <h2 class="sunlit-section-title text-3xl md:text-5xl">Factory-Supplied Project References</h2>
+          <p class="sunlit-overline mb-3">Recent Projects</p>
+          <h2 class="sunlit-section-title text-4xl md:text-5xl">
+            Factory-Supplied BIPV Installations
+          </h2>
         </div>
-        <a href="/projects/" class="sunlit-btn-secondary w-fit">View All Projects <span>鈫?/span></a>
+        <a
+          href="/projects/"
+          class="sunlit-btn-secondary whitespace-nowrap w-fit"
+        >
+          View Full Portfolio
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+          >
+            <path
+              d="M9.62012 3.9668L14.6668 7.99947L9.62012 12.0328"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-miterlimit="10"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+            <path
+              d="M1.33325 8H14.5333"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-miterlimit="10"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </a>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {projects.slice(0, 4).map((project) => (
-          <a href={`/projects/${project.slug}/`} class="sunlit-card overflow-hidden block hover:-translate-y-1 transition">
-            {project.images?.[0] ? <img src={project.images[0]} alt={project.name} class="h-44 w-full object-cover" loading="lazy" /> : <div class="h-44 image-placeholder"></div>}
-            <div class="p-5">
-              <h3 class="font-extrabold text-[var(--charcoal)] mb-2 line-clamp-2">{project.name}</h3>
-              <p class="text-sm text-[var(--slate)] mb-4">{project.location}</p>
-              <div class="flex flex-wrap gap-2">
-                <span class="text-xs font-bold px-3 py-1 rounded-full bg-blue-50 text-blue-700">{project.system}</span>
-                <span class="text-xs font-bold px-3 py-1 rounded-full bg-green-50 text-green-700">{project.application}</span>
+        {
+          projects.slice(0, 4).map((project) => (
+            <a
+              href={`/projects/${project.slug}/`}
+              class="sunlit-card overflow-hidden block group"
+            >
+              {project.images?.[0] ? (
+                <img
+                  src={project.images[0]}
+                  alt={project.name}
+                  class="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              ) : (
+                <div class="h-48 image-placeholder"></div>
+              )}
+              <div class="p-6">
+                <h3 class="font-heading font-bold text-charcoal mb-2 line-clamp-2">
+                  {project.name}
+                </h3>
+                <p class="text-sm text-slate mb-4">{project.location}</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="text-xs px-3 py-1 rounded-full bg-soft-green text-deep-green">
+                    {project.system}
+                  </span>
+                  <span class="text-xs px-3 py-1 rounded-full bg-light-gray text-slate">
+                    {project.application}
+                  </span>
+                </div>
               </div>
-            </div>
-          </a>
-        ))}
+            </a>
+          ))
+        }
       </div>
     </div>
   </section>
 
-  <section id="faq" class="py-16 md:py-24 bg-white">
-    <div class="container mx-auto px-4 max-w-4xl">
-      <div class="text-center mb-12">
+  <section id="faq" class="py-16 md:py-24 bg-light-gray border-y border-border">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+      <div class="text-center mb-14">
         <p class="sunlit-overline mb-3">FAQ</p>
-        <h2 class="sunlit-section-title text-3xl md:text-5xl">Factory Supply Questions</h2>
+        <h2 class="sunlit-section-title text-4xl md:text-5xl">
+          Factory Supply Questions
+        </h2>
       </div>
       <div class="space-y-4">
         {faqs.map((faq) => (
-          <div class="border border-[var(--border)] rounded-2xl p-6 bg-white">
-            <h3 class="font-extrabold text-[var(--charcoal)] mb-2">{faq.question}</h3>
-            <p class="text-[var(--slate)] leading-relaxed">{faq.answer}</p>
-          </div>
+          <details class="sunlit-card group cursor-pointer">
+            <summary class="p-6 font-heading font-bold text-charcoal text-lg flex items-center justify-between list-none">
+              {faq.question}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="transition-transform duration-200 group-open:rotate-45"
+              >
+                <path d="M5 12h14" />
+                <path d="M12 5v14" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-slate leading-relaxed">{faq.answer}</div>
+          </details>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="py-16 md:py-20 dark-green-gradient text-white">
-    <div class="container mx-auto px-4 text-center">
-      <p class="uppercase tracking-[0.16em] text-white/70 font-extrabold text-xs mb-4">Start with a roof drawing</p>
-      <h2 class="text-3xl md:text-5xl font-extrabold mb-5">Get Factory Pricing for Your Solar Roof Project</h2>
-      <p class="text-lg text-white/75 max-w-2xl mx-auto mb-8">Send project country, roof area and drawings. We will help define product scope, active and inactive coverage, accessories and quotation direction.</p>
+  <section class="py-16 md:py-24 dark-green-gradient text-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+      <p class="sunlit-overline mb-4 text-white/70">Start with a Roof Drawing</p>
+      <h2 class="font-heading text-3xl md:text-5xl font-bold mb-5">
+        Request Factory Pricing for Your Project
+      </h2>
+      <p class="text-base md:text-lg text-white/70 leading-relaxed mb-8">
+        Tell us your country, roof area, and send your drawings. We will
+        define the supply scope, active and inactive coverage, and provide
+        a project-based quotation.
+      </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact/" class="sunlit-btn-primary">Get Factory Pricing <span>鈫?/span></a>
-        <a href="/contact/" class="border border-white/60 text-white rounded-full px-6 py-3 font-extrabold hover:bg-white/10">Send Roof Drawing</a>
+        <a href="/contact/" class="sunlit-btn-primary whitespace-nowrap">
+          Request a Quote
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+          >
+            <path
+              d="M9.62012 3.9668L14.6668 7.99947L9.62012 12.0328"
+              stroke="#111827"
+              stroke-width="1.5"
+              stroke-miterlimit="10"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+            <path
+              d="M1.33325 8H14.5333"
+              stroke="#111827"
+              stroke-width="1.5"
+              stroke-miterlimit="10"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </a>
+        <a
+          href="/system-overview/"
+          class="border border-white/40 text-white rounded-full px-6 py-3 font-bold hover:bg-white/10 transition-colors text-center"
+        >
+          Explore Systems
+        </a>
       </div>
     </div>
   </section>
