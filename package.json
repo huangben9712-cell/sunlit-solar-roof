@@ -9,7 +9,8 @@
     "dev": "npx astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "localize:project-images": "node scripts/localize-project-images.mjs"
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.1.0",
