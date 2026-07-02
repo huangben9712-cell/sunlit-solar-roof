@@ -1,18 +1,9 @@
 ---
-/**
- * Global Navigation Component - Astro Version
- * Features:
- * - Full Sunlit logo with icon
- * - Dropdown-style navigation menu
- * - Primary CTA button
- * - Mobile responsive with sidebar
- */
-
 const navItems = [
   { label: "Home", href: "/" },
   {
     label: "Solar Roof Systems",
-    href: "#",
+    href: "/system-overview/",
     submenu: [
       { label: "System Overview", href: "/system-overview/" },
       { label: "Lumina Slate", href: "/lumina-slate/" },
@@ -21,6 +12,7 @@ const navItems = [
   },
   { label: "Projects", href: "/projects/" },
   { label: "Resources", href: "/resources/" },
+  { label: "Articles", href: "/articles/" },
   { label: "About Us", href: "/about/" },
   { label: "Contact", href: "/contact/" },
 ];
@@ -28,39 +20,31 @@ const navItems = [
 
 <nav class="sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm">
   <div class="container max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-    <!-- Logo -->
     <a href="/" class="flex items-center gap-2">
-      <div class="w-8 h-8 bg-green-700 rounded-full flex items-center justify-center text-white font-bold text-sm">
-        S
-      </div>
+      <div class="w-8 h-8 bg-green-700 rounded-full flex items-center justify-center text-white font-bold text-sm">S</div>
       <div class="flex flex-col">
         <span class="font-bold text-lg text-gray-900 leading-none">SUNLIT</span>
         <span class="text-xs text-gray-600 font-medium">SOLAR ROOF SYSTEMS</span>
       </div>
     </a>
 
-    <!-- Desktop Menu -->
     <div class="hidden lg:flex items-center gap-1">
       {navItems.map((item) => (
         <div class="relative group">
           {item.submenu ? (
-            <button class="px-3 py-2 text-sm font-medium text-gray-900 hover:text-green-700 transition flex items-center gap-1">
+            <a href={item.href} class="px-3 py-2 text-sm font-medium text-gray-900 hover:text-green-700 transition flex items-center gap-1">
               {item.label}
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
-            </button>
-          ) : (
-            <a href={item.href} class="px-3 py-2 text-sm font-medium text-gray-900 hover:text-green-700 transition">
-              {item.label}
             </a>
+          ) : (
+            <a href={item.href} class="px-3 py-2 text-sm font-medium text-gray-900 hover:text-green-700 transition">{item.label}</a>
           )}
           {item.submenu && (
             <div class="absolute left-0 mt-0 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
               {item.submenu.map((subitem) => (
-                <a href={subitem.href} class="block px-4 py-2.5 text-sm text-gray-900 hover:bg-gray-100 hover:text-green-700 transition first:rounded-t-lg last:rounded-b-lg">
-                  {subitem.label}
-                </a>
+                <a href={subitem.href} class="block px-4 py-2.5 text-sm text-gray-900 hover:bg-gray-100 hover:text-green-700 transition first:rounded-t-lg last:rounded-b-lg">{subitem.label}</a>
               ))}
             </div>
           )}
@@ -68,23 +52,16 @@ const navItems = [
       ))}
     </div>
 
-    <!-- Right Side: CTA -->
     <div class="flex items-center gap-3">
       <a href="/contact/" class="hidden lg:flex bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-lg font-medium text-sm gap-2 transition items-center">
-        Get Distributor Pricing
-        <span>→</span>
+        Get Distributor Pricing <span>→</span>
       </a>
-
-      <!-- Mobile Menu Toggle -->
       <button class="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition" id="mobile-menu-btn">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
       </button>
     </div>
   </div>
 
-  <!-- Mobile Menu -->
   <div class="lg:hidden bg-white border-t border-gray-200 hidden" id="mobile-menu">
     <div class="container max-w-7xl mx-auto px-4 py-4 space-y-2">
       {navItems.map((item) => (
@@ -93,30 +70,21 @@ const navItems = [
             <>
               <button class="w-full text-left px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 rounded-lg transition flex items-center justify-between submenu-toggle">
                 {item.label}
-                <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                </svg>
+                <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
               </button>
               <div class="pl-4 space-y-1 hidden submenu-items">
                 {item.submenu.map((subitem) => (
-                  <a href={subitem.href} class="block px-4 py-2 text-sm text-gray-600 hover:text-green-700 transition rounded-lg hover:bg-gray-100">
-                    {subitem.label}
-                  </a>
+                  <a href={subitem.href} class="block px-4 py-2 text-sm text-gray-600 hover:text-green-700 transition rounded-lg hover:bg-gray-100">{subitem.label}</a>
                 ))}
               </div>
             </>
           ) : (
-            <a href={item.href} class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 rounded-lg transition">
-              {item.label}
-            </a>
+            <a href={item.href} class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 rounded-lg transition">{item.label}</a>
           )}
         </div>
       ))}
-
       <div class="pt-4 border-t border-gray-200">
-        <a href="/contact/" class="block w-full bg-orange-500 hover:bg-orange-600 text-white py-2.5 rounded-lg font-medium text-sm transition text-center">
-          Get Distributor Pricing
-        </a>
+        <a href="/contact/" class="block w-full bg-orange-500 hover:bg-orange-600 text-white py-2.5 rounded-lg font-medium text-sm transition text-center">Get Distributor Pricing</a>
       </div>
     </div>
   </div>
@@ -133,12 +101,10 @@ const navItems = [
     });
   }
 
-  submenuToggles.forEach(toggle => {
-    toggle.addEventListener('click', (e) => {
-      const submenuItems = (e.target as HTMLElement).closest('.relative')?.querySelector('.submenu-items');
-      if (submenuItems) {
-        submenuItems.classList.toggle('hidden');
-      }
+  submenuToggles.forEach((toggle) => {
+    toggle.addEventListener('click', () => {
+      const submenuItems = toggle.parentElement?.querySelector('.submenu-items');
+      if (submenuItems) submenuItems.classList.toggle('hidden');
     });
   });
 </script>
