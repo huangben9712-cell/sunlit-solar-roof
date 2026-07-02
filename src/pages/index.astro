@@ -44,7 +44,8 @@ const audiences = [
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <div class="max-w-xl">
-          <p class="sunlit-overline mb-5">
+          <p class="sunlit-overline mb-5 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
             China BIPV Manufacturer
           </p>
           <h1 class="sunlit-section-title text-4xl md:text-5xl lg:text-6xl mb-6">
@@ -119,42 +120,43 @@ const audiences = [
       <div
         class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-10"
       >
-        {
-          trustItems.map((item) => (
-            <div class="text-center lg:text-left flex flex-col items-center lg:items-start">
-              <div class="w-12 h-12 rounded-full bg-soft-green text-deep-green flex items-center justify-center mb-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-check"
-                >
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
-              </div>
-              <h3 class="font-heading font-bold text-charcoal text-lg mb-1">
-                {item.label}
-              </h3>
-              <p class="text-base text-slate leading-relaxed">
-                {item.desc}
-              </p>
+        {trustItems.map((item, index) => (
+          <div class="text-center lg:text-left flex flex-col items-center lg:items-start">
+            <div class="w-12 h-12 rounded-full bg-soft-green text-deep-green flex items-center justify-center mb-4">
+              {index === 0 && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+              )}
+              {index === 1 && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              )}
+              {index === 2 && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+              )}
+              {index === 3 && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M8 13h2"/><path d="M8 17h2"/><path d="M14 13h2"/><path d="M14 17h2"/></svg>
+              )}
+              {index === 4 && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/><path d="M12 2a15.3 15.3 0 0 0-4 10 15.3 15.3 0 0 0 4 10"/></svg>
+              )}
             </div>
-          ))
-        }
+            <h3 class="font-heading font-bold text-charcoal text-lg mb-1">
+              {item.label}
+            </h3>
+            <p class="text-base text-slate leading-relaxed">
+              {item.desc}
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="py-16 md:py-24 bg-light-gray border-y border-border">
+  <section class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <p class="sunlit-overline mb-4">Two Systems, One Factory</p>
+        <p class="sunlit-overline mb-4">
+          Two Systems, One Factory
+        </p>
         <h2 class="sunlit-section-title text-4xl md:text-5xl">
           A Product Line for Every Project
         </h2>
@@ -165,7 +167,7 @@ const audiences = [
           <img
             src={ASSETS.luminaSlateHero}
             alt="Lumina Slate glass solar roof tiles"
-            class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105"
+              class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-[1.02]"
           />
           <div class="p-8">
             <p class="sunlit-overline mb-3">Glass BIPV Tile</p>
@@ -184,7 +186,7 @@ const audiences = [
                 height="16"
                 viewBox="0 0 16 16"
                 fill="none"
-                class="transition-transform duration-300 group-hover:translate-x-1"
+                 class="transition-transform duration-500 group-hover:translate-x-1"
               >
                 <path
                   d="M9.62012 3.9668L14.6668 7.99947L9.62012 12.0328"
@@ -209,7 +211,7 @@ const audiences = [
           <img
             src={ASSETS.stormGuardHero}
             alt="Storm Guard metal solar roof sheets"
-            class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105"
+              class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-[1.02]"
           />
           <div class="p-8">
             <p class="sunlit-overline mb-3">Metal BIPV Sheet</p>
@@ -228,7 +230,7 @@ const audiences = [
                 height="16"
                 viewBox="0 0 16 16"
                 fill="none"
-                class="transition-transform duration-300 group-hover:translate-x-1"
+                 class="transition-transform duration-500 group-hover:translate-x-1"
               >
                 <path
                   d="M9.62012 3.9668L14.6668 7.99947L9.62012 12.0328"
@@ -256,7 +258,9 @@ const audiences = [
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-12 gap-8 items-center">
         <div class="lg:col-span-4">
-          <p class="sunlit-overline mb-4">Factory Supply Scope</p>
+          <p class="sunlit-overline mb-4">
+            Factory Supply Scope
+          </p>
           <h2 class="sunlit-section-title text-3xl md:text-4xl mb-4">
             A Complete System, Not Just Panels.
           </h2>
@@ -302,7 +306,9 @@ const audiences = [
   <section class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <p class="sunlit-overline mb-4">Built for Professional B2B Buyers</p>
+        <p class="sunlit-overline mb-4">
+          Built for Professional B2B Buyers
+        </p>
         <h2 class="sunlit-section-title text-4xl md:text-5xl">
           A Supply Partner You Can Trust
         </h2>
@@ -359,11 +365,13 @@ const audiences = [
     </div>
   </section>
 
-  <section class="py-16 md:py-24 bg-white">
+  <section class="py-16 md:py-24 bg-light-gray border-y border-border">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
         <div>
-          <p class="sunlit-overline mb-3">Recent Projects</p>
+          <p class="sunlit-overline mb-3">
+            Recent Projects
+          </p>
           <h2 class="sunlit-section-title text-4xl md:text-5xl">
             Factory-Supplied BIPV Installations
           </h2>
@@ -408,7 +416,7 @@ const audiences = [
                 <img
                   src={project.images[0]}
                   alt={project.name}
-                  class="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  class="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                   loading="lazy"
                 />
               ) : (
@@ -435,10 +443,12 @@ const audiences = [
     </div>
   </section>
 
-  <section id="faq" class="py-16 md:py-24 bg-light-gray border-y border-border">
+  <section id="faq" class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
       <div class="text-center mb-14">
-        <p class="sunlit-overline mb-3">FAQ</p>
+        <p class="sunlit-overline mb-3">
+          FAQ
+        </p>
         <h2 class="sunlit-section-title text-4xl md:text-5xl">
           Factory Supply Questions
         </h2>
@@ -473,7 +483,10 @@ const audiences = [
 
   <section class="py-16 md:py-24 dark-green-gradient text-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
-      <p class="sunlit-overline mb-4 text-white/70">Start with a Roof Drawing</p>
+      <p class="sunlit-overline mb-4 text-white/70 flex items-center justify-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3"/><path d="m12 12 8-4.5"/><path d="M12 12v9"/><path d="m12 12-8-4.5"/><path d="M15 14.25 12 12"/><path d="m9 14.25 6 3.375"/></svg>
+        Start with a Roof Drawing
+      </p>
       <h2 class="font-heading text-3xl md:text-5xl font-bold mb-5">
         Request Factory Pricing for Your Project
       </h2>
