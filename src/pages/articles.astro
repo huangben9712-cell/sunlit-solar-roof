@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { blogPosts } from '../data/blog';
+---
+
+<Layout title="Solar Roof Articles">
+  <section class="bg-[#f8faf8] py-14 md:py-20">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <p class="sunlit-overline mb-4">Knowledge Articles</p>
+      <h1 class="sunlit-section-title text-4xl md:text-6xl mb-6">Solar Roof Articles</h1>
+      <p class="text-lg text-[var(--slate)] leading-relaxed">Legacy articles organized around complete solar roof systems, B2B sourcing and project quotation.</p>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {blogPosts.map((post) => (
+          <a href={`/articles/${post.slug}/`} class="sunlit-card p-7 block hover:-translate-y-1 transition">
+            <p class="text-sm font-extrabold text-[var(--deep-green)] mb-3">{post.priority} · {post.category}</p>
+            <h3 class="text-xl font-extrabold text-[var(--charcoal)] mb-3">{post.title}</h3>
+            <p class="text-[var(--slate)] leading-relaxed mb-5">{post.summary}</p>
+            <span class="text-[var(--deep-green)] font-extrabold">Read Article</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
