@@ -10,7 +10,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "localize:project-images": "node scripts/localize-project-images.mjs"
+    "localize:project-images": "node scripts/localize-project-images.mjs",
+    "organize:project-images": "node scripts/organize-project-images.mjs"
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.1.0",
