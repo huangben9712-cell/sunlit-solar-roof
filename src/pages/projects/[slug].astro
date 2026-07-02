@@ -14,7 +14,7 @@ interface Props {
 }
 
 const { project } = Astro.props;
-const clean = (value?: string) => value && value !== 'Available upon request' ? value : undefined;
+const clean = (value?: string | null) => value && value !== 'Available upon request' ? value : undefined;
 const relatedProjects = projects.filter((p) => p.system === project.system && p.id !== project.id).slice(0, 3);
 ---
 
@@ -88,6 +88,13 @@ const relatedProjects = projects.filter((p) => p.system === project.system && p.
               </ul>
             </div>
           )}
+
+          {clean(project.projectLog) && (
+            <div class="sunlit-card-soft p-8 mb-8 border-l-4 border-[var(--amber)]">
+              <h2 class="text-2xl font-extrabold text-[var(--charcoal)] mb-4">Legacy Project Note</h2>
+              <p class="text-[var(--slate)] leading-relaxed whitespace-pre-line">{project.projectLog}</p>
+            </div>
+          )}
         </div>
 
         <aside>
@@ -97,8 +104,10 @@ const relatedProjects = projects.filter((p) => p.system === project.system && p.
               <div class="pb-4 border-b border-[var(--border)]"><p class="text-sm text-[var(--slate)] mb-1">Location</p><p class="font-extrabold text-[var(--charcoal)]">{project.location}</p></div>
               <div class="pb-4 border-b border-[var(--border)]"><p class="text-sm text-[var(--slate)] mb-1">System</p><p class="font-extrabold text-[var(--charcoal)]">{project.system}</p></div>
               <div class="pb-4 border-b border-[var(--border)]"><p class="text-sm text-[var(--slate)] mb-1">Application</p><p class="font-extrabold text-[var(--charcoal)]">{project.application}</p></div>
+              {clean(project.projectDate) && <div class="pb-4 border-b border-[var(--border)]"><p class="text-sm text-[var(--slate)] mb-1">Project Date</p><p class="font-extrabold text-[var(--charcoal)]">{project.projectDate}</p></div>}
               {clean(project.roofArea) && <div class="pb-4 border-b border-[var(--border)]"><p class="text-sm text-[var(--slate)] mb-1">Roof Area</p><p class="font-extrabold text-[var(--charcoal)]">{project.roofArea}</p></div>}
               {clean(project.capacity) && <div class="pb-4 border-b border-[var(--border)]"><p class="text-sm text-[var(--slate)] mb-1">Capacity</p><p class="font-extrabold text-[var(--charcoal)]">{project.capacity}</p></div>}
+              {project.sourceUrl && <div><p class="text-sm text-[var(--slate)] mb-1">Legacy Source</p><a href={project.sourceUrl} class="text-[var(--deep-green)] font-extrabold text-sm break-all">Old project page</a></div>}
             </div>
             <a href="/contact/" class="sunlit-btn-primary w-full mt-6">Discuss Similar Project</a>
           </div>
