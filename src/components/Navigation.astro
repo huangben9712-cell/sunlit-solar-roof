@@ -1,20 +1,28 @@
 ---
 const navItems = [
   {
-    label: "Solar Roof Systems",
+    label: "Products",
     href: "/system-overview/",
     submenu: [
-      { label: "Supply Scope", href: "/system-overview/" },
       { label: "Lumina Slate", href: "/lumina-slate/" },
       { label: "Storm Guard", href: "/storm-guard/" },
+      { label: "System Components", href: "/system-overview/" },
     ],
   },
   { label: "Projects", href: "/projects/" },
-  { label: "Resources", href: "/resources/" },
   { label: "About", href: "/about/" },
+  {
+    label: "Resources",
+    href: "/resources/",
+    submenu: [
+      { label: "Knowledge Base", href: "/resources/knowledge-base/" },
+      { label: "Downloads", href: "/resources/downloads/" },
+    ],
+  },
+  { label: "Contact", href: "/contact/" },
 ];
 
-const contactItem = { label: "Get Factory Pricing", href: "/contact/" };
+const contactItem = { label: "Request a Quote", href: "/contact/" };
 ---
 
 <header
