@@ -4,7 +4,7 @@ const navItems = [
     label: "Solar Roof Systems",
     href: "/system-overview/",
     submenu: [
-      { label: "System Overview", href: "/system-overview/" },
+      { label: "Supply Scope", href: "/system-overview/" },
       { label: "Lumina Slate", href: "/lumina-slate/" },
       { label: "Storm Guard", href: "/storm-guard/" },
     ],
@@ -14,7 +14,7 @@ const navItems = [
   { label: "About", href: "/about/" },
 ];
 
-const contactItem = { label: "Request a Quote", href: "/contact/" };
+const contactItem = { label: "Get Factory Pricing", href: "/contact/" };
 ---
 
 <header
@@ -164,7 +164,7 @@ const contactItem = { label: "Request a Quote", href: "/contact/" };
     <div
       class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-2"
     >
-      {[...navItems, { label: "Contact", href: "/contact" }].map((item) => (
+      {[...navItems, { label: "Contact", href: "/contact/" }].map((item) => (
         <div>
           {item.submenu ? (
             <>
