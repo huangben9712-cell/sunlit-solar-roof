@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from '../../layouts/Layout.astro';
 import { resources } from '../../data/resources.ts';
 
@@ -18,22 +18,22 @@ const relatedResources = resources.filter((r) => r.category === resource.categor
 const paragraphs = resource.content ? resource.content.split('\n\n') : [];
 ---
 
-<Layout title={resource.title}>
-  <section class="border-b border-[var(--border)] bg-white">
-    <div class="container mx-auto px-4 py-4 text-sm text-[var(--slate)]">
-      <a href="/" class="hover:text-[var(--deep-green)]">Home</a>
+<Layout title={resource.title} description={resource.summary}>
+  <section class="border-b border-border bg-white">
+    <div class="container mx-auto px-4 py-4 text-sm text-slate">
+      <a href="/" class="hover:text-deep-green">Home</a>
       <span class="mx-2">/</span>
-      <a href="/resources/" class="hover:text-[var(--deep-green)]">Resources</a>
+      <a href="/resources/" class="hover:text-deep-green">Resources</a>
       <span class="mx-2">/</span>
-      <span class="font-bold text-[var(--charcoal)]">{resource.title}</span>
+      <span class="font-bold text-charcoal">{resource.title}</span>
     </div>
   </section>
 
-  <section class="bg-[#f8faf8] py-14 md:py-20">
+  <section class="bg-soft-green py-14 md:py-20">
     <div class="container mx-auto px-4 max-w-4xl">
       <p class="sunlit-overline mb-4">{resource.category}</p>
       <h1 class="sunlit-section-title text-4xl md:text-6xl mb-6">{resource.title}</h1>
-      <p class="text-lg md:text-xl text-[var(--slate)] leading-relaxed">{resource.summary}</p>
+      <p class="text-lg md:text-xl text-slate leading-relaxed">{resource.summary}</p>
     </div>
   </section>
 
@@ -44,13 +44,13 @@ const paragraphs = resource.content ? resource.content.split('\n\n') : [];
           {resource.isPublic && paragraphs.length > 0 ? (
             <div class="sunlit-card p-8 space-y-5">
               {paragraphs.map((paragraph) => (
-                <p class="text-[var(--slate)] leading-relaxed whitespace-pre-line">{paragraph}</p>
+                <p class="text-slate leading-relaxed whitespace-pre-line">{paragraph}</p>
               ))}
             </div>
           ) : (
             <div class="sunlit-card p-8">
-              <h2 class="text-2xl font-extrabold text-[var(--charcoal)] mb-4">Request This Document</h2>
-              <p class="text-[var(--slate)] leading-relaxed mb-6">
+              <h2 class="text-2xl font-heading font-bold text-charcoal mb-4">Request This Document</h2>
+              <p class="text-slate leading-relaxed mb-6">
                 This document is shared based on the project stage, selected system and buyer requirements. Contact us with your project details and we will send the most relevant version.
               </p>
               <a href="/contact/" class="sunlit-btn-primary">Request Document</a>
@@ -60,19 +60,19 @@ const paragraphs = resource.content ? resource.content.split('\n\n') : [];
 
         <aside>
           <div class="sunlit-card p-6 sticky top-24">
-            <h3 class="font-extrabold text-[var(--charcoal)] mb-5">Resource Details</h3>
+            <h3 class="font-heading font-bold text-charcoal mb-5">Resource Details</h3>
             <div class="space-y-4">
-              <div class="pb-4 border-b border-[var(--border)]">
-                <p class="text-sm text-[var(--slate)] mb-1">Type</p>
-                <p class="font-extrabold text-[var(--charcoal)] capitalize">{resource.type}</p>
+              <div class="pb-4 border-b border-border">
+                <p class="text-sm text-slate mb-1">Type</p>
+                <p class="font-heading font-bold text-charcoal capitalize">{resource.type}</p>
               </div>
-              <div class="pb-4 border-b border-[var(--border)]">
-                <p class="text-sm text-[var(--slate)] mb-1">Category</p>
-                <p class="font-extrabold text-[var(--charcoal)]">{resource.category}</p>
+              <div class="pb-4 border-b border-border">
+                <p class="text-sm text-slate mb-1">Category</p>
+                <p class="font-heading font-bold text-charcoal">{resource.category}</p>
               </div>
               <div>
-                <p class="text-sm text-[var(--slate)] mb-1">Access</p>
-                <p class="font-extrabold text-[var(--charcoal)]">{resource.isPublic ? "Public guide" : "Available on request"}</p>
+                <p class="text-sm text-slate mb-1">Access</p>
+                <p class="font-heading font-bold text-charcoal">{resource.isPublic ? "Public guide" : "Available on request"}</p>
               </div>
             </div>
             <a href={resource.isPublic ? "/resources/" : "/contact/"} class="sunlit-btn-green w-full mt-6">
@@ -85,15 +85,15 @@ const paragraphs = resource.content ? resource.content.split('\n\n') : [];
   </section>
 
   {relatedResources.length > 0 && (
-    <section class="py-16 md:py-24 bg-[#f8faf8]">
+    <section class="py-16 md:py-24 bg-soft-green">
       <div class="container mx-auto px-4">
         <h2 class="sunlit-section-title text-3xl md:text-5xl mb-10 text-center">Related Resources</h2>
         <div class="grid md:grid-cols-3 gap-6">
           {relatedResources.map((relatedResource) => (
             <a href={`/resources/${relatedResource.slug}/`} class="sunlit-card p-6 block">
-              <p class="text-sm font-extrabold text-[var(--deep-green)] mb-3">{relatedResource.category}</p>
-              <h3 class="font-extrabold text-[var(--charcoal)] mb-2 line-clamp-2">{relatedResource.title}</h3>
-              <p class="text-sm text-[var(--slate)] leading-relaxed">{relatedResource.summary}</p>
+              <p class="text-sm font-heading font-bold text-deep-green mb-3">{relatedResource.category}</p>
+              <h3 class="font-heading font-bold text-charcoal mb-2 line-clamp-2">{relatedResource.title}</h3>
+              <p class="text-sm text-slate leading-relaxed">{relatedResource.summary}</p>
             </a>
           ))}
         </div>

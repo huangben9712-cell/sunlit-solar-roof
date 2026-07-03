@@ -1,15 +1,19 @@
----
+﻿---
 import Layout from '../layouts/Layout.astro';
 import { projects } from '../data/projects';
+
+const featuredProjects = projects.filter(p => p.challenge && p.images?.length);
 ---
 
-<Layout title="Project References - Sunlit Solar Roof">
-  <section class="bg-[#f8faf8] py-14 md:py-20">
-    <div class="container mx-auto px-4 max-w-4xl">
-      <p class="sunlit-overline mb-4">Project References</p>
-      <h1 class="sunlit-section-title text-4xl md:text-6xl mb-6">Solar Roof Project References</h1>
-      <p class="text-lg text-[var(--slate)] leading-relaxed">
-        Project references from the old Sunlit website, organized for the new B2B decision center.
+<Layout title="Project References - Sunlit Solar Roof" description="Explore factory-supplied BIPV solar roof installations across residential, commercial, and public projects worldwide.">
+  <section class="bg-soft-green py-16 md:py-24">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl">
+      <p class="sunlit-overline mb-5">Project References</p>
+      <h1 class="sunlit-section-title text-4xl md:text-5xl lg:text-6xl text-charcoal mb-6">
+        Factory-Supplied BIPV Installations
+      </h1>
+      <p class="text-lg text-slate leading-relaxed max-w-3xl mx-auto">
+        Real-world solar roof projects supplied by our factory — from luxury villas to commercial buildings.
       </p>
     </div>
   </section>
@@ -17,7 +21,7 @@ import { projects } from '../data/projects';
   <section class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-4">
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project) => (
+        {featuredProjects.map((project) => (
           <a href={`/projects/${project.slug}/`} class="sunlit-card overflow-hidden block hover:-translate-y-1 transition">
             {project.images?.[0] ? (
               <img src={project.images[0]} alt={project.name} class="h-52 w-full object-cover" loading="lazy" />
@@ -26,15 +30,15 @@ import { projects } from '../data/projects';
             )}
             <div class="p-6">
               <div class="flex gap-2 flex-wrap mb-4">
-                <span class="inline-block bg-blue-50 text-blue-700 text-xs font-extrabold px-3 py-1 rounded-full">{project.system}</span>
-                <span class="inline-block bg-green-50 text-green-700 text-xs font-extrabold px-3 py-1 rounded-full">{project.application}</span>
+                <span class="inline-block bg-blue-50 text-blue-700 text-xs font-heading font-bold px-3 py-1 rounded-full">{project.system}</span>
+                <span class="inline-block bg-green-50 text-green-700 text-xs font-heading font-bold px-3 py-1 rounded-full">{project.application}</span>
               </div>
-              <h3 class="text-xl font-extrabold text-[var(--charcoal)] mb-3 line-clamp-2">{project.name}</h3>
-              <p class="text-sm text-[var(--slate)] mb-3">{project.location}</p>
+              <h3 class="text-xl font-heading font-bold text-charcoal mb-3 line-clamp-2">{project.name}</h3>
+              <p class="text-sm text-slate mb-3">{project.location}</p>
               {(project.capacity || project.roofArea) && (
-                <p class="text-xs text-[var(--slate)] mb-5">{project.capacity} {project.roofArea}</p>
+                <p class="text-xs text-slate mb-5">{project.capacity} {project.roofArea}</p>
               )}
-              <div class="text-[var(--deep-green)] font-extrabold text-sm">View Project</div>
+              <div class="text-deep-green font-heading font-bold text-sm">View Project</div>
             </div>
           </a>
         ))}
@@ -44,7 +48,7 @@ import { projects } from '../data/projects';
 
   <section class="py-16 md:py-20 dark-green-gradient text-white">
     <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl md:text-5xl font-extrabold mb-5">Have a Similar Project?</h2>
+      <h2 class="text-3xl md:text-5xl font-heading font-bold mb-5">Have a Similar Project?</h2>
       <p class="text-lg text-white/75 max-w-2xl mx-auto mb-8">
         Send your roof drawing and project details. We will help you evaluate the right system and quotation direction.
       </p>

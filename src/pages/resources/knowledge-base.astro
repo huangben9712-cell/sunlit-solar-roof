@@ -1,22 +1,32 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { blogPosts } from '../../data/blog';
+
+const publishedPosts = blogPosts.filter(p => p.priority === 'P0');
 ---
 
-<Layout title="Knowledge Base - Sunlit Solar Roof">
+<Layout title="Knowledge Base - Sunlit Solar Roof" description="Technical guides, market insights, and installation resources for B2B solar roof buyers.">
   <section class="bg-soft-green py-16 md:py-20">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl">
-      <p class="sunlit-overline mb-4">Knowledge Base</p>
-      <h1 class="sunlit-section-title text-4xl md:text-5xl text-charcoal mb-6">
-        Articles & Guides
-      </h1>
+      <p class="sunlit-overline mb-5">Knowledge Base</p>
+      <h1 class="sunlit-section-title text-4xl md:text-5xl text-charcoal mb-6">Articles & Guides</h1>
       <p class="text-lg text-slate leading-relaxed max-w-3xl mx-auto">
         Technical guides, market insights, and installation resources for B2B solar roof buyers.
       </p>
     </div>
   </section>
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-xl text-slate">Browse our <a href="/articles/" class="text-deep-green font-bold hover:text-amber">articles</a> for detailed guides and insights.</p>
+  <section class="py-16 md:py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        {publishedPosts.map((post) => (
+          <a href={`/articles/${post.slug}/`} class="sunlit-card p-7 block group">
+            <p class="text-sm font-heading font-bold text-deep-green mb-3">{post.category}</p>
+            <h3 class="text-xl font-heading font-bold text-charcoal mb-3">{post.title}</h3>
+            <p class="text-slate leading-relaxed mb-5">{post.summary}</p>
+            <span class="font-bold text-deep-green group-hover:text-amber transition-colors">Read Article</span>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 </Layout>

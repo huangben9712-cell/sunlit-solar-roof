@@ -1,25 +1,75 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { getPublicGuides, getRequestDocuments } from '../../data/resources';
+
+const publicGuides = getPublicGuides();
+const requestDocs = getRequestDocuments();
 ---
 
-<Layout title="Resources - Sunlit Solar Roof">
-  <section class="bg-soft-green py-16 md:py-20">
+<Layout title="Resources for Solar Roof Buyers" description="Practical guides and technical documents for overseas B2B buyers evaluating complete BIPV solar roof systems.">
+  <section class="bg-soft-green py-16 md:py-24">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl">
-      <p class="sunlit-overline mb-4">Resources</p>
-      <h1 class="sunlit-section-title text-4xl md:text-5xl text-charcoal mb-6">
-        Learn & Explore
+      <p class="sunlit-overline mb-5">Buyer Resources</p>
+      <h1 class="sunlit-section-title text-4xl md:text-5xl lg:text-6xl text-charcoal mb-6">
+        Solar Roof Guides and Technical Documents
       </h1>
-      <p class="text-lg text-slate leading-relaxed max-w-3xl mx-auto mb-10">
-        Technical guides, product documents and market insights for B2B buyers.
+      <p class="text-lg text-slate leading-relaxed max-w-3xl mx-auto">
+        Practical resources for overseas buyers evaluating complete BIPV solar roof systems.
       </p>
     </div>
   </section>
-  <section class="py-10 bg-white">
+
+  <section class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/resources/knowledge-base/" class="sunlit-btn-primary">Knowledge Base</a>
-        <a href="/resources/downloads/" class="sunlit-btn-secondary">Downloads</a>
+      <div class="max-w-3xl mb-12">
+        <p class="sunlit-overline mb-4">Public Guides</p>
+        <h2 class="sunlit-section-title text-3xl md:text-5xl text-charcoal">
+          Learn Before You Request a Quote
+        </h2>
       </div>
+      <div class="grid md:grid-cols-2 gap-6 max-w-5xl">
+        {publicGuides.map((guide) => (
+          <a href={`/resources/${guide.slug}/`} class="sunlit-card p-7 block group">
+            <p class="text-sm font-heading font-bold text-deep-green mb-3">Buyer Guide</p>
+            <h3 class="text-xl font-heading font-bold text-charcoal mb-3">{guide.title}</h3>
+            <p class="text-slate leading-relaxed mb-5">{guide.summary}</p>
+            <span class="font-bold text-deep-green group-hover:text-amber transition-colors">Read Guide</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-light-gray border-y border-border">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-12">
+        <p class="sunlit-overline mb-4">Request Documents</p>
+        <h2 class="sunlit-section-title text-3xl md:text-5xl text-charcoal">
+          Technical Documents for Active Projects
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl">
+        {requestDocs.map((doc) => (
+          <div class="sunlit-card p-6">
+            <p class="text-sm font-heading font-bold text-deep-green mb-3">Request Document</p>
+            <h3 class="font-heading font-bold text-charcoal mb-2">{doc.title}</h3>
+            <p class="text-sm text-slate mb-5 leading-relaxed">{doc.summary}</p>
+            <a href="/contact/" class="font-bold text-deep-green hover:text-amber transition-colors text-sm">Request Document</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 dark-green-gradient text-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+      <h2 class="font-heading text-3xl md:text-5xl font-bold mb-5">
+        Need Documents for a Real Project?
+      </h2>
+      <p class="text-lg text-white/75 mb-8">
+        Send your project country, roof area and preferred system. We will point you to the right documents and next steps.
+      </p>
+      <a href="/contact/" class="sunlit-btn-primary">Request Documents</a>
     </div>
   </section>
 </Layout>

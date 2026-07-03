@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from '../../layouts/Layout.astro';
 import { projects } from '../../data/projects.ts';
 
@@ -11,21 +11,21 @@ const clean = (value?: string | null) => value && value !== 'Available upon requ
 const relatedProjects = projects.filter((p) => p.system === project.system && p.id !== project.id).slice(0, 3);
 ---
 
-<Layout title={project.name}>
-  <section class="border-b border-[var(--border)] bg-white">
-    <div class="container mx-auto px-4 py-4 text-sm text-[var(--slate)]">
+<Layout title={project.name} description={`${project.name} — a BIPV solar roof installation by Sunlit.`}>
+  <section class="border-b border-border bg-white">
+    <div class="container mx-auto px-4 py-4 text-sm text-slate">
       <a href="/">Home</a><span class="mx-2">/</span><a href="/projects/">Projects</a><span class="mx-2">/</span><span>{project.name}</span>
     </div>
   </section>
 
-  <section class="bg-[#f8faf8] py-14 md:py-20">
+  <section class="bg-soft-green py-14 md:py-20">
     <div class="container mx-auto px-4 max-w-4xl">
       <p class="sunlit-overline mb-4">Project Reference</p>
       <h1 class="sunlit-section-title text-4xl md:text-6xl mb-6">{project.name}</h1>
       <div class="flex gap-2 flex-wrap">
-        <span class="inline-block bg-blue-50 text-blue-700 text-sm font-extrabold px-4 py-2 rounded-full">{project.system}</span>
-        <span class="inline-block bg-green-50 text-green-700 text-sm font-extrabold px-4 py-2 rounded-full">{project.application}</span>
-        <span class="inline-block bg-white text-[var(--slate)] text-sm font-extrabold px-4 py-2 rounded-full border border-[var(--border)]">{project.location}</span>
+        <span class="inline-block bg-blue-50 text-blue-700 text-sm font-heading font-bold px-4 py-2 rounded-full">{project.system}</span>
+        <span class="inline-block bg-green-50 text-green-700 text-sm font-heading font-bold px-4 py-2 rounded-full">{project.application}</span>
+        <span class="inline-block bg-white text-slate text-sm font-heading font-bold px-4 py-2 rounded-full border border-border">{project.location}</span>
       </div>
     </div>
   </section>
@@ -36,22 +36,22 @@ const relatedProjects = projects.filter((p) => p.system === project.system && p.
         {project.images?.[0] ? <img src={project.images[0]} alt={project.name} class="w-full h-80 object-cover rounded-3xl mb-8" /> : <div class="h-80 image-placeholder rounded-3xl mb-8"></div>}
         {project.images && project.images.length > 1 && <div class="grid md:grid-cols-3 gap-4 mb-8">{project.images.slice(1).map((image) => <img src={image} alt={project.name} class="w-full h-36 object-cover rounded-2xl" loading="lazy" />)}</div>}
 
-        <div class="sunlit-card p-8 mb-8"><h2 class="text-2xl font-extrabold text-[var(--charcoal)] mb-4">Project Overview</h2><p class="text-[var(--slate)] leading-relaxed">{project.overview}</p></div>
-        {clean(project.challenge) && <div class="sunlit-card p-8 mb-8"><h2 class="text-2xl font-extrabold text-[var(--charcoal)] mb-4">Project Challenge</h2><p class="text-[var(--slate)] leading-relaxed whitespace-pre-line">{project.challenge}</p></div>}
-        {clean(project.sunlitSolution) && <div class="sunlit-card p-8 mb-8"><h2 class="text-2xl font-extrabold text-[var(--charcoal)] mb-4">Sunlit Solution</h2><p class="text-[var(--slate)] leading-relaxed whitespace-pre-line">{project.sunlitSolution}</p></div>}
-        {project.technicalHighlights && project.technicalHighlights.length > 0 && <div class="sunlit-card p-8 mb-8"><h2 class="text-2xl font-extrabold text-[var(--charcoal)] mb-4">Technical Notes</h2><ul class="space-y-3 text-[var(--slate)]">{project.technicalHighlights.map((item) => <li>• {item}</li>)}</ul></div>}
+        <div class="sunlit-card p-8 mb-8"><h2 class="text-2xl font-heading font-bold text-charcoal mb-4">Project Overview</h2><p class="text-slate leading-relaxed">{project.overview}</p></div>
+        {clean(project.challenge) && <div class="sunlit-card p-8 mb-8"><h2 class="text-2xl font-heading font-bold text-charcoal mb-4">Project Challenge</h2><p class="text-slate leading-relaxed whitespace-pre-line">{project.challenge}</p></div>}
+        {clean(project.sunlitSolution) && <div class="sunlit-card p-8 mb-8"><h2 class="text-2xl font-heading font-bold text-charcoal mb-4">Sunlit Solution</h2><p class="text-slate leading-relaxed whitespace-pre-line">{project.sunlitSolution}</p></div>}
+        {project.technicalHighlights && project.technicalHighlights.length > 0 && <div class="sunlit-card p-8 mb-8"><h2 class="text-2xl font-heading font-bold text-charcoal mb-4">Technical Notes</h2><ul class="space-y-3 text-slate">{project.technicalHighlights.map((item) => <li>• {item}</li>)}</ul></div>}
       </div>
 
       <aside>
         <div class="sunlit-card p-6 sticky top-24">
-          <h3 class="font-extrabold text-[var(--charcoal)] mb-5">Project Details</h3>
+          <h3 class="font-heading font-bold text-charcoal mb-5">Project Details</h3>
           <div class="space-y-4">
-            <div class="pb-4 border-b border-[var(--border)]"><p class="text-sm text-[var(--slate)] mb-1">Location</p><p class="font-extrabold text-[var(--charcoal)]">{project.location}</p></div>
-            <div class="pb-4 border-b border-[var(--border)]"><p class="text-sm text-[var(--slate)] mb-1">System</p><p class="font-extrabold text-[var(--charcoal)]">{project.system}</p></div>
-            <div class="pb-4 border-b border-[var(--border)]"><p class="text-sm text-[var(--slate)] mb-1">Application</p><p class="font-extrabold text-[var(--charcoal)]">{project.application}</p></div>
-            {clean(project.roofArea) && <div class="pb-4 border-b border-[var(--border)]"><p class="text-sm text-[var(--slate)] mb-1">Roof Area</p><p class="font-extrabold text-[var(--charcoal)]">{project.roofArea}</p></div>}
-            {clean(project.capacity) && <div class="pb-4 border-b border-[var(--border)]"><p class="text-sm text-[var(--slate)] mb-1">Capacity</p><p class="font-extrabold text-[var(--charcoal)]">{project.capacity}</p></div>}
-            {project.sourceUrl && <div><p class="text-sm text-[var(--slate)] mb-1">Legacy Source</p><a href={project.sourceUrl} class="text-[var(--deep-green)] font-extrabold text-sm">Old project page</a></div>}
+            <div class="pb-4 border-b border-border"><p class="text-sm text-slate mb-1">Location</p><p class="font-heading font-bold text-charcoal">{project.location}</p></div>
+            <div class="pb-4 border-b border-border"><p class="text-sm text-slate mb-1">System</p><p class="font-heading font-bold text-charcoal">{project.system}</p></div>
+            <div class="pb-4 border-b border-border"><p class="text-sm text-slate mb-1">Application</p><p class="font-heading font-bold text-charcoal">{project.application}</p></div>
+            {clean(project.roofArea) && <div class="pb-4 border-b border-border"><p class="text-sm text-slate mb-1">Roof Area</p><p class="font-heading font-bold text-charcoal">{project.roofArea}</p></div>}
+            {clean(project.capacity) && <div class="pb-4 border-b border-border"><p class="text-sm text-slate mb-1">Capacity</p><p class="font-heading font-bold text-charcoal">{project.capacity}</p></div>}
+            {project.sourceUrl && <div><p class="text-sm text-slate mb-1">Legacy Source</p><a href={project.sourceUrl} class="text-deep-green font-heading font-bold text-sm">Old project page</a></div>}
           </div>
           <a href="/contact/" class="sunlit-btn-primary w-full mt-6">Discuss Similar Project</a>
         </div>
@@ -59,5 +59,5 @@ const relatedProjects = projects.filter((p) => p.system === project.system && p.
     </div>
   </section>
 
-  {relatedProjects.length > 0 && <section class="py-16 md:py-24 bg-[#f8faf8]"><div class="container mx-auto px-4"><h2 class="sunlit-section-title text-3xl md:text-5xl mb-10 text-center">Related Projects</h2><div class="grid md:grid-cols-3 gap-6">{relatedProjects.map((relatedProject) => <a href={`/projects/${relatedProject.slug}/`} class="sunlit-card p-6 block"><h3 class="font-extrabold text-[var(--charcoal)] mb-2">{relatedProject.name}</h3><p class="text-sm text-[var(--slate)]">{relatedProject.location}</p></a>)}</div></div></section>}
+  {relatedProjects.length > 0 && <section class="py-16 md:py-24 bg-soft-green"><div class="container mx-auto px-4"><h2 class="sunlit-section-title text-3xl md:text-5xl mb-10 text-center">Related Projects</h2><div class="grid md:grid-cols-3 gap-6">{relatedProjects.map((relatedProject) => <a href={`/projects/${relatedProject.slug}/`} class="sunlit-card p-6 block"><h3 class="font-heading font-bold text-charcoal mb-2">{relatedProject.name}</h3><p class="text-sm text-slate">{relatedProject.location}</p></a>)}</div></div></section>}
 </Layout>

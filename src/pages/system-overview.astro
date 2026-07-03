@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from '../layouts/Layout.astro';
 
 const components = [
@@ -27,12 +27,12 @@ const comparison = [
 ];
 ---
 
-<Layout title="China Solar Roof Manufacturer Supply Scope">
-  <section class="bg-[#f8faf8] py-14 md:py-20">
+<Layout title="China Solar Roof Manufacturer Supply Scope" description="Compare Lumina Slate and Storm Guard BIPV systems. Understand the complete factory supply scope for your solar roof project.">
+  <section class="bg-soft-green py-14 md:py-20">
     <div class="container mx-auto px-4 max-w-4xl">
       <p class="sunlit-overline mb-4">Manufacturer Supply Scope</p>
       <h1 class="sunlit-section-title text-4xl md:text-6xl mb-6">What We Supply as a China Solar Roof Manufacturer</h1>
-      <p class="text-lg md:text-xl text-[var(--slate)] leading-relaxed">
+      <p class="text-lg md:text-xl text-slate leading-relaxed">
         Sunlit is not positioning this page as a turnkey EPC service. This page explains the factory supply package: active solar roof elements, matching inactive roof elements, flashing, fixings, accessories, documents and export coordination for overseas B2B buyers.
       </p>
     </div>
@@ -44,16 +44,16 @@ const comparison = [
         <div>
           <p class="sunlit-overline mb-3">Definition</p>
           <h2 class="sunlit-section-title text-3xl md:text-4xl mb-4">Complete Package Means Supply Scope</h2>
-          <p class="text-[var(--slate)] leading-relaxed">
+          <p class="text-slate leading-relaxed">
             When we say complete solar roof package, we mean the product scope a factory can supply for a roof project. It does not mean we replace local roofers, electricians, permit work or local engineering responsibility.
           </p>
         </div>
         <div class="lg:col-span-2 grid sm:grid-cols-2 gap-5">
           {components.map((item, index) => (
             <div class="sunlit-card p-6">
-              <div class="text-xs font-extrabold text-[var(--deep-green)] mb-3">0{index + 1}</div>
-              <h3 class="font-extrabold text-[var(--charcoal)] mb-2">{item.title}</h3>
-              <p class="text-sm text-[var(--slate)] leading-relaxed">{item.desc}</p>
+              <div class="text-xs font-heading font-bold text-deep-green mb-3">0{index + 1}</div>
+              <h3 class="font-heading font-bold text-charcoal mb-2">{item.title}</h3>
+              <p class="text-sm text-slate leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
@@ -61,18 +61,18 @@ const comparison = [
     </div>
   </section>
 
-  <section class="py-16 md:py-24 bg-[#f8faf8]">
+  <section class="py-16 md:py-24 bg-soft-green">
     <div class="container mx-auto px-4">
       <div class="text-center max-w-3xl mx-auto mb-12">
         <p class="sunlit-overline mb-3">B2B Sourcing Logic</p>
         <h2 class="sunlit-section-title text-3xl md:text-5xl mb-4">Why Supply Scope Matters</h2>
-        <p class="text-[var(--slate)]">For distributors, installers, contractors and developers, the main question is not only wattage. They need to know what the factory can supply, what needs to be sourced locally and how the quotation boundary is defined.</p>
+        <p class="text-slate">For distributors, installers, contractors and developers, the main question is not only wattage. They need to know what the factory can supply, what needs to be sourced locally and how the quotation boundary is defined.</p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
         {buyerBenefits.map((item) => (
           <div class="sunlit-card p-6">
-            <h3 class="font-extrabold text-[var(--charcoal)] mb-3">{item.title}</h3>
-            <p class="text-sm text-[var(--slate)] leading-relaxed">{item.desc}</p>
+            <h3 class="font-heading font-bold text-charcoal mb-3">{item.title}</h3>
+            <p class="text-sm text-slate leading-relaxed">{item.desc}</p>
           </div>
         ))}
       </div>
@@ -84,19 +84,19 @@ const comparison = [
       <div class="max-w-3xl mb-10">
         <p class="sunlit-overline mb-3">Product Line Comparison</p>
         <h2 class="sunlit-section-title text-3xl md:text-5xl mb-4">Lumina Slate or Storm Guard?</h2>
-        <p class="text-[var(--slate)]">The right product line depends on roof appearance, buyer role, project size and budget position.</p>
+        <p class="text-slate">The right product line depends on roof appearance, buyer role, project size and budget position.</p>
       </div>
       <div class="sunlit-card overflow-hidden">
-        <div class="grid grid-cols-3 bg-[var(--deep-green)] text-white font-extrabold">
+        <div class="grid grid-cols-3 bg-[var(--deep-green)] text-white font-heading font-bold">
           <div class="p-4">Decision Point</div>
           <div class="p-4">Lumina Slate</div>
           <div class="p-4">Storm Guard</div>
         </div>
         {comparison.map((row) => (
-          <div class="grid grid-cols-3 border-b border-[var(--border)] last:border-b-0">
-            <div class="p-4 font-extrabold text-[var(--charcoal)]">{row[0]}</div>
-            <div class="p-4 text-[var(--slate)]">{row[1]}</div>
-            <div class="p-4 text-[var(--slate)]">{row[2]}</div>
+          <div class="grid grid-cols-3 border-b border-border last:border-b-0">
+            <div class="p-4 font-heading font-bold text-charcoal">{row[0]}</div>
+            <div class="p-4 text-slate">{row[1]}</div>
+            <div class="p-4 text-slate">{row[2]}</div>
           </div>
         ))}
       </div>
@@ -110,7 +110,7 @@ const comparison = [
 
   <section class="py-16 md:py-20 dark-green-gradient text-white">
     <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl md:text-5xl font-extrabold mb-5">Start with Your Roof Drawing</h2>
+      <h2 class="text-3xl md:text-5xl font-heading font-bold mb-5">Start with Your Roof Drawing</h2>
       <p class="text-lg text-white/75 max-w-2xl mx-auto mb-8">Send project country, roof area and drawings. We will help define the factory supply scope, product line and quotation direction.</p>
       <a href="/contact/" class="sunlit-btn-primary">Request Factory Quote</a>
     </div>
