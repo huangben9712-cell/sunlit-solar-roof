@@ -134,6 +134,28 @@ a:active {
   line-height: 1.05;
 }
 
+.route-projects h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+
+.route-projects .sunlit-section-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.route-projects h2 {
+  letter-spacing: -0.025em;
+}
+
+.route-commercial h1,
+.route-commercial .sunlit-section-title {
+  font-family: 'Manrope', system-ui, sans-serif;
+}
+
 .sunlit-technical-label {
   font-family: 'Manrope', system-ui, sans-serif;
   font-weight: 700;
