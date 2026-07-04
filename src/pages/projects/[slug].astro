@@ -78,9 +78,12 @@ const icons: Record<string, string> = {
     </div>
   </nav>
 
-  <!-- ===== HERO HEADER ===== -->
-  <section class="bg-soft-green pt-16 pb-12">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- ===== HERO + IMAGE BAND: single section with split bg ===== -->
+  <!-- Upper 55% green, lower 45% white via inline style -->
+  <section class="relative" style="background: linear-gradient(to bottom, #e8f2ec 55%, #ffffff 55%)">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-10">
+
+      <!-- HERO TEXT -->
       <p class="sunlit-overline mb-4">Project Reference</p>
       <h1 class="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-charcoal leading-tight mb-6 max-w-4xl">
         {project.name}
@@ -91,7 +94,7 @@ const icons: Record<string, string> = {
         </p>
       )}
       <!-- Tags -->
-      <div class="flex gap-2 flex-wrap mb-0">
+      <div class="flex gap-2 flex-wrap mb-10">
         <span class="inline-flex items-center gap-1.5 bg-soft-green border border-deep-green/20 text-deep-green text-sm font-heading font-semibold px-3.5 py-1.5 rounded-full">
           <Fragment set:html={icons.system} />
           {project.system}
@@ -105,15 +108,9 @@ const icons: Record<string, string> = {
           {project.location}
         </span>
       </div>
-    </div>
-  </section>
 
-  <!-- ===== MAIN CONTENT ===== -->
-  <section class="bg-white py-10">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-
-      <!-- TOP ROW: images + sidebar -->
-      <div class="flex flex-col lg:flex-row gap-8 items-start mb-12">
+      <!-- TOP ROW: images + sidebar (cards straddle the green/white boundary) -->
+      <div class="flex flex-col lg:flex-row gap-8 items-stretch mb-0">
 
         <!-- LEFT: images -->
         <div class="flex-1 min-w-0">
@@ -150,8 +147,8 @@ const icons: Record<string, string> = {
         </div>
 
         <!-- RIGHT SIDEBAR: Project Facts -->
-        <aside class="w-full lg:w-80 flex-shrink-0">
-          <div class="sunlit-card p-6">
+        <aside class="w-full lg:w-80 flex-shrink-0 flex flex-col">
+          <div class="sunlit-card p-6 flex flex-col flex-1">
             <div class="flex items-center gap-2 mb-5">
               <div class="w-5 h-0.5 bg-deep-green"></div>
               <h3 class="font-heading font-bold text-charcoal text-base">Project Facts</h3>
@@ -233,7 +230,7 @@ const icons: Record<string, string> = {
             </div>
 
             <!-- CTA -->
-            <a href="/contact/" class="sunlit-btn-primary w-full text-center block mt-6 text-sm">
+            <a href="/contact/" class="sunlit-btn-primary w-full text-center block mt-auto pt-6 text-sm">
               Discuss Similar Project →
             </a>
           </div>
@@ -245,7 +242,7 @@ const icons: Record<string, string> = {
   </section>
 
   <!-- ===== FULL-WIDTH CONTENT SECTION ===== -->
-  <section class="bg-white py-10">
+  <section class="bg-white pt-10 pb-10">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div>
 
@@ -309,12 +306,12 @@ const icons: Record<string, string> = {
 
           <!-- Technical Notes -->
           {project.technicalHighlights && project.technicalHighlights.length > 0 && (
-            <div class="border border-border rounded-2xl p-6 mb-8">
+            <div class="border border-border rounded-2xl p-6 mb-8 relative overflow-hidden">
               <div class="flex items-center gap-2 mb-5">
                 <div class="w-6 h-0.5 bg-deep-green"></div>
                 <h2 class="font-heading font-bold text-charcoal text-lg">Technical Notes</h2>
               </div>
-              <div class="grid md:grid-cols-2 gap-x-8 gap-y-2.5">
+              <div class="grid md:grid-cols-2 gap-x-8 gap-y-2.5 relative z-10">
                 {project.technicalHighlights.map(item => (
                   <div class="flex items-start gap-2 text-sm text-slate">
                     <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-deep-green flex-shrink-0"></span>
@@ -322,7 +319,30 @@ const icons: Record<string, string> = {
                   </div>
                 ))}
               </div>
-
+              <!-- Decorative architectural roof line drawing -->
+              <div class="absolute bottom-0 right-0 opacity-[0.07] pointer-events-none">
+                <svg width="280" height="160" viewBox="0 0 280 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 150 L140 20 L270 150" stroke="#1a3a2a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                  <path d="M125 32 L140 20 L155 32" stroke="#1a3a2a" stroke-width="2" fill="none" stroke-linecap="round"/>
+                  <path d="M30 150 L140 38" stroke="#1a3a2a" stroke-width="1.5" fill="none" stroke-dasharray="6 3"/>
+                  <path d="M55 150 L140 56" stroke="#1a3a2a" stroke-width="1.5" fill="none" stroke-dasharray="6 3"/>
+                  <path d="M80 150 L140 74" stroke="#1a3a2a" stroke-width="1.5" fill="none" stroke-dasharray="6 3"/>
+                  <path d="M105 150 L140 92" stroke="#1a3a2a" stroke-width="1.5" fill="none" stroke-dasharray="6 3"/>
+                  <path d="M250 150 L140 38" stroke="#1a3a2a" stroke-width="1.5" fill="none" stroke-dasharray="6 3"/>
+                  <path d="M225 150 L140 56" stroke="#1a3a2a" stroke-width="1.5" fill="none" stroke-dasharray="6 3"/>
+                  <path d="M200 150 L140 74" stroke="#1a3a2a" stroke-width="1.5" fill="none" stroke-dasharray="6 3"/>
+                  <path d="M175 150 L140 92" stroke="#1a3a2a" stroke-width="1.5" fill="none" stroke-dasharray="6 3"/>
+                  <path d="M10 150 L75 88" stroke="#1a3a2a" stroke-width="1" fill="none"/>
+                  <path d="M10 150 L107 55" stroke="#1a3a2a" stroke-width="1" fill="none" opacity="0.6"/>
+                  <path d="M270 150 L205 88" stroke="#1a3a2a" stroke-width="1" fill="none"/>
+                  <path d="M270 150 L173 55" stroke="#1a3a2a" stroke-width="1" fill="none" opacity="0.6"/>
+                  <path d="M5 150 L275 150" stroke="#1a3a2a" stroke-width="2" fill="none"/>
+                  <rect x="38" y="108" width="30" height="18" rx="1" stroke="#1a3a2a" stroke-width="1" fill="none" transform="rotate(-35 38 108)"/>
+                  <rect x="62" y="90" width="30" height="18" rx="1" stroke="#1a3a2a" stroke-width="1" fill="none" transform="rotate(-35 62 90)"/>
+                  <rect x="188" y="108" width="30" height="18" rx="1" stroke="#1a3a2a" stroke-width="1" fill="none" transform="rotate(35 188 108)"/>
+                  <rect x="164" y="90" width="30" height="18" rx="1" stroke="#1a3a2a" stroke-width="1" fill="none" transform="rotate(35 164 90)"/>
+                </svg>
+              </div>
             </div>
           )}
 
