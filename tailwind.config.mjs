@@ -15,8 +15,9 @@ export default {
         border: '#e5e8e6',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        heading: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        sans: ['Manrope', 'system-ui', 'sans-serif'],
+        heading: ['Manrope', 'system-ui', 'sans-serif'],
+        editorial: ['Cormorant Garamond', 'Georgia', 'serif'],
       },
     },
   },
