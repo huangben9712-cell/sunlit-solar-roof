@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -17,7 +17,7 @@
 }
 
 html {
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -27,7 +27,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  font-family: 'Manrope', system-ui, sans-serif;
   letter-spacing: -0.035em;
 }
 
@@ -47,8 +47,8 @@ a:active {
 .sunlit-card {
   background: #ffffff;
   border: 1px solid var(--border);
-  border-radius: 16px; /* Slightly smaller radius */
-  box-shadow: 0 4px 16px rgba(23, 35, 43, 0.04); /* Softer shadow */
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(23, 35, 43, 0.04);
 }
 
 .sunlit-card-soft {
@@ -65,9 +65,9 @@ a:active {
   background: var(--amber);
   color: #111827;
   border-radius: 999px;
-  padding: 0.85rem 1.5rem; /* More padding */
-  font-weight: 600; /* Slightly less bold */
-  box-shadow: 0 4px 14px rgba(212, 160, 86, 0.2); /* Softer, new color shadow */
+  padding: 0.85rem 1.5rem;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(212, 160, 86, 0.2);
 }
 
 .sunlit-btn-primary:hover {
@@ -118,6 +118,26 @@ a:active {
 .sunlit-section-title {
   font-weight: 800;
   line-height: 1.08;
+}
+
+.sunlit-editorial-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+
+.sunlit-editorial-heading {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.sunlit-technical-label {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .image-placeholder {
