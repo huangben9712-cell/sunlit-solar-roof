@@ -9,6 +9,15 @@ const trustItems = [
   { title: 'Export Support', desc: 'Packaging, shipping documents and communication.' },
 ];
 
+const comparison = [
+  ['Product Type', 'Glass solar roof tiles', 'Metal solar roof sheets'],
+  ['Appearance', 'Premium slate-look glass roof', 'Modern metal roof profile'],
+  ['Inactive Match', 'Matching glass inactive tiles', 'Matching inactive metal sheets'],
+  ['Best Fit', 'Villas, premium residential, architectural roofs', 'Residential, commercial, public, large-area roofs'],
+  ['Cost Position', 'Higher-end', 'More practical'],
+  ['Buyer Value', 'Aesthetics + solar integration', 'Project efficiency + broader application'],
+];
+
 const included = [
   { title: 'Active PV Tiles / Sheets', desc: 'Solar-generating glass tiles or metal roof sheets supplied according to the selected product line.' },
   { title: 'Matching Inactive Roof Elements', desc: 'Non-PV roof elements for edges, shaded areas, non-generating zones and visual consistency.' },
@@ -38,7 +47,7 @@ const stormComponents = [
 
 const process = [
   { step: '1', title: 'Share Project Basics', desc: 'Send country, project type, estimated roof area, product interest or basic questions. A roof drawing helps but is not required for the first conversation.' },
-  { step: '2', title: 'Confirm Product Line', desc: 'We help compare Lumina Slate and Storm Guard based on appearance, budget position and project use.' },
+  { step: '2', title: 'Choose Product Direction', desc: 'Compare Lumina Slate and Storm Guard based on appearance, budget position and project use.' },
   { step: '3', title: 'Define Active + Inactive Coverage', desc: 'The roof is reviewed as active PV coverage, matching inactive roof elements and accessory areas.' },
   { step: '4', title: 'Receive Project-Based Quotation', desc: 'You receive quotation direction with product scope, estimated quantities, documents, packing and export terms.' },
 ];
@@ -56,11 +65,11 @@ const faqs = ['Can I ask for pricing without a roof drawing?', 'Do you supply in
         <p class="sunlit-overline mb-4">Factory Supply Scope</p>
         <h1 class="sunlit-section-title text-4xl md:text-6xl mb-6">What We Supply for a Solar Roof Project</h1>
         <p class="text-lg text-slate leading-relaxed mb-5">Sunlit supplies the factory-side roof product package: active solar roof tiles or sheets, matching inactive roof elements, flashing, fixings, roof accessories and project documents.</p>
-        <p class="text-slate leading-relaxed mb-8">Local roofing installation, electrical connection, permits and grid approval are usually handled by qualified local teams. We focus on factory supply, project quotation support, documents, packaging and export communication.</p>
+        <p class="text-slate leading-relaxed mb-8">This page also helps you compare Lumina Slate and Storm Guard before entering each product page. Local roofing installation, electrical connection, permits and grid approval are usually handled by qualified local teams.</p>
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="/contact/" class="sunlit-btn-primary">Get Factory Pricing</a>
-          <a href="#components" class="sunlit-btn-secondary">Ask About Supply Scope</a>
-          <a href="/contact/" class="sunlit-btn-secondary">Send Roof Drawing Optional</a>
+          <a href="#compare" class="sunlit-btn-secondary">Compare Product Lines</a>
+          <a href="#components" class="sunlit-btn-secondary">View Components</a>
         </div>
       </div>
       <div class="sunlit-card p-8">
@@ -77,7 +86,53 @@ const faqs = ['Can I ask for pricing without a roof drawing?', 'Do you supply in
     </div>
   </section>
 
-  <section class="py-16 md:py-24 bg-white">
+  <section id="compare" class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mb-10">
+        <p class="sunlit-overline mb-3">Product Line Comparison</p>
+        <h2 class="sunlit-section-title text-3xl md:text-5xl mb-4">Lumina Slate or Storm Guard?</h2>
+        <p class="text-slate leading-relaxed">This is a decision-level comparison inside the supply scope page. Detailed specifications, images and project examples should be reviewed on each product line page.</p>
+      </div>
+      <div class="sunlit-card overflow-hidden mb-8">
+        <div class="grid grid-cols-3 bg-deep-green text-white font-heading font-bold">
+          <div class="p-4">Decision Point</div>
+          <div class="p-4">Lumina Slate</div>
+          <div class="p-4">Storm Guard</div>
+        </div>
+        {comparison.map((row) => (
+          <div class="grid grid-cols-3 border-b border-border last:border-b-0">
+            <div class="p-4 font-heading font-bold text-charcoal">{row[0]}</div>
+            <div class="p-4 text-slate">{row[1]}</div>
+            <div class="p-4 text-slate">{row[2]}</div>
+          </div>
+        ))}
+      </div>
+      <div class="grid lg:grid-cols-2 gap-6">
+        <div class="sunlit-card p-6">
+          <p class="sunlit-overline mb-3">Choose Lumina Slate if...</p>
+          <ul class="space-y-3 text-slate leading-relaxed">
+            <li>✓ The client cares strongly about premium roof appearance.</li>
+            <li>✓ The project is a villa, estate, resort or architectural residence.</li>
+            <li>✓ The roof should look closer to slate than standard PV panels.</li>
+            <li>✓ The budget can support a higher-end glass roof product.</li>
+          </ul>
+          <a href="/lumina-slate/" class="sunlit-btn-secondary mt-6">Explore Lumina Slate</a>
+        </div>
+        <div class="sunlit-card p-6">
+          <p class="sunlit-overline mb-3">Choose Storm Guard if...</p>
+          <ul class="space-y-3 text-slate leading-relaxed">
+            <li>✓ The project needs modern metal roof aesthetics.</li>
+            <li>✓ The roof area is larger or more cost-sensitive.</li>
+            <li>✓ The buyer wants a practical solar roof sheet system.</li>
+            <li>✓ The project is residential, commercial, public or utility-related.</li>
+          </ul>
+          <a href="/storm-guard/" class="sunlit-btn-secondary mt-6">Explore Storm Guard</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-light-gray border-y border-border">
     <div class="container mx-auto px-4">
       <div class="text-center max-w-3xl mx-auto mb-12">
         <p class="sunlit-overline mb-4">Factory Supply Package</p>
@@ -95,7 +150,7 @@ const faqs = ['Can I ask for pricing without a roof drawing?', 'Do you supply in
     </div>
   </section>
 
-  <section id="components" class="py-16 md:py-24 bg-light-gray border-y border-border">
+  <section id="components" class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-4">
       <div class="max-w-3xl mb-10">
         <p class="sunlit-overline mb-4">Component Library by Product Line</p>
@@ -112,7 +167,7 @@ const faqs = ['Can I ask for pricing without a roof drawing?', 'Do you supply in
           </div>
           <div class="space-y-4">
             {luminaComponents.map((component) => (
-              <details class="rounded-2xl border border-border bg-white p-5">
+              <details class="rounded-2xl border border-border bg-light-gray p-5">
                 <summary class="font-heading font-bold text-charcoal cursor-pointer">{component.title}</summary>
                 <p class="text-slate mt-3 mb-3 leading-relaxed">{component.desc}</p>
                 <ul class="space-y-2 text-sm text-slate">
@@ -131,7 +186,7 @@ const faqs = ['Can I ask for pricing without a roof drawing?', 'Do you supply in
           </div>
           <div class="space-y-4">
             {stormComponents.map((component) => (
-              <details class="rounded-2xl border border-border bg-white p-5">
+              <details class="rounded-2xl border border-border bg-light-gray p-5">
                 <summary class="font-heading font-bold text-charcoal cursor-pointer">{component.title}</summary>
                 <p class="text-slate mt-3 mb-3 leading-relaxed">{component.desc}</p>
                 <ul class="space-y-2 text-sm text-slate">
@@ -145,7 +200,7 @@ const faqs = ['Can I ask for pricing without a roof drawing?', 'Do you supply in
     </div>
   </section>
 
-  <section class="py-16 md:py-24 bg-white">
+  <section class="py-16 md:py-24 bg-light-gray border-y border-border">
     <div class="container mx-auto px-4">
       <div class="text-center max-w-3xl mx-auto mb-12">
         <p class="sunlit-overline mb-4">Quotation Workflow</p>
@@ -163,7 +218,7 @@ const faqs = ['Can I ask for pricing without a roof drawing?', 'Do you supply in
     </div>
   </section>
 
-  <section class="py-16 md:py-24 bg-soft-green">
+  <section class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-8">
       <div class="sunlit-card p-8">
         <h2 class="font-heading font-bold text-3xl mb-6">What We Usually Supply</h2>
@@ -180,11 +235,11 @@ const faqs = ['Can I ask for pricing without a roof drawing?', 'Do you supply in
     </div>
   </section>
 
-  <section class="py-16 md:py-24 bg-white">
+  <section class="py-16 md:py-24 bg-soft-green">
     <div class="container mx-auto px-4">
       <div class="text-center max-w-3xl mx-auto mb-12">
-        <p class="sunlit-overline mb-4">Related Product Lines</p>
-        <h2 class="sunlit-section-title text-3xl md:text-5xl">Supply Scope Applies to Both Product Families</h2>
+        <p class="sunlit-overline mb-4">Next Step</p>
+        <h2 class="sunlit-section-title text-3xl md:text-5xl">Enter the Product Line Page That Fits Your Project</h2>
       </div>
       <div class="grid lg:grid-cols-2 gap-8">
         <a href="/lumina-slate/" class="sunlit-card p-8 block">
@@ -203,7 +258,7 @@ const faqs = ['Can I ask for pricing without a roof drawing?', 'Do you supply in
     </div>
   </section>
 
-  <section class="py-16 md:py-24 bg-light-gray border-y border-border">
+  <section class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-4 max-w-5xl">
       <div class="text-center mb-10">
         <p class="sunlit-overline mb-4">FAQ</p>
