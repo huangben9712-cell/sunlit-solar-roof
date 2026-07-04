@@ -15,22 +15,32 @@ const otherHero = otherProjects.find(p => p.images?.length)?.images?.[0] ?? lumi
 <Layout title="Project References - Sunlit Solar Roof" description="Explore real-world solar roof projects supplied by Sunlit Solar Roof, organized by product line — Lumina Slate, Storm Guard, and Others.">
 
   <!-- ===== HERO ===== -->
-  <section class="relative bg-soft-green overflow-hidden">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 flex flex-col md:flex-row items-center gap-8">
-      <div class="max-w-xl z-10">
+  <!-- 修复1: Hero 图片改为右侧大圆角卡片，与概念图对齐；图片占据右半区域，左侧文字区 -->
+  <section class="relative bg-soft-green overflow-hidden min-h-[340px] md:min-h-[400px]">
+    <!-- 右侧装饰圆形背景 -->
+    <div class="absolute right-0 top-0 w-[55%] h-full hidden md:block">
+      <div class="absolute right-[-80px] top-[-60px] w-[600px] h-[600px] rounded-full bg-white/30"></div>
+    </div>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20 flex flex-col md:flex-row items-center gap-0 relative z-10">
+      <!-- Left text -->
+      <div class="w-full md:w-1/2 pr-0 md:pr-10 z-10 mb-8 md:mb-0">
         <p class="sunlit-overline mb-4">Project References</p>
-        <h1 class="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-charcoal leading-tight mb-6">
+        <h1 class="font-heading font-bold text-4xl md:text-5xl lg:text-[3.25rem] text-charcoal leading-tight mb-5">
           Factory-Supplied Solar Roof Project References
         </h1>
-        <p class="text-slate text-lg leading-relaxed">
+        <p class="text-slate text-base md:text-lg leading-relaxed max-w-lg">
           Explore real-world projects supplied by Sunlit Solar Roof. References are organized by product line — Lumina Slate, Storm Guard, and Others — to help you find the right solution for your next project.
         </p>
       </div>
-      <!-- Hero image -->
-      <div class="hidden md:block flex-shrink-0 w-80 lg:w-96 relative">
-        <div class="absolute -right-16 -top-8 w-[420px] h-[320px] rounded-3xl overflow-hidden shadow-xl">
+      <!-- Right image: large rounded card, bleeds to edge like concept -->
+      <div class="w-full md:w-1/2 flex justify-end">
+        <div class="w-full max-w-[560px] h-[260px] md:h-[320px] rounded-2xl overflow-hidden shadow-lg">
           {luminaHero ? (
-            <img src={luminaHero} alt="Solar roof project" class="w-full h-full object-cover" />
+            <img
+              src={luminaHero}
+              alt="Solar roof project reference"
+              class="w-full h-full object-cover object-center"
+            />
           ) : (
             <div class="w-full h-full image-placeholder"></div>
           )}
@@ -39,26 +49,10 @@ const otherHero = otherProjects.find(p => p.images?.length)?.images?.[0] ?? lumi
     </div>
   </section>
 
-  <!-- ===== FILTER TABS ===== -->
+  <!-- ===== FILTER BAR (只保留 Application 筛选 + 搜索，删除 Tab 导航) ===== -->
+  <!-- 修复2: 删除 All Projects / Lumina Slate / Storm Guard / Others 那一行 Tab -->
   <div class="sticky top-0 z-30 bg-white border-b border-border shadow-sm">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Product line tabs -->
-      <div class="flex gap-0 border-b border-border overflow-x-auto">
-        {[
-          { label: 'All Projects', id: 'all' },
-          { label: 'Lumina Slate', id: 'lumina' },
-          { label: 'Storm Guard', id: 'storm' },
-          { label: 'Others', id: 'others' },
-        ].map((tab, i) => (
-          <button
-            class={`tab-btn px-5 py-4 font-heading font-semibold text-sm whitespace-nowrap border-b-2 transition-colors ${i === 0 ? 'border-deep-green text-deep-green' : 'border-transparent text-slate hover:text-charcoal'}`}
-            data-tab={tab.id}
-          >
-            {tab.label}
-          </button>
-        ))}
-      </div>
-      <!-- Application filter -->
       <div class="flex items-center gap-3 py-3 overflow-x-auto">
         <div class="flex gap-2 flex-shrink-0">
           {['All Applications', 'Residential', 'Commercial', 'Hospitality', 'Public'].map((app, i) => (
@@ -85,169 +79,187 @@ const otherHero = otherProjects.find(p => p.images?.length)?.images?.[0] ?? lumi
     </div>
   </div>
 
-  <!-- ===== MAIN CONTENT ===== -->
+  <!-- ===== BROWSE BY PRODUCT LINE (全宽，在侧边栏布局之外) ===== -->
+  <!-- 修复3: 三个卡片全宽横排，不与侧边栏并排 -->
+  <div class="bg-white border-b border-border py-10">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="sunlit-overline text-center mb-6">Browse by Product Line</p>
+      <div class="grid md:grid-cols-3 gap-5">
+        {[
+          {
+            id: 'lumina',
+            label: 'Lumina Slate Projects',
+            desc: 'Premium glass solar roof tiles for architectural villas, premium residential and design-led projects.',
+            img: luminaHero,
+            icon: (
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 4v14"/><path d="M12 4v14"/><path d="M17 4v14"/><path d="M3 9h18"/><path d="M3 14h18"/></svg>
+            ),
+          },
+          {
+            id: 'storm',
+            label: 'Storm Guard Projects',
+            desc: 'Metal solar roof sheets for modern residential, commercial, public and large-area roofs.',
+            img: stormHero,
+            icon: (
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"/><path d="M3 9l2-4h14l2 4"/><path d="M12 9v12"/></svg>
+            ),
+          },
+          {
+            id: 'others',
+            label: 'Others / Early Projects',
+            desc: 'Projects completed before our current product-line structure, including legacy or mixed-solution references.',
+            img: otherHero,
+            icon: (
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+            ),
+          },
+        ].map(line => (
+          <div class="sunlit-card overflow-hidden">
+            <div class="relative h-48 overflow-hidden">
+              {line.img ? (
+                <img src={line.img} alt={line.label} class="w-full h-full object-cover" loading="lazy" />
+              ) : (
+                <div class="w-full h-full image-placeholder"></div>
+              )}
+              <div class="absolute bottom-3 left-3 w-9 h-9 rounded-full bg-deep-green text-white flex items-center justify-center">
+                {line.icon}
+              </div>
+            </div>
+            <div class="p-5">
+              <h3 class="font-heading font-bold text-charcoal text-lg mb-2">{line.label}</h3>
+              <p class="text-sm text-slate leading-relaxed mb-4">{line.desc}</p>
+              <a href={`#section-${line.id}`} class="text-amber font-heading font-semibold text-sm hover:text-amber-dark transition-colors">
+                View Projects →
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MAIN CONTENT: 项目列表 + 侧边栏 ===== -->
   <div class="bg-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div class="flex gap-8 items-start">
 
-        <!-- Left: main content -->
+        <!-- Left: project sections -->
         <div class="flex-1 min-w-0">
-
-          <!-- Browse by Product Line cards -->
-          <div id="section-browse" class="mb-14">
-            <p class="sunlit-overline text-center mb-6">Browse by Product Line</p>
-            <div class="grid md:grid-cols-3 gap-5">
-              {[
-                {
-                  id: 'lumina',
-                  label: 'Lumina Slate Projects',
-                  desc: 'Premium glass solar roof tiles for architectural villas, premium residential and design-led projects.',
-                  img: luminaHero,
-                  icon: (
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 4v14"/><path d="M12 4v14"/><path d="M17 4v14"/><path d="M3 9h18"/><path d="M3 14h18"/></svg>
-                  ),
-                  count: luminaProjects.length,
-                },
-                {
-                  id: 'storm',
-                  label: 'Storm Guard Projects',
-                  desc: 'Metal solar roof sheets for modern residential, commercial, public and large-area roofs.',
-                  img: stormHero,
-                  icon: (
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"/><path d="M3 9l2-4h14l2 4"/><path d="M12 9v12"/></svg>
-                  ),
-                  count: stormGuardProjects.length,
-                },
-                {
-                  id: 'others',
-                  label: 'Others / Early Projects',
-                  desc: 'Projects completed before our current product-line structure, including legacy or mixed-solution references.',
-                  img: otherHero,
-                  icon: (
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
-                  ),
-                  count: otherProjects.length,
-                },
-              ].map(line => (
-                <div class="sunlit-card overflow-hidden product-line-card" data-line={line.id}>
-                  <div class="relative h-44 overflow-hidden">
-                    {line.img ? (
-                      <img src={line.img} alt={line.label} class="w-full h-full object-cover" loading="lazy" />
-                    ) : (
-                      <div class="w-full h-full image-placeholder"></div>
-                    )}
-                    <div class="absolute bottom-3 left-3 w-9 h-9 rounded-full bg-deep-green text-white flex items-center justify-center">
-                      {line.icon}
-                    </div>
-                  </div>
-                  <div class="p-5">
-                    <h3 class="font-heading font-bold text-charcoal text-lg mb-2">{line.label}</h3>
-                    <p class="text-sm text-slate leading-relaxed mb-4">{line.desc}</p>
-                    <button class="text-amber font-heading font-semibold text-sm hover:text-amber-dark transition-colors view-line-btn" data-line={line.id}>
-                      View Projects →
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
 
           <!-- Lumina Slate section -->
           <div id="section-lumina" class="mb-14 project-section" data-section="lumina">
             <div class="flex items-center justify-between mb-6">
               <h2 class="font-heading font-bold text-2xl text-charcoal">Lumina Slate Projects</h2>
-              <button class="text-sm text-deep-green font-heading font-semibold hover:underline view-all-btn" data-line="lumina">View all →</button>
+              <button class="text-sm text-deep-green font-heading font-semibold hover:underline toggle-extra-btn" data-target="lumina-extra" data-more="View all {n} Lumina Slate projects ↓" data-less="Show less ↑">
+                View all {luminaProjects.length} Lumina Slate projects ↓
+              </button>
             </div>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 project-grid" data-line="lumina">
+            <!-- 修复4: 项目卡片样式 — 更大标题、标签胶囊、琥珀色 View Case Study -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 project-grid" data-line="lumina">
               {luminaProjects.slice(0, 4).map(project => (
                 <a href={`/projects/${project.slug}/`} class="sunlit-card overflow-hidden block group project-card" data-system={project.system} data-app={project.application}>
-                  <div class="h-40 overflow-hidden">
+                  <div class="h-44 overflow-hidden">
                     {project.images?.[0] ? (
                       <img src={project.images[0]} alt={project.name} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
                     ) : (
-                      <div class="h-full image-placeholder"></div>
+                      <div class="h-44 image-placeholder"></div>
                     )}
                   </div>
                   <div class="p-4">
-                    <h3 class="font-heading font-bold text-charcoal text-sm mb-1 line-clamp-2">{project.name.split(':')[0]}</h3>
+                    <h3 class="font-heading font-bold text-charcoal text-base leading-snug mb-1 line-clamp-2">{project.name.split(':')[0]}</h3>
                     <p class="text-xs text-slate mb-3">{project.location}</p>
-                    <div class="flex flex-wrap gap-1 mb-3">
-                      <span class="text-xs bg-soft-green text-deep-green font-heading font-semibold px-2 py-0.5 rounded-full">{project.system}</span>
-                      <span class="text-xs bg-gray-100 text-slate font-heading px-2 py-0.5 rounded-full">{project.application}</span>
-                      {project.capacity && <span class="text-xs bg-gray-100 text-slate font-heading px-2 py-0.5 rounded-full">{project.capacity}</span>}
+                    <div class="flex flex-wrap gap-1.5 mb-4">
+                      <span class="text-xs bg-soft-green text-deep-green font-heading font-semibold px-2.5 py-1 rounded-full border border-deep-green/10">{project.system}</span>
+                      <span class="text-xs bg-gray-100 text-slate font-heading px-2.5 py-1 rounded-full">{project.application}</span>
+                      {project.capacity && <span class="text-xs bg-gray-100 text-slate font-heading px-2.5 py-1 rounded-full">{project.capacity}</span>}
                     </div>
-                    <span class="text-amber font-heading font-semibold text-xs group-hover:text-amber-dark transition-colors">View Case Study →</span>
+                    <span class="text-amber font-heading font-semibold text-sm group-hover:text-amber-dark transition-colors">View Case Study →</span>
                   </div>
                 </a>
               ))}
             </div>
-            <!-- Expanded rows (hidden by default) -->
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-5 project-grid hidden" data-line="lumina" id="lumina-extra">
+            <!-- Expanded rows -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-4 project-grid hidden" data-line="lumina" id="lumina-extra">
               {luminaProjects.slice(4).map(project => (
                 <a href={`/projects/${project.slug}/`} class="sunlit-card overflow-hidden block group project-card" data-system={project.system} data-app={project.application}>
-                  <div class="h-40 overflow-hidden">
+                  <div class="h-44 overflow-hidden">
                     {project.images?.[0] ? (
                       <img src={project.images[0]} alt={project.name} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
                     ) : (
-                      <div class="h-full image-placeholder"></div>
+                      <div class="h-44 image-placeholder"></div>
                     )}
                   </div>
                   <div class="p-4">
-                    <h3 class="font-heading font-bold text-charcoal text-sm mb-1 line-clamp-2">{project.name.split(':')[0]}</h3>
+                    <h3 class="font-heading font-bold text-charcoal text-base leading-snug mb-1 line-clamp-2">{project.name.split(':')[0]}</h3>
                     <p class="text-xs text-slate mb-3">{project.location}</p>
-                    <div class="flex flex-wrap gap-1 mb-3">
-                      <span class="text-xs bg-soft-green text-deep-green font-heading font-semibold px-2 py-0.5 rounded-full">{project.system}</span>
-                      <span class="text-xs bg-gray-100 text-slate font-heading px-2 py-0.5 rounded-full">{project.application}</span>
-                      {project.capacity && <span class="text-xs bg-gray-100 text-slate font-heading px-2 py-0.5 rounded-full">{project.capacity}</span>}
+                    <div class="flex flex-wrap gap-1.5 mb-4">
+                      <span class="text-xs bg-soft-green text-deep-green font-heading font-semibold px-2.5 py-1 rounded-full border border-deep-green/10">{project.system}</span>
+                      <span class="text-xs bg-gray-100 text-slate font-heading px-2.5 py-1 rounded-full">{project.application}</span>
+                      {project.capacity && <span class="text-xs bg-gray-100 text-slate font-heading px-2.5 py-1 rounded-full">{project.capacity}</span>}
                     </div>
-                    <span class="text-amber font-heading font-semibold text-xs group-hover:text-amber-dark transition-colors">View Case Study →</span>
+                    <span class="text-amber font-heading font-semibold text-sm group-hover:text-amber-dark transition-colors">View Case Study →</span>
                   </div>
                 </a>
               ))}
             </div>
-            {luminaProjects.length > 4 && (
-              <div class="mt-5 text-center">
-                <button class="sunlit-btn-secondary text-sm toggle-extra-btn" data-target="lumina-extra">
-                  View all {luminaProjects.length} Lumina Slate projects ↓
-                </button>
-              </div>
-            )}
           </div>
 
           <!-- Storm Guard section -->
           <div id="section-storm" class="mb-14 project-section" data-section="storm">
             <div class="flex items-center justify-between mb-6">
               <h2 class="font-heading font-bold text-2xl text-charcoal">Storm Guard Projects</h2>
-              <button class="text-sm text-deep-green font-heading font-semibold hover:underline view-all-btn" data-line="storm">View all →</button>
+              {stormGuardProjects.length > 4 && (
+                <button class="text-sm text-deep-green font-heading font-semibold hover:underline toggle-extra-btn" data-target="storm-extra">
+                  View all {stormGuardProjects.length} Storm Guard projects ↓
+                </button>
+              )}
             </div>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 project-grid" data-line="storm">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 project-grid" data-line="storm">
               {stormGuardProjects.slice(0, 4).map(project => (
                 <a href={`/projects/${project.slug}/`} class="sunlit-card overflow-hidden block group project-card" data-system={project.system} data-app={project.application}>
-                  <div class="h-40 overflow-hidden">
+                  <div class="h-44 overflow-hidden">
                     {project.images?.[0] ? (
                       <img src={project.images[0]} alt={project.name} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
                     ) : (
-                      <div class="h-full image-placeholder"></div>
+                      <div class="h-44 image-placeholder"></div>
                     )}
                   </div>
                   <div class="p-4">
-                    <h3 class="font-heading font-bold text-charcoal text-sm mb-1 line-clamp-2">{project.name.split(':')[0]}</h3>
+                    <h3 class="font-heading font-bold text-charcoal text-base leading-snug mb-1 line-clamp-2">{project.name.split(':')[0]}</h3>
                     <p class="text-xs text-slate mb-3">{project.location}</p>
-                    <div class="flex flex-wrap gap-1 mb-3">
-                      <span class="text-xs bg-soft-green text-deep-green font-heading font-semibold px-2 py-0.5 rounded-full">{project.system}</span>
-                      <span class="text-xs bg-gray-100 text-slate font-heading px-2 py-0.5 rounded-full">{project.application}</span>
-                      {project.capacity && <span class="text-xs bg-gray-100 text-slate font-heading px-2 py-0.5 rounded-full">{project.capacity}</span>}
+                    <div class="flex flex-wrap gap-1.5 mb-4">
+                      <span class="text-xs bg-soft-green text-deep-green font-heading font-semibold px-2.5 py-1 rounded-full border border-deep-green/10">{project.system}</span>
+                      <span class="text-xs bg-gray-100 text-slate font-heading px-2.5 py-1 rounded-full">{project.application}</span>
+                      {project.capacity && <span class="text-xs bg-gray-100 text-slate font-heading px-2.5 py-1 rounded-full">{project.capacity}</span>}
                     </div>
-                    <span class="text-amber font-heading font-semibold text-xs group-hover:text-amber-dark transition-colors">View Case Study →</span>
+                    <span class="text-amber font-heading font-semibold text-sm group-hover:text-amber-dark transition-colors">View Case Study →</span>
                   </div>
                 </a>
               ))}
             </div>
             {stormGuardProjects.length > 4 && (
-              <div class="mt-5 text-center">
-                <button class="sunlit-btn-secondary text-sm toggle-extra-btn" data-target="storm-extra">
-                  View all {stormGuardProjects.length} Storm Guard projects ↓
-                </button>
+              <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-4 project-grid hidden" data-line="storm" id="storm-extra">
+                {stormGuardProjects.slice(4).map(project => (
+                  <a href={`/projects/${project.slug}/`} class="sunlit-card overflow-hidden block group project-card" data-system={project.system} data-app={project.application}>
+                    <div class="h-44 overflow-hidden">
+                      {project.images?.[0] ? (
+                        <img src={project.images[0]} alt={project.name} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                      ) : (
+                        <div class="h-44 image-placeholder"></div>
+                      )}
+                    </div>
+                    <div class="p-4">
+                      <h3 class="font-heading font-bold text-charcoal text-base leading-snug mb-1 line-clamp-2">{project.name.split(':')[0]}</h3>
+                      <p class="text-xs text-slate mb-3">{project.location}</p>
+                      <div class="flex flex-wrap gap-1.5 mb-4">
+                        <span class="text-xs bg-soft-green text-deep-green font-heading font-semibold px-2.5 py-1 rounded-full border border-deep-green/10">{project.system}</span>
+                        <span class="text-xs bg-gray-100 text-slate font-heading px-2.5 py-1 rounded-full">{project.application}</span>
+                        {project.capacity && <span class="text-xs bg-gray-100 text-slate font-heading px-2.5 py-1 rounded-full">{project.capacity}</span>}
+                      </div>
+                      <span class="text-amber font-heading font-semibold text-sm group-hover:text-amber-dark transition-colors">View Case Study →</span>
+                    </div>
+                  </a>
+                ))}
               </div>
             )}
           </div>
@@ -257,26 +269,25 @@ const otherHero = otherProjects.find(p => p.images?.length)?.images?.[0] ?? lumi
             <div id="section-others" class="mb-14 project-section" data-section="others">
               <div class="flex items-center justify-between mb-6">
                 <h2 class="font-heading font-bold text-2xl text-charcoal">Other Project References</h2>
-                <button class="text-sm text-deep-green font-heading font-semibold hover:underline view-all-btn" data-line="others">View all →</button>
               </div>
-              <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 project-grid" data-line="others">
+              <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 project-grid" data-line="others">
                 {otherProjects.slice(0, 3).map(project => (
                   <a href={`/projects/${project.slug}/`} class="sunlit-card overflow-hidden block group project-card" data-system={project.system} data-app={project.application}>
-                    <div class="h-44 overflow-hidden">
+                    <div class="h-48 overflow-hidden">
                       {project.images?.[0] ? (
                         <img src={project.images[0]} alt={project.name} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
                       ) : (
-                        <div class="h-full image-placeholder"></div>
+                        <div class="h-48 image-placeholder"></div>
                       )}
                     </div>
                     <div class="p-4">
-                      <h3 class="font-heading font-bold text-charcoal text-sm mb-1 line-clamp-2">{project.name.split(':')[0]}</h3>
+                      <h3 class="font-heading font-bold text-charcoal text-base leading-snug mb-1 line-clamp-2">{project.name.split(':')[0]}</h3>
                       <p class="text-xs text-slate mb-3">{project.location}</p>
-                      <div class="flex flex-wrap gap-1 mb-3">
-                        <span class="text-xs bg-soft-green text-deep-green font-heading font-semibold px-2 py-0.5 rounded-full">Mixed Solution</span>
-                        <span class="text-xs bg-gray-100 text-slate font-heading px-2 py-0.5 rounded-full">{project.application}</span>
+                      <div class="flex flex-wrap gap-1.5 mb-4">
+                        <span class="text-xs bg-soft-green text-deep-green font-heading font-semibold px-2.5 py-1 rounded-full border border-deep-green/10">Mixed Solution</span>
+                        <span class="text-xs bg-gray-100 text-slate font-heading px-2.5 py-1 rounded-full">{project.application}</span>
                       </div>
-                      <span class="text-amber font-heading font-semibold text-xs group-hover:text-amber-dark transition-colors">View Case Study →</span>
+                      <span class="text-amber font-heading font-semibold text-sm group-hover:text-amber-dark transition-colors">View Case Study →</span>
                     </div>
                   </a>
                 ))}
@@ -287,16 +298,17 @@ const otherHero = otherProjects.find(p => p.images?.length)?.images?.[0] ?? lumi
         </div>
 
         <!-- ===== RIGHT SIDEBAR ===== -->
-        <aside class="hidden lg:block w-72 flex-shrink-0 sticky top-32 space-y-5">
+        <aside class="hidden lg:block w-72 flex-shrink-0 sticky top-24 space-y-5">
 
           <!-- How to read -->
           <div class="sunlit-card p-6">
-            <div class="text-3xl text-deep-green font-heading font-bold mb-3">"</div>
+            <div class="text-3xl text-deep-green font-heading font-bold mb-3 leading-none">"</div>
             <h3 class="font-heading font-bold text-charcoal text-base mb-3">How to read these project references</h3>
             <p class="text-sm text-slate leading-relaxed mb-4">
               These projects are supplied by Sunlit Solar Roof. Local partners are responsible for installation, electrical work, and system integration in accordance with local codes and standards.
             </p>
-            <ul class="space-y-2">
+            <hr class="border-border mb-4" />
+            <ul class="space-y-2.5">
               {[
                 'Products supplied by Sunlit (tiles or sheets)',
                 'Project location and application',
@@ -376,40 +388,6 @@ const otherHero = otherProjects.find(p => p.images?.length)?.images?.[0] ?? lumi
 </Layout>
 
 <script>
-  // ===== Tab switching =====
-  const tabBtns = document.querySelectorAll<HTMLButtonElement>('.tab-btn');
-  const sections = document.querySelectorAll<HTMLElement>('.project-section');
-  const browseSection = document.getElementById('section-browse');
-
-  function activateTab(tabId: string) {
-    tabBtns.forEach(btn => {
-      const active = btn.dataset.tab === tabId;
-      btn.classList.toggle('border-deep-green', active);
-      btn.classList.toggle('text-deep-green', active);
-      btn.classList.toggle('border-transparent', !active);
-      btn.classList.toggle('text-slate', !active);
-    });
-
-    if (tabId === 'all') {
-      browseSection?.classList.remove('hidden');
-      sections.forEach(s => s.classList.remove('hidden'));
-    } else {
-      browseSection?.classList.add('hidden');
-      sections.forEach(s => {
-        s.classList.toggle('hidden', s.dataset.section !== tabId);
-      });
-    }
-  }
-
-  tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => activateTab(btn.dataset.tab ?? 'all'));
-  });
-
-  // Product line card "View Projects" buttons
-  document.querySelectorAll<HTMLButtonElement>('.view-line-btn, .view-all-btn').forEach(btn => {
-    btn.addEventListener('click', () => activateTab(btn.dataset.line ?? 'all'));
-  });
-
   // ===== Application filter =====
   const appBtns = document.querySelectorAll<HTMLButtonElement>('.app-filter-btn');
   const projectCards = document.querySelectorAll<HTMLElement>('.project-card');
@@ -425,7 +403,7 @@ const otherHero = otherProjects.find(p => p.images?.length)?.images?.[0] ?? lumi
       });
       projectCards.forEach(card => {
         const match = app === 'all' || card.dataset.app === app;
-        card.closest('a')?.classList.toggle('hidden', !match);
+        (card as HTMLElement).style.display = match ? '' : 'none';
       });
     });
   });
@@ -436,7 +414,7 @@ const otherHero = otherProjects.find(p => p.images?.length)?.images?.[0] ?? lumi
     const q = searchInput.value.toLowerCase();
     projectCards.forEach(card => {
       const text = card.textContent?.toLowerCase() ?? '';
-      card.closest('a')?.classList.toggle('hidden', q.length > 0 && !text.includes(q));
+      (card as HTMLElement).style.display = (q.length > 0 && !text.includes(q)) ? 'none' : '';
     });
   });
 
@@ -445,10 +423,12 @@ const otherHero = otherProjects.find(p => p.images?.length)?.images?.[0] ?? lumi
     btn.addEventListener('click', () => {
       const target = document.getElementById(btn.dataset.target ?? '');
       if (!target) return;
-      const hidden = target.classList.toggle('hidden');
-      btn.textContent = hidden
-        ? btn.textContent?.replace('↑', '↓') ?? ''
-        : btn.textContent?.replace('↓', '↑') ?? '';
+      const isHidden = target.classList.toggle('hidden');
+      if (isHidden) {
+        btn.textContent = btn.textContent?.replace('↑', '↓') ?? '';
+      } else {
+        btn.textContent = btn.textContent?.replace('↓', '↑') ?? '';
+      }
     });
   });
 </script>
