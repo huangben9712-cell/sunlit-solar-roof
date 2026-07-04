@@ -11,111 +11,86 @@ const ASSETS = {
 };
 
 const trustItems = [
-  { label: "China Manufacturer", desc: "Own factory supply for overseas B2B solar roof projects." },
-  { label: "Factory Pricing", desc: "Direct factory pricing with clear product scope and flexible cooperation terms." },
-  { label: "Active + Inactive Supply", desc: "Complete system package including active PV, inactive elements and accessories." },
-  { label: "Samples Available", desc: "Product samples and system details available before project commitment." },
-  { label: "Export Support", desc: "Global shipping, documents and technical support for overseas projects." },
+  { label: "China Manufacturer", desc: "Factory supply for overseas B2B solar roof projects." },
+  { label: "Factory Pricing", desc: "Project-based pricing with clear active, inactive and accessory scope." },
+  { label: "Active + Inactive Supply", desc: "Solar roof tiles or sheets plus matching non-PV roof elements." },
+  { label: "Samples Available", desc: "Product samples and technical details before project commitment." },
+  { label: "Export Support", desc: "Packaging, shipping documents and overseas project communication." },
 ];
 
 const supplyItems = [
-  { title: "Active PV Tiles / Sheets", desc: "High-efficiency PV tiles or sheets for clean and reliable energy." },
-  { title: "Matching Inactive Roof Elements", desc: "Inactive tiles or sheets that match the active products in design and color." },
-  { title: "Flashing", desc: "Waterproof flashing solutions for secure and tidy roof integration." },
-  { title: "Ridge and Edge Pieces", desc: "Ridges, hips, eaves and edges for a complete roof system." },
-  { title: "Fixings", desc: "Stainless steel or aluminum fixings for wind-resistant and durable roofs." },
-  { title: "Project Documents", desc: "Drawings, BOM, installation guides and technical documentation." },
+  { title: "Active PV Tiles / Sheets", desc: "Solar-generating glass tiles or metal roof sheets supplied by product line." },
+  { title: "Matching Inactive Roof Elements", desc: "Non-PV roof elements for edges, shaded areas and visual consistency." },
+  { title: "Flashing", desc: "Roof transition and waterproofing accessories for project quotation." },
+  { title: "Ridge and Edge Pieces", desc: "Ridge, hip, eave and edge components for a complete roof package." },
+  { title: "Fixings", desc: "Fasteners and supporting components for roof-side installation planning." },
+  { title: "Project Documents", desc: "Datasheets, installation notes, BOM, packing list and quotation documents." },
 ];
 
 const audiences = [
-  { title: "For Distributors", desc: "Competitive factory pricing, product samples and cooperation support." },
-  { title: "For Solar Installers", desc: "Solar roof products for clients who want integrated alternatives to panels." },
-  { title: "For Roofing Contractors", desc: "Complete roof package discussion with active and inactive coverage." },
-  { title: "For Developers", desc: "Premium aesthetics, long-term value and scalable project quotation." },
+  { title: "For Distributors", desc: "Source differentiated solar roof products with factory pricing and sample support." },
+  { title: "For Solar Installers", desc: "Offer integrated solar roof products when clients reject standard panels." },
+  { title: "For Roofing Contractors", desc: "Discuss roof-side product packages with active and inactive coverage." },
+  { title: "For Developers", desc: "Evaluate solar roof packages for residential, commercial and premium projects." },
 ];
 ---
 
 <Layout title="China Solar Roof Tile Manufacturer - Sunlit Solar Roof">
-  <section class="relative text-center text-white overflow-hidden">
+  <section class="relative text-white overflow-hidden">
     <div class="absolute inset-0">
-      <img
-        src={ASSETS.luminaSlateHero}
-        alt="Architectural solar roof"
-        class="w-full h-full object-cover"
-      />
+      <img src={ASSETS.luminaSlateHero} alt="Architectural solar roof" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-charcoal/60"></div>
     </div>
-    <div
-      class="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-40 relative max-w-4xl"
-    >
-      <p class="sunlit-overline mb-5 text-amber">
-        China BIPV Manufacturer
-      </p>
-      <h1 class="sunlit-section-title text-4xl md:text-5xl lg:text-6xl text-white mb-6">
-        Factory-Direct Solar Roof Systems
-      </h1>
-      <p class="font-heading text-xl font-bold text-white/90 mb-8">
-        Glass Solar Roof Tiles + Metal Solar Roof Sheets
-      </p>
-      <p class="text-lg text-white/80 leading-relaxed mb-10">
-        Sunlit is a China-based factory supplying complete BIPV roof systems —
-        active PV elements, matching inactive materials, and all accessories
-        for overseas B2B projects.
-      </p>
 
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="/contact/" class="sunlit-btn-primary whitespace-nowrap">
-          Request a Quote
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-          >
-            <path
-              d="M9.62012 3.9668L14.6668 7.99947L9.62012 12.0328"
-              stroke="#111827"
-              stroke-width="1.5"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"></path>
-            <path
-              d="M1.33325 8H14.5333"
-              stroke="#111827"
-              stroke-width="1.5"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"></path>
-          </svg>
-        </a>
-        <a
-          href="/system-overview/"
-          class="border border-white/40 text-white rounded-full px-6 py-3 font-bold hover:bg-white/10 transition-colors text-center"
-        >
-          View Systems
-        </a>
-      </div>
-    </div>
-    <div class="relative pb-16">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                <a href="/lumina-slate" class="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 flex items-center gap-5 hover:border-amber transition-all group">
-                    <img src={ASSETS.luminaSlateHero} alt="Lumina Slate" class="w-24 h-24 rounded-lg object-cover"/>
-                    <div>
-                        <h3 class="font-heading font-bold text-white text-xl mb-1">Lumina Slate</h3>
-                        <p class="text-white/70">Premium glass solar tiles for architectural aesthetics.</p>
-                    </div>
-                </a>
-                <a href="/storm-guard" class="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 flex items-center gap-5 hover:border-amber transition-all group">
-                    <img src={ASSETS.stormGuardHero} alt="Storm Guard" class="w-24 h-24 rounded-lg object-cover"/>
-                    <div>
-                        <h3 class="font-heading font-bold text-white text-xl mb-1">Storm Guard</h3>
-                        <p class="text-white/70">Modern metal solar sheets for large-scale projects.</p>
-                    </div>
-                </a>
-            </div>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-36 relative">
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-7 max-w-3xl">
+          <p class="sunlit-overline mb-5 text-amber">China Solar Roof Tile Manufacturer</p>
+          <h1 class="sunlit-section-title text-4xl md:text-5xl lg:text-6xl text-white mb-6">
+            Factory Supply for Complete Solar Roof Tile Packages
+          </h1>
+          <p class="font-heading text-xl md:text-2xl font-bold text-white/95 mb-6">
+            Glass Solar Roof Tiles + Metal Solar Roof Sheets
+          </p>
+          <p class="text-lg text-white/80 leading-relaxed mb-5 max-w-2xl">
+            Active solar roof tiles or sheets, matching inactive roof elements, flashing, fixings and roofing accessories for overseas B2B buyers.
+          </p>
+          <p class="text-base text-white/70 leading-relaxed mb-10 max-w-2xl">
+            Sunlit is a China-based manufacturer and export supplier. We help distributors, installers, contractors and project buyers source solar roof products with clearer factory scope, samples, documents, packaging and project-based quotation support.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-start gap-4">
+            <a href="/contact/" class="sunlit-btn-primary whitespace-nowrap">Get Factory Pricing →</a>
+            <a href="/system-overview/" class="border border-white/40 text-white rounded-full px-6 py-3 font-bold hover:bg-white/10 transition-colors text-center">View Supply Scope</a>
+            <a href="/contact/" class="border border-white/40 text-white rounded-full px-6 py-3 font-bold hover:bg-white/10 transition-colors text-center">Send Roof Drawing</a>
+          </div>
         </div>
+
+        <div class="lg:col-span-5 hidden lg:block">
+          <div class="grid gap-4">
+            <a href="/lumina-slate/" class="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-5 flex items-center gap-5 hover:border-amber transition-all group">
+              <img src={ASSETS.luminaSlateHero} alt="Lumina Slate" class="w-28 h-24 rounded-xl object-cover" />
+              <div>
+                <p class="text-xs uppercase tracking-[0.16em] text-amber font-bold mb-1">Product Line 01</p>
+                <h3 class="font-heading font-bold text-white text-xl mb-1">Lumina Slate</h3>
+                <p class="text-white/70 text-sm">Premium glass solar roof tiles for villas and architectural projects.</p>
+              </div>
+            </a>
+            <a href="/storm-guard/" class="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-5 flex items-center gap-5 hover:border-amber transition-all group">
+              <img src={ASSETS.stormGuardHero} alt="Storm Guard" class="w-28 h-24 rounded-xl object-cover" />
+              <div>
+                <p class="text-xs uppercase tracking-[0.16em] text-amber font-bold mb-1">Product Line 02</p>
+                <h3 class="font-heading font-bold text-white text-xl mb-1">Storm Guard</h3>
+                <p class="text-white/70 text-sm">Metal solar roof sheets for modern, commercial and large-area roofs.</p>
+              </div>
+            </a>
+            <div class="bg-white text-charcoal rounded-2xl p-6 shadow-xl">
+              <p class="font-heading font-bold text-lg mb-2">Factory Scope First</p>
+              <p class="text-sm text-slate leading-relaxed">Active elements, inactive coverage and accessories are quoted together as a product supply package.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -144,15 +119,16 @@ const audiences = [
       <div class="text-center max-w-3xl mx-auto mb-12">
         <p class="sunlit-overline mb-4">Two Product Lines, One Factory</p>
         <h2 class="sunlit-section-title text-4xl md:text-5xl">Choose the Product Line That Fits the Project</h2>
+        <p class="text-slate leading-relaxed mt-5">Lumina Slate focuses on premium glass solar roof tiles. Storm Guard focuses on modern metal solar roof sheets with a more practical cost position.</p>
       </div>
 
       <div class="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
         <a href="/lumina-slate/" class="sunlit-card block group overflow-hidden">
           <img src={ASSETS.luminaSlateHero} alt="Lumina Slate glass solar roof tiles" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-[1.02]" />
           <div class="p-8">
-            <span class="inline-flex px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold mb-4">Premium Glass System</span>
+            <span class="inline-flex px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold mb-4">Premium Glass Tile Line</span>
             <h3 class="font-heading text-2xl font-bold mb-3 text-charcoal">Lumina Slate Glass Solar Roof Tiles</h3>
-            <p class="text-slate leading-relaxed mb-6">Premium glass slate-look solar roof tiles with matching inactive glass tiles and accessories. Ideal for villas and premium architectural projects that require refined aesthetics and long-term performance.</p>
+            <p class="text-slate leading-relaxed mb-6">Premium glass slate-look solar roof tiles with matching inactive glass tiles and accessories. Built for villas and architectural projects where appearance is part of the value.</p>
             <span class="font-bold text-deep-green group-hover:text-amber transition-colors flex items-center gap-2">Explore Lumina Slate →</span>
           </div>
         </a>
@@ -160,9 +136,9 @@ const audiences = [
         <a href="/storm-guard/" class="sunlit-card block group overflow-hidden">
           <img src={ASSETS.stormGuardHero} alt="Storm Guard metal solar roof sheets" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-[1.02]" />
           <div class="p-8">
-            <span class="inline-flex px-3 py-1 rounded-full bg-soft-green text-deep-green text-xs font-bold mb-4">Modern Metal System</span>
+            <span class="inline-flex px-3 py-1 rounded-full bg-soft-green text-deep-green text-xs font-bold mb-4">Modern Metal Sheet Line</span>
             <h3 class="font-heading text-2xl font-bold mb-3 text-charcoal">Storm Guard Metal Solar Roof Sheets</h3>
-            <p class="text-slate leading-relaxed mb-6">Modern metal roof sheets with matching inactive metal elements and accessories. Cost-effective and practical for residential, commercial, public and large-area roof projects.</p>
+            <p class="text-slate leading-relaxed mb-6">Modern metal roof sheets with matching inactive metal elements and accessories. Built for residential, commercial, public and large-area roof projects.</p>
             <span class="font-bold text-deep-green group-hover:text-amber transition-colors flex items-center gap-2">Explore Storm Guard →</span>
           </div>
         </a>
@@ -175,7 +151,7 @@ const audiences = [
       <div class="text-center max-w-3xl mx-auto mb-12">
         <p class="sunlit-overline mb-4">Factory Supply Scope</p>
         <h2 class="sunlit-section-title text-4xl md:text-5xl">What We Can Supply as a Manufacturer</h2>
-        <p class="text-slate leading-relaxed mt-5">All components are defined clearly for quotation, production and project delivery. Local roofing and electrical work should be handled by qualified local professionals.</p>
+        <p class="text-slate leading-relaxed mt-5">A serious quotation should define the factory-side product package first. Local roofing and electrical work should be handled by qualified local professionals.</p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-6 gap-5">
         {supplyItems.map((item, index) => (
@@ -201,20 +177,14 @@ const audiences = [
       <div class="text-center max-w-3xl mx-auto mb-12">
         <p class="sunlit-overline mb-4">Built for Professional B2B Buyers</p>
         <h2 class="sunlit-section-title text-4xl md:text-5xl">Designed Around B2B Sourcing Decisions</h2>
+        <p class="text-slate leading-relaxed mt-5">The homepage should help professional buyers quickly understand product fit, quotation scope and cooperation path.</p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
-        {audiences.map((audience, index) => (
-          <div class="sunlit-card p-6 flex gap-4 items-start">
-            <div class="w-12 h-12 rounded-2xl bg-soft-green text-deep-green flex items-center justify-center shrink-0">
-              {index === 0 && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>}
-              {index === 1 && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8"/><path d="m16 6-4 4-4-4"/><path d="M20 14a8 8 0 1 1-16 0"/><path d="M4 14h16"/></svg>}
-              {index === 2 && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 18-18"/><path d="m7 17 10-10"/><path d="M5 21h14"/><path d="M3 19h4"/><path d="M17 5h4"/></svg>}
-              {index === 3 && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/><path d="M15 21V9"/></svg>}
-            </div>
-            <div>
-              <h3 class="font-heading font-bold text-lg text-charcoal mb-2">{audience.title}</h3>
-              <p class="text-sm text-slate leading-relaxed">{audience.desc}</p>
-            </div>
+        {audiences.map((audience) => (
+          <div class="sunlit-card p-6">
+            <div class="w-12 h-12 rounded-2xl bg-soft-green text-deep-green flex items-center justify-center mb-5 font-heading font-bold">B2B</div>
+            <h3 class="font-heading font-bold text-lg text-charcoal mb-2">{audience.title}</h3>
+            <p class="text-sm text-slate leading-relaxed">{audience.desc}</p>
           </div>
         ))}
       </div>
@@ -272,9 +242,8 @@ const audiences = [
     </div>
   </section>
 
-  <section class="py-16 md:py-24 dark-green-gradient text-white relative overflow-hidden">
-    <div class="absolute inset-0 opacity-20"><img src={ASSETS.luminaSlateHero} alt="Solar roof background" class="w-full h-full object-cover" loading="lazy" /></div>
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+  <section class="py-16 md:py-24 dark-green-gradient text-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-10 items-center">
         <div>
           <p class="uppercase tracking-[0.16em] text-white/70 font-bold text-xs mb-4">Start with a Roof Drawing</p>
@@ -288,7 +257,7 @@ const audiences = [
         <div class="grid sm:grid-cols-2 gap-5">
           <div class="bg-white/10 border border-white/20 rounded-2xl p-5 backdrop-blur-sm"><div class="font-heading font-bold text-xl mb-2">Direct Factory</div><p class="text-white/70 text-sm">Better value and clearer product scope.</p></div>
           <div class="bg-white/10 border border-white/20 rounded-2xl p-5 backdrop-blur-sm"><div class="font-heading font-bold text-xl mb-2">Project-Based Quote</div><p class="text-white/70 text-sm">Quoted according to roof layout and supply package.</p></div>
-          <div class="bg-white/10 border border-white/20 rounded-2xl p-5 backdrop-blur-sm"><div class="font-heading font-bold text-xl mb-2">Global Shipping</div><p class="text-white/70 text-sm">Export packaging and shipping document support.</p></div>
+          <div class="bg-white/10 border border-white/20 rounded-2xl p-5 backdrop-blur-sm"><div class="font-heading font-bold text-xl mb-2">Export Support</div><p class="text-white/70 text-sm">Packaging, shipping document and delivery communication.</p></div>
           <div class="bg-white/10 border border-white/20 rounded-2xl p-5 backdrop-blur-sm"><div class="font-heading font-bold text-xl mb-2">Long-Term Cooperation</div><p class="text-white/70 text-sm">For distributors, installers and project buyers.</p></div>
         </div>
       </div>
