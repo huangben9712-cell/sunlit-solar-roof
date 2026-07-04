@@ -4,22 +4,21 @@ const navItems = [
     label: "Products",
     href: "/system-overview/",
     submenu: [
+      { label: "Supply Scope", href: "/system-overview/" },
       { label: "Lumina Slate", href: "/lumina-slate/" },
       { label: "Storm Guard", href: "/storm-guard/" },
-      { label: "Supply Scope", href: "/system-overview/" },
     ],
   },
   { label: "Projects", href: "/projects/" },
-  { label: "About", href: "/about/" },
   {
     label: "Resources",
     href: "/resources/",
     submenu: [
       { label: "Knowledge Base", href: "/resources/knowledge-base/" },
-      { label: "Articles", href: "/articles/" },
       { label: "Downloads", href: "/resources/downloads/" },
     ],
   },
+  { label: "About Us", href: "/about/" },
   { label: "Contact", href: "/contact/" },
 ];
 
@@ -173,7 +172,7 @@ const contactItem = { label: "Get Factory Pricing", href: "/contact/" };
     <div
       class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-2"
     >
-      {[...navItems, { label: "Contact", href: "/contact" }].map((item) => (
+      {[...navItems].map((item) => (
         <div>
           {item.submenu ? (
             <>
