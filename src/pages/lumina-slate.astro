@@ -1,144 +1,211 @@
-﻿---
+---
 import Layout from '../layouts/Layout.astro';
-import { getComponentsBySystem } from '../data/systemComponents';
 import { productFAQs, generalFAQs } from '../data/faqs';
 
-const components = getComponentsBySystem('Lumina Slate');
-const displayFaqs = [...productFAQs, ...generalFAQs].slice(0, 5);
 const heroImage = "https://d2xsxph8kpxj0f.cloudfront.net/310519663705242844/mtvS4X69r9pvLdqcQTXPeQ/lumina-slate-hero-dFoW7mbWnUAgHmoQ6n9iPk.webp";
+const faqs = [...productFAQs, ...generalFAQs].slice(0, 5);
 
-const specs = [
-  ["Factory Role", "China manufacturer and export supplier"],
-  ["Product Line", "Premium slate-look glass solar roof tiles"],
-  ["Active Element", "AG-etched frameless double-glass PV roof tiles"],
-  ["Inactive Element", "Matching glass inactive roof tiles"],
-  ["Best Fit", "Villas, premium residential roofs, architectural projects"],
-  ["Documents", "Datasheets and warranty documents available upon request"],
+const proofCards = [
+  { title: 'Premium Roof Appearance', desc: 'A slate-look glass roof surface for villas, estates and architecture-led projects where standard panels are visually unacceptable.' },
+  { title: 'Active + Inactive Coverage', desc: 'Active PV tiles and matching inactive glass tiles are discussed together, so the roof does not become a patchwork surface.' },
+  { title: 'Factory Supply Package', desc: 'Tiles, matching roof elements, accessories, documents and export support can be reviewed as one factory-side package.' },
+  { title: 'Project-Based Quotation', desc: 'The quotation direction depends on roof area, active coverage, inactive coverage, accessories, packing and destination.' },
 ];
 
-const applications = ["Premium villas", "High-end residential roofs", "Architectural projects", "Distributors and project buyers"];
+const components = [
+  {
+    title: 'Active Glass PV Tile',
+    desc: 'Solar-generating glass roof tile used on suitable roof areas.',
+    specs: ['Size: 1240 × 390 mm', 'Thickness: 6.2 mm', 'Power: 70W per tile', 'Weight: approx. 14.5 kg/m²'],
+  },
+  {
+    title: 'Matching Inactive Glass Tile',
+    desc: 'Non-generating glass roof tile for edges, shaded areas and visual continuity.',
+    specs: ['Size: 1240 × 390 mm', 'Thickness: 6.2 mm', 'Material: tempered glass', 'Weight: approx. 14.5 kg/m²'],
+  },
+  {
+    title: 'Ridge / Hip / Edge Pieces',
+    desc: 'Roof finishing components used to close and detail the full roof package.',
+    specs: ['Dimensions: project-specific', 'Use: ridge, hip, eave and edge areas', 'Quoted by roof shape', 'Matched with Lumina Slate layout'],
+  },
+  {
+    title: 'Flashing and Waterproofing Details',
+    desc: 'Transition details for valleys, walls, penetrations and junctions.',
+    specs: ['Dimensions: project-specific', 'Use: roof transitions and junctions', 'Requires local roof detail review', 'Quoted by project scope'],
+  },
+  {
+    title: 'Fixings and Accessories',
+    desc: 'Supporting components used for roof-side installation planning.',
+    specs: ['Selected by roof build-up', 'Reviewed with drawings when available', 'Local installation responsibility remains local', 'Included by quotation scope'],
+  },
+  {
+    title: 'Project Documents',
+    desc: 'Documents that support product evaluation, quotation and local installation communication.',
+    specs: ['Datasheet', 'Installation notes', 'BOM / packing list', 'Warranty document'],
+  },
+];
+
+const modelSpecs = [
+  ['Lumina Slate Pro', '1240 × 390 × 6.2 mm', '70W', 'Premium glass tile projects'],
+  ['Lumina Slate Plus', '1408 × 438 mm', '100W', 'Larger glass tile layouts'],
+  ['Lumina Slate P135', '1950 × 420 mm', '135W', 'Higher-output roof areas'],
+  ['Inactive Glass Tile', '1240 × 390 × 6.2 mm', 'Non-PV', 'Matching non-generating roof areas'],
+];
+
+const goodFit = ['Premium villas and estates', 'High-end residential developments', 'Architecture-led roofs', 'Projects where curb appeal matters'];
+const notIdeal = ['Lowest-cost roof projects', 'Buyers who only want standard rooftop panels', 'Projects where local roof teams cannot review BIPV details'];
+
+const process = [
+  { step: '01', title: 'Start with the Roof Goal', desc: 'Tell us the country, roof type, rough area, photos or desired appearance. Drawings help but are not required for the first message.' },
+  { step: '02', title: 'Review Active + Inactive Areas', desc: 'We discuss which areas may use active PV tiles and where matching inactive glass tiles may be needed.' },
+  { step: '03', title: 'Define Accessories and Documents', desc: 'Ridge, edge, flashing, fixings, packing and documents are reviewed as part of the quotation direction.' },
+  { step: '04', title: 'Move Toward Factory Pricing', desc: 'Once the roof scope is clearer, we can prepare a project-based factory quotation and sample/document direction.' },
+];
 ---
 
-<Layout title="Lumina Slate Solar Roof Tiles - China Manufacturer" description="Lumina Slate: premium frameless double-glass BIPV solar roof tiles with matching inactive tiles. Factory-direct from China.">
+<Layout title="Lumina Slate Glass Solar Roof Tiles - Sunlit Solar Roof" description="Lumina Slate is Sunlit's premium glass solar roof tile line with active PV tiles, matching inactive glass tiles and factory-side roof package support.">
   <section class="border-b border-border bg-white">
     <div class="container mx-auto px-4 py-4 text-sm text-slate">
       <a href="/" class="hover:text-deep-green">Home</a>
       <span class="mx-2">/</span>
-      <a href="/system-overview/" class="hover:text-deep-green">Solar Roof Supply Scope</a>
+      <a href="/system-overview/" class="hover:text-deep-green">Supply Scope</a>
       <span class="mx-2">/</span>
       <span class="font-bold text-charcoal">Lumina Slate</span>
     </div>
   </section>
 
-  <section class="bg-soft-green py-14 md:py-20">
-    <div class="container mx-auto px-4">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <p class="sunlit-overline mb-4">China Manufacturer · Premium Glass Solar Roof Tiles</p>
-          <h1 class="sunlit-section-title text-4xl md:text-6xl mb-6">Lumina Slate Glass Solar Roof Tiles for Overseas Projects</h1>
-          <p class="text-lg md:text-xl text-slate leading-relaxed mb-8">
-            Factory supply of AG-etched frameless double-glass PV roof tiles, matching glass inactive tiles, flashing, fixings and accessories for premium villas, residential developments and architectural projects.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-3 mb-8">
-            <a href="/contact/" class="sunlit-btn-primary">Get Factory Quote <span>→</span></a>
-            <a href="/resources/" class="sunlit-btn-secondary">Request Datasheet</a>
-          </div>
-          <div class="grid grid-cols-3 gap-3">
-            <div class="stat-pill p-4"><div class="font-heading font-bold text-deep-green">China Factory</div><div class="text-xs text-slate">Export supply</div></div>
-            <div class="stat-pill p-4"><div class="font-heading font-bold text-deep-green">Active + Inactive</div><div class="text-xs text-slate">Package scope</div></div>
-            <div class="stat-pill p-4"><div class="font-heading font-bold text-deep-green">Premium Glass</div><div class="text-xs text-slate">Slate-like finish</div></div>
-          </div>
+  <section class="bg-soft-green py-16 md:py-24">
+    <div class="container mx-auto px-4 grid lg:grid-cols-[1fr_0.95fr] gap-12 items-center">
+      <div>
+        <p class="sunlit-overline mb-4">Premium Glass Solar Roof Tile Line</p>
+        <h1 class="sunlit-section-title text-4xl md:text-6xl mb-6">Lumina Slate for Roofs Where Appearance Is Part of the Value</h1>
+        <p class="text-lg text-slate leading-relaxed mb-5">Lumina Slate is a glass solar roof tile product line for villas, premium residential projects and architectural roofs that need both solar generation and a refined roof surface.</p>
+        <p class="text-slate leading-relaxed mb-8">The factory package can include active glass PV tiles, matching inactive glass tiles, roof detailing accessories, documents, packaging and export communication.</p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/contact/" class="sunlit-btn-primary">Ask About Lumina Slate</a>
+          <a href="#components" class="sunlit-btn-secondary">View Components</a>
+          <a href="/system-overview/" class="sunlit-btn-secondary">View Supply Scope</a>
         </div>
-        <div class="sunlit-card overflow-hidden p-3">
-          <img src={heroImage} alt="Lumina Slate glass solar roof tiles from China manufacturer" class="w-full h-[420px] object-cover rounded-2xl" />
-        </div>
+      </div>
+      <div class="sunlit-card overflow-hidden p-3">
+        <img src={heroImage} alt="Lumina Slate glass solar roof tiles" class="w-full h-[420px] object-cover rounded-2xl" />
       </div>
     </div>
   </section>
 
   <section class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-4">
-      <div class="grid lg:grid-cols-3 gap-10 items-start">
-        <div>
-          <p class="sunlit-overline mb-3">What We Supply</p>
-          <h2 class="sunlit-section-title text-3xl md:text-4xl mb-4">Premium Glass Solar Roof Tile Supply, Not a Vague Turnkey Claim</h2>
-          <p class="text-slate leading-relaxed">
-            Lumina Slate is presented as a factory-supplied product package. Sunlit supplies the active and inactive roof elements and related accessories. Local roof and electrical work should be handled by qualified local professionals.
-          </p>
-        </div>
-        <div class="lg:col-span-2 grid sm:grid-cols-2 gap-5">
+      <div class="max-w-3xl mb-10">
+        <p class="sunlit-overline mb-4">Why Buyers Choose It</p>
+        <h2 class="sunlit-section-title text-3xl md:text-5xl mb-5">A Solar Roof Tile Line for Visual Trust</h2>
+        <p class="text-slate leading-relaxed">For this product line, the first decision is not only wattage. The buyer needs to believe the roof will still look premium after it starts generating power.</p>
+      </div>
+      <div class="grid md:grid-cols-4 gap-5">
+        {proofCards.map((item) => (
           <div class="sunlit-card p-6">
-            <div class="h-32 image-placeholder rounded-2xl mb-5"></div>
-            <h3 class="font-heading font-bold text-xl mb-2">Active PV Roof Tile</h3>
-            <p class="text-slate leading-relaxed">AG-etched frameless double-glass PV roof tiles provide solar generation while keeping a slate-like roof appearance.</p>
+            <h3 class="font-heading font-bold text-xl text-charcoal mb-3">{item.title}</h3>
+            <p class="text-sm text-slate leading-relaxed">{item.desc}</p>
           </div>
-          <div class="sunlit-card p-6">
-            <div class="h-32 image-placeholder rounded-2xl mb-5"></div>
-            <h3 class="font-heading font-bold text-xl mb-2">Matching Inactive Tile</h3>
-            <p class="text-slate leading-relaxed">Matching glass inactive tiles cover non-generating roof areas and help the full roof keep a consistent appearance.</p>
-          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="components" class="py-16 md:py-24 bg-light-gray border-y border-border">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="sunlit-overline mb-4">Component Package</p>
+        <h2 class="sunlit-section-title text-3xl md:text-5xl mb-5">What Lumina Slate Can Include</h2>
+        <p class="text-slate leading-relaxed">Key specs are shown as previews only. Full technical specifications should be confirmed through datasheets and project quotation.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {components.map((component) => (
+          <details class="sunlit-card p-6">
+            <summary class="cursor-pointer font-heading font-bold text-xl text-charcoal">{component.title}</summary>
+            <p class="text-slate leading-relaxed mt-4 mb-4">{component.desc}</p>
+            <div class="rounded-2xl bg-soft-green border border-deep-green/10 p-4">
+              <p class="text-xs font-heading font-bold text-deep-green uppercase tracking-[0.12em] mb-3">Key Specs Preview</p>
+              <ul class="space-y-2 text-sm text-slate">
+                {component.specs.map((spec) => <li>• {spec}</li>)}
+              </ul>
+            </div>
+            <a href="/contact/" class="inline-block mt-4 font-heading font-bold text-deep-green">Ask about this component →</a>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4 grid lg:grid-cols-[0.8fr_1.2fr] gap-10 items-start">
+      <div>
+        <p class="sunlit-overline mb-4">Technical Evaluation</p>
+        <h2 class="sunlit-section-title text-3xl md:text-5xl mb-5">Model Options and Key Parameters</h2>
+        <p class="text-slate leading-relaxed mb-6">Use this table for early evaluation. Final model selection, active coverage and quantities should be confirmed by project layout and factory quotation.</p>
+        <a href="/contact/" class="sunlit-btn-secondary">Request Datasheet</a>
+      </div>
+      <div class="sunlit-card overflow-hidden">
+        <div class="grid grid-cols-4 bg-deep-green text-white font-heading font-bold">
+          <div class="p-4">Model / Item</div>
+          <div class="p-4">Size</div>
+          <div class="p-4">Power</div>
+          <div class="p-4">Use</div>
         </div>
+        {modelSpecs.map((row) => (
+          <div class="grid grid-cols-4 border-b border-border last:border-b-0">
+            <div class="p-4 font-heading font-bold text-charcoal">{row[0]}</div>
+            <div class="p-4 text-slate">{row[1]}</div>
+            <div class="p-4 text-slate">{row[2]}</div>
+            <div class="p-4 text-slate">{row[3]}</div>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
   <section class="py-16 md:py-24 bg-soft-green">
-    <div class="container mx-auto px-4">
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <p class="sunlit-overline mb-3">Factory Supply Package</p>
-        <h2 class="sunlit-section-title text-3xl md:text-5xl mb-4">What the Lumina Slate Package May Include</h2>
-        <p class="text-slate">Component details are evaluated by project. The following structure helps overseas buyers understand the factory supply scope before requesting a quotation.</p>
+    <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-8">
+      <div class="sunlit-card p-8">
+        <p class="sunlit-overline mb-4">Best Fit</p>
+        <h2 class="font-heading font-bold text-3xl mb-6">Choose Lumina Slate When...</h2>
+        <ul class="space-y-3 text-slate">
+          {goodFit.map((item) => <li>✓ {item}</li>)}
+        </ul>
       </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-5">
-        {components.map((component, index) => (
-          <div class="sunlit-card p-5">
-            <div class="text-xs font-heading font-bold text-deep-green mb-3">0{index + 1}</div>
-            <h3 class="font-heading font-bold text-charcoal mb-2">{component.name}</h3>
-            <p class="text-sm text-slate leading-relaxed">{component.description}</p>
-          </div>
-        ))}
+      <div class="sunlit-card p-8">
+        <p class="sunlit-overline mb-4">Expectation Setting</p>
+        <h2 class="font-heading font-bold text-3xl mb-6">It May Not Be the First Choice When...</h2>
+        <ul class="space-y-3 text-slate">
+          {notIdeal.map((item) => <li>• {item}</li>)}
+        </ul>
       </div>
     </div>
   </section>
 
   <section class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-4">
-      <div class="grid lg:grid-cols-2 gap-10">
-        <div>
-          <p class="sunlit-overline mb-3">Early Evaluation</p>
-          <h2 class="sunlit-section-title text-3xl md:text-4xl mb-4">Key Information for Factory Quotation</h2>
-          <p class="text-slate mb-6">Final specifications depend on roof layout, active and inactive coverage, selected components and destination. Detailed datasheets are available upon request.</p>
-          <a href="/contact/" class="sunlit-btn-green">Send Roof Drawing <span>→</span></a>
-        </div>
-        <div class="sunlit-card overflow-hidden">
-          {specs.map(([label, value]) => (
-            <div class="grid grid-cols-3 gap-4 p-4 border-b border-border last:border-b-0">
-              <div class="font-heading font-bold text-charcoal">{label}</div>
-              <div class="col-span-2 text-slate">{value}</div>
-            </div>
-          ))}
-        </div>
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="sunlit-overline mb-4">Quotation Path</p>
+        <h2 class="sunlit-section-title text-3xl md:text-5xl">Start with What You Have</h2>
       </div>
-    </div>
-  </section>
-
-  <section class="py-16 bg-soft-green">
-    <div class="container mx-auto px-4">
-      <p class="sunlit-overline text-center mb-3">Suitable Projects</p>
-      <div class="grid md:grid-cols-4 gap-4">
-        {applications.map((app) => (
-          <div class="sunlit-card-soft p-6 text-center font-heading font-bold text-charcoal">{app}</div>
+      <div class="grid md:grid-cols-4 gap-5">
+        {process.map((item) => (
+          <div class="sunlit-card p-6">
+            <div class="text-sm font-heading font-bold text-deep-green mb-4">{item.step}</div>
+            <h3 class="font-heading font-bold text-charcoal mb-3">{item.title}</h3>
+            <p class="text-sm text-slate leading-relaxed">{item.desc}</p>
+          </div>
         ))}
       </div>
     </div>
   </section>
 
-  <section id="faq" class="py-16 md:py-24 bg-white">
+  <section id="faq" class="py-16 md:py-24 bg-light-gray border-y border-border">
     <div class="container mx-auto px-4 max-w-4xl">
       <h2 class="sunlit-section-title text-3xl md:text-5xl mb-10 text-center">Lumina Slate FAQ</h2>
       <div class="space-y-4">
-        {displayFaqs.map((faq) => (
-          <div class="border border-border rounded-2xl p-6">
+        {faqs.map((faq) => (
+          <div class="sunlit-card p-6">
             <h3 class="font-heading font-bold text-charcoal mb-2">{faq.question}</h3>
             <p class="text-slate leading-relaxed">{faq.answer}</p>
           </div>
@@ -148,11 +215,12 @@ const applications = ["Premium villas", "High-end residential roofs", "Architect
   </section>
 
   <section class="py-16 md:py-20 dark-green-gradient text-white">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl md:text-5xl font-heading font-bold mb-5">Evaluate Lumina Slate for Your Project</h2>
-      <p class="text-lg text-white/75 max-w-2xl mx-auto mb-8">Send your roof drawing, country and estimated roof area. We will help discuss active and inactive coverage, accessory scope and factory quotation direction.</p>
+    <div class="container mx-auto px-4 text-center max-w-4xl">
+      <p class="uppercase tracking-[0.16em] text-white/70 font-bold text-xs mb-4">Low-pressure first step</p>
+      <h2 class="text-3xl md:text-5xl font-heading font-bold mb-5">Ask Whether Lumina Slate Fits Your Roof</h2>
+      <p class="text-lg text-white/75 max-w-2xl mx-auto mb-8">Send your country, estimated roof area, photos, drawings or a simple product question. We will help review active/inactive coverage and factory quotation direction.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact/" class="sunlit-btn-primary">Get Lumina Factory Quote <span>→</span></a>
+        <a href="/contact/" class="sunlit-btn-primary">Ask About Lumina Slate</a>
         <a href="/projects/" class="border border-white/60 text-white rounded-full px-6 py-3 font-heading font-bold hover:bg-white/10">View Projects</a>
       </div>
     </div>
