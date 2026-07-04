@@ -1,145 +1,205 @@
-﻿---
+---
 import Layout from '../layouts/Layout.astro';
-import { getComponentsBySystem } from '../data/systemComponents';
 import { productFAQs, generalFAQs } from '../data/faqs';
 
-const components = getComponentsBySystem('Storm Guard');
-const faqs = [...productFAQs, ...generalFAQs].slice(0, 5);
 const heroImage = "https://d2xsxph8kpxj0f.cloudfront.net/310519663705242844/mtvS4X69r9pvLdqcQTXPeQ/storm-guard-hero-Rv3C82SNHYaBM2TVgU4t7W.webp";
+const faqs = [...productFAQs, ...generalFAQs].slice(0, 5);
 
-const specs = [
-  ["Factory Role", "China manufacturer and export supplier"],
-  ["Product Line", "Modern metal solar roof sheets"],
-  ["Active Element", "Low-standing-seam Al-Mg-Mn metal solar roof sheets"],
-  ["Inactive Element", "Matching inactive metal roof elements"],
-  ["Main Buyer Value", "More practical cost position than premium glass systems"],
-  ["Best Fit", "Modern residential, commercial, public and large roof projects"],
-  ["Documents", "Datasheets and warranty documents available upon request"]
+const proofCards = [
+  { title: 'Modern Metal Roof Look', desc: 'A clean metal roof profile for buyers who want solar generation without a conventional panel array appearance.' },
+  { title: 'Practical Project Position', desc: 'Better suited to larger or more cost-sensitive projects than a premium glass tile roof line.' },
+  { title: 'Active + Inactive Metal Coverage', desc: 'Active solar sheets and matching inactive metal elements are reviewed together for a consistent roof surface.' },
+  { title: 'Factory Supply Package', desc: 'Sheets, matching elements, accessories, documents and export support can be discussed as one project package.' },
 ];
 
-const applications = ["Modern homes", "Commercial buildings", "Public buildings", "Large roof projects"];
+const components = [
+  {
+    title: 'Active Metal Solar Roof Sheet',
+    desc: 'Solar-generating metal roof sheet used on suitable roof areas.',
+    specs: ['Size: project / model based', 'Material: Al-Mg-Mn metal roof sheet', 'Profile: low standing seam', 'Power: model dependent'],
+  },
+  {
+    title: 'Matching Inactive Metal Roof Sheet',
+    desc: 'Non-generating metal roof sheet used where PV is not required or not suitable.',
+    specs: ['Size: project / model based', 'Material: matching Al-Mg-Mn metal', 'Coating: fluorocarbon coating', 'Profile: matched with active sheet'],
+  },
+  {
+    title: 'Metal Ridge / Edge / Trim Accessories',
+    desc: 'Metal roof finishing components for ridges, edges, eaves and transitions.',
+    specs: ['Dimensions: project-specific', 'Use: ridge, edge and trim areas', 'Matched to roof profile', 'Quoted by roof detail'],
+  },
+  {
+    title: 'Flashing and Drainage Details',
+    desc: 'Metal roof transition details for waterproofing and roof junctions.',
+    specs: ['Dimensions: project-specific', 'Use: wall junctions, penetrations and drainage areas', 'Requires local detailing review', 'Quoted by project scope'],
+  },
+  {
+    title: 'Clips / Fixings / Mounting-Related Parts',
+    desc: 'Supporting parts used for metal roof installation planning.',
+    specs: ['Selected by roof build-up', 'Reviewed with local method', 'Supports roof-side assembly', 'Included by quotation scope'],
+  },
+  {
+    title: 'Project Documents',
+    desc: 'Documents that support product evaluation, quotation and local installation communication.',
+    specs: ['Datasheet', 'Installation notes', 'BOM / packing list', 'Warranty document'],
+  },
+];
+
+const keySpecs = [
+  ['Product Line', 'Storm Guard Metal Solar Roof Sheets'],
+  ['Active Element', 'Low-standing-seam Al-Mg-Mn metal solar roof sheet'],
+  ['Inactive Element', 'Matching inactive metal roof element'],
+  ['Coating Direction', 'Fluorocarbon coating for metal roof finish'],
+  ['Size / Power', 'Project and model based'],
+  ['Best Fit', 'Modern residential, commercial, public and large roof projects'],
+];
+
+const goodFit = ['Modern residential roofs', 'Commercial and public buildings', 'Large roof areas', 'Projects needing a more practical cost position'];
+const notIdeal = ['Projects requiring a slate-look glass roof', 'Ultra-premium villa roofs where glass aesthetics are the first priority', 'Buyers who only want loose PV panels without roof package scope'];
+
+const process = [
+  { step: '01', title: 'Start with Project Use', desc: 'Tell us whether the roof is residential, commercial, public or large-area. Photos and rough roof size are enough for the first discussion.' },
+  { step: '02', title: 'Review Metal Roof Direction', desc: 'We discuss whether the Storm Guard metal profile fits the building appearance, budget position and local roof practice.' },
+  { step: '03', title: 'Define Active + Inactive Coverage', desc: 'Active solar sheet areas, inactive metal sheet areas and roof accessories are reviewed as one package.' },
+  { step: '04', title: 'Move Toward Factory Pricing', desc: 'When the roof scope is clearer, we can discuss quantities, packing, documents, samples and export terms.' },
+];
 ---
 
-<Layout title="Storm Guard Metal Solar Roof Sheets - China Manufacturer" description="Storm Guard: low-standing-seam Al-Mg-Mn metal BIPV solar roof sheets. Cost-effective factory supply for large-area projects.">
+<Layout title="Storm Guard Metal Solar Roof Sheets - Sunlit Solar Roof" description="Storm Guard is Sunlit's modern metal solar roof sheet line with active metal PV sheets, matching inactive metal roof elements and project-based factory supply support.">
   <section class="border-b border-border bg-white">
     <div class="container mx-auto px-4 py-4 text-sm text-slate">
       <a href="/" class="hover:text-deep-green">Home</a>
       <span class="mx-2">/</span>
-      <a href="/system-overview/" class="hover:text-deep-green">Solar Roof Supply Scope</a>
+      <a href="/system-overview/" class="hover:text-deep-green">Supply Scope</a>
       <span class="mx-2">/</span>
       <span class="font-bold text-charcoal">Storm Guard</span>
     </div>
   </section>
 
-  <section class="bg-soft-green py-14 md:py-20">
-    <div class="container mx-auto px-4">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <p class="sunlit-overline mb-4">China Manufacturer · Metal Solar Roof Sheets</p>
-          <h1 class="sunlit-section-title text-4xl md:text-6xl mb-6">Storm Guard Metal Solar Roof Sheets for Overseas Projects</h1>
-          <p class="text-lg md:text-xl text-slate leading-relaxed mb-8">
-            Factory supply of low-standing-seam Al-Mg-Mn metal solar roof sheets, matching inactive metal roof elements, flashing, fixings and accessories for modern residential, commercial, public and large roof projects.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-3 mb-8">
-            <a href="/contact/" class="sunlit-btn-primary">Get Factory Quote</a>
-            <a href="/resources/" class="sunlit-btn-secondary">Request Datasheet</a>
-          </div>
-          <div class="grid grid-cols-3 gap-3">
-            <div class="stat-pill p-4"><div class="font-heading font-bold text-deep-green">China Factory</div><div class="text-xs text-slate">Export supply</div></div>
-            <div class="stat-pill p-4"><div class="font-heading font-bold text-deep-green">Metal Roof</div><div class="text-xs text-slate">Modern profile</div></div>
-            <div class="stat-pill p-4"><div class="font-heading font-bold text-deep-green">Project Based</div><div class="text-xs text-slate">Quoted by roof layout</div></div>
-          </div>
+  <section class="bg-soft-green py-16 md:py-24">
+    <div class="container mx-auto px-4 grid lg:grid-cols-[1fr_0.95fr] gap-12 items-center">
+      <div>
+        <p class="sunlit-overline mb-4">Modern Metal Solar Roof Sheet Line</p>
+        <h1 class="sunlit-section-title text-4xl md:text-6xl mb-6">Storm Guard for Practical Modern Solar Roof Projects</h1>
+        <p class="text-lg text-slate leading-relaxed mb-5">Storm Guard is a metal solar roof sheet product line for modern residential, commercial, public and larger roof projects that need a cleaner roof-integrated alternative to standard panels.</p>
+        <p class="text-slate leading-relaxed mb-8">The factory package can include active metal solar roof sheets, matching inactive metal roof elements, roof detailing accessories, documents, packaging and export communication.</p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/contact/" class="sunlit-btn-primary">Ask About Storm Guard</a>
+          <a href="#components" class="sunlit-btn-secondary">View Components</a>
+          <a href="/system-overview/" class="sunlit-btn-secondary">View Supply Scope</a>
         </div>
-        <div class="sunlit-card overflow-hidden p-3">
-          <img src={heroImage} alt="Storm Guard metal solar roof sheets from China manufacturer" class="w-full h-[420px] object-cover rounded-2xl" />
-        </div>
+      </div>
+      <div class="sunlit-card overflow-hidden p-3">
+        <img src={heroImage} alt="Storm Guard metal solar roof sheets" class="w-full h-[420px] object-cover rounded-2xl" />
       </div>
     </div>
   </section>
 
   <section class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-4">
-      <div class="grid lg:grid-cols-3 gap-10 items-start">
-        <div>
-          <p class="sunlit-overline mb-3">What We Supply</p>
-          <h2 class="sunlit-section-title text-3xl md:text-4xl mb-4">Modern Metal Solar Roof Supply for Practical Projects</h2>
-          <p class="text-slate leading-relaxed">
-            Storm Guard is presented as a factory-supplied metal solar roof product line. Sunlit supplies active metal solar sheets, matching inactive roof elements and related accessories. Local roofing and electrical work should be handled by qualified local professionals.
-          </p>
-        </div>
-        <div class="lg:col-span-2 grid sm:grid-cols-2 gap-5">
+      <div class="max-w-3xl mb-10">
+        <p class="sunlit-overline mb-4">Why Buyers Choose It</p>
+        <h2 class="sunlit-section-title text-3xl md:text-5xl mb-5">A Metal Solar Roof Line for Practical Projects</h2>
+        <p class="text-slate leading-relaxed">For Storm Guard buyers, the main question is usually not luxury. It is whether the solar roof can look clean, cover larger roof areas and remain practical for project budgets.</p>
+      </div>
+      <div class="grid md:grid-cols-4 gap-5">
+        {proofCards.map((item) => (
           <div class="sunlit-card p-6">
-            <div class="h-32 image-placeholder rounded-2xl mb-5"></div>
-            <h3 class="font-heading font-bold text-xl mb-2">Active Metal Solar Sheet</h3>
-            <p class="text-slate leading-relaxed">The active roof sheet combines metal roofing appearance with photovoltaic power generation.</p>
+            <h3 class="font-heading font-bold text-xl text-charcoal mb-3">{item.title}</h3>
+            <p class="text-sm text-slate leading-relaxed">{item.desc}</p>
           </div>
-          <div class="sunlit-card p-6">
-            <div class="h-32 image-placeholder rounded-2xl mb-5"></div>
-            <h3 class="font-heading font-bold text-xl mb-2">Matching Inactive Element</h3>
-            <p class="text-slate leading-relaxed">Inactive metal roof elements cover areas where solar generation is not required while keeping a consistent roof appearance.</p>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="components" class="py-16 md:py-24 bg-light-gray border-y border-border">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="sunlit-overline mb-4">Component Package</p>
+        <h2 class="sunlit-section-title text-3xl md:text-5xl mb-5">What Storm Guard Can Include</h2>
+        <p class="text-slate leading-relaxed">Key specs are shown as previews only. Final size, power and accessories depend on project layout, roof profile and factory quotation.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {components.map((component) => (
+          <details class="sunlit-card p-6">
+            <summary class="cursor-pointer font-heading font-bold text-xl text-charcoal">{component.title}</summary>
+            <p class="text-slate leading-relaxed mt-4 mb-4">{component.desc}</p>
+            <div class="rounded-2xl bg-soft-green border border-deep-green/10 p-4">
+              <p class="text-xs font-heading font-bold text-deep-green uppercase tracking-[0.12em] mb-3">Key Specs Preview</p>
+              <ul class="space-y-2 text-sm text-slate">
+                {component.specs.map((spec) => <li>• {spec}</li>)}
+              </ul>
+            </div>
+            <a href="/contact/" class="inline-block mt-4 font-heading font-bold text-deep-green">Ask about this component →</a>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4 grid lg:grid-cols-[0.8fr_1.2fr] gap-10 items-start">
+      <div>
+        <p class="sunlit-overline mb-4">Technical Evaluation</p>
+        <h2 class="sunlit-section-title text-3xl md:text-5xl mb-5">Key Parameters for Early Review</h2>
+        <p class="text-slate leading-relaxed mb-6">Storm Guard is more project-based than a fixed-size glass tile. Use this table to understand the evaluation direction before requesting final factory pricing.</p>
+        <a href="/contact/" class="sunlit-btn-secondary">Request Datasheet</a>
+      </div>
+      <div class="sunlit-card overflow-hidden">
+        {keySpecs.map(([label, value]) => (
+          <div class="grid grid-cols-3 gap-4 p-4 border-b border-border last:border-b-0">
+            <div class="font-heading font-bold text-charcoal">{label}</div>
+            <div class="col-span-2 text-slate">{value}</div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   </section>
 
   <section class="py-16 md:py-24 bg-soft-green">
-    <div class="container mx-auto px-4">
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <p class="sunlit-overline mb-3">Factory Supply Package</p>
-        <h2 class="sunlit-section-title text-3xl md:text-5xl mb-4">What the Storm Guard Package May Include</h2>
-        <p class="text-slate">The exact bill of materials depends on roof layout. The package may include the following coordinated components from factory supply.</p>
+    <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-8">
+      <div class="sunlit-card p-8">
+        <p class="sunlit-overline mb-4">Best Fit</p>
+        <h2 class="font-heading font-bold text-3xl mb-6">Choose Storm Guard When...</h2>
+        <ul class="space-y-3 text-slate">
+          {goodFit.map((item) => <li>✓ {item}</li>)}
+        </ul>
       </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-5">
-        {components.map((component, index) => (
-          <div class="sunlit-card p-5">
-            <div class="text-xs font-heading font-bold text-deep-green mb-3">0{index + 1}</div>
-            <h3 class="font-heading font-bold text-charcoal mb-2">{component.name}</h3>
-            <p class="text-sm text-slate leading-relaxed">{component.description}</p>
-          </div>
-        ))}
+      <div class="sunlit-card p-8">
+        <p class="sunlit-overline mb-4">Expectation Setting</p>
+        <h2 class="font-heading font-bold text-3xl mb-6">It May Not Be the First Choice When...</h2>
+        <ul class="space-y-3 text-slate">
+          {notIdeal.map((item) => <li>• {item}</li>)}
+        </ul>
       </div>
     </div>
   </section>
 
   <section class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-4">
-      <div class="grid lg:grid-cols-2 gap-10">
-        <div>
-          <p class="sunlit-overline mb-3">Early Evaluation</p>
-          <h2 class="sunlit-section-title text-3xl md:text-4xl mb-4">Key Information for Factory Quotation</h2>
-          <p class="text-slate mb-6">Final specifications depend on roof layout, active and inactive coverage, selected components and destination. Detailed datasheets are available upon request.</p>
-          <a href="/contact/" class="sunlit-btn-green">Send Roof Drawing</a>
-        </div>
-        <div class="sunlit-card overflow-hidden">
-          {specs.map(([label, value]) => (
-            <div class="grid grid-cols-3 gap-4 p-4 border-b border-border last:border-b-0">
-              <div class="font-heading font-bold text-charcoal">{label}</div>
-              <div class="col-span-2 text-slate">{value}</div>
-            </div>
-          ))}
-        </div>
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="sunlit-overline mb-4">Quotation Path</p>
+        <h2 class="sunlit-section-title text-3xl md:text-5xl">Start with What You Have</h2>
       </div>
-    </div>
-  </section>
-
-  <section class="py-16 bg-soft-green">
-    <div class="container mx-auto px-4">
-      <p class="sunlit-overline text-center mb-3">Suitable Projects</p>
-      <div class="grid md:grid-cols-4 gap-4">
-        {applications.map((app) => (
-          <div class="sunlit-card-soft p-6 text-center font-heading font-bold text-charcoal">{app}</div>
+      <div class="grid md:grid-cols-4 gap-5">
+        {process.map((item) => (
+          <div class="sunlit-card p-6">
+            <div class="text-sm font-heading font-bold text-deep-green mb-4">{item.step}</div>
+            <h3 class="font-heading font-bold text-charcoal mb-3">{item.title}</h3>
+            <p class="text-sm text-slate leading-relaxed">{item.desc}</p>
+          </div>
         ))}
       </div>
     </div>
   </section>
 
-  <section id="faq" class="py-16 md:py-24 bg-white">
+  <section id="faq" class="py-16 md:py-24 bg-light-gray border-y border-border">
     <div class="container mx-auto px-4 max-w-4xl">
       <h2 class="sunlit-section-title text-3xl md:text-5xl mb-10 text-center">Storm Guard FAQ</h2>
       <div class="space-y-4">
         {faqs.map((faq) => (
-          <div class="border border-border rounded-2xl p-6">
+          <div class="sunlit-card p-6">
             <h3 class="font-heading font-bold text-charcoal mb-2">{faq.question}</h3>
             <p class="text-slate leading-relaxed">{faq.answer}</p>
           </div>
@@ -149,11 +209,12 @@ const applications = ["Modern homes", "Commercial buildings", "Public buildings"
   </section>
 
   <section class="py-16 md:py-20 dark-green-gradient text-white">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl md:text-5xl font-heading font-bold mb-5">Evaluate Storm Guard for Your Project</h2>
-      <p class="text-lg text-white/75 max-w-2xl mx-auto mb-8">Send your roof drawing, country and estimated roof area. We will help discuss active and inactive coverage, accessory scope and factory quotation direction.</p>
+    <div class="container mx-auto px-4 text-center max-w-4xl">
+      <p class="uppercase tracking-[0.16em] text-white/70 font-bold text-xs mb-4">Low-pressure first step</p>
+      <h2 class="text-3xl md:text-5xl font-heading font-bold mb-5">Ask Whether Storm Guard Fits Your Roof</h2>
+      <p class="text-lg text-white/75 max-w-2xl mx-auto mb-8">Send your country, estimated roof area, photos, drawings or a simple product question. We will help review active/inactive coverage and factory quotation direction.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact/" class="sunlit-btn-primary">Get Storm Guard Factory Quote</a>
+        <a href="/contact/" class="sunlit-btn-primary">Ask About Storm Guard</a>
         <a href="/projects/" class="border border-white/60 text-white rounded-full px-6 py-3 font-heading font-bold hover:bg-white/10">View Projects</a>
       </div>
     </div>
