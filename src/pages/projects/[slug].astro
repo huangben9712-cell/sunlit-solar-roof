@@ -256,7 +256,7 @@ const icons: Record<string, string> = {
                   <Fragment set:html={icons.overview} />
                 </div>
                 <div>
-                  <h2 class="font-heading font-bold text-charcoal text-lg mb-2">Project Overview</h2>
+                  <h2 class="font-editorial font-bold text-charcoal text-xl mb-2">Project Overview</h2>
                   <p class="text-slate text-sm leading-relaxed">{project.overview}</p>
                 </div>
               </div>
@@ -269,7 +269,7 @@ const icons: Record<string, string> = {
                   <Fragment set:html={icons.challenge} />
                 </div>
                 <div>
-                  <h2 class="font-heading font-bold text-charcoal text-lg mb-2">Project Challenge</h2>
+                  <h2 class="font-editorial font-bold text-charcoal text-xl mb-2">Project Challenge</h2>
                   <p class="text-slate text-sm leading-relaxed whitespace-pre-line">{project.challenge}</p>
                 </div>
               </div>
@@ -282,7 +282,7 @@ const icons: Record<string, string> = {
                   <Fragment set:html={icons.solution} />
                 </div>
                 <div>
-                  <h2 class="font-heading font-bold text-charcoal text-lg mb-2">Sunlit Solution</h2>
+                  <h2 class="font-editorial font-bold text-charcoal text-xl mb-2">Sunlit Solution</h2>
                   <p class="text-slate text-sm leading-relaxed whitespace-pre-line">{project.sunlitSolution}</p>
                 </div>
               </div>
@@ -295,7 +295,7 @@ const icons: Record<string, string> = {
                   <Fragment set:html={icons.visual} />
                 </div>
                 <div>
-                  <h2 class="font-heading font-bold text-charcoal text-lg mb-2">Visual Outcome</h2>
+                  <h2 class="font-editorial font-bold text-charcoal text-xl mb-2">Visual Outcome</h2>
                   <p class="text-slate text-sm leading-relaxed">
                     The completed roof integrates seamlessly with the building's architecture. From the ground, the solar roof reads as a refined architectural finish — delivering clean energy without compromising curb appeal or the character of the property.
                   </p>
@@ -309,7 +309,7 @@ const icons: Record<string, string> = {
             <div class="border border-border rounded-2xl p-6 mb-8 relative overflow-hidden">
               <div class="flex items-center gap-2 mb-5">
                 <div class="w-6 h-0.5 bg-deep-green"></div>
-                <h2 class="font-heading font-bold text-charcoal text-lg">Technical Notes</h2>
+                <h2 class="font-editorial font-bold text-charcoal text-xl">Technical Notes</h2>
               </div>
               <div class="grid md:grid-cols-2 gap-x-8 gap-y-2.5 relative z-10">
                 {project.technicalHighlights.map(item => (
@@ -350,7 +350,7 @@ const icons: Record<string, string> = {
           <div class="mb-8">
             <div class="flex items-center gap-2 mb-5">
               <div class="w-6 h-0.5 bg-deep-green"></div>
-              <h2 class="font-heading font-bold text-charcoal text-lg">Supply Scope Used in This Project</h2>
+              <h2 class="font-editorial font-bold text-charcoal text-xl">Supply Scope Used in This Project</h2>
             </div>
             <div class="grid grid-cols-3 sm:grid-cols-6 gap-4">
               {supplyScope.map(item => (
@@ -376,7 +376,7 @@ const icons: Record<string, string> = {
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center gap-2 mb-7">
           <div class="w-6 h-0.5 bg-deep-green"></div>
-          <h2 class="font-heading font-bold text-charcoal text-xl">Related Projects</h2>
+          <h2 class="font-editorial font-bold text-charcoal text-2xl">Related Projects</h2>
         </div>
         <div class="grid md:grid-cols-3 gap-5">
           {relatedProjects.map(rel => (
