@@ -1,57 +1,73 @@
-﻿---
+---
 import Layout from '../layouts/Layout.astro';
 
-const components = [
-  { title: "Active PV Elements", desc: "Solar-generating glass roof tiles or metal roof sheets supplied according to the selected product line." },
-  { title: "Matching Inactive Elements", desc: "Non-generating roof elements used for edges, shaded areas and sections where PV is not required." },
-  { title: "Flashing and Drainage Details", desc: "Edge, transition and water-management parts selected according to roof layout and quotation scope." },
-  { title: "Fixings and Accessories", desc: "Fasteners, ridge pieces, edge pieces and supporting roof integration components." },
-  { title: "Project Documents", desc: "Datasheets, installation notes, packing information and quotation documents based on project stage." },
-  { title: "Export Packaging", desc: "Factory packing and shipping coordination for overseas project delivery." }
+const trustItems = [
+  { title: 'China Manufacturer', desc: 'Factory-side supply for overseas B2B projects.' },
+  { title: 'Active + Inactive Scope', desc: 'Solar elements and matching non-PV roof coverage.' },
+  { title: 'Project-Based Quote', desc: 'Quotation based on roof layout and product scope.' },
+  { title: 'Samples Available', desc: 'Product samples and documents before commitment.' },
+  { title: 'Export Support', desc: 'Packaging, shipping documents and communication.' },
 ];
 
-const buyerBenefits = [
-  { title: "Clear Factory Scope", desc: "The buyer can see what the China factory is supplying instead of comparing isolated PV tiles only." },
-  { title: "Better Cost Control", desc: "Active, inactive and accessory scope can be quoted together before the buyer commits to the project." },
-  { title: "Easier Local Planning", desc: "Local roof and electrical teams can review the supply package and documents before installation." },
-  { title: "More Useful B2B Quotation", desc: "Roof drawing, product line, coverage ratio and export details are discussed as one sourcing package." }
+const included = [
+  { title: 'Active PV Tiles / Sheets', desc: 'Solar-generating glass tiles or metal roof sheets supplied according to the selected product line.' },
+  { title: 'Matching Inactive Roof Elements', desc: 'Non-PV roof elements for edges, shaded areas, non-generating zones and visual consistency.' },
+  { title: 'Flashing', desc: 'Roof transition and waterproofing accessories for valleys, edges, walls and junctions.' },
+  { title: 'Ridge and Edge Pieces', desc: 'Ridge, hip, eave and edge components used to complete the roof package.' },
+  { title: 'Fixings', desc: 'Fasteners and supporting components for roof-side installation planning.' },
+  { title: 'Project Documents', desc: 'Datasheets, installation notes, BOM, packing list and quotation documents.' },
 ];
 
-const comparison = [
-  ["Positioning", "Premium glass solar roof tile line", "Modern metal solar roof sheet line"],
-  ["Active Element", "AG-etched glass PV roof tile", "Metal solar roof sheet"],
-  ["Inactive Element", "Matching glass inactive tile", "Matching inactive metal element"],
-  ["Appearance", "Premium slate-like glass roof", "Contemporary metal roof profile"],
-  ["Best Fit", "Villas and architectural projects", "Residential, commercial and large roof projects"],
-  ["Cost Position", "Premium", "More cost-effective"]
+const luminaComponents = [
+  { title: 'Active Glass PV Tile', desc: 'The solar-generating glass roof tile used on suitable roof areas.', details: ['Used for active power generation', 'Slate-look glass appearance', 'Selected by roof layout and system design'] },
+  { title: 'Matching Inactive Glass Tile', desc: 'A non-generating glass roof tile used where PV is not required or not suitable.', details: ['Used for edges, shaded areas and visual continuity', 'Matches the appearance of active tiles', 'Helps avoid a patchwork roof surface'] },
+  { title: 'Ridge / Hip / Edge Pieces', desc: 'Roof finishing components used to close and detail the roof package.', details: ['Used at ridges, hips, eaves and edges', 'Supports a cleaner complete roof appearance', 'Defined according to roof shape'] },
+  { title: 'Flashing and Waterproofing Details', desc: 'Project-specific roof transition components for junctions and water management.', details: ['Used around walls, valleys, skylights and penetrations', 'Needs local roof detailing review', 'Quoted according to roof layout'] },
+  { title: 'Fixings and Accessories', desc: 'Supporting components used for roof-side installation planning.', details: ['Selected according to roof build-up', 'Reviewed with project drawings', 'Local installation remains the local team responsibility'] },
+  { title: 'Project Documents', desc: 'Documents that support product evaluation, quotation and installation communication.', details: ['Datasheet', 'Installation notes', 'BOM / packing list', 'Warranty document'] },
 ];
+
+const stormComponents = [
+  { title: 'Active Metal Solar Roof Sheet', desc: 'The solar-generating metal roof sheet used on suitable roof areas.', details: ['Combines metal roof appearance and PV generation', 'Suitable for modern and larger roof surfaces', 'Selected by layout and project conditions'] },
+  { title: 'Matching Inactive Metal Roof Sheet', desc: 'A non-generating metal roof sheet used to complete the non-PV roof areas.', details: ['Used where PV is not needed or not suitable', 'Maintains a consistent metal roof appearance', 'Useful for large-area roof coverage'] },
+  { title: 'Metal Ridge / Edge / Trim Accessories', desc: 'Metal roof finishing components used for roof edges and transitions.', details: ['Used at ridge, hip, edge and eave areas', 'Helps complete the roof-side supply package', 'Defined by roof shape and local detailing needs'] },
+  { title: 'Flashing and Drainage Details', desc: 'Metal roof transition details for waterproofing and roof junctions.', details: ['Used around wall junctions and penetrations', 'Requires project-specific review', 'Coordinated with local roof installation practice'] },
+  { title: 'Clips / Fixings / Mounting-Related Parts', desc: 'Supporting parts used for metal roof installation planning.', details: ['Selected based on roof build-up and local method', 'Supports roof-side assembly', 'Reviewed by project scope'] },
+  { title: 'Project Documents', desc: 'Documents that support product review, quotation and local installation communication.', details: ['Datasheet', 'Installation notes', 'BOM / packing list', 'Warranty document'] },
+];
+
+const process = [
+  { step: '1', title: 'Share Project Basics', desc: 'Send country, project type, estimated roof area, product interest or basic questions. A roof drawing helps but is not required for the first conversation.' },
+  { step: '2', title: 'Confirm Product Line', desc: 'We help compare Lumina Slate and Storm Guard based on appearance, budget position and project use.' },
+  { step: '3', title: 'Define Active + Inactive Coverage', desc: 'The roof is reviewed as active PV coverage, matching inactive roof elements and accessory areas.' },
+  { step: '4', title: 'Receive Project-Based Quotation', desc: 'You receive quotation direction with product scope, estimated quantities, documents, packing and export terms.' },
+];
+
+const factorySupply = ['Active PV tiles or metal solar roof sheets', 'Matching inactive roof elements', 'Flashing, ridge pieces and edge trims', 'Fixings and accessory components', 'Project documents and packing information', 'Export packaging and shipping document support'];
+const localScope = ['Roof structure and installation labor', 'Electrical connection and wiring', 'Local permits and code compliance', 'Grid connection and utility approval', 'Scaffolding, safety and site protection', 'Import taxes, local fees and final installation responsibility'];
+
+const faqs = ['Can I ask for pricing without a roof drawing?', 'Do you supply inactive roof elements and accessories together?', 'Can you provide samples and documents first?', 'Who handles local installation?', 'Can you support OEM or distributor cooperation?', 'What information helps you quote faster?'];
 ---
 
-<Layout title="China Solar Roof Manufacturer Supply Scope" description="Compare Lumina Slate and Storm Guard BIPV systems. Understand the complete factory supply scope for your solar roof project.">
-  <section class="bg-soft-green py-14 md:py-20">
-    <div class="container mx-auto px-4 max-w-4xl">
-      <p class="sunlit-overline mb-4">Manufacturer Supply Scope</p>
-      <h1 class="sunlit-section-title text-4xl md:text-6xl mb-6">What We Supply as a China Solar Roof Manufacturer</h1>
-      <p class="text-lg md:text-xl text-slate leading-relaxed">
-        Sunlit is not positioning this page as a turnkey EPC service. This page explains the factory supply package: active solar roof elements, matching inactive roof elements, flashing, fixings, accessories, documents and export coordination for overseas B2B buyers.
-      </p>
-    </div>
-  </section>
-
-  <section class="py-16 md:py-24 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="grid lg:grid-cols-3 gap-10 items-start">
-        <div>
-          <p class="sunlit-overline mb-3">Definition</p>
-          <h2 class="sunlit-section-title text-3xl md:text-4xl mb-4">Complete Package Means Supply Scope</h2>
-          <p class="text-slate leading-relaxed">
-            When we say complete solar roof package, we mean the product scope a factory can supply for a roof project. It does not mean we replace local roofers, electricians, permit work or local engineering responsibility.
-          </p>
+<Layout title="Factory Supply Scope - Sunlit Solar Roof" description="Understand what Sunlit supplies from the factory for solar roof projects, including active PV tiles or sheets, inactive roof elements, accessories, documents and export support.">
+  <section class="bg-soft-green py-16 md:py-24">
+    <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="sunlit-overline mb-4">Factory Supply Scope</p>
+        <h1 class="sunlit-section-title text-4xl md:text-6xl mb-6">What We Supply for a Solar Roof Project</h1>
+        <p class="text-lg text-slate leading-relaxed mb-5">Sunlit supplies the factory-side roof product package: active solar roof tiles or sheets, matching inactive roof elements, flashing, fixings, roof accessories and project documents.</p>
+        <p class="text-slate leading-relaxed mb-8">Local roofing installation, electrical connection, permits and grid approval are usually handled by qualified local teams. We focus on factory supply, project quotation support, documents, packaging and export communication.</p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/contact/" class="sunlit-btn-primary">Get Factory Pricing</a>
+          <a href="#components" class="sunlit-btn-secondary">Ask About Supply Scope</a>
+          <a href="/contact/" class="sunlit-btn-secondary">Send Roof Drawing Optional</a>
         </div>
-        <div class="lg:col-span-2 grid sm:grid-cols-2 gap-5">
-          {components.map((item, index) => (
-            <div class="sunlit-card p-6">
-              <div class="text-xs font-heading font-bold text-deep-green mb-3">0{index + 1}</div>
+      </div>
+      <div class="sunlit-card p-8">
+        <p class="sunlit-overline mb-4">Scope Boundary</p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          {trustItems.map((item) => (
+            <div class="rounded-2xl bg-light-gray border border-border p-4">
               <h3 class="font-heading font-bold text-charcoal mb-2">{item.title}</h3>
               <p class="text-sm text-slate leading-relaxed">{item.desc}</p>
             </div>
@@ -61,16 +77,84 @@ const comparison = [
     </div>
   </section>
 
-  <section class="py-16 md:py-24 bg-soft-green">
+  <section class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-4">
       <div class="text-center max-w-3xl mx-auto mb-12">
-        <p class="sunlit-overline mb-3">B2B Sourcing Logic</p>
-        <h2 class="sunlit-section-title text-3xl md:text-5xl mb-4">Why Supply Scope Matters</h2>
-        <p class="text-slate">For distributors, installers, contractors and developers, the main question is not only wattage. They need to know what the factory can supply, what needs to be sourced locally and how the quotation boundary is defined.</p>
+        <p class="sunlit-overline mb-4">Factory Supply Package</p>
+        <h2 class="sunlit-section-title text-3xl md:text-5xl mb-5">What Is Included in Factory Supply</h2>
+        <p class="text-slate leading-relaxed">This is the common supply framework. The actual components differ between Lumina Slate and Storm Guard, but the quotation logic is similar.</p>
       </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-        {buyerBenefits.map((item) => (
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {included.map((item) => (
           <div class="sunlit-card p-6">
+            <h3 class="font-heading font-bold text-xl text-charcoal mb-3">{item.title}</h3>
+            <p class="text-slate leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="components" class="py-16 md:py-24 bg-light-gray border-y border-border">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mb-10">
+        <p class="sunlit-overline mb-4">Component Library by Product Line</p>
+        <h2 class="sunlit-section-title text-3xl md:text-5xl mb-5">Review the Roof Package Structure by System</h2>
+        <p class="text-slate leading-relaxed">A solar roof project is not only active PV tiles or sheets. Choose a product line to review the active elements, matching inactive elements and roof accessories that should be reviewed together.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8">
+        <section class="sunlit-card p-6">
+          <div class="mb-6">
+            <p class="sunlit-overline mb-2">Lumina Slate Components</p>
+            <h3 class="font-heading font-bold text-3xl text-charcoal mb-3">Glass Solar Roof Tile Package</h3>
+            <p class="text-slate leading-relaxed">Lumina Slate is built around active glass PV tiles, matching inactive glass tiles and roof detailing accessories.</p>
+          </div>
+          <div class="space-y-4">
+            {luminaComponents.map((component) => (
+              <details class="rounded-2xl border border-border bg-white p-5">
+                <summary class="font-heading font-bold text-charcoal cursor-pointer">{component.title}</summary>
+                <p class="text-slate mt-3 mb-3 leading-relaxed">{component.desc}</p>
+                <ul class="space-y-2 text-sm text-slate">
+                  {component.details.map((detail) => <li>• {detail}</li>)}
+                </ul>
+              </details>
+            ))}
+          </div>
+        </section>
+
+        <section class="sunlit-card p-6">
+          <div class="mb-6">
+            <p class="sunlit-overline mb-2">Storm Guard Components</p>
+            <h3 class="font-heading font-bold text-3xl text-charcoal mb-3">Metal Solar Roof Sheet Package</h3>
+            <p class="text-slate leading-relaxed">Storm Guard is built around active metal solar sheets, matching inactive metal roof sheets and metal roof accessories.</p>
+          </div>
+          <div class="space-y-4">
+            {stormComponents.map((component) => (
+              <details class="rounded-2xl border border-border bg-white p-5">
+                <summary class="font-heading font-bold text-charcoal cursor-pointer">{component.title}</summary>
+                <p class="text-slate mt-3 mb-3 leading-relaxed">{component.desc}</p>
+                <ul class="space-y-2 text-sm text-slate">
+                  {component.details.map((detail) => <li>• {detail}</li>)}
+                </ul>
+              </details>
+            ))}
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="sunlit-overline mb-4">Quotation Workflow</p>
+        <h2 class="sunlit-section-title text-3xl md:text-5xl">How the Supply Scope Is Defined</h2>
+      </div>
+      <div class="grid md:grid-cols-4 gap-5">
+        {process.map((item) => (
+          <div class="sunlit-card p-6">
+            <div class="w-10 h-10 rounded-full bg-deep-green text-white flex items-center justify-center font-heading font-bold mb-5">{item.step}</div>
             <h3 class="font-heading font-bold text-charcoal mb-3">{item.title}</h3>
             <p class="text-sm text-slate leading-relaxed">{item.desc}</p>
           </div>
@@ -79,40 +163,72 @@ const comparison = [
     </div>
   </section>
 
+  <section class="py-16 md:py-24 bg-soft-green">
+    <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-8">
+      <div class="sunlit-card p-8">
+        <h2 class="font-heading font-bold text-3xl mb-6">What We Usually Supply</h2>
+        <ul class="space-y-3 text-slate">
+          {factorySupply.map((item) => <li>✓ {item}</li>)}
+        </ul>
+      </div>
+      <div class="sunlit-card p-8">
+        <h2 class="font-heading font-bold text-3xl mb-6">What Is Usually Handled Locally</h2>
+        <ul class="space-y-3 text-slate">
+          {localScope.map((item) => <li>• {item}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-4">
-      <div class="max-w-3xl mb-10">
-        <p class="sunlit-overline mb-3">Product Line Comparison</p>
-        <h2 class="sunlit-section-title text-3xl md:text-5xl mb-4">Lumina Slate or Storm Guard?</h2>
-        <p class="text-slate">The right product line depends on roof appearance, buyer role, project size and budget position.</p>
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="sunlit-overline mb-4">Related Product Lines</p>
+        <h2 class="sunlit-section-title text-3xl md:text-5xl">Supply Scope Applies to Both Product Families</h2>
       </div>
-      <div class="sunlit-card overflow-hidden">
-        <div class="grid grid-cols-3 bg-[var(--deep-green)] text-white font-heading font-bold">
-          <div class="p-4">Decision Point</div>
-          <div class="p-4">Lumina Slate</div>
-          <div class="p-4">Storm Guard</div>
-        </div>
-        {comparison.map((row) => (
-          <div class="grid grid-cols-3 border-b border-border last:border-b-0">
-            <div class="p-4 font-heading font-bold text-charcoal">{row[0]}</div>
-            <div class="p-4 text-slate">{row[1]}</div>
-            <div class="p-4 text-slate">{row[2]}</div>
-          </div>
+      <div class="grid lg:grid-cols-2 gap-8">
+        <a href="/lumina-slate/" class="sunlit-card p-8 block">
+          <p class="sunlit-overline mb-3">Premium Glass Tile Line</p>
+          <h3 class="font-heading font-bold text-3xl text-charcoal mb-3">Lumina Slate Glass Solar Roof Tiles</h3>
+          <p class="text-slate mb-6">Premium glass tile line for villas and architectural projects.</p>
+          <span class="font-heading font-bold text-deep-green">Explore Lumina Slate →</span>
+        </a>
+        <a href="/storm-guard/" class="sunlit-card p-8 block">
+          <p class="sunlit-overline mb-3">Modern Metal Sheet Line</p>
+          <h3 class="font-heading font-bold text-3xl text-charcoal mb-3">Storm Guard Metal Solar Roof Sheets</h3>
+          <p class="text-slate mb-6">Modern metal sheet line for residential, commercial and large-area roofs.</p>
+          <span class="font-heading font-bold text-deep-green">Explore Storm Guard →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-light-gray border-y border-border">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div class="text-center mb-10">
+        <p class="sunlit-overline mb-4">FAQ</p>
+        <h2 class="sunlit-section-title text-3xl md:text-5xl">Questions Buyers Usually Ask</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4">
+        {faqs.map((question) => (
+          <details class="sunlit-card p-5">
+            <summary class="font-heading font-bold cursor-pointer">{question}</summary>
+            <p class="text-slate mt-3 leading-relaxed">Send us what you have today. We can start with rough information and clarify the next step before a detailed quotation.</p>
+          </details>
         ))}
-      </div>
-      <div class="flex flex-col sm:flex-row gap-4 mt-8">
-        <a href="/lumina-slate/" class="sunlit-btn-secondary">View Lumina Slate</a>
-        <a href="/storm-guard/" class="sunlit-btn-secondary">View Storm Guard</a>
-        <a href="/contact/" class="sunlit-btn-primary">Send Roof Drawing</a>
       </div>
     </div>
   </section>
 
   <section class="py-16 md:py-20 dark-green-gradient text-white">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl md:text-5xl font-heading font-bold mb-5">Start with Your Roof Drawing</h2>
-      <p class="text-lg text-white/75 max-w-2xl mx-auto mb-8">Send project country, roof area and drawings. We will help define the factory supply scope, product line and quotation direction.</p>
-      <a href="/contact/" class="sunlit-btn-primary">Request Factory Quote</a>
+    <div class="container mx-auto px-4 max-w-4xl text-center">
+      <p class="uppercase tracking-[0.16em] text-white/70 font-bold text-xs mb-4">Start with a conversation</p>
+      <h2 class="font-heading text-3xl md:text-5xl font-bold mb-5">Tell Us What You’re Planning — We’ll Help Define the Right Supply Scope</h2>
+      <p class="text-white/75 leading-relaxed mb-8">Share your country, roof type, estimated roof area, photos, drawings or product interest. We will help you understand which product line and factory supply scope fits the project.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact/" class="sunlit-btn-primary">Get Factory Pricing</a>
+        <a href="/contact/" class="border border-white/50 text-white rounded-full px-6 py-3 font-bold hover:bg-white/10 transition-colors">Ask a Product Question</a>
+      </div>
     </div>
   </section>
 </Layout>
