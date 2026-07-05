@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Project references migrated from the old WordPress project content type.
  * P0 cases preserve public-facing project detail and image URLs from the legacy site.
  * Remaining projects are kept as reference entries and can be expanded in later passes.
@@ -54,7 +54,7 @@ export const projects: Project[] = [
     roofArea: "227 sq.m",
     capacity: "10 kWp",
     status: "Reference",
-    images: ["/images/projects/beijing-new-world-lizun/sunlit-solar-roof-tiles-detail-decorative-vent.webp", "/images/projects/beijing-new-world-lizun/sunlit-solar-slate-installed-texture-close-up.webp", "/images/projects/beijing-new-world-lizun/sunlit-solar-slate-roof-tiles-xianghu-details.webp", "/images/projects/beijing-new-world-lizun/sunlit-bipv-roof-scenic-harmony-xianghu-mountains.webp"],
+    images: ["/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-bipv-roof-scenic-harmony-xianghu-mountains.webp", "/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-solar-roof-tiles-detail-decorative-vent.webp", "/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-solar-slate-installed-texture-close-up.webp", "/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-solar-slate-roof-tiles-xianghu-details.webp"],
     sourceUrl: "https://www.sunlitsolarroof.com/project/hangzhou-xianghu-arcadia-villa/"
   },
   {
@@ -71,7 +71,7 @@ export const projects: Project[] = [
     roofArea: "245 sq.m",
     capacity: "10 kWp",
     status: "Reference",
-    images: ["/images/projects/beijing-new-world-lizun/sunlit-solar-slate-interlocking-texture.webp", "/images/projects/beijing-new-world-lizun/sunlit-solar-roof-yellow-resort-villa-aerial.webp", "/images/projects/beijing-new-world-lizun/sunlit-bipv-roof-gable-edge-finish.webp", "/images/projects/beijing-new-world-lizun/sunlit-solar-tiles-flat-roof-transition.webp"],
+    images: ["/images/projects/nanjing-nanshan-lake/sunlit-bipv-roof-gable-edge-finish.webp", "/images/projects/nanjing-nanshan-lake/sunlit-solar-roof-yellow-resort-villa-aerial.webp", "/images/projects/nanjing-nanshan-lake/sunlit-solar-slate-interlocking-texture.webp", "/images/projects/nanjing-nanshan-lake/sunlit-solar-tiles-flat-roof-transition.webp"],
     sourceUrl: "https://www.sunlitsolarroof.com/project/nanjing-nanshan-lake/"
   },
   {
@@ -88,7 +88,7 @@ export const projects: Project[] = [
     roofArea: "140.6 sq.m",
     capacity: "13 kWp",
     status: "Reference",
-    images: ["/images/projects/beijing-new-world-lizun/sunlit-bipv-vs-bapv-solar-roof-comparison.webp", "/images/projects/beijing-new-world-lizun/sunlit-invisible-solar-roof-neighborhood-upgrade.webp", "/images/projects/beijing-new-world-lizun/sunlit-bipv-roof-vent-pipe-integration.webp", "/images/projects/beijing-new-world-lizun/sunlit-solar-tiles-flush-mount-design.webp"],
+    images: ["/images/projects/xuzhou-luxury-villa-the-ultimate-bipv-vs-bapv-contrast/sunlit-bipv-roof-vent-pipe-integration.webp", "/images/projects/xuzhou-luxury-villa-the-ultimate-bipv-vs-bapv-contrast/sunlit-bipv-vs-bapv-solar-roof-comparison.webp", "/images/projects/xuzhou-luxury-villa-the-ultimate-bipv-vs-bapv-contrast/sunlit-invisible-solar-roof-neighborhood-upgrade.webp", "/images/projects/xuzhou-luxury-villa-the-ultimate-bipv-vs-bapv-contrast/sunlit-solar-tiles-flush-mount-design.webp"],
     sourceUrl: "https://www.sunlitsolarroof.com/project/xuzhou-luxury-villa-the-ultimate-bipv-vs-bapv-contrast/"
   },
   {
@@ -105,7 +105,7 @@ export const projects: Project[] = [
     roofArea: "180 sq.m",
     capacity: "8 kWp",
     status: "Reference",
-    images: ["/images/projects/beijing-new-world-lizun/sunlit-bipv-solar-roof-homestay-jiaxing.webp", "/images/projects/beijing-new-world-lizun/sunlit-solar-tiles-clean-energy-guesthouse.webp", "/images/projects/beijing-new-world-lizun/sunlit-invisible-solar-slate-sleek-surface.webp", "/images/projects/beijing-new-world-lizun/sunlit-solar-roof-valley-flashing-details.webp"],
+    images: ["/images/projects/jiaxing-boutique-homestay/sunlit-bipv-solar-roof-homestay-jiaxing.webp", "/images/projects/jiaxing-boutique-homestay/sunlit-invisible-solar-slate-sleek-surface.webp", "/images/projects/jiaxing-boutique-homestay/sunlit-solar-roof-valley-flashing-details.webp", "/images/projects/jiaxing-boutique-homestay/sunlit-solar-tiles-clean-energy-guesthouse.webp"],
     sourceUrl: "https://www.sunlitsolarroof.com/project/jiaxing-boutique-homestay/"
   },
   {
@@ -122,7 +122,7 @@ export const projects: Project[] = [
     roofArea: "1200 sq.m",
     capacity: "75 kWp",
     status: "Reference",
-    images: ["/images/projects/beijing-new-world-lizun/usa-gymnasium-solar-roof-construction-scaffolding.webp", "/images/projects/beijing-new-world-lizun/sunlit-bipv-solar-roof-gymnasium-aerial-usa-scaled.webp", "/images/projects/beijing-new-world-lizun/usa-solar-roof-substructure-wooden-battens-scaled.webp", "/images/projects/beijing-new-world-lizun/usa-large-gym-invisible-solar-roof-facade.webp"],
+    images: ["/images/projects/usa-private-gymnasium/sunlit-bipv-solar-roof-gymnasium-aerial-usa-scaled.webp", "/images/projects/usa-private-gymnasium/usa-gymnasium-solar-roof-construction-scaffolding.webp", "/images/projects/usa-private-gymnasium/usa-large-gym-invisible-solar-roof-facade.webp", "/images/projects/usa-private-gymnasium/usa-solar-roof-substructure-wooden-battens-scaled.webp"],
     sourceUrl: "https://www.sunlitsolarroof.com/project/usa-private-gymnasium/"
   },
   {
@@ -139,7 +139,7 @@ export const projects: Project[] = [
     roofArea: "1,500 sq.m",
     capacity: "150 kWp",
     status: "Reference",
-    images: ["/images/projects/beijing-new-world-lizun/storm-guard-bipv-extreme-weather-water-shedding.webp", "/images/projects/beijing-new-world-lizun/storm-guard-heavy-duty-solar-tiles-commercial-scale.webp", "/images/projects/beijing-new-world-lizun/storm-guard-hurricane-resistant-solar-roof-construction-scaled.webp", "/images/projects/beijing-new-world-lizun/storm-guard-large-scale-bipv-integration-aerial-scaled.webp"],
+    images: ["/images/projects/large-scale-commercial-complex/storm-guard-bipv-extreme-weather-water-shedding.webp", "/images/projects/large-scale-commercial-complex/storm-guard-heavy-duty-solar-tiles-commercial-scale.webp", "/images/projects/large-scale-commercial-complex/storm-guard-hurricane-resistant-solar-roof-construction-scaled.webp", "/images/projects/large-scale-commercial-complex/storm-guard-large-scale-bipv-integration-aerial-scaled.webp"],
     sourceUrl: "https://www.sunlitsolarroof.com/project/large-scale-commercial-complex/"
   },
   {
@@ -155,7 +155,7 @@ export const projects: Project[] = [
     technicalHighlights: ["System Type: Community-Scale Residential Development", "Capacity: 10-15 kWp per household", "Key Features: HOA-compliant aesthetic, neighborhood uniformity, developer-ready scalability", "Application Environment: High-end coastal / waterfront communities"],
     capacity: "10-15 kWp per household",
     status: "Reference",
-    images: ["/images/projects/beijing-new-world-lizun/neighborhood-scale-solar-roof-deployment.webp", "/images/projects/beijing-new-world-lizun/us-modern-home-bipv-facade-integration.webp", "/images/projects/beijing-new-world-lizun/us-coastal-villa-invisible-solar-roof.webp", "/images/projects/beijing-new-world-lizun/solar-roof-standard-for-new-developments.webp"],
+    images: ["/images/projects/us-coastal-community/neighborhood-scale-solar-roof-deployment.webp", "/images/projects/us-coastal-community/solar-roof-standard-for-new-developments.webp", "/images/projects/us-coastal-community/us-coastal-villa-invisible-solar-roof.webp", "/images/projects/us-coastal-community/us-modern-home-bipv-facade-integration.webp"],
     sourceUrl: "https://www.sunlitsolarroof.com/project/us-coastal-community/"
   },
   { id: 9, slug: "beijing-poly-longshang-luxury-villa-bipv-integration-on-complex-roof-geometry", name: "Beijing Poly Longshang Luxury Villa: BIPV Integration on Complex Roof Geometry", location: "China", system: "Lumina Slate", application: "Residential", overview: "Legacy project reference migrated from the old website. Keep as a visual and application reference; expand with verified details in a later pass.", status: "Reference", sourceUrl: "https://www.sunlitsolarroof.com/project/beijing-poly-longshang-luxury-villa-bipv-integration-on-complex-roof-geometry/" },
