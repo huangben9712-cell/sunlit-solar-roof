@@ -7,7 +7,7 @@ const stormGuardProjects = projects.filter(p => p.system === 'Storm Guard');
 const otherProjects = projects.filter(p => p.system === 'Others');
 
 // Hero images for the 3 product line cards
-const luminaHero = luminaProjects.find(p => p.images?.length)?.images?.[0] ?? '';
+const luminaHero = luminaProjects.find(p => p.slug === 'nanjing-nanshan-lake')?.images?.[0] ?? luminaProjects.find(p => p.images?.length)?.images?.[0] ?? '';
 const stormHero = stormGuardProjects.find(p => p.images?.length)?.images?.[0] ?? '';
 const otherHero = otherProjects.find(p => p.images?.length)?.images?.[0] ?? luminaProjects[4]?.images?.[0] ?? '';
 ---
@@ -269,15 +269,20 @@ const otherHero = otherProjects.find(p => p.images?.length)?.images?.[0] ?? lumi
             <div id="section-others" class="mb-14 project-section" data-section="others">
               <div class="flex items-center justify-between mb-6">
                 <h2 class="font-heading font-bold text-2xl text-charcoal">Other Project References</h2>
+                {otherProjects.length > 4 && (
+                  <button class="text-sm text-deep-green font-heading font-semibold hover:underline toggle-extra-btn" data-target="others-extra">
+                    View all {otherProjects.length} other projects ↓
+                  </button>
+                )}
               </div>
-              <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 project-grid" data-line="others">
-                {otherProjects.slice(0, 3).map(project => (
+              <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 project-grid" data-line="others">
+                {otherProjects.slice(0, 4).map(project => (
                   <a href={`/projects/${project.slug}/`} class="sunlit-card overflow-hidden block group project-card" data-system={project.system} data-app={project.application}>
-                    <div class="h-48 overflow-hidden">
+                    <div class="h-44 overflow-hidden">
                       {project.images?.[0] ? (
                         <img src={project.images[0]} alt={project.name} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
                       ) : (
-                        <div class="h-48 image-placeholder"></div>
+                        <div class="h-44 image-placeholder"></div>
                       )}
                     </div>
                     <div class="p-4">
@@ -292,6 +297,30 @@ const otherHero = otherProjects.find(p => p.images?.length)?.images?.[0] ?? lumi
                   </a>
                 ))}
               </div>
+              {otherProjects.length > 4 && (
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-4 project-grid hidden" data-line="others" id="others-extra">
+                  {otherProjects.slice(4).map(project => (
+                    <a href={`/projects/${project.slug}/`} class="sunlit-card overflow-hidden block group project-card" data-system={project.system} data-app={project.application}>
+                      <div class="h-44 overflow-hidden">
+                        {project.images?.[0] ? (
+                          <img src={project.images[0]} alt={project.name} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                        ) : (
+                          <div class="h-44 image-placeholder"></div>
+                        )}
+                      </div>
+                      <div class="p-4">
+                        <h3 class="font-heading font-bold text-charcoal text-base leading-snug mb-1 line-clamp-2">{project.name.split(':')[0]}</h3>
+                        <p class="text-xs text-slate mb-3">{project.location}</p>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                          <span class="text-xs bg-soft-green text-deep-green font-heading font-semibold px-2.5 py-1 rounded-full border border-deep-green/10">Others</span>
+                          <span class="text-xs bg-gray-100 text-slate font-heading px-2.5 py-1 rounded-full">{project.application}</span>
+                        </div>
+                        <span class="text-amber font-heading font-semibold text-sm group-hover:text-amber-dark transition-colors">View Case Study →</span>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
           )}
 
