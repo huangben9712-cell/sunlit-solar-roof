@@ -4,7 +4,7 @@ import { projects } from '../data/projects';
 
 const luminaProjects = projects.filter(p => p.system === 'Lumina Slate');
 const stormGuardProjects = projects.filter(p => p.system === 'Storm Guard');
-const otherProjects = projects.filter(p => p.system !== 'Lumina Slate' && p.system !== 'Storm Guard');
+const otherProjects = projects.filter(p => p.system === 'Others');
 
 // Hero images for the 3 product line cards
 const luminaHero = luminaProjects.find(p => p.images?.length)?.images?.[0] ?? '';
@@ -284,7 +284,7 @@ const otherHero = otherProjects.find(p => p.images?.length)?.images?.[0] ?? lumi
                       <h3 class="font-heading font-bold text-charcoal text-base leading-snug mb-1 line-clamp-2">{project.name.split(':')[0]}</h3>
                       <p class="text-xs text-slate mb-3">{project.location}</p>
                       <div class="flex flex-wrap gap-1.5 mb-4">
-                        <span class="text-xs bg-soft-green text-deep-green font-heading font-semibold px-2.5 py-1 rounded-full border border-deep-green/10">Mixed Solution</span>
+                        <span class="text-xs bg-soft-green text-deep-green font-heading font-semibold px-2.5 py-1 rounded-full border border-deep-green/10">Others</span>
                         <span class="text-xs bg-gray-100 text-slate font-heading px-2.5 py-1 rounded-full">{project.application}</span>
                       </div>
                       <span class="text-amber font-heading font-semibold text-sm group-hover:text-amber-dark transition-colors">View Case Study →</span>
