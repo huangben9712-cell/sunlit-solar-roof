@@ -8,8 +8,9 @@ export function getStaticPaths() {
 
 const { post } = Astro.props;
 
-// Extract H2 headings for Table of Contents
 const rawContent = post.content || '';
+
+// Extract H2 headings for TOC
 const tocItems: { id: string; text: string }[] = [];
 const h2Regex = /^## (.+)$/gm;
 let tocMatch;
@@ -19,13 +20,13 @@ while ((tocMatch = h2Regex.exec(rawContent)) !== null) {
   tocItems.push({ id, text });
 }
 
-// Parse inline markdown (bold, italic, code, links)
+// Parse inline markdown
 function parseInline(text: string): string {
   return text
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
     .replace(/\*(.+?)\*/g, '<em>$1</em>')
     .replace(/`(.+?)`/g, '<code class="bg-soft-green text-deep-green px-1.5 py-0.5 rounded text-sm font-mono">$1</code>')
-    .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" class="text-deep-green font-semibold underline decoration-deep-green/30 hover:decoration-deep-green transition-all" target="_blank" rel="noopener">$1</a>');
+    .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" class="text-deep-green font-semibold underline decoration-deep-green/40 hover:decoration-deep-green transition-all" target="_blank" rel="noopener">$1</a>');
 }
 
 interface ContentBlock {
@@ -86,7 +87,16 @@ while (i < lines.length) {
   }
   // Paragraph
   const paraLines: string[] = [];
-  while (i < lines.length && lines[i].trim() !== '' && !lines[i].startsWith('#') && !lines[i].startsWith('> ') && !lines[i].startsWith('- ') && !lines[i].startsWith('* ') && !/^\d+\.\s/.test(lines[i]) && lines[i].trim() !== '---') {
+  while (
+    i < lines.length &&
+    lines[i].trim() !== '' &&
+    !lines[i].startsWith('#') &&
+    !lines[i].startsWith('> ') &&
+    !lines[i].startsWith('- ') &&
+    !lines[i].startsWith('* ') &&
+    !/^\d+\.\s/.test(lines[i]) &&
+    lines[i].trim() !== '---'
+  ) {
     paraLines.push(lines[i].trim());
     i++;
   }
@@ -110,190 +120,163 @@ const readingTime = Math.max(1, Math.ceil(wordCount / 200));
 
 <Layout title={`${post.title} — Sunlit Solar Roof`} description={post.summary}>
 
-  <div id="reading-progress" class="fixed top-0 left-0 h-0.5 bg-amber w-0 z-50 transition-none"></div>
+  <!-- Reading progress bar -->
+  <div id="reading-progress" class="fixed top-0 left-0 h-[3px] bg-deep-green w-0 z-50 transition-none"></div>
 
-  <div class="border-b border-border bg-white">
-    <div class="container mx-auto px-4 py-3 text-sm text-slate flex items-center gap-2 flex-wrap">
+  <!-- Breadcrumb -->
+  <div class="border-b border-gray-100 bg-white">
+    <div class="max-w-[860px] mx-auto px-6 py-3 text-sm text-slate flex items-center gap-2 flex-wrap">
       <a href="/" class="hover:text-deep-green transition-colors">Home</a>
-      <span class="text-border">/</span>
+      <span class="text-gray-300">/</span>
       <a href="/articles/" class="hover:text-deep-green transition-colors">Articles</a>
-      <span class="text-border">/</span>
-      <span class="text-charcoal font-medium">{post.title}</span>
+      <span class="text-gray-300">/</span>
+      <span class="text-charcoal">{post.title}</span>
     </div>
   </div>
 
-  <header class="bg-soft-green pt-12 pb-0">
-    <div class="container mx-auto px-4 max-w-5xl">
-      <div class="flex flex-wrap items-center gap-3 mb-5">
-        <span class="sunlit-overline text-xs">{post.category}</span>
-        <span class="text-slate/40">·</span>
-        <span class="text-sm text-slate">{formattedDate}</span>
-        <span class="text-slate/40">·</span>
-        <span class="text-sm text-slate">{readingTime} min read</span>
+  <!-- Article Header -->
+  <header class="bg-white pt-12 pb-0">
+    <div class="max-w-[860px] mx-auto px-6">
+      <!-- Category + date -->
+      <div class="flex items-center gap-3 mb-5 text-sm text-slate">
+        <span class="text-deep-green font-semibold">{post.category}</span>
+        <span class="text-gray-300">·</span>
+        <span>{formattedDate}</span>
+        <span class="text-gray-300">·</span>
+        <span>{readingTime} min read</span>
       </div>
-      <h1 class="font-heading font-bold text-4xl md:text-5xl lg:text-[3.25rem] text-charcoal leading-tight mb-6 max-w-4xl">
+
+      <!-- Title -->
+      <h1 class="font-heading font-bold text-[2.6rem] md:text-[3.2rem] text-charcoal leading-[1.1] mb-6 tracking-tight">
         {post.title}
       </h1>
-      <p class="text-xl text-slate leading-relaxed max-w-3xl mb-8">{post.summary}</p>
-      <div class="w-full h-64 md:h-80 rounded-t-2xl overflow-hidden bg-gradient-to-br from-deep-green to-deep-green-2 flex items-center justify-center">
-        <div class="text-center text-white/40 px-8">
-          <svg class="w-14 h-14 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          </svg>
-          <p class="text-xs font-heading font-bold uppercase tracking-widest">Cover Image</p>
-        </div>
+
+      <!-- Cover image -->
+      <div class="w-full aspect-[16/7] overflow-hidden bg-gradient-to-br from-deep-green to-[#1a3a2a] flex items-center justify-center mt-8">
+        {post.coverImage ? (
+          <img src={post.coverImage} alt={post.title} class="w-full h-full object-cover" />
+        ) : (
+          <div class="text-center text-white/20">
+            <svg class="w-16 h-16 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <p class="text-xs font-heading font-bold uppercase tracking-widest">Cover Image</p>
+          </div>
+        )}
       </div>
     </div>
   </header>
 
-  <main class="bg-white py-12 md:py-16">
-    <div class="container mx-auto px-4 max-w-5xl">
-      <div class="grid lg:grid-cols-[1fr_280px] gap-12 items-start">
+  <!-- Article Body -->
+  <main class="bg-white py-14">
+    <div class="max-w-[860px] mx-auto px-6">
 
-        <article class="min-w-0">
-          {tocItems.length >= 3 && (
-            <nav class="mb-10 p-6 bg-soft-green rounded-2xl border border-border/50">
-              <p class="text-xs font-heading font-bold uppercase tracking-widest text-deep-green mb-4">In This Article</p>
-              <ol class="space-y-2">
-                {tocItems.map((item, idx) => (
-                  <li>
-                    <a href={`#${item.id}`} class="flex items-start gap-2.5 text-sm text-slate hover:text-deep-green transition-colors group">
-                      <span class="text-deep-green/40 font-heading font-bold text-xs mt-0.5 group-hover:text-deep-green transition-colors shrink-0">{String(idx + 1).padStart(2, '0')}</span>
-                      <span class="leading-snug">{item.text}</span>
-                    </a>
+      <!-- TOC: arrow list like roofit -->
+      {tocItems.length >= 3 && (
+        <nav class="mb-12 pb-10 border-b border-gray-100">
+          <p class="text-sm text-slate mb-5">By the end of this article, you will have learned about:</p>
+          <ol class="space-y-3">
+            {tocItems.map((item) => (
+              <li>
+                <a href={`#${item.id}`} class="flex items-center gap-3 text-[16px] text-charcoal hover:text-deep-green transition-colors group">
+                  <svg class="w-4 h-4 text-deep-green shrink-0 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                  <span>{item.text}</span>
+                </a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      )}
+
+      <!-- Content blocks -->
+      <div class="article-content">
+        {blocks.map((block) => (
+          <>
+            {block.type === 'lead' && (
+              <p class="text-[1.25rem] md:text-[1.35rem] font-bold text-charcoal leading-[1.65] mb-10" set:html={block.html} />
+            )}
+
+            {block.type === 'h2' && (
+              <div class="mt-16 mb-0 scroll-mt-24" id={block.id}>
+                <h2 class="font-heading font-bold text-[2rem] md:text-[2.5rem] text-charcoal leading-tight tracking-tight" set:html={block.html} />
+              </div>
+            )}
+
+            {block.type === 'h3' && (
+              <h3 class="font-heading font-bold text-[1.25rem] text-charcoal mt-8 mb-3 leading-snug" set:html={block.html} />
+            )}
+
+            {block.type === 'h4' && (
+              <h4 class="font-heading font-bold text-[1rem] text-charcoal mt-6 mb-2 uppercase tracking-wide" set:html={block.html} />
+            )}
+
+            {block.type === 'paragraph' && (
+              <p class="text-[17px] text-[#333] leading-[1.85] mb-6 mt-5" set:html={block.html} />
+            )}
+
+            {block.type === 'list_ul' && (
+              <ul class="mb-6 mt-4 space-y-3 pl-0">
+                {block.items?.map((item) => (
+                  <li class="flex items-start gap-3 text-[17px] text-[#333] leading-relaxed">
+                    <svg class="w-4 h-4 text-deep-green shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                    <span set:html={item} />
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {block.type === 'list_ol' && (
+              <ol class="mb-6 mt-4 space-y-4 pl-0">
+                {block.items?.map((item, idx) => (
+                  <li class="flex items-start gap-4 text-[17px] text-[#333] leading-relaxed">
+                    <span class="shrink-0 font-heading font-bold text-[15px] text-deep-green w-8 pt-0.5">
+                      {String(idx + 1).padStart(2, '0')}.
+                    </span>
+                    <span set:html={item} />
                   </li>
                 ))}
               </ol>
-            </nav>
-          )}
+            )}
 
-          <div class="article-body">
-            {blocks.map((block) => (
-              <>
-                {block.type === 'lead' && (
-                  <p class="text-xl md:text-2xl font-semibold text-charcoal leading-relaxed mb-8" set:html={block.html} />
-                )}
-                {block.type === 'h2' && (
-                  <h2 id={block.id} class="font-heading font-bold text-2xl md:text-3xl text-charcoal mt-12 mb-5 scroll-mt-24 pb-3 border-b border-border" set:html={block.html} />
-                )}
-                {block.type === 'h3' && (
-                  <h3 class="font-heading font-bold text-xl text-charcoal mt-8 mb-4" set:html={block.html} />
-                )}
-                {block.type === 'h4' && (
-                  <h4 class="font-heading font-bold text-sm text-deep-green uppercase tracking-wider mt-6 mb-3" set:html={block.html} />
-                )}
-                {block.type === 'paragraph' && (
-                  <p class="text-[17px] text-slate leading-[1.85] mb-6" set:html={block.html} />
-                )}
-                {block.type === 'list_ul' && (
-                  <ul class="mb-6 space-y-2.5 pl-0">
-                    {block.items?.map((item) => (
-                      <li class="flex items-start gap-3 text-[17px] text-slate leading-relaxed">
-                        <span class="mt-2.5 w-1.5 h-1.5 rounded-full bg-deep-green shrink-0"></span>
-                        <span set:html={item} />
-                      </li>
-                    ))}
-                  </ul>
-                )}
-                {block.type === 'list_ol' && (
-                  <ol class="mb-6 space-y-3 pl-0">
-                    {block.items?.map((item, idx) => (
-                      <li class="flex items-start gap-3 text-[17px] text-slate leading-relaxed">
-                        <span class="shrink-0 w-6 h-6 rounded-full bg-deep-green text-white text-xs font-heading font-bold flex items-center justify-center mt-0.5">{idx + 1}</span>
-                        <span set:html={item} />
-                      </li>
-                    ))}
-                  </ol>
-                )}
-                {block.type === 'blockquote' && (
-                  <blockquote class="my-8 pl-5 border-l-4 border-amber">
-                    <p class="text-lg text-charcoal italic leading-relaxed" set:html={block.html} />
-                  </blockquote>
-                )}
-                {block.type === 'divider' && (
-                  <hr class="my-10 border-border" />
-                )}
-              </>
-            ))}
-          </div>
+            {block.type === 'blockquote' && (
+              <blockquote class="my-10 pl-6 border-l-[3px] border-deep-green">
+                <p class="text-[1.1rem] text-charcoal italic leading-relaxed font-medium" set:html={block.html} />
+              </blockquote>
+            )}
 
-          <div class="mt-12 pt-8 border-t border-border flex flex-wrap items-center justify-between gap-4">
-            <div>
-              <p class="text-xs text-slate/50 mb-1">Original source</p>
-              <a href={post.sourceUrl} target="_blank" rel="noopener" class="text-sm text-deep-green hover:underline break-all">{post.sourceUrl}</a>
-            </div>
-            <a href="/articles/" class="sunlit-btn-secondary text-sm">← Back to Articles</a>
-          </div>
-        </article>
+            {block.type === 'divider' && (
+              <hr class="my-12 border-gray-100" />
+            )}
+          </>
+        ))}
+      </div>
 
-        <aside class="space-y-5 lg:sticky lg:top-24">
-          {tocItems.length >= 3 && (
-            <div class="sunlit-card p-5 hidden lg:block">
-              <p class="text-xs font-heading font-bold uppercase tracking-widest text-deep-green mb-4">Contents</p>
-              <nav class="space-y-1.5">
-                {tocItems.map((item, idx) => (
-                  <a href={`#${item.id}`} class="toc-link flex items-start gap-2 text-sm text-slate hover:text-deep-green transition-colors py-0.5 group" data-target={item.id}>
-                    <span class="text-deep-green/30 font-heading font-bold text-xs mt-0.5 shrink-0 group-hover:text-deep-green transition-colors">{String(idx + 1).padStart(2, '0')}</span>
-                    <span class="leading-snug">{item.text}</span>
-                  </a>
-                ))}
-              </nav>
-            </div>
-          )}
-
-          <div class="sunlit-card p-5">
-            <p class="sunlit-overline text-xs mb-3">Ready to Start?</p>
-            <h3 class="font-heading font-bold text-lg text-charcoal mb-3 leading-snug">Not sure which system fits your roof?</h3>
-            <p class="text-sm text-slate leading-relaxed mb-4">Share your country, roof area, and a photo. No drawing required for the first message.</p>
-            <a href="/contact/" class="sunlit-btn-green w-full text-sm">Ask Sunlit →</a>
-          </div>
-
-          <div class="sunlit-card p-5">
-            <p class="text-xs font-heading font-bold uppercase tracking-widest text-slate/50 mb-4">Article Info</p>
-            <div class="space-y-3 text-sm">
-              <div class="flex justify-between items-center">
-                <span class="text-slate">Published</span>
-                <span class="font-medium text-charcoal">{formattedDate}</span>
-              </div>
-              <div class="flex justify-between items-center">
-                <span class="text-slate">Reading time</span>
-                <span class="font-medium text-charcoal">{readingTime} min</span>
-              </div>
-              <div class="flex justify-between items-start gap-2">
-                <span class="text-slate shrink-0">Category</span>
-                <span class="font-medium text-charcoal text-right">{post.category}</span>
-              </div>
-            </div>
-          </div>
-
-          {relatedPosts.length > 0 && (
-            <div class="sunlit-card p-5">
-              <p class="text-xs font-heading font-bold uppercase tracking-widest text-deep-green mb-4">Related</p>
-              <div class="space-y-4">
-                {relatedPosts.map((rp) => (
-                  <a href={`/articles/${rp.slug}/`} class="block group">
-                    <h4 class="font-heading font-bold text-sm text-charcoal group-hover:text-deep-green transition-colors leading-snug mb-1">{rp.title}</h4>
-                    <p class="text-xs text-slate leading-relaxed line-clamp-2">{rp.summary}</p>
-                  </a>
-                ))}
-              </div>
-            </div>
-          )}
-        </aside>
+      <!-- Article footer -->
+      <div class="mt-16 pt-8 border-t border-gray-100 flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <p class="text-xs text-slate/50 mb-1">Original source</p>
+          <a href={post.sourceUrl} target="_blank" rel="noopener" class="text-sm text-deep-green hover:underline break-all">{post.sourceUrl}</a>
+        </div>
+        <a href="/articles/" class="sunlit-btn-secondary text-sm">← Back to Articles</a>
       </div>
     </div>
   </main>
 
+  <!-- Related articles -->
   {relatedPosts.length > 0 && (
-    <section class="py-14 bg-soft-green">
-      <div class="container mx-auto px-4 max-w-5xl">
+    <section class="py-16 bg-soft-green">
+      <div class="max-w-[860px] mx-auto px-6">
         <div class="flex items-center justify-between mb-8">
           <h2 class="font-heading font-bold text-2xl md:text-3xl text-charcoal">More in {post.category}</h2>
           <a href="/articles/" class="text-sm text-deep-green font-heading font-bold hover:underline">View all →</a>
         </div>
         <div class="grid md:grid-cols-3 gap-5">
           {relatedPosts.map((rp) => (
-            <a href={`/articles/${rp.slug}/`} class="sunlit-card p-6 block group hover:shadow-md transition-shadow">
+            <a href={`/articles/${rp.slug}/`} class="sunlit-card p-6 block group hover:shadow-md transition-shadow bg-white">
               <div class="w-full h-28 bg-gradient-to-br from-deep-green/10 to-deep-green/5 rounded-xl mb-4 flex items-center justify-center">
                 <svg class="w-7 h-7 text-deep-green/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -309,51 +292,30 @@ const readingTime = Math.max(1, Math.ceil(wordCount / 200));
     </section>
   )}
 
+  <!-- CTA Banner -->
   <section class="py-16 dark-green-gradient text-white">
-    <div class="container mx-auto px-4 max-w-4xl text-center">
+    <div class="max-w-[860px] mx-auto px-6 text-center">
       <p class="text-xs font-heading font-bold uppercase tracking-widest text-white/40 mb-4">Sunlit Solar Roof</p>
       <h2 class="font-heading font-bold text-3xl md:text-4xl mb-4 leading-tight">Ready to Move from Reading to a Real Project?</h2>
-      <p class="text-white/70 leading-relaxed mb-8 max-w-2xl mx-auto">Share your country, roof area, and a photo or sketch. We will help you identify the right product direction and factory supply scope before any formal quotation.</p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact/" class="sunlit-btn-primary">Ask About My Project →</a>
-        <a href="/system-overview/" class="sunlit-btn-secondary border-white/30 text-white hover:bg-white/10">View Supply Scope</a>
+      <p class="text-white/70 text-lg mb-8 max-w-xl mx-auto">Share your roof area and location. We'll tell you which system fits and what to expect.</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="/contact/" class="sunlit-btn-amber">Get a Free Consultation →</a>
+        <a href="/system-overview/" class="sunlit-btn-outline-white">Explore Supply Scope</a>
       </div>
     </div>
   </section>
 
-</Layout>
-
-<script is:inline>
-  window.addEventListener('scroll', () => {
-    const article = document.querySelector('.article-body');
+  <script is:inline>
+    // Reading progress bar
     const bar = document.getElementById('reading-progress');
-    if (!article || !bar) return;
-    const rect = article.getBoundingClientRect();
-    const scrolled = Math.max(0, -rect.top);
-    const progress = Math.min(100, (scrolled / article.scrollHeight) * 100);
-    bar.style.width = progress + '%';
-  });
+    if (bar) {
+      window.addEventListener('scroll', () => {
+        const doc = document.documentElement;
+        const scrolled = doc.scrollTop;
+        const total = doc.scrollHeight - doc.clientHeight;
+        bar.style.width = total > 0 ? (scrolled / total * 100) + '%' : '0%';
+      }, { passive: true });
+    }
+  </script>
 
-  const tocLinks = document.querySelectorAll('.toc-link');
-  const headings = document.querySelectorAll('h2[id]');
-  if (tocLinks.length > 0 && headings.length > 0) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          tocLinks.forEach((l) => { l.classList.remove('!text-deep-green', 'font-semibold'); });
-          const active = document.querySelector('.toc-link[data-target="' + entry.target.id + '"]');
-          if (active) active.classList.add('!text-deep-green', 'font-semibold');
-        }
-      });
-    }, { rootMargin: '-20% 0px -70% 0px' });
-    headings.forEach((h) => observer.observe(h));
-  }
-</script>
-
-<style>
-  .article-body :global(strong) { color: var(--charcoal); font-weight: 700; }
-  .article-body :global(em) { font-style: italic; color: var(--slate); }
-  .article-body :global(a) { color: var(--deep-green); font-weight: 600; text-decoration: underline; text-decoration-color: rgba(15,77,58,0.3); }
-  .article-body :global(a:hover) { text-decoration-color: var(--deep-green); }
-  .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-</style>
+</Layout>
