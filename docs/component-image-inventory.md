@@ -3,8 +3,8 @@
 ## Directory Structure
 ```
 public/images/components/
-├── shared/              (3 files)  — Both product lines
-├── lumina-slate/        (14 files) — Lumina Slate only
+├── shared/              (5 files)  — Both product lines
+├── lumina-slate/        (13 files) — Lumina Slate only
 └── storm-guard/         (8 files)  — Storm Guard only
 ```
 
@@ -44,21 +44,29 @@ public/images/components/
 
 ### 1. Butyl Sealant Tape
 - **File**: `shared/butyl-sealant-tape.webp`
-- **Zoho ID**: 12256000000037313 (LS), generic for SG
 - **Source**: Storm Guard Ridge & Edge page
 - **Description**: High-performance butyl rubber sealing tape, paired with eave sub-plate; adhesion enhanced at high temperatures (up to 150°C) with low water vapor transmission rate for permanent flexible sealing, UV-resistant aging, suitable for multiple waterproof joints.
 
 ### 2. Foil-Faced Radiant Barrier
 - **File**: `shared/foil-radiant-barrier.webp`
-- **Zoho ID**: 12256000000037235 (LS)
 - **Source**: Lumina Slate & Storm Guard Roof Base Layer pages
 - **Description**: A composite layer of aluminum foil and waterproof materials, placed over the roof base or waterproof membrane, ensuring tight overlaps. It combines waterproofing with heat reflection, blocking summer heat radiation while retaining winter warmth for energy-efficient insulation.
 
 ### 3. Waterproof Breathable Membrane
 - **File**: `shared/waterproof-membrane.webp`
-- **Zoho ID**: 12256000000037219 (LS Plide Membrane)
 - **Source**: Lumina Slate & Storm Guard Roof Base Layer pages
 - **Description**: Made from non-woven fabric compounded with modified asphalt, serving as the primary roof base waterproof layer. Directly laid and nailed in place, its special self-healing structure ensures no leakage from nail holes, providing a reliable waterproof barrier; suitable for sloped roofs.
+
+### 4. Roof Batten (Counter / Tile Batten)
+- **File**: `shared/roof-batten.webp`
+- **Chinese**: 防腐木瓦条 / 顺水条 / 挂瓦条
+- **Source**: Lumina Slate & Storm Guard Roof Base Layer pages
+- **Description**: Made from corrosion-resistant treated wood, typically arranged by the buyer. Recommended size 3cm×5cm; eave strips placed perpendicular to the ridge on the roof base to secure batten strips and guide rainwater drainage while promoting ventilation; batten strips installed parallel to the ridge, providing stable tile support, separating the waterproof layer from tiles for efficient drainage and system durability.
+
+### 5. MC4 Connector
+- **File**: `shared/mc4-connector.webp`
+- **Chinese**: MC4接头
+- **Description**: Standard MC4-compatible connector for tile-to-tile electrical connections. Used by both Lumina Slate and Storm Guard systems for string wiring.
 
 ---
 
@@ -88,7 +96,6 @@ public/images/components/
 |------|---------|---------|---------------------------|
 | `lumina-wind-clip.webp` | 抗风扣 | Wind Uplift Clip | Stainless steel base wrapped in rubber layer, 3 clips per full-size tile. Clamps tiles to roof for typhoon-resistant anchoring without drilling. |
 | `lumina-ridge-support-bracket.webp` | 托木支架 | Ridge Support Bracket | Metal bracket holding ridge structure. Galvanized steel. |
-| `lumina-mc4-connector.webp` | MC4接头 | MC4 Connector | Standard MC4-compatible connector for tile-to-tile electrical connections. |
 
 ---
 
