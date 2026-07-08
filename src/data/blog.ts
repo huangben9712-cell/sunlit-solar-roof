@@ -267,12 +267,231 @@ Solar roof products are fragile and project-specific. Packaging, labels, packing
 Your margin is protected by clarity. If the quotation is vague, you may later pay for missing accessories, extra shipping, local rework or unhappy customers. A complete quotation is slower, but it is safer.`,
     sourceUrl: "https://www.sunlitsolarroof.com/import-solar-roof/"
   },
-  { id: 9, slug: "solar-system-categories", title: "Grid-Tied, Off-Grid, or Hybrid? How to Choose the Right Solar Setup", category: "Technical & Installation", priority: "P1", date: "2025-10-30", summary: "Guide for explaining grid-tied, off-grid and hybrid electrical setups.", content: `This article should be rewritten after the electrical-system article is finalized. It can become a supporting guide that explains grid-tied, hybrid and off-grid setups for buyers who are not electrical specialists.`, sourceUrl: "https://www.sunlitsolarroof.com/solar-system-categories/" },
-  { id: 10, slug: "solar-roof-roi-for-developers", title: "Why Developers Are Doing the Math Wrong on Solar Roofs", category: "Market Insights & ROI", priority: "P1", date: "2026-03-31", summary: "Developer-focused article on how solar roofs affect project value beyond simple electricity payback.", content: `This article should be kept as a developer education piece. The rewrite should avoid unsupported ROI promises and focus on premium positioning, differentiation, energy resilience and buyer perception.`, sourceUrl: "https://www.sunlitsolarroof.com/solar-roof-roi-for-developers/" },
-  { id: 11, slug: "future-of-solar-roofs", title: "Why Energy Independence Will Become the Biggest Premium for High End Real Estate", category: "Market Insights & ROI", priority: "P1", date: "2026-04-01", summary: "Market insight article about energy independence as a premium real estate value.", content: `This article can become thought leadership after stronger evidence and market-specific examples are added. Keep it secondary until the product, project and importer pages are stronger.`, sourceUrl: "https://www.sunlitsolarroof.com/future-of-solar-roofs/" },
-  { id: 12, slug: "solar-roofing-business-model", title: "The IKEA Model of Solar Roofing: Who We Work With", category: "Market Insights & ROI", priority: "P1", date: "2026-04-02", summary: "Explains Sunlit's cooperation model with distributors, installers, contractors and developers.", content: `This article is useful for explaining Sunlit's role: China-based design and manufacturing support, local installation by the buyer's roof and electrical teams, and cooperation with distributors or project partners.`, sourceUrl: "https://www.sunlitsolarroof.com/solar-roofing-business-model/" },
-  { id: 13, slug: "sunlit-bipv-story", title: "From Premium Exterior Contracting to Advanced BIPV: The Sunlit Story", category: "Products & Case Studies", priority: "P2", date: "2026-05-16", summary: "Brand story article that can support the About page after fact-checking.", content: `Keep this as a later brand-story rewrite. It should not outrank product, project and buyer-guide content in the first migration pass.`, sourceUrl: "https://www.sunlitsolarroof.com/sunlit-bipv-story/" },
-  { id: 14, slug: "why-are-most-solar-roofs-black", title: "Why Are Most Solar Roofs Black?", category: "Products & Case Studies", priority: "P1", date: "2026-06-05", summary: "Explains the visual and technical reasons many solar roof products are black.", content: `This article can support the Lumina Slate and Storm Guard product pages. It should explain the relationship between solar absorption, cell appearance, glass treatment, roof aesthetics and buyer expectations.`, sourceUrl: "https://www.sunlitsolarroof.com/why-are-most-solar-roofs-black/" }
+  {
+    id: 9,
+    slug: "solar-system-categories",
+    title: "Grid-Tied, Off-Grid, or Hybrid? How to Choose the Right Solar Setup",
+    category: "Technical & Installation",
+    priority: "P1",
+    date: "2025-10-30",
+    summary: "Compare grid-tied, off-grid, and hybrid solar systems and when to use each for residential projects.",
+    content: `If you are building homes or replacing roofs in 2026, the buzzwords are everywhere: "Net Zero," "Energy Independence," "Microgrids." Solar is no longer just glass you bolt to the roof; it is the energy engine of a modern house. But before you break ground, you have to answer one critical question: How are we wiring this thing?
+
+## The Inverter: The Brain of the Operation
+
+The inverter takes raw power from the roof and turns it into power your house can actually use. It dictates the rules:
+
+- Grid-Tied Inverter: If the city grid goes down, it shuts off instantly to protect utility workers.
+- Off-Grid Inverter: Does everything itself. If you plug in too many appliances at once, the whole house goes dark.
+- Hybrid Inverter: Juggles the solar roof, batteries, and city grid all at once, switching between them in milliseconds.
+
+## Option 1: The Grid-Tied System
+
+The most common setup, permanently connected to the utility grid. During the day, the solar roof powers the house and extra juice gets sent back for a credit. At night, the house buys power back.
+
+Why Builders Like It: Cheapest option, no batteries, zero maintenance.
+The Catch: Blackouts mean blackouts. Safety laws force grid-tied systems to shut down when the street loses power.
+Best For: Urban starter homes with solid grids and strict budgets.
+
+## Option 2: The Off-Grid System
+
+If you are building an eco-resort on a remote island or a cabin in the mountains, this is your only option. Completely disconnected from the utility company. No safety net — you need a massive bank of LFP batteries and always include a generator as backup.
+Best For: Remote builds where running utility cables costs more than the solar system itself.
+
+## Option 3: The Hybrid System
+
+The number one recommendation for mid-to-high-end developments in 2026. It connects to the grid but also has a battery. A hybrid system can charge from the grid at 2 AM when power is cheap and run the house off the battery at 7 PM when rates skyrocket. When the city grid dies, it switches to battery power in under 20 milliseconds.
+Best For: Luxury homes. These buyers have zero tolerance for sitting in the dark.
+
+## The Quick Cheat Sheet
+
+- No city power available? Go Off-Grid.
+- City power is available but unreliable? Go Hybrid.
+- City power is rock-solid, budget is tight? Go Grid-Tied.
+
+## Common Questions
+
+Q: How long does a hybrid battery last in a blackout?
+A: A 10kWh battery keeps essentials (fridge, lights, Wi-Fi, TV) running overnight. Stack more for AC.
+
+Q: Can I install a cheap Grid-Tied system now and plug in a battery later?
+A: Do not fall for this trap. Standard grid-tied inverters cannot communicate with batteries. Install a Battery-Ready Hybrid inverter today.
+
+Q: Do Sunlit Solar Roofs work with all these setups?
+A: 100%. Our solar roof is the engine. Hook it up to whatever inverter system fits your project.`,
+    sourceUrl: "https://www.sunlitsolarroof.com/solar-system-categories/"
+  },
+  {
+    id: 10,
+    slug: "solar-roof-roi-for-developers",
+    title: "Why Developers Are Doing the Math Wrong on Solar Roofs",
+    category: "Market Insights & ROI",
+    priority: "P1",
+    date: "2026-03-31",
+    summary: "A real Cambodia villa case study: how integrated solar roofs save developers money on materials, labor, and schedule.",
+    content: `Most developers look at an integrated solar roof and think: "That's too expensive." If you just compare to standard clay tiles, the math doesn't look great. But a true solar roof is not just an electrical add-on. It is a different way to build the roof itself.
+
+## The Project: A Luxury Villa in Cambodia
+
+A major real estate conglomerate wanted to see if solar roofs made financial sense for luxury villas. The villa had a 374 sq.m roof. Homeowners would use 2,320 kWh/month. At $0.20/kWh, that is a painful monthly bill. Every 1kW of solar capacity there generates about 1,480 kWh/year.
+
+## The Three Choices
+
+**Option 1: Standard Roof.** Premium traditional tile roof, ~$16,000. Low initial cost, zero ROI. Buyer gets a $500/month power bill.
+
+**Option 2: Standard Roof + Bolted-On Solar.** $16,000 for roof + $28,500 for 19kW solar + 30kWh battery. Total: $44,500. Four extra build days. Ugly panels ruin curb appeal. Drilling racks into a finished roof in a storm zone is a massive leak risk.
+
+**Option 3: Integrated Solar Roof.** Storm Guard Series, all-in-one metal-based roof as primary weather barrier. Factory-direct 19kW + 30kWh battery: $35,700.
+
+## The Hidden Savings
+
+In regions with heavy rain, traditional tiles need a massive concrete base. The whole house needs thicker steel and heavier beams. Storm Guard uses dry-hang installation, weighs only 15 kg/m2, and survives Category 5 hurricanes. The developer could eliminate the concrete sub-structure, saving $43/m2 and 15 construction days.
+
+## The Real Math
+
+Integrated roof: $35,700 minus skipped concrete: $16,000 equals real cost: $19,700.
+Compare to Option 2: $44,500.
+The developer saved ~$25,000 per villa, delivered two weeks earlier, with a better-looking leak-proof product. Payback: under 4 years.
+
+Note: The massive concrete saving applies mostly to reinforced concrete roof regions (Asia, Middle East, South America). Timber truss builders in the US or Europe still save on roofing labor, material substitution, and energy bills.`,
+    sourceUrl: "https://www.sunlitsolarroof.com/solar-roof-roi-for-developers/"
+  },
+  {
+    id: 11,
+    slug: "future-of-solar-roofs",
+    title: "Energy Security and the Future of Solar Roofs",
+    category: "Market Insights & ROI",
+    priority: "P1",
+    date: "2026-04-01",
+    summary: "Why energy independence will become the biggest premium for high-end real estate.",
+    content: `Most people normally do not care about geopolitics. But when gas prices and grocery bills spike at the same time and start choking your daily life, people wake up.
+
+## A Fragile Global Trade Network
+
+More than 70 years of post-WWII peace built a massive trade network that allowed oil and gas to flow freely from the Middle East, the US, and Russia. Cheap endless fossil fuels became the bedrock of modern life. But when war threatens to lock down the Strait of Hormuz, everything changes. That single strait handles about 20% of the world's oil and LNG. If that stops, prices skyrocket.
+
+## How the 1970s Oil Crisis Birthed the New Energy Market
+
+The OPEC embargo sent oil prices to the moon, caused massive inflation, and froze the global economy. Solar technology had just been invented. It was expensive and barely worked, but governments used it to sell hope. In 1979, the US President put a $28,000 solar water heater on the White House roof. This was not because everyone wanted to save the environment. It was because brutal fuel prices forced people to find alternatives.
+
+## The Geopolitical Premium
+
+No matter how the current conflicts end, the geopolitical premium is here to stay. The extra costs go straight onto your gas receipt and monthly power bill. This pain will force nations to produce their own energy at home. This is solar's next historical moment. Except this time, it is not an expensive lab experiment but a highly mature technology ready for the real world.
+
+## Massive Market Demand Will Force Products to Evolve
+
+When a market gets this big, products evolve. Think cars: the Model T splintered into sedans, SUVs, and minivans. Solar is doing exactly the same. Traditional blue panels will get bigger for utility farms. But for homes, solar must integrate seamlessly with architecture.
+
+In a future with inflation, premium real estate prices will keep rising. When top-tier buyers want energy independence, do they want cheap blue panels bolted onto their roofs, or a sleek integrated luxury solar roof? The answer is obvious. The decentralization of energy is the only absolute certainty.`,
+    sourceUrl: "https://www.sunlitsolarroof.com/future-of-solar-roofs/"
+  },
+  {
+    id: 12,
+    slug: "solar-roofing-business-model",
+    title: "The IKEA Model of Solar Roofing: Who We Work With (And Why We Say No)",
+    category: "Market Insights & ROI",
+    priority: "P1",
+    date: "2026-04-02",
+    summary: "How Sunlit's factory-direct model works: flat-pack solar roofs shipped globally, local crews handle installation, you keep the margins.",
+    content: `Solar roofs are going global. Our inbox is flooded with inquiries from North America, the UK, Australia, the Middle East, and Africa. But how does this business actually work? And why do we turn down most partnership emails?
+
+## 1. The "No Boots" Problem
+
+Every day we hear from investment brokers, tech fans, and solar panel salesmen. They see our photos and want to partner up. But deals rarely close. Why? A beautiful solar roof still needs guys in work boots. It needs roofers to lay the tiles and electricians to wire the inverters. If you do not want to get your hands dirty, or you do not have a local crew, this business is not for you.
+
+## 2. Stop Calculating "Price Per Watt"
+
+Traditional solar guys always do the same thing: they divide our quote by wattage and say "Too expensive." That is the wrong math. A solar roof is not a metal rack bolted to an old roof. It is the roof. When you look at our quote, you are buying premium building materials, a 25-year waterproof guarantee, and a micro-power plant.
+
+## 3. Timing is Everything
+
+You can bolt standard solar panels onto a house anytime. A solar roof is different. If a homeowner just bought asphalt shingles three years ago, do not pitch them a solar roof. Ripping up a perfectly good roof creates a massive sunk cost. Only two perfect windows exist: a brand-new build or a complete roof replacement.
+
+## 4. Who We Actually Want to Talk To
+
+Our ideal partners: custom home builders, real estate developers, and turnkey roofing companies. We focus on premium high-net-worth projects because they support the budget for flawless aesthetics, and our roof drives up the property's market value instantly.
+
+Doing this right takes budget, vision, and coordination. That is why we cut the middleman. We only want to talk to decision-makers: CEOs, owners, and the people who write the checks.
+
+## 5. Our Playbook: The IKEA Model
+
+Some suppliers promise an all-inclusive package. You will pay a massive markup for that privilege. We do things differently. We are the IKEA of the solar roof world. We build top-tier products using a highly efficient supply chain, ship directly to your site via ocean freight. You pay your local crew to install it.
+
+Yes, more work for you: import paperwork (our freight partners guide you), grid-connection permits, managing your roofers and electricians.
+
+But the payoff: You cut out the middleman. You get factory-direct pricing. You keep the massive margins. We handle the gear: premium hardware, system design, clear installation guides, and pre-assembled electrical components.`,
+    sourceUrl: "https://www.sunlitsolarroof.com/solar-roofing-business-model/"
+  },
+  {
+    id: 13,
+    slug: "sunlit-bipv-story",
+    title: "From Premium Exterior Contracting to Advanced BIPV: The Sunlit Story",
+    category: "Products & Case Studies",
+    priority: "P2",
+    date: "2026-05-16",
+    summary: "Sunlit's origin story — from high-end architectural exterior contractor to specialized BIPV manufacturer.",
+    content: `Before establishing our footprint in BIPV, our core team operated at the intersection of high-end architectural exterior contracting and structural engineering. We built our reputation managing structural design, material procurement, and complex exterior installations for luxury estates and commercial developments.
+
+## The Shift to Architectural Energy Integration
+
+The global transition toward decentralized clean energy introduced challenges for high-end properties. Developers faced rising energy consumption and environmental governance pressures. While interest in BIPV grew, sophisticated developers identified critical vulnerabilities: traditional solar panels (BAPV) compromised architectural symmetry and poorly engineered systems failed to deliver reliable weatherproofing.
+
+## Structural Deficiencies of Traditional Solar (BAPV)
+
+Standard BAPV mounts panels over existing roofs via rail brackets, disrupting building aesthetics with heavy aluminum frames and exposed wiring. A roof is first and foremost a protective structural envelope. If a BIPV product fails to ensure water-tight integrity, structural stability, and edge-to-edge detailing, electrical efficiency becomes irrelevant.
+
+## Product Innovation and Strategic Supply Chain
+
+Our R&D department developed two distinct product lines:
+
+**The Storm Guard Series**: Leveraging our expertise in premium metal-tile manufacturing, these integrated photovoltaic metal tiles use a high-tensile alloy substrate designed for extreme wind loads. The interlocking profile provides redundant waterproofing.
+
+**The Lumina Slate Series**: Partnering with advanced glass processor Almaden, this premium line features double-glass frameless photovoltaic panels matching minimalist slate roofs. Using Almaden's high-transmission textured anti-reflective glass, it delivers excellent power output while blending into contemporary designs.
+
+## Global B2B Technical Delivery Model
+
+Sunlit Solar Roof minimizes the complexities of international BIPV procurement by acting as a single, accountable point of contact for developers, EPC contractors, and architects worldwide. Our model covers: CAD layout design from architectural files, turnkey packaged logistics, interlocking mechanical tile profiles for local crews, and pre-configured wiring harnesses aligned with inverters and battery storage.
+
+## Our Commercial Commitments
+
+No Minimum Order Quantities (MOQ): We accept small-scale initial orders and pilot projects. Technical Team Training: Comprehensive documentation, layout diagrams, and remote engineering consultations. Rigorous Quality Assurance: Mechanical load testing, EL imaging inspection, and waterproofing validation on every production run.`,
+    sourceUrl: "https://www.sunlitsolarroof.com/sunlit-bipv-story/"
+  },
+  {
+    id: 14,
+    slug: "why-are-most-solar-roofs-black",
+    title: "Why Are Most Solar Roofs Black?",
+    category: "Products & Case Studies",
+    priority: "P1",
+    date: "2026-06-05",
+    summary: "The physics behind black solar tiles: what the color tax costs in power loss and custom manufacturing.",
+    content: `Architects and developers ask this all the time: "Can we get this solar roof in a different color?" A BIPV roof is a building material first, and a power plant second. But look at Tesla, Sunlit, and almost every major BIPV player. The default is almost always black. Why?
+
+## The Truth Behind the Black Default
+
+The core of a solar tile is a silicon cell. By nature, raw silicon cells are dark blue or dark black. To get maximum power, we cover it with ultra-clear tempered glass. Sunlight punches through the clear glass, hits the dark cell, and generates power. To unify the roof visually, we match the non-solar dummy tiles and flashings to that same dark shade. Maximum power output plus visual harmony.
+
+## The Color Tax: What You Actually Pay
+
+Can you get a solar roof in red or green? Yes. Using ceramic fritting or optical nano-coatings on the glass. But you have to pay a two-part tax.
+
+**Tax 1: The Physics Penalty.** You see red because the glass reflects red light. If it reflects light, it is not making power. Adding color instantly loses 15% to 20% of output. A 100W tile drops to 80W.
+
+**Tax 2: The Supply Chain Markup.** Ultra-clear glass is cheap because millions of units are produced. Colored solar glass is a custom run that interrupts automated lines and requires manual adjustments. Per-tile manufacturing cost goes up 10% to 20%.
+
+## Three Ways to Handle Color on a Project
+
+**Route A: The Blank Check Build.** We supplied a massive regional headquarters for SDIC that needed a red roof to match the campus. We custom-manufactured red solar glass and matching dummy tiles. It looked incredible, but they paid a premium.
+
+**Route B: The Cheater Method.** Active solar tiles stay black, but you customize the color of the non-solar dummy tiles around them. A budget-friendly illusion.
+
+**Route C: The Subtle Tint.** A light bronze or tinted finish takes the edge off pure black without destroying power output.
+
+## The Bottom Line
+
+Our default black roof is the sweet spot: sleek, matches modern architecture, delivers highest ROI. But if you are building a landmark project with a healthy budget and are willing to trade a little efficiency for massive visual impact, bring us your blueprints and we will custom-build exactly what you need.`,
+    sourceUrl: "https://www.sunlitsolarroof.com/why-are-most-solar-roofs-black/"
+  }
 ];
 
 export const getBlogPostBySlug = (slug: string): BlogPost | undefined => blogPosts.find((p) => p.slug === slug);
