@@ -15,7 +15,9 @@ const tocItems: { id: string; text: string }[] = [];
 const h2Regex = /^## (.+)$/gm;
 let tocMatch;
 while ((tocMatch = h2Regex.exec(rawContent)) !== null) {
-  const text = tocMatch[1].trim();
+  const rawText = tocMatch[1].trim();
+  // Strip markdown bold/italic markers from TOC display text
+  const text = rawText.replace(/\*\*(.+?)\*\*/g, '$1').replace(/\*(.+?)\*/g, '$1').replace(/`(.+?)`/g, '$1');
   const id = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   tocItems.push({ id, text });
 }
