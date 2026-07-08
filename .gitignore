@@ -25,6 +25,3 @@ pnpm-debug.log*
 
 # platform-specific config with secrets
 .project-config.json
-
-# large raw videos (process locally before committing)
-public/videos/installation/lumina-slate/*.mp4
