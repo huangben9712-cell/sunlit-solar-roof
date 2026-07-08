@@ -2,7 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import { blogPosts } from '../../data/blog';
 
-const publishedPosts = blogPosts.filter(p => p.priority === 'P0');
+const publishedPosts = blogPosts.filter(p => p.priority === 'P0' || p.priority === 'P1');
 ---
 
 <Layout title="Knowledge Base - Sunlit Solar Roof" description="Technical guides, market insights, and installation resources for B2B solar roof buyers.">

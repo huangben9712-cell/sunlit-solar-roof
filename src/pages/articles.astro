@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { blogPosts } from '../data/blog';
 
-const publishedPosts = blogPosts.filter(p => p.priority === 'P0');
+const publishedPosts = blogPosts.filter(p => p.priority === 'P0' || p.priority === 'P1');
 ---
 
 <Layout title="Solar Roof Articles - Sunlit" description="Practical guides and insights for B2B buyers sourcing complete BIPV solar roof systems.">
