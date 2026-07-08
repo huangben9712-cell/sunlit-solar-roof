@@ -1,4 +1,4 @@
-﻿---
+---
 import Layout from '../../layouts/Layout.astro';
 import { resources } from '../../data/resources.ts';
 
@@ -14,11 +14,62 @@ interface Props {
 }
 
 const { resource } = Astro.props;
-const relatedResources = resources.filter((r) => r.category === resource.category && r.id !== resource.id).slice(0, 3);
-const paragraphs = resource.content ? resource.content.split('\n\n') : [];
+const relatedResources = resources
+  .filter((r) => r.category === resource.category && r.id !== resource.id)
+  .slice(0, 3);
+
+const rawBlocks = resource.content
+  ? resource.content.split('\n\n').map((block) => block.trim()).filter(Boolean)
+  : [];
+
+const articleBlocks = rawBlocks.map((block) => {
+  const lines = block.split('\n').map((line) => line.trim()).filter(Boolean);
+  const hasList = lines.some((line) => line.startsWith('-') || /^\d+\./.test(line));
+
+  if (hasList) {
+    const headingLine = lines.find((line) => !line.startsWith('-') && !/^\d+\./.test(line));
+    const items = lines
+      .filter((line) => line.startsWith('-') || /^\d+\./.test(line))
+      .map((line) => line.replace(/^-\s*/, '').replace(/^\d+\.\s*/, '').trim());
+
+    return {
+      type: 'list',
+      heading: headingLine ? headingLine.replace(/:$/, '') : 'Key Points',
+      items,
+    };
+  }
+
+  if (lines.length === 1 && lines[0].endsWith(':')) {
+    return {
+      type: 'heading',
+      text: lines[0].replace(/:$/, ''),
+    };
+  }
+
+  return {
+    type: 'paragraph',
+    text: block,
+  };
+});
+
+const guideTakeaways = resource.isPublic
+  ? [
+      'Understand the buyer decision before asking only for price.',
+      'Separate product scope, local responsibility and quotation requirements.',
+      'Use the guide to decide what to ask Sunlit next.',
+    ]
+  : [
+      'Documents are shared according to project stage and selected product line.',
+      'A short project description is enough to start the request.',
+      'We will point you to the most relevant version instead of sending random files.',
+    ];
+
+const articleMap = resource.isPublic
+  ? ['Quick answer', 'What buyers should understand', 'Sunlit factory-supply angle', 'Next decision']
+  : ['What this document is for', 'When to request it', 'What information helps', 'Next step'];
 ---
 
-<Layout title={resource.title} description={resource.summary}>
+<Layout title={`${resource.title} - Sunlit Solar Roof`} description={resource.summary}>
   <section class="border-b border-border bg-white">
     <div class="container mx-auto px-4 py-4 text-sm text-slate">
       <a href="/" class="hover:text-deep-green">Home</a>
@@ -29,75 +80,156 @@ const paragraphs = resource.content ? resource.content.split('\n\n') : [];
     </div>
   </section>
 
-  <section class="bg-soft-green py-14 md:py-20">
-    <div class="container mx-auto px-4 max-w-4xl">
-      <p class="sunlit-overline mb-4">{resource.category}</p>
-      <h1 class="sunlit-section-title text-4xl md:text-6xl mb-6">{resource.title}</h1>
-      <p class="text-lg md:text-xl text-slate leading-relaxed">{resource.summary}</p>
-    </div>
-  </section>
-
-  <section class="py-16 md:py-24 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="grid lg:grid-cols-3 gap-10">
-        <article class="lg:col-span-2">
-          {resource.isPublic && paragraphs.length > 0 ? (
-            <div class="sunlit-card p-8 space-y-5">
-              {paragraphs.map((paragraph) => (
-                <p class="text-slate leading-relaxed whitespace-pre-line">{paragraph}</p>
-              ))}
-            </div>
-          ) : (
-            <div class="sunlit-card p-8">
-              <h2 class="text-2xl font-heading font-bold text-charcoal mb-4">Request This Document</h2>
-              <p class="text-slate leading-relaxed mb-6">
-                This document is shared based on the project stage, selected system and buyer requirements. Contact us with your project details and we will send the most relevant version.
-              </p>
-              <a href="/contact/" class="sunlit-btn-primary">Request Document</a>
-            </div>
-          )}
-        </article>
-
-        <aside>
-          <div class="sunlit-card p-6 sticky top-24">
-            <h3 class="font-heading font-bold text-charcoal mb-5">Resource Details</h3>
-            <div class="space-y-4">
-              <div class="pb-4 border-b border-border">
-                <p class="text-sm text-slate mb-1">Type</p>
-                <p class="font-heading font-bold text-charcoal capitalize">{resource.type}</p>
-              </div>
-              <div class="pb-4 border-b border-border">
-                <p class="text-sm text-slate mb-1">Category</p>
-                <p class="font-heading font-bold text-charcoal">{resource.category}</p>
-              </div>
-              <div>
-                <p class="text-sm text-slate mb-1">Access</p>
-                <p class="font-heading font-bold text-charcoal">{resource.isPublic ? "Public guide" : "Available on request"}</p>
-              </div>
-            </div>
-            <a href={resource.isPublic ? "/resources/" : "/contact/"} class="sunlit-btn-green w-full mt-6">
-              {resource.isPublic ? "Back to Resources" : "Request Document"}
-            </a>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  {relatedResources.length > 0 && (
-    <section class="py-16 md:py-24 bg-soft-green">
-      <div class="container mx-auto px-4">
-        <h2 class="sunlit-section-title text-3xl md:text-5xl mb-10 text-center">Related Resources</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-          {relatedResources.map((relatedResource) => (
-            <a href={`/resources/${relatedResource.slug}/`} class="sunlit-card p-6 block">
-              <p class="text-sm font-heading font-bold text-deep-green mb-3">{relatedResource.category}</p>
-              <h3 class="font-heading font-bold text-charcoal mb-2 line-clamp-2">{relatedResource.title}</h3>
-              <p class="text-sm text-slate leading-relaxed">{relatedResource.summary}</p>
-            </a>
-          ))}
+  <section class="bg-soft-green py-16 md:py-24">
+    <div class="container mx-auto px-4 grid lg:grid-cols-[1fr_0.42fr] gap-10 items-end">
+      <div class="max-w-5xl">
+        <p class="sunlit-overline mb-5">{resource.category}</p>
+        <h1 class="sunlit-section-title text-4xl md:text-6xl mb-6 text-charcoal">{resource.title}</h1>
+        <p class="text-lg md:text-xl text-slate leading-relaxed max-w-4xl">{resource.summary}</p>
+        <div class="flex flex-col sm:flex-row gap-4 mt-8">
+          <a href={resource.isPublic ? '#article' : '/contact/'} class="sunlit-btn-primary">
+            {resource.isPublic ? 'Read the Guide' : 'Request This Document'}
+          </a>
+          <a href="/resources/" class="sunlit-btn-secondary">Back to Resources</a>
         </div>
       </div>
-    </section>
-  )}
+
+      <aside class="sunlit-card p-6">
+        <p class="sunlit-overline mb-5">Resource Snapshot</p>
+        <div class="space-y-4">
+          <div class="pb-4 border-b border-border">
+            <p class="text-sm text-slate mb-1">Type</p>
+            <p class="font-heading font-bold text-charcoal capitalize">{resource.type}</p>
+          </div>
+          <div class="pb-4 border-b border-border">
+            <p class="text-sm text-slate mb-1">Category</p>
+            <p class="font-heading font-bold text-charcoal">{resource.category}</p>
+          </div>
+          <div>
+            <p class="text-sm text-slate mb-1">Access</p>
+            <p class="font-heading font-bold text-charcoal">{resource.isPublic ? 'Public guide' : 'Available on request'}</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="py-10 bg-white border-b border-border">
+    <div class="container mx-auto px-4 grid md:grid-cols-4 gap-4">
+      {articleMap.map((item, index) => (
+        <div class="rounded-2xl border border-border bg-light-gray p-5">
+          <p class="text-xs font-heading font-bold text-deep-green mb-2">0{index + 1}</p>
+          <h2 class="font-heading font-bold text-charcoal">{item}</h2>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section id="article" class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4 grid lg:grid-cols-[minmax(0,1fr)_340px] gap-10 items-start">
+      <article class="space-y-8">
+        <div class="sunlit-card p-6 md:p-8">
+          <p class="sunlit-overline mb-5">Quick Takeaways</p>
+          <div class="grid md:grid-cols-3 gap-4">
+            {guideTakeaways.map((item) => (
+              <div class="rounded-2xl bg-soft-green border border-deep-green/10 p-5">
+                <p class="text-sm text-slate leading-relaxed">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {resource.isPublic && articleBlocks.length > 0 ? (
+          <div class="sunlit-card p-6 md:p-10 space-y-8">
+            {articleBlocks.map((block) => (
+              <>
+                {block.type === 'heading' && (
+                  <h2 class="font-heading font-bold text-3xl text-charcoal">{block.text}</h2>
+                )}
+
+                {block.type === 'paragraph' && (
+                  <p class="text-lg text-slate leading-relaxed whitespace-pre-line">{block.text}</p>
+                )}
+
+                {block.type === 'list' && (
+                  <section class="rounded-3xl bg-light-gray border border-border p-6">
+                    <h2 class="font-heading font-bold text-2xl text-charcoal mb-5">{block.heading}</h2>
+                    <ul class="grid md:grid-cols-2 gap-3">
+                      {block.items.map((item) => (
+                        <li class="rounded-2xl bg-white border border-border p-4 text-slate leading-relaxed">{item}</li>
+                      ))}
+                    </ul>
+                  </section>
+                )}
+              </>
+            ))}
+          </div>
+        ) : (
+          <div class="sunlit-card p-8 md:p-10">
+            <p class="sunlit-overline mb-4">Request Document</p>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-charcoal mb-5">Request the Right Version for Your Project</h2>
+            <p class="text-lg text-slate leading-relaxed mb-6">
+              This document is shared based on project stage, selected product line and buyer requirements. Send us your country, roof area, product interest or question, and we will point you to the most relevant version.
+            </p>
+            <a href="/contact/" class="sunlit-btn-primary">Request Document</a>
+          </div>
+        )}
+
+        <div class="dark-green-gradient text-white rounded-3xl p-8 md:p-10">
+          <p class="uppercase tracking-[0.16em] text-white/70 font-bold text-xs mb-4">Sunlit buyer note</p>
+          <h2 class="font-heading font-bold text-3xl md:text-4xl mb-5">A Guide Should Help You Make the Next Decision</h2>
+          <p class="text-white/75 leading-relaxed mb-6">
+            Sunlit resources are written for overseas B2B buyers who need to understand product fit, factory supply scope and project communication before moving into a quotation.
+          </p>
+          <a href="/contact/" class="sunlit-btn-primary">Ask a Product Question</a>
+        </div>
+      </article>
+
+      <aside class="space-y-6 lg:sticky lg:top-24">
+        <div class="sunlit-card p-6">
+          <p class="sunlit-overline mb-4">Use This Guide For</p>
+          <ul class="space-y-3 text-slate text-sm leading-relaxed">
+            <li>✓ Early project education</li>
+            <li>✓ Product direction discussion</li>
+            <li>✓ Factory supply scope clarification</li>
+            <li>✓ Preparing better questions before quotation</li>
+          </ul>
+        </div>
+
+        <div class="sunlit-card p-6">
+          <p class="sunlit-overline mb-4">Next Step</p>
+          <h3 class="font-heading font-bold text-2xl text-charcoal mb-3">Not sure what fits your roof?</h3>
+          <p class="text-sm text-slate leading-relaxed mb-5">Send your country, estimated roof area, photos or simple product question. A complete drawing is not required for the first message.</p>
+          <a href="/contact/" class="sunlit-btn-green w-full">Ask Sunlit</a>
+        </div>
+
+        {relatedResources.length > 0 && (
+          <div class="sunlit-card p-6">
+            <p class="sunlit-overline mb-4">Related Resources</p>
+            <div class="space-y-4">
+              {relatedResources.map((relatedResource) => (
+                <a href={`/resources/${relatedResource.slug}/`} class="block border-b border-border last:border-b-0 pb-4 last:pb-0 group">
+                  <h3 class="font-heading font-bold text-charcoal group-hover:text-deep-green transition-colors mb-1">{relatedResource.title}</h3>
+                  <p class="text-sm text-slate leading-relaxed">{relatedResource.summary}</p>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+      </aside>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-soft-green">
+    <div class="container mx-auto px-4 text-center max-w-4xl">
+      <p class="sunlit-overline mb-4">Continue the Buying Path</p>
+      <h2 class="sunlit-section-title text-3xl md:text-5xl mb-5">Move from Reading to Product Fit</h2>
+      <p class="text-slate leading-relaxed mb-8">Use this guide as a starting point. The next useful step is usually to compare product direction, define factory supply scope, or ask a simple project question.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/system-overview/" class="sunlit-btn-secondary">View Supply Scope</a>
+        <a href="/lumina-slate/" class="sunlit-btn-secondary">Lumina Slate</a>
+        <a href="/storm-guard/" class="sunlit-btn-secondary">Storm Guard</a>
+      </div>
+    </div>
+  </section>
 </Layout>
