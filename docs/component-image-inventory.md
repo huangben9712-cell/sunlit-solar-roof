@@ -8,6 +8,8 @@ public/images/components/
 └── storm-guard/         (8 files)  — Storm Guard only
 ```
 
+Naming convention: Zoho English names with hyphens, no product-line prefix (folder already indicates series).
+
 ---
 
 ## Active Tile Specs (from Datasheet)
@@ -73,49 +75,49 @@ public/images/components/
 ## Lumina Slate Components
 
 ### Core Tiles
-| File | Chinese | English | Description (from old site) |
-|------|---------|---------|---------------------------|
-| `lumina-active-solar-tile.webp` | Pro发电瓦 | Active Solar Tile | 70W monocrystalline PERC, double glass encapsulated. Dark slate-grey frosted glass, zero visible cells from street level, 21%+ mono-PERC efficiency. Click-in interlocking system. |
-| `lumina-inactive-half-tile.webp` | Pro非发电半瓦 | Inactive Half Tile | Pre-sized glass dummy tile for staggered layout. Same display-grade anti-glare tempered glass as active tile. |
-| `lumina-cuttable-half-tile.webp` | Pro非发电切瓦 | Cuttable Half Tile | Injection-molded from high-strength polymer plastic with same overlap design as glass tiles. Cut on-site to any size for roof edges or complex areas. |
-| `lumina-quarter-tile.webp` | Pro非发电1/4瓦 | Quarter Tile | Quarter-sized dummy glass tile for tight spaces and layout completion. |
+| File | Chinese | English (Zoho) | Description (from old site) |
+|------|---------|---------------|---------------------------|
+| `active-solar-tile.webp` | Pro发电瓦 | Active Solar Tile | 70W monocrystalline PERC, double glass encapsulated. Dark slate-grey frosted glass, zero visible cells from street level. Click-in interlocking system. |
+| `inactive-half-tile-uncuttable.webp` | Pro非发电半瓦 | Inactive Half Tile (Uncuttable) | Pre-sized glass dummy tile for staggered layout. Same display-grade anti-glare tempered glass as active tile. |
+| `inactive-half-tile-cuttable.webp` | Pro非发电切瓦 | Inactive Half Tile (Cuttable) | Injection-molded from high-strength polymer plastic with same overlap design as glass tiles. Cut on-site to any size. |
+| `inactive-quarter-tile.webp` | Pro非发电1/4瓦 | Inactive Quarter Tile | Quarter-sized dummy glass tile for tight spaces and layout completion. |
 
 ### Trim & Flashing
-| File | Chinese | English | Description (from old site) |
-|------|---------|---------|---------------------------|
-| `lumina-ridge-tile.webp` | 脊瓦 | Ridge Tile | Covers and seals the roof peak. Toughened glass, matching the active tile appearance. |
-| `lumina-rake-tile.webp` | 边瓦 | Rake Tile | Covers and finishes the sloping roof edges. Same anti-glare tempered glass as active tiles. |
-| `lumina-eaves-starter.webp` | 封檐板 | Eaves Starter & Drip Edge | Base support for first row and water deflector. Aluminum construction with integrated drainage. |
-| `lumina-flashing-strip.webp` | 墅封压条 | Vertical Flashing Strip | Weatherproofing aluminum strip for vertical joints. |
-| `lumina-valley-flashing.webp` | 铝制排水沟 | Aluminum Valley Flashing | Channels water runoff at roof intersections. Aluminum construction. |
-| `lumina-flexible-flashing.webp` | 普利得卷材 | Flexible Flashing Roll | Adaptable sealing roll for complex joints and transitions. |
-| `lumina-ventilated-ridge-roll.webp` | 通风卷材 | Ventilated Ridge Roll | Breathable weather-seal for the roof ridge. |
+| File | Chinese | English (Zoho) | Description (from old site) |
+|------|---------|---------------|---------------------------|
+| `ridge-tile.webp` | 脊瓦 | Ridge Tile | Covers and seals the roof peak. Toughened glass, matching active tile appearance. |
+| `rake-tile.webp` | 边瓦 | Rake Tile | Covers and finishes sloping roof edges. Same anti-glare tempered glass as active tiles. |
+| `eaves-starter-drip-edge.webp` | 封檐板 | Eaves Starter & Drip Edge | Base support for first row and water deflector. Aluminum construction with integrated drainage. |
+| `vertical-flashing-strip.webp` | 墅封压条 | Vertical Flashing Strip | Weatherproofing aluminum strip for vertical joints. |
+| `aluminum-valley-flashing.webp` | 铝制排水沟 | Aluminum Valley Flashing | Channels water runoff at roof intersections. Aluminum construction. |
+| `flexible-flashing-roll.webp` | 普利得卷材 | Flexible Flashing Roll | Adaptable sealing roll for complex joints and transitions. |
+| `ventilated-ridge-roll.webp` | 通风卷材 | Ventilated Ridge Roll | Breathable weather-seal for the roof ridge. |
 
 ### Accessories
-| File | Chinese | English | Description (from old site) |
-|------|---------|---------|---------------------------|
-| `lumina-wind-clip.webp` | 抗风扣 | Wind Uplift Clip | Stainless steel base wrapped in rubber layer, 3 clips per full-size tile. Clamps tiles to roof for typhoon-resistant anchoring without drilling. |
-| `lumina-ridge-support-bracket.webp` | 托木支架 | Ridge Support Bracket | Metal bracket holding ridge structure. Galvanized steel. |
+| File | Chinese | English (Zoho) | Description (from old site) |
+|------|---------|---------------|---------------------------|
+| `wind-uplift-clip.webp` | 抗风扣 | Wind Uplift Clip | Stainless steel base wrapped in rubber layer, 3 clips per full-size tile. Typhoon-resistant anchoring without drilling. |
+| `ridge-support-bracket.webp` | 托木支架 | Ridge Support Bracket | Metal bracket holding ridge structure. Galvanized steel. |
 
 ---
 
 ## Storm Guard Components
 
 ### Core Tiles
-| File | Chinese | English | Description (from old site) |
-|------|---------|---------|---------------------------|
-| `storm-active-solar-tile.webp` | P135发电 | Active Solar Tile (P135) | 135W monocrystalline TOPCON, single glass adhesive, aluminum-magnesium-manganese alloy low-standing-seam base. |
-| `storm-matching-metal-tile.webp` | 智装金属瓦 | Matching Metal Tile | Non-generating matching metal roof sheet. Same Al-Mg-Mn alloy and fluorocarbon coating as active tile for visual consistency. |
+| File | Chinese | English (Zoho) | Description (from old site) |
+|------|---------|---------------|---------------------------|
+| `active-solar-tile.webp` | P135发电 | Active Solar Tile | 135W monocrystalline TOPCON, single glass adhesive, Al-Mg-Mn alloy low-standing-seam base. |
+| `matching-metal-tile.webp` | 智装金属瓦 | Matching Metal Tile | Non-generating matching metal roof sheet. Same Al-Mg-Mn alloy and fluorocarbon coating as active tile. |
 
 ### Trim & Flashing
-| File | Chinese | English | Description (from old site) |
-|------|---------|---------|---------------------------|
-| `storm-ridge-tile.webp` | 脊瓦 | Ridge Tile | Al-Mg-Mn alloy base coated with fluorocarbon paint, pre-cut into 1m segments for ridge closures. Nailed installation with corrosion-resistant coating, integrating ridge ventilation and waterproofing. |
-| `storm-gable-panel.webp` | 山墙板 | Gable Panel | Al-Mg-Mn alloy coated with fluorocarbon paint, pre-cut into 1m segments. Nailed fixation with high-strength weather resistance prevents side wind/water leaks and provides aesthetic edging. |
-| `storm-eaves-starter.webp` | 檐口板 | Eaves Starter & Drip Edge | Al-Mg-Mn alloy with fluorocarbon coating. Sub-plate adhered to walls via butyl tape, main board supports first row of tiles, integrated drainage channel prevents backflow. |
-| `storm-flashing-board.webp` | 泛水板 | Flashing Board | Al-Mg-Mn alloy with fluorocarbon paint for roof edges and parapet water diversion. On-site flexible cutting, installed with nails and weatherproof sealant. |
-| `storm-gutter-board.webp` | 天沟板 | Gutter Board / Valley Gutter | Al-Mg-Mn alloy with fluorocarbon paint for roof valley waterproofing and drainage. Ends clipped and fixed to batten strips, corrosion-resistant. |
-| `storm-dedicated-fastener.webp` | 专用固定扣件 | Dedicated Fastener | Series-specific mounting fastener compatible with Storm Guard system. |
+| File | Chinese | English (Zoho) | Description (from old site) |
+|------|---------|---------------|---------------------------|
+| `ridge-tile.webp` | 脊瓦 | Ridge Tile | Al-Mg-Mn alloy with fluorocarbon paint, pre-cut into 1m segments. Corrosion-resistant, integrates ridge ventilation and waterproofing. |
+| `gable-panel.webp` | 山墙板 | Gable Panel | Al-Mg-Mn alloy with fluorocarbon paint, pre-cut into 1m segments. Prevents side wind/water leaks, provides aesthetic edging. |
+| `eaves-starter-drip-edge.webp` | 檐口板 | Eaves Starter & Drip Edge | Al-Mg-Mn alloy with fluorocarbon coating. Sub-plate adhered via butyl tape, supports first row of tiles, integrated drainage channel. |
+| `flashing-board.webp` | 泛水板 | Flashing Board | Al-Mg-Mn alloy with fluorocarbon paint for roof edges and parapet water diversion. On-site flexible cutting. |
+| `gutter-board.webp` | 天沟板 | Gutter Board | Al-Mg-Mn alloy with fluorocarbon paint for roof valley waterproofing and drainage. Corrosion-resistant. |
+| `dedicated-fastener.webp` | 专用固定扣件 | Dedicated Fastener | Series-specific mounting fastener compatible with Storm Guard system. |
 
 ---
 
