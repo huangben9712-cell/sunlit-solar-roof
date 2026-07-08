@@ -1,102 +1,366 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
-const values = [
-  {
-    title: "Factory-Direct Supply",
-    desc: "We are not a trading company. We manufacture our BIPV systems, giving you direct access to factory pricing, production schedules, and quality control.",
-  },
-  {
-    title: "Complete System Scope",
-    desc: "We provide the full package: active solar elements, matching inactive tiles, and all necessary roofing accessories for a seamless, fully integrated installation.",
-  },
-  {
-    title: "B2B Project Focus",
-    desc: "Our entire process is built for professionals. We provide project-based quotes, export documentation, and dedicated technical support for developers and contractors.",
-  },
-  {
-    title: "Transparent Communication",
-    desc: "We provide clear, honest information on product specs, capabilities, and project requirements, ensuring there are no surprises.",
-  },
-];
-
-const steps = [
-  { title: "Project Inquiry", desc: "You send project country, roof area, roof drawing if available, preferred system and delivery destination." },
-  { title: "System Discussion", desc: "We discuss whether Lumina Slate or Storm Guard is more suitable based on appearance, budget and roof type." },
-  { title: "Scope and Quotation", desc: "We prepare the product scope around active elements, inactive coverage, accessories and packaging requirements." },
-  { title: "Documents and Coordination", desc: "We provide relevant datasheets, installation notes and other documents according to the project stage." },
-];
 ---
 
-<Layout title="About Sunlit - BIPV Solar Roof Manufacturer">
-  <section class="bg-soft-green py-16 md:py-24">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl">
-      <p class="sunlit-overline mb-5">About Sunlit</p>
-      <h1 class="sunlit-section-title text-4xl md:text-5xl lg:text-6xl text-charcoal mb-6">
-        A B2B Manufacturer of Integrated Solar Roof Systems
+<Layout title="About Sunlit — China Factory-Side Solar Roof Supplier" description="Sunlit is a China-based factory and export partner for complete BIPV solar roof systems. Active PV tiles, matching inactive elements, accessories, documents and export support.">
+
+  <!-- 1. Hero -->
+  <section class="relative min-h-[60vh] flex items-end bg-charcoal overflow-hidden">
+    <img
+      src="/images/projects/usa-private-gymnasium/sunlit-bipv-solar-roof-gymnasium-aerial-usa.webp"
+      alt="Sunlit solar roof project aerial view"
+      class="absolute inset-0 w-full h-full object-cover opacity-50"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-transparent"></div>
+    <div class="relative max-w-5xl mx-auto px-6 pb-16 pt-32">
+      <p class="text-xs font-heading font-bold uppercase tracking-widest text-white/50 mb-4">About Sunlit</p>
+      <h1 class="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6 max-w-3xl">
+        China Factory-Side Supplier for Complete Solar Roof Product Packages
       </h1>
-      <p class="text-lg text-slate leading-relaxed max-w-3xl mx-auto">
-        We are a specialized China-based factory and export partner for B2B buyers sourcing complete BIPV (Building-Integrated Photovoltaic) roof systems.
+      <p class="text-lg text-white/70 leading-relaxed max-w-2xl">
+        Sunlit supports overseas B2B buyers with active PV tiles and sheets, matching inactive roof elements,
+        accessories, documents, packaging and export communication.
       </p>
     </div>
   </section>
 
-  <section class="py-16 md:py-24 bg-white">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <p class="sunlit-overline mb-4">Why Sunlit</p>
-        <h2 class="sunlit-section-title text-4xl md:text-5xl">
-          Your Direct Link to BIPV Manufacturing
-        </h2>
+  <!-- 2. What We Actually Supply -->
+  <section class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-xs font-heading font-bold uppercase tracking-widest text-deep-green mb-4">What We Supply</p>
+          <h2 class="font-heading font-bold text-3xl md:text-4xl text-charcoal leading-tight mb-6">
+            A complete solar roof product package — not just panels
+          </h2>
+          <p class="text-slate leading-relaxed mb-8">
+            Most solar suppliers sell modules. We supply everything needed to build a complete integrated solar roof:
+            the active generating elements, the matching inactive tiles that make the roof look uniform,
+            all the trim and flashing pieces, fixings, and the documents your project needs.
+          </p>
+          <div class="space-y-4">
+            {[
+              { label: 'Active PV Tiles / Sheets', note: 'Lumina Slate (70W glass tile) or Storm Guard (135W metal sheet)' },
+              { label: 'Matching Inactive Elements', note: 'Non-generating tiles that match the active tile appearance' },
+              { label: 'Flashing, Ridge & Edge Pieces', note: 'All trim components for a watertight, finished installation' },
+              { label: 'Fixings & Accessories', note: 'Battens, sealant tape, MC4 connectors, waterproof membrane' },
+              { label: 'Technical Documents', note: 'Datasheet, BOM, installation notes, certifications' },
+              { label: 'Packaging & Export Support', note: 'Export-ready packing, shipping coordination, COO documentation' },
+            ].map((item) => (
+              <div class="flex items-start gap-3">
+                <div class="w-5 h-5 rounded-full bg-deep-green/10 flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-3 h-3 text-deep-green" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <span class="font-heading font-bold text-sm text-charcoal">{item.label}</span>
+                  <span class="text-sm text-slate"> — {item.note}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <img src="/images/components/lumina-slate/active-solar-tile.webp" alt="Lumina Slate active solar tile" class="rounded-xl object-cover aspect-square w-full" />
+          <img src="/images/components/storm-guard/matching-metal-tile.webp" alt="Storm Guard matching metal tile" class="rounded-xl object-cover aspect-square w-full" />
+          <img src="/images/components/lumina-slate/ridge-tile.webp" alt="Ridge tile component" class="rounded-xl object-cover aspect-square w-full" />
+          <img src="/images/components/shared/mc4-connector.webp" alt="MC4 connector accessory" class="rounded-xl object-cover aspect-square w-full" />
+        </div>
       </div>
-      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-        {values.map((item, index) => (
-          <div class="flex items-start gap-6">
-            <div class="w-14 h-14 rounded-2xl bg-soft-green text-deep-green flex items-center justify-center shrink-0">
-              {index === 0 && <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-7h6v7"/><path d="M9 9h.01"/><path d="M12 9h.01"/><path d="M15 9h.01"/></svg>}
-              {index === 1 && <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 8 4.5v9L12 20l-8-4.5v-9L12 2Z"/><path d="M12 11 4.5 6.8"/><path d="M12 11l7.5-4.2"/><path d="M12 11v9"/></svg>}
-              {index === 2 && <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>}
-              {index === 3 && <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>}
+    </div>
+  </section>
+
+  <!-- 3. Factory & Product Evidence -->
+  <section class="py-20 bg-soft-green">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <p class="text-xs font-heading font-bold uppercase tracking-widest text-deep-green mb-4">Factory Evidence</p>
+        <h2 class="font-heading font-bold text-3xl md:text-4xl text-charcoal leading-tight mb-4">
+          We are a manufacturer, not a marketing website
+        </h2>
+        <p class="text-slate max-w-2xl mx-auto">
+          These are our actual production and sample facilities. We manufacture, test and ship from our own factory.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="relative rounded-2xl overflow-hidden aspect-[4/3]">
+          <img src="/images/factory/样品区.webp" alt="Sunlit product sample area" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+            <p class="text-white text-xs font-heading font-bold">Sample Area</p>
+          </div>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden aspect-[4/3]">
+          <img src="/images/factory/实验室 (1).webp" alt="Sunlit testing laboratory" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+            <p class="text-white text-xs font-heading font-bold">Testing Laboratory</p>
+          </div>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden aspect-[4/3]">
+          <img src="/images/factory/实验室 (2).webp" alt="Sunlit QC laboratory" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+            <p class="text-white text-xs font-heading font-bold">QC Laboratory</p>
+          </div>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden aspect-[4/3]">
+          <img src="/images/factory/仓库出货区 (1).webp" alt="Warehouse and dispatch area" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+            <p class="text-white text-xs font-heading font-bold">Warehouse & Dispatch</p>
+          </div>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden aspect-[4/3]">
+          <img src="/images/factory/仓库出货区 (2).webp" alt="Outbound logistics area" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+            <p class="text-white text-xs font-heading font-bold">Outbound Logistics</p>
+          </div>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden aspect-[4/3]">
+          <img src="/images/factory/实验室 (3).webp" alt="Product testing station" class="w-full h-full object-cover" />
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+            <p class="text-white text-xs font-heading font-bold">Product Testing</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Testing & Quality Evidence -->
+  <section class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="space-y-4">
+          <!-- Impact test video thumbnail -->
+          <div class="relative rounded-2xl overflow-hidden aspect-video bg-charcoal cursor-pointer group">
+            <img
+              src="/videos/testing/Lumina slate 抗冲击-poster.webp"
+              alt="Lumina Slate hail impact test"
+              class="w-full h-full object-cover opacity-80 group-hover:opacity-70 transition-opacity"
+            />
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center border border-white/30">
+                <svg class="w-7 h-7 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
             </div>
-            <div>
-              <h3 class="font-heading font-bold text-xl text-charcoal mb-2">{item.title}</h3>
-              <p class="text-slate leading-relaxed">{item.desc}</p>
+            <div class="absolute bottom-4 left-4">
+              <span class="bg-deep-green text-white text-xs font-heading font-bold px-3 py-1 rounded-full">35mm Hail Test — Lumina Slate</span>
             </div>
+          </div>
+          <div class="relative rounded-2xl overflow-hidden aspect-video bg-charcoal cursor-pointer group">
+            <img
+              src="/videos/testing/Storm Guard 抗冲击-poster.webp"
+              alt="Storm Guard hail impact test"
+              class="w-full h-full object-cover opacity-80 group-hover:opacity-70 transition-opacity"
+            />
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center border border-white/30">
+                <svg class="w-7 h-7 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+            <div class="absolute bottom-4 left-4">
+              <span class="bg-deep-green text-white text-xs font-heading font-bold px-3 py-1 rounded-full">35mm Hail Test — Storm Guard</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="text-xs font-heading font-bold uppercase tracking-widest text-deep-green mb-4">Testing & Quality</p>
+          <h2 class="font-heading font-bold text-3xl md:text-4xl text-charcoal leading-tight mb-6">
+            Tested to reduce buyer risk
+          </h2>
+          <p class="text-slate leading-relaxed mb-8">
+            Every product line goes through structured testing before export. We share test results and certificate
+            documentation with buyers at the appropriate project stage.
+          </p>
+          <div class="grid grid-cols-2 gap-3">
+            {[
+              'IEC 61215 / IEC 61730',
+              'IP68 Waterproof',
+              '35mm Hail Impact',
+              'CE Marking',
+              'ISO 9001',
+              'Grade A Fire Rating',
+            ].map((cert) => (
+              <div class="flex items-center gap-2 p-3 bg-soft-green rounded-xl">
+                <svg class="w-4 h-4 text-deep-green shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+                <span class="text-xs font-heading font-bold text-charcoal">{cert}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Packing & Export Support -->
+  <section class="py-20 bg-soft-green">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <p class="text-xs font-heading font-bold uppercase tracking-widest text-deep-green mb-4">Export Readiness</p>
+        <h2 class="font-heading font-bold text-3xl md:text-4xl text-charcoal leading-tight mb-4">
+          Packed and shipped for international delivery
+        </h2>
+        <p class="text-slate max-w-2xl mx-auto">
+          Products are packed to withstand long-haul freight. We handle export documentation and coordinate with freight forwarders on behalf of buyers.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+        <div class="relative rounded-2xl overflow-hidden aspect-square">
+          <img src="/images/shipping/12396c9bf48aa20316ba926d2f5206d5.webp" alt="Solar tile export packing" class="w-full h-full object-cover" />
+        </div>
+        <div class="relative rounded-2xl overflow-hidden aspect-square">
+          <img src="/images/shipping/57e4ef2b6e97c1498741c40e4e2897af.webp" alt="Packaged solar roof products" class="w-full h-full object-cover" />
+        </div>
+        <div class="relative rounded-2xl overflow-hidden aspect-square">
+          <img src="/images/shipping/8879fe166b4b0f67455ca7409ba71e1e.webp" alt="Export-ready pallet" class="w-full h-full object-cover" />
+        </div>
+        <div class="relative rounded-2xl overflow-hidden aspect-square">
+          <img src="/images/shipping/a1e77cb3c75b8df9e4aede91087a4efd.webp" alt="Shipping preparation" class="w-full h-full object-cover" />
+        </div>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-4">
+        {[
+          { title: 'Export Packing', desc: 'Tiles packed in reinforced cartons with foam protection for sea freight' },
+          { title: 'Export Documents', desc: 'Commercial invoice, packing list, certificate of origin, bill of lading' },
+          { title: 'Freight Coordination', desc: 'We work with your forwarder or recommend trusted freight partners' },
+        ].map((item) => (
+          <div class="bg-white rounded-2xl p-5">
+            <h3 class="font-heading font-bold text-sm text-charcoal mb-2">{item.title}</h3>
+            <p class="text-xs text-slate leading-relaxed">{item.desc}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="py-16 md:py-24 bg-light-gray border-y border-border">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-14">
-        <p class="sunlit-overline mb-4">How We Work</p>
-        <h2 class="sunlit-section-title text-4xl md:text-5xl">
-          A Practical Process for Overseas Projects
+  <!-- 6. How We Work with Overseas Buyers -->
+  <section class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <p class="text-xs font-heading font-bold uppercase tracking-widest text-deep-green mb-4">Process</p>
+        <h2 class="font-heading font-bold text-3xl md:text-4xl text-charcoal leading-tight">
+          How we work with overseas buyers
         </h2>
       </div>
-      <div class="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-        {steps.map((step, index) => (
-          <div class="sunlit-card p-6">
-            <div class="w-10 h-10 rounded-full bg-soft-green text-deep-green flex items-center justify-center font-bold mb-4">{index + 1}</div>
-            <h3 class="font-heading font-bold text-charcoal mb-2">{step.title}</h3>
-            <p class="text-sm text-slate leading-relaxed">{step.desc}</p>
+      <div class="grid md:grid-cols-5 gap-0">
+        {[
+          { step: '01', title: 'Inquiry', desc: 'Share your roof area, location, product preference and delivery destination.' },
+          { step: '02', title: 'Product Direction', desc: 'We recommend Lumina Slate or Storm Guard based on your project type and budget.' },
+          { step: '03', title: 'Sample & Docs', desc: 'We provide samples, datasheet and relevant certifications for evaluation.' },
+          { step: '04', title: 'Quotation', desc: 'We prepare a project-specific BOM and quotation based on confirmed scope.' },
+          { step: '05', title: 'Production & Export', desc: 'We manufacture, pack and ship with full export documentation.' },
+        ].map((item, i) => (
+          <div class={`relative flex flex-col items-center text-center px-4 ${i < 4 ? 'md:after:content-[\'\'] md:after:absolute md:after:top-8 md:after:left-[60%] md:after:w-[80%] md:after:h-px md:after:bg-gray-200' : ''}`}>
+            <div class="w-16 h-16 rounded-full bg-deep-green flex items-center justify-center mb-4 shrink-0 relative z-10">
+              <span class="font-heading font-bold text-white text-sm">{item.step}</span>
+            </div>
+            <h3 class="font-heading font-bold text-sm text-charcoal mb-2">{item.title}</h3>
+            <p class="text-xs text-slate leading-relaxed">{item.desc}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="dark-green-gradient text-white py-16 md:py-20">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
-      <h2 class="font-heading text-3xl md:text-5xl font-bold mb-5">
-        Discuss a Solar Roof Project
+  <!-- 7. What We Do / What Local Teams Handle -->
+  <section class="py-20 bg-charcoal">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <p class="text-xs font-heading font-bold uppercase tracking-widest text-white/40 mb-4">Scope Clarity</p>
+        <h2 class="font-heading font-bold text-3xl md:text-4xl text-white leading-tight">
+          What Sunlit supplies vs what local teams handle
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-deep-green rounded-2xl p-8">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
+              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
+            </div>
+            <h3 class="font-heading font-bold text-white">Sunlit Supplies (Factory Side)</h3>
+          </div>
+          <ul class="space-y-3">
+            {[
+              'Active PV tiles or sheets',
+              'Matching inactive roof elements',
+              'Trim, flashing and ridge components',
+              'Fixings and accessories',
+              'Technical datasheets and BOM',
+              'Certification documents',
+              'Export-ready packaging',
+              'Shipping and freight coordination',
+              'Pre-shipment product inspection',
+              'After-sales product support',
+            ].map((item) => (
+              <li class="flex items-start gap-2 text-sm text-white/80">
+                <svg class="w-4 h-4 text-amber shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="bg-white/5 rounded-2xl p-8 border border-white/10">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
+              <svg class="w-4 h-4 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <h3 class="font-heading font-bold text-white/60">Local Teams Handle</h3>
+          </div>
+          <ul class="space-y-3">
+            {[
+              'Roof structure assessment and preparation',
+              'Physical installation of tiles and components',
+              'Electrical wiring and inverter connection',
+              'Local building permits and approvals',
+              'Grid connection application',
+              'Local compliance and safety inspection',
+              'Ongoing maintenance and service',
+            ].map((item) => (
+              <li class="flex items-start gap-2 text-sm text-white/50">
+                <svg class="w-4 h-4 text-white/30 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Final CTA -->
+  <section class="py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <p class="text-xs font-heading font-bold uppercase tracking-widest text-deep-green mb-4">Get Started</p>
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-charcoal leading-tight mb-6">
+        Ready to evaluate our products for your project?
       </h2>
-      <p class="text-lg text-white/75 mb-8">
-        Send your project country, roof area, preferred system and roof drawing if available.
+      <p class="text-slate leading-relaxed mb-10 max-w-xl mx-auto">
+        Share your project details and we will respond with product direction, relevant documents and a preliminary scope.
       </p>
-      <a href="/contact/" class="sunlit-btn-primary">Contact Sunlit</a>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact/" class="inline-flex items-center justify-center gap-2 bg-deep-green text-white font-heading font-bold px-7 py-3.5 rounded-full hover:bg-deep-green/90 transition-colors">
+          Ask a Product Question
+        </a>
+        <a href="/contact/" class="inline-flex items-center justify-center gap-2 bg-amber text-charcoal font-heading font-bold px-7 py-3.5 rounded-full hover:bg-amber/90 transition-colors">
+          Get Factory Pricing
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
     </div>
   </section>
+
 </Layout>
