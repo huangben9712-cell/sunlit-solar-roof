@@ -1,4 +1,5 @@
 allowBuilds:
+  '@ffmpeg-installer/linux-x64': false
   esbuild: false
   sharp: true
 minimumReleaseAgeExclude:
