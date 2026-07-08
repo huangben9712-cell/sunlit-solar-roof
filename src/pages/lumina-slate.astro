@@ -1,7 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
 import { activeTileSpecs, sharedActiveTilePerformance } from '../data/productSpecs';
 import { luminaSlateComponents, sharedComponents } from '../data/componentAssets';
 import { projects } from '../data/projects';
@@ -19,8 +17,6 @@ const accessoryComponents = luminaSlateComponents.filter((c: any) => c.group ===
 ---
 
 <Layout title="Lumina Slate — Premium Glass Solar Roof Tiles | Sunlit Solar Roof" description="Lumina Slate is a premium double-glass BIPV solar roof tile line for high-end villas and architectural projects. 70W per tile, IP68, Grade A fire rating. Factory direct from China.">
-  <Navigation />
-
   <!-- HERO -->
   <section class="relative h-[90vh] min-h-[600px] overflow-hidden">
     <img
@@ -588,5 +584,4 @@ const accessoryComponents = luminaSlateComponents.filter((c: any) => c.group ===
     </div>
   </section>
 
-  <Footer />
 </Layout>
