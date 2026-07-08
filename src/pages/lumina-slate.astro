@@ -28,34 +28,34 @@ const accessoryComponents = luminaSlateComponents.filter((c: any) => c.group ===
     <div class="relative z-10 h-full flex items-end pb-16 md:pb-24">
       <div class="max-w-7xl mx-auto px-6 w-full">
         <div class="max-w-2xl">
-          <p class="text-amber-400 text-sm font-semibold tracking-widest uppercase mb-4">Premium Glass Solar Roof Tile</p>
+          <p class="text-amber text-sm font-semibold tracking-widest uppercase mb-4">Premium Glass Solar Roof Tile</p>
           <h1 class="text-white text-5xl md:text-6xl font-bold leading-tight mb-6">Lumina Slate</h1>
           <p class="text-white/80 text-xl mb-8 leading-relaxed">
             A double-glass BIPV tile line engineered for high-end villas, heritage-sensitive roofs and architecture-led projects where aesthetics and performance must coexist.
           </p>
           <div class="flex flex-wrap gap-6 mb-10">
             <div class="text-white">
-              <div class="text-3xl font-bold text-amber-400">{spec.powerPmax}</div>
+              <div class="text-3xl font-bold text-amber">{spec.powerPmax}</div>
               <div class="text-sm text-white/60 mt-1">Per Active Tile</div>
             </div>
             <div class="w-px bg-white/20 self-stretch"></div>
             <div class="text-white">
-              <div class="text-3xl font-bold text-amber-400">IP68</div>
+              <div class="text-3xl font-bold text-amber">IP68</div>
               <div class="text-sm text-white/60 mt-1">Waterproof Rating</div>
             </div>
             <div class="w-px bg-white/20 self-stretch"></div>
             <div class="text-white">
-              <div class="text-3xl font-bold text-amber-400">Grade A</div>
+              <div class="text-3xl font-bold text-amber">Grade A</div>
               <div class="text-sm text-white/60 mt-1">Fire Rating</div>
             </div>
             <div class="w-px bg-white/20 self-stretch"></div>
             <div class="text-white">
-              <div class="text-3xl font-bold text-amber-400">16+</div>
+              <div class="text-3xl font-bold text-amber">16+</div>
               <div class="text-sm text-white/60 mt-1">Completed Projects</div>
             </div>
           </div>
           <div class="flex flex-wrap gap-4">
-            <a href="/contact/" class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-black font-semibold px-7 py-3.5 rounded-lg transition-colors">
+            <a href="/contact/" class="inline-flex items-center gap-2 bg-amber hover:bg-amber-dark text-gray-900 font-semibold px-7 py-3.5 rounded-lg transition-colors">
               Request Sample or Quote
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </a>
@@ -184,7 +184,7 @@ const accessoryComponents = luminaSlateComponents.filter((c: any) => c.group ===
               </div>
               <div class="p-4">
                 <div class="font-semibold text-gray-900 text-sm mb-1">{comp.name}</div>
-                {comp.chineseName && <div class="text-gray-400 text-xs mb-2">{comp.chineseName}</div>}
+                
                 <p class="text-gray-500 text-xs leading-relaxed">{comp.shortDescription}</p>
                 {comp.keySpecs && comp.keySpecs.length > 0 && (
                   <div class="mt-3 pt-3 border-t border-gray-100 space-y-1">
@@ -212,7 +212,7 @@ const accessoryComponents = luminaSlateComponents.filter((c: any) => c.group ===
               </div>
               <div class="p-4">
                 <div class="font-semibold text-gray-900 text-sm mb-1">{comp.name}</div>
-                {comp.chineseName && <div class="text-gray-400 text-xs mb-2">{comp.chineseName}</div>}
+                
                 <p class="text-gray-500 text-xs leading-relaxed">{comp.shortDescription}</p>
               </div>
             </div>
@@ -230,7 +230,7 @@ const accessoryComponents = luminaSlateComponents.filter((c: any) => c.group ===
               </div>
               <div class="p-4">
                 <div class="font-semibold text-gray-900 text-sm mb-1">{comp.name}</div>
-                {comp.chineseName && <div class="text-gray-400 text-xs mb-2">{comp.chineseName}</div>}
+                
                 <p class="text-gray-500 text-xs leading-relaxed">{comp.shortDescription}</p>
                 {comp.keySpecs && comp.keySpecs.length > 0 && (
                   <div class="mt-3 pt-3 border-t border-gray-100 space-y-1">
@@ -271,7 +271,7 @@ const accessoryComponents = luminaSlateComponents.filter((c: any) => c.group ===
             </div>
             <div class="bg-[#1a2e1a] p-10 flex flex-col justify-between">
               <div>
-                <span class="text-amber-400 text-xs font-bold tracking-widest uppercase">Lumina Slate</span>
+                <span class="text-amber text-xs font-bold tracking-widest uppercase">Lumina Slate</span>
                 <h3 class="text-white text-2xl font-bold mt-3 mb-4 leading-snug">{heroProject.title}</h3>
                 <p class="text-white/60 text-sm leading-relaxed mb-6">{heroProject.overview}</p>
                 <div class="grid grid-cols-2 gap-3">
@@ -289,7 +289,7 @@ const accessoryComponents = luminaSlateComponents.filter((c: any) => c.group ===
                   )}
                 </div>
               </div>
-              <a href={`/projects/${heroProject.slug}/`} class="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 font-medium text-sm transition-colors mt-6">
+              <a href={`/projects/${heroProject.slug}/`} class="inline-flex items-center gap-2 text-amber hover:text-amber-dark font-medium text-sm transition-colors mt-6">
                 View Full Project
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
               </a>
@@ -322,7 +322,7 @@ const accessoryComponents = luminaSlateComponents.filter((c: any) => c.group ===
                   </div>
                 )}
               </div>
-              <a href={`/projects/${proj.slug}/`} class="inline-flex items-center gap-2 text-[#2d5a27] hover:text-[#1a4d16] font-medium text-sm transition-colors">View Full Project →</a>
+              <a href={`/projects/${proj.slug}/`} class="inline-flex items-center gap-2 text-amber hover:text-amber-dark font-medium text-sm transition-colors">View Full Project →</a>
             </div>
           </div>
         ))}
@@ -391,7 +391,7 @@ const accessoryComponents = luminaSlateComponents.filter((c: any) => c.group ===
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid md:grid-cols-2 gap-16 items-center">
         <div>
-          <p class="text-amber-400 text-sm font-semibold tracking-widest uppercase mb-4">Quality Evidence</p>
+          <p class="text-amber text-sm font-semibold tracking-widest uppercase mb-4">Quality Evidence</p>
           <h2 class="text-white text-4xl font-bold mb-6 leading-tight">Impact Resistance<br/>Tested on Camera</h2>
           <p class="text-white/60 text-lg mb-8 leading-relaxed">The Lumina Slate active tile is tested to resist 35mm hailstone impact. Watch the actual test footage — not a spec sheet claim.</p>
           <div class="grid grid-cols-2 gap-4 mb-8">
@@ -402,7 +402,7 @@ const accessoryComponents = luminaSlateComponents.filter((c: any) => c.group ===
               </div>
             ))}
           </div>
-          <a href="/contact/" class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-black font-semibold px-7 py-3.5 rounded-lg transition-colors">Request Datasheet</a>
+          <a href="/contact/" class="inline-flex items-center gap-2 bg-amber hover:bg-amber-dark text-gray-900 font-semibold px-7 py-3.5 rounded-lg transition-colors">Request Datasheet</a>
         </div>
         <div class="relative">
           <div class="rounded-2xl overflow-hidden bg-black aspect-video relative cursor-pointer group" onclick="const v=this.querySelector('video');const o=this.querySelector('.play-overlay');v.style.display='block';o.style.display='none';v.play();">
@@ -416,7 +416,7 @@ const accessoryComponents = luminaSlateComponents.filter((c: any) => c.group ===
               <source src="/videos/testing/Lumina slate 抗冲击.mp4" type="video/mp4" />
             </video>
           </div>
-          <div class="absolute -bottom-4 -right-4 bg-amber-500 text-black text-xs font-bold px-4 py-2 rounded-lg shadow-lg">35mm Hail Test Passed</div>
+          <div class="absolute -bottom-4 -right-4 bg-amber text-black text-xs font-bold px-4 py-2 rounded-lg shadow-lg">35mm Hail Test Passed</div>
         </div>
       </div>
     </div>
@@ -516,7 +516,7 @@ const accessoryComponents = luminaSlateComponents.filter((c: any) => c.group ===
         </div>
         <div class="bg-white rounded-2xl p-8 border border-amber-200">
           <div class="flex items-center gap-3 mb-6">
-            <div class="w-10 h-10 bg-amber-500 rounded-full flex items-center justify-center">
+            <div class="w-10 h-10 bg-amber rounded-full flex items-center justify-center">
               <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
             </div>
             <h3 class="text-xl font-bold text-gray-900">Consider Before Choosing</h3>
@@ -524,8 +524,8 @@ const accessoryComponents = luminaSlateComponents.filter((c: any) => c.group ===
           <ul class="space-y-4">
             {['Flat roofs — Lumina Slate is designed for pitched roofs (≥15° pitch)', 'Very large commercial rooftops — Storm Guard may offer better economics', 'Projects needing on-site tile cutting — use cuttable inactive tiles for edges', 'Budget-first buyers — Lumina Slate is a premium-positioned product line'].map(item => (
               <li class="flex items-start gap-3">
-                <div class="w-5 h-5 rounded-full bg-amber-50 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <div class="w-2 h-2 rounded-full bg-amber-500"></div>
+                <div class="w-5 h-5 rounded-full bg-amber/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div class="w-2 h-2 rounded-full bg-amber"></div>
                 </div>
                 <span class="text-gray-600 text-sm leading-relaxed">{item}</span>
               </li>
@@ -568,11 +568,11 @@ const accessoryComponents = luminaSlateComponents.filter((c: any) => c.group ===
       <img src="/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-solar-slate-roof-tiles-xianghu-details.webp" alt="" class="w-full h-full object-cover" />
     </div>
     <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
-      <p class="text-amber-400 text-sm font-semibold tracking-widest uppercase mb-4">Get Started</p>
+      <p class="text-amber text-sm font-semibold tracking-widest uppercase mb-4">Get Started</p>
       <h2 class="text-white text-4xl md:text-5xl font-bold mb-6 leading-tight">Ready to Specify<br/>Lumina Slate?</h2>
       <p class="text-white/60 text-lg mb-10 max-w-2xl mx-auto">We work directly with distributors, developers and installers. No middlemen. Request a sample, a datasheet, or a project-specific quote.</p>
       <div class="flex flex-wrap justify-center gap-4 mb-12">
-        <a href="/contact/" class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-black font-semibold px-8 py-4 rounded-lg transition-colors text-lg">
+        <a href="/contact/" class="inline-flex items-center gap-2 bg-amber hover:bg-amber-dark text-gray-900 font-semibold px-8 py-4 rounded-lg transition-colors text-lg">
           Request Sample or Quote
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
