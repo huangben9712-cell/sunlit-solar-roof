@@ -1,222 +1,581 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { productFAQs, generalFAQs } from '../data/faqs';
+import { activeTileSpecs, sharedActiveTilePerformance } from '../data/productSpecs';
+import { stormGuardComponents } from '../data/componentAssets';
+import { projects } from '../data/projects';
 
-const heroImage = "https://d2xsxph8kpxj0f.cloudfront.net/310519663705242844/mtvS4X69r9pvLdqcQTXPeQ/storm-guard-hero-Rv3C82SNHYaBM2TVgU4t7W.webp";
-const faqs = [...productFAQs, ...generalFAQs].slice(0, 5);
+const spec = activeTileSpecs.stormGuard;
 
-const proofCards = [
-  { title: 'Modern Metal Roof Look', desc: 'A clean metal roof profile for buyers who want solar generation without a conventional panel array appearance.' },
-  { title: 'Practical Project Position', desc: 'Better suited to larger or more cost-sensitive projects than a premium glass tile roof line.' },
-  { title: 'Active + Inactive Metal Coverage', desc: 'Active solar sheets and matching inactive metal elements are reviewed together for a consistent roof surface.' },
-  { title: 'Factory Supply Package', desc: 'Sheets, matching elements, accessories, documents and export support can be discussed as one project package.' },
-];
+// Storm Guard projects
+const stormProjects = projects.filter((p: any) => p.system === 'Storm Guard');
+const heroProject = stormProjects.find((p: any) => p.slug === 'large-scale-commercial-complex');
+const urbanRetrofit = stormProjects.find((p: any) => p.slug === 'urban-compact-home-retrofit');
+const lowSlope = stormProjects.find((p: any) => p.slug === 'urban-low-slope-extension');
 
-const components = [
+// Component groups
+const coreComponents = stormGuardComponents.filter((c: any) => c.group === 'core');
+const trimComponents = stormGuardComponents.filter((c: any) => c.group === 'trim-flashing');
+const accessoryComponents = stormGuardComponents.filter((c: any) => c.group === 'accessory');
+
+// Installation videos
+const installVideos = [
   {
-    title: 'Active Metal Solar Roof Sheet',
-    desc: 'Solar-generating metal roof sheet used on suitable roof areas.',
-    specs: ['Size: project / model based', 'Material: Al-Mg-Mn metal roof sheet', 'Profile: low standing seam', 'Power: model dependent'],
+    src: '/videos/installation/storm-guard/P135  安装1.mp4',
+    poster: '/videos/installation/storm-guard/P135  安装1-poster.webp',
+    label: 'Step 1 — Sheet Laying',
   },
   {
-    title: 'Matching Inactive Metal Roof Sheet',
-    desc: 'Non-generating metal roof sheet used where PV is not required or not suitable.',
-    specs: ['Size: project / model based', 'Material: matching Al-Mg-Mn metal', 'Coating: fluorocarbon coating', 'Profile: matched with active sheet'],
+    src: '/videos/installation/storm-guard/P135  安装2.mp4',
+    poster: '/videos/installation/storm-guard/P135  安装2-poster.webp',
+    label: 'Step 2 — Seam Locking',
   },
   {
-    title: 'Metal Ridge / Edge / Trim Accessories',
-    desc: 'Metal roof finishing components for ridges, edges, eaves and transitions.',
-    specs: ['Dimensions: project-specific', 'Use: ridge, edge and trim areas', 'Matched to roof profile', 'Quoted by roof detail'],
+    src: '/videos/installation/storm-guard/P135  安装3.mp4',
+    poster: '/videos/installation/storm-guard/P135  安装3-poster.webp',
+    label: 'Step 3 — Ridge & Edge',
   },
   {
-    title: 'Flashing and Drainage Details',
-    desc: 'Metal roof transition details for waterproofing and roof junctions.',
-    specs: ['Dimensions: project-specific', 'Use: wall junctions, penetrations and drainage areas', 'Requires local detailing review', 'Quoted by project scope'],
+    src: '/videos/installation/storm-guard/完工效果.mp4',
+    poster: '/videos/installation/storm-guard/完工效果-poster.webp',
+    label: 'Completed Roof Result',
   },
-  {
-    title: 'Clips / Fixings / Mounting-Related Parts',
-    desc: 'Supporting parts used for metal roof installation planning.',
-    specs: ['Selected by roof build-up', 'Reviewed with local method', 'Supports roof-side assembly', 'Included by quotation scope'],
-  },
-  {
-    title: 'Project Documents',
-    desc: 'Documents that support product evaluation, quotation and local installation communication.',
-    specs: ['Datasheet', 'Installation notes', 'BOM / packing list', 'Warranty document'],
-  },
-];
-
-const keySpecs = [
-  ['Product Line', 'Storm Guard Metal Solar Roof Sheets'],
-  ['Active Element', 'Low-standing-seam Al-Mg-Mn metal solar roof sheet'],
-  ['Inactive Element', 'Matching inactive metal roof element'],
-  ['Coating Direction', 'Fluorocarbon coating for metal roof finish'],
-  ['Size / Power', 'Project and model based'],
-  ['Best Fit', 'Modern residential, commercial, public and large roof projects'],
-];
-
-const goodFit = ['Modern residential roofs', 'Commercial and public buildings', 'Large roof areas', 'Projects needing a more practical cost position'];
-const notIdeal = ['Projects requiring a slate-look glass roof', 'Ultra-premium villa roofs where glass aesthetics are the first priority', 'Buyers who only want loose PV panels without roof package scope'];
-
-const process = [
-  { step: '01', title: 'Start with Project Use', desc: 'Tell us whether the roof is residential, commercial, public or large-area. Photos and rough roof size are enough for the first discussion.' },
-  { step: '02', title: 'Review Metal Roof Direction', desc: 'We discuss whether the Storm Guard metal profile fits the building appearance, budget position and local roof practice.' },
-  { step: '03', title: 'Define Active + Inactive Coverage', desc: 'Active solar sheet areas, inactive metal sheet areas and roof accessories are reviewed as one package.' },
-  { step: '04', title: 'Move Toward Factory Pricing', desc: 'When the roof scope is clearer, we can discuss quantities, packing, documents, samples and export terms.' },
 ];
 ---
+<Layout title="Storm Guard — Metal Solar Roof Sheets | Sunlit Solar Roof" description="Storm Guard is a modern metal solar roof sheet line for large-scale, practical and cost-positioned BIPV projects. 135W per sheet, standing-seam Al-Mg-Mn alloy, typhoon-rated. Factory direct from China.">
 
-<Layout title="Storm Guard Metal Solar Roof Sheets - Sunlit Solar Roof" description="Storm Guard is Sunlit's modern metal solar roof sheet line with active metal PV sheets, matching inactive metal roof elements and project-based factory supply support.">
-  <section class="border-b border-border bg-white">
-    <div class="container mx-auto px-4 py-4 text-sm text-slate">
-      <a href="/" class="hover:text-deep-green">Home</a>
-      <span class="mx-2">/</span>
-      <a href="/system-overview/" class="hover:text-deep-green">Supply Scope</a>
-      <span class="mx-2">/</span>
-      <span class="font-bold text-charcoal">Storm Guard</span>
-    </div>
-  </section>
-
-  <section class="bg-soft-green py-16 md:py-24">
-    <div class="container mx-auto px-4 grid lg:grid-cols-[1fr_0.95fr] gap-12 items-center">
-      <div>
-        <p class="sunlit-overline mb-4">Modern Metal Solar Roof Sheet Line</p>
-        <h1 class="sunlit-section-title text-4xl md:text-6xl mb-6">Storm Guard for Practical Modern Solar Roof Projects</h1>
-        <p class="text-lg text-slate leading-relaxed mb-5">Storm Guard is a metal solar roof sheet product line for modern residential, commercial, public and larger roof projects that need a cleaner roof-integrated alternative to standard panels.</p>
-        <p class="text-slate leading-relaxed mb-8">The factory package can include active metal solar roof sheets, matching inactive metal roof elements, roof detailing accessories, documents, packaging and export communication.</p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/contact/" class="sunlit-btn-primary">Ask About Storm Guard</a>
-          <a href="#components" class="sunlit-btn-secondary">View Components</a>
-          <a href="/system-overview/" class="sunlit-btn-secondary">View Supply Scope</a>
+  <!-- HERO -->
+  <section class="relative h-[90vh] min-h-[600px] overflow-hidden">
+    <img
+      src="/images/projects/large-scale-commercial-complex/storm-guard-large-scale-bipv-integration-aerial-scaled.webp"
+      alt="Storm Guard metal solar roof sheets installed on large-scale commercial complex"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-transparent"></div>
+    <div class="relative z-10 h-full flex items-end pb-16 md:pb-24">
+      <div class="max-w-7xl mx-auto px-6 w-full">
+        <div class="max-w-2xl">
+          <p class="text-amber text-sm font-semibold tracking-widest uppercase mb-4">Metal Solar Roof Sheet</p>
+          <h1 class="text-white text-5xl md:text-6xl font-bold leading-tight mb-6">Storm Guard</h1>
+          <p class="text-white/80 text-xl mb-8 leading-relaxed">
+            A standing-seam Al-Mg-Mn metal solar roof sheet line engineered for large-scale, practical and typhoon-rated projects where durability and cost efficiency must coexist.
+          </p>
+          <div class="flex flex-wrap gap-6 mb-10">
+            <div class="text-white">
+              <div class="text-3xl font-bold text-amber">{spec.powerPmax}</div>
+              <div class="text-sm text-white/60 mt-1">Per Active Sheet</div>
+            </div>
+            <div class="w-px bg-white/20 self-stretch"></div>
+            <div class="text-white">
+              <div class="text-3xl font-bold text-amber">IP68</div>
+              <div class="text-sm text-white/60 mt-1">Waterproof Rating</div>
+            </div>
+            <div class="w-px bg-white/20 self-stretch"></div>
+            <div class="text-white">
+              <div class="text-3xl font-bold text-amber">Grade A</div>
+              <div class="text-sm text-white/60 mt-1">Fire Rating</div>
+            </div>
+            <div class="w-px bg-white/20 self-stretch"></div>
+            <div class="text-white">
+              <div class="text-3xl font-bold text-amber">10+</div>
+              <div class="text-sm text-white/60 mt-1">Completed Projects</div>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-4">
+            <a href="/contact/" class="inline-flex items-center gap-2 bg-amber hover:bg-amber-dark text-gray-900 font-semibold px-7 py-3.5 rounded-lg transition-colors">
+              Request Sample or Quote
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+            <a href="#component-library" class="inline-flex items-center gap-2 border border-white/40 hover:border-white text-white font-medium px-7 py-3.5 rounded-lg transition-colors">
+              View Components
+            </a>
+          </div>
         </div>
       </div>
-      <div class="sunlit-card overflow-hidden p-3">
-        <img src={heroImage} alt="Storm Guard metal solar roof sheets" class="w-full h-[420px] object-cover rounded-2xl" />
-      </div>
     </div>
+    <div class="absolute bottom-4 right-6 text-white/40 text-xs">Large-Scale Commercial Complex · Storm Guard Installation</div>
   </section>
 
-  <section class="py-16 md:py-24 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="max-w-3xl mb-10">
-        <p class="sunlit-overline mb-4">Why Buyers Choose It</p>
-        <h2 class="sunlit-section-title text-3xl md:text-5xl mb-5">A Metal Solar Roof Line for Practical Projects</h2>
-        <p class="text-slate leading-relaxed">For Storm Guard buyers, the main question is usually not luxury. It is whether the solar roof can look clean, cover larger roof areas and remain practical for project budgets.</p>
-      </div>
-      <div class="grid md:grid-cols-4 gap-5">
-        {proofCards.map((item) => (
-          <div class="sunlit-card p-6">
-            <h3 class="font-heading font-bold text-xl text-charcoal mb-3">{item.title}</h3>
-            <p class="text-sm text-slate leading-relaxed">{item.desc}</p>
+  <!-- TRUST BAR -->
+  <section class="bg-[#1a2e1a] border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-5">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
+        {[
+          { icon: '⚡', label: '135W per sheet', sub: 'Monocrystalline TOPCON' },
+          { icon: '💧', label: 'IP68 rated', sub: 'Structural waterproof' },
+          { icon: '🔥', label: 'Grade A fire', sub: '≥5400Pa mechanical load' },
+          { icon: '🌪️', label: '35mm hail', sub: 'Typhoon-level wind resist.' },
+          { icon: '🏗️', label: '10+ projects', sub: 'Factory direct, B2B' },
+        ].map(item => (
+          <div class="flex flex-col items-center gap-1 py-2">
+            <span class="text-xl">{item.icon}</span>
+            <span class="text-white font-semibold text-sm">{item.label}</span>
+            <span class="text-white/50 text-xs">{item.sub}</span>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <section id="components" class="py-16 md:py-24 bg-light-gray border-y border-border">
-    <div class="container mx-auto px-4">
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <p class="sunlit-overline mb-4">Component Package</p>
-        <h2 class="sunlit-section-title text-3xl md:text-5xl mb-5">What Storm Guard Can Include</h2>
-        <p class="text-slate leading-relaxed">Key specs are shown as previews only. Final size, power and accessories depend on project layout, roof profile and factory quotation.</p>
+  <!-- ACTIVE + INACTIVE SYSTEM -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <p class="text-[#2d5a27] text-sm font-semibold tracking-widest uppercase mb-3">How the System Works</p>
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Active Sheets + Matching Metal Sheets</h2>
+        <p class="text-gray-500 max-w-2xl mx-auto">Every Storm Guard roof uses a mix of power-generating active sheets and matching non-generating metal sheets. The same Al-Mg-Mn alloy and fluorocarbon coating ensures a uniform roof surface across the entire installation.</p>
       </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {components.map((component) => (
-          <details class="sunlit-card p-6">
-            <summary class="cursor-pointer font-heading font-bold text-xl text-charcoal">{component.title}</summary>
-            <p class="text-slate leading-relaxed mt-4 mb-4">{component.desc}</p>
-            <div class="rounded-2xl bg-soft-green border border-deep-green/10 p-4">
-              <p class="text-xs font-heading font-bold text-deep-green uppercase tracking-[0.12em] mb-3">Key Specs Preview</p>
-              <ul class="space-y-2 text-sm text-slate">
-                {component.specs.map((spec) => <li>• {spec}</li>)}
-              </ul>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Active Sheet -->
+        <div class="rounded-2xl border border-gray-100 overflow-hidden bg-white shadow-sm">
+          <div class="bg-gray-50 p-8 flex items-center justify-center h-64">
+            <img
+              src={coreComponents[0]?.image}
+              alt="Storm Guard Active Solar Sheet"
+              class="max-h-full max-w-full object-contain"
+            />
+          </div>
+          <div class="p-8">
+            <span class="inline-block bg-[#2d5a27] text-white text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-4">Generates Power</span>
+            <h3 class="text-gray-900 text-2xl font-bold mb-3">Active Solar Sheet</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-6">{spec.powerPmax} monocrystalline TOPCON metal solar roof sheet with Al-Mg-Mn alloy low-standing-seam base and fluorocarbon coating.</p>
+            <div class="grid grid-cols-2 gap-3">
+              <div class="bg-gray-50 rounded-xl p-4">
+                <div class="text-gray-400 text-xs mb-1">Power</div>
+                <div class="text-gray-900 font-semibold">{spec.powerPmax}</div>
+              </div>
+              <div class="bg-gray-50 rounded-xl p-4">
+                <div class="text-gray-400 text-xs mb-1">Size</div>
+                <div class="text-gray-900 font-semibold">{spec.size}</div>
+              </div>
+              <div class="bg-gray-50 rounded-xl p-4">
+                <div class="text-gray-400 text-xs mb-1">Weight</div>
+                <div class="text-gray-900 font-semibold">{spec.weight}</div>
+              </div>
+              <div class="bg-gray-50 rounded-xl p-4">
+                <div class="text-gray-400 text-xs mb-1">Cell Type</div>
+                <div class="text-gray-900 font-semibold">{spec.cellType}</div>
+              </div>
+              <div class="bg-gray-50 rounded-xl p-4 col-span-2">
+                <div class="text-gray-400 text-xs mb-1">Encapsulation</div>
+                <div class="text-gray-900 font-semibold">{spec.encapsulation}</div>
+              </div>
+              <div class="bg-gray-50 rounded-xl p-4 col-span-2">
+                <div class="text-gray-400 text-xs mb-1">Module Efficiency</div>
+                <div class="text-gray-900 font-semibold">{spec.moduleEfficiency}</div>
+              </div>
             </div>
-            <a href="/contact/" class="inline-block mt-4 font-heading font-bold text-deep-green">Ask about this component →</a>
-          </details>
-        ))}
+          </div>
+        </div>
+
+        <!-- Matching Metal Sheet -->
+        <div class="rounded-2xl border border-gray-100 overflow-hidden bg-white shadow-sm">
+          <div class="bg-gray-50 p-8 flex items-center justify-center h-64">
+            <img
+              src={coreComponents[1]?.image}
+              alt="Storm Guard Matching Metal Sheet"
+              class="max-h-full max-w-full object-contain"
+            />
+          </div>
+          <div class="p-8">
+            <span class="inline-block bg-gray-400 text-white text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-4">Matching Appearance</span>
+            <h3 class="text-gray-900 text-2xl font-bold mb-3">Matching Metal Sheet</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-6">Non-generating metal roof sheet with the same Al-Mg-Mn alloy and fluorocarbon coating as the active sheet. Used where PV is not required or not suitable — no visible difference from active sheets.</p>
+            <div class="bg-gray-50 rounded-xl p-5 space-y-3">
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#2d5a27] mt-2 flex-shrink-0"></div>
+                <p class="text-gray-600 text-sm">Same Al-Mg-Mn alloy base and fluorocarbon coating as active sheet</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#2d5a27] mt-2 flex-shrink-0"></div>
+                <p class="text-gray-600 text-sm">Identical standing-seam profile for uniform roof surface</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#2d5a27] mt-2 flex-shrink-0"></div>
+                <p class="text-gray-600 text-sm">Used on non-solar areas, hips, valleys and complex roof sections</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#2d5a27] mt-2 flex-shrink-0"></div>
+                <p class="text-gray-600 text-sm">Supplied as part of the complete factory package</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="py-16 md:py-24 bg-white">
-    <div class="container mx-auto px-4 grid lg:grid-cols-[0.8fr_1.2fr] gap-10 items-start">
-      <div>
-        <p class="sunlit-overline mb-4">Technical Evaluation</p>
-        <h2 class="sunlit-section-title text-3xl md:text-5xl mb-5">Key Parameters for Early Review</h2>
-        <p class="text-slate leading-relaxed mb-6">Storm Guard is more project-based than a fixed-size glass tile. Use this table to understand the evaluation direction before requesting final factory pricing.</p>
-        <a href="/contact/" class="sunlit-btn-secondary">Request Datasheet</a>
+  <!-- COMPONENT LIBRARY -->
+  <section id="component-library" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <p class="text-[#2d5a27] text-sm font-semibold tracking-widest uppercase mb-3">Complete System</p>
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Component Library</h2>
+        <p class="text-gray-500 max-w-2xl mx-auto">Every component in the Storm Guard system is factory-produced and supplied together. No sourcing gaps, no compatibility surprises on site.</p>
       </div>
-      <div class="sunlit-card overflow-hidden">
-        {keySpecs.map(([label, value]) => (
-          <div class="grid grid-cols-3 gap-4 p-4 border-b border-border last:border-b-0">
-            <div class="font-heading font-bold text-charcoal">{label}</div>
-            <div class="col-span-2 text-slate">{value}</div>
+
+      <!-- Core Sheets -->
+      <h3 class="text-xs font-bold text-gray-400 tracking-widest uppercase mb-5 border-b border-gray-200 pb-3">Core Sheets</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+        {coreComponents.map((comp: any) => (
+          <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+            <div class="bg-gray-50 p-4 flex items-center justify-center h-36">
+              <img src={comp.image} alt={comp.name} class="max-h-full max-w-full object-contain" />
+            </div>
+            <div class="p-4">
+              <h4 class="text-gray-900 font-semibold text-sm mb-1">{comp.name}</h4>
+              {comp.keySpecs && comp.keySpecs.length > 0 && (
+                <div class="flex flex-wrap gap-1 mb-2">
+                  {comp.keySpecs.map((s: any) => (
+                    <span class="text-xs bg-[#2d5a27]/10 text-[#2d5a27] px-2 py-0.5 rounded-full font-medium">{s.label}: {s.value}</span>
+                  ))}
+                </div>
+              )}
+              <p class="text-gray-500 text-xs leading-relaxed">{comp.shortDescription}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Trim & Flashing -->
+      <h3 class="text-xs font-bold text-gray-400 tracking-widest uppercase mb-5 border-b border-gray-200 pb-3">Trim & Flashing</h3>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-10">
+        {trimComponents.map((comp: any) => (
+          <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+            <div class="bg-gray-50 p-3 flex items-center justify-center h-28">
+              <img src={comp.image} alt={comp.name} class="max-h-full max-w-full object-contain" />
+            </div>
+            <div class="p-3">
+              <h4 class="text-gray-900 font-semibold text-xs mb-1">{comp.name}</h4>
+              <p class="text-gray-500 text-xs leading-relaxed">{comp.shortDescription}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Accessories -->
+      {accessoryComponents.length > 0 && (
+        <div>
+          <h3 class="text-xs font-bold text-gray-400 tracking-widest uppercase mb-5 border-b border-gray-200 pb-3">Accessories & Fasteners</h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {accessoryComponents.map((comp: any) => (
+              <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+                <div class="bg-gray-50 p-4 flex items-center justify-center h-28">
+                  <img src={comp.image} alt={comp.name} class="max-h-full max-w-full object-contain" />
+                </div>
+                <div class="p-4">
+                  <h4 class="text-gray-900 font-semibold text-sm mb-1">{comp.name}</h4>
+                  <p class="text-gray-500 text-xs leading-relaxed">{comp.shortDescription}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <p class="text-[#2d5a27] text-sm font-semibold tracking-widest uppercase mb-3">Real Projects</p>
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Storm Guard in the Field</h2>
+        <p class="text-gray-500 max-w-2xl mx-auto">From large commercial complexes to urban residential retrofits — Storm Guard is deployed across diverse project types where weather resistance and practical installation matter most.</p>
+      </div>
+
+      {heroProject && (
+        <div class="mb-8 rounded-2xl overflow-hidden group">
+          <div class="grid md:grid-cols-3 h-[480px]">
+            <div class="md:col-span-2 overflow-hidden">
+              <img
+                src={heroProject.images[0]}
+                alt={heroProject.name}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            <div class="bg-[#1a2e1a] p-10 flex flex-col justify-between">
+              <div>
+                <span class="text-amber text-xs font-bold tracking-widest uppercase">Storm Guard</span>
+                <h3 class="text-white text-2xl font-bold mt-3 mb-4 leading-snug">{heroProject.name}</h3>
+                <p class="text-white/60 text-sm leading-relaxed mb-6">{heroProject.overview}</p>
+                <div class="grid grid-cols-2 gap-3">
+                  {heroProject.roofArea && (
+                    <div class="bg-white/10 rounded-lg p-3">
+                      <div class="text-white/40 text-xs mb-1">Roof Area</div>
+                      <div class="text-white font-semibold text-sm">{heroProject.roofArea}</div>
+                    </div>
+                  )}
+                  {heroProject.capacity && (
+                    <div class="bg-white/10 rounded-lg p-3">
+                      <div class="text-white/40 text-xs mb-1">Capacity</div>
+                      <div class="text-white font-semibold text-sm">{heroProject.capacity}</div>
+                    </div>
+                  )}
+                </div>
+              </div>
+              <a href={`/projects/${heroProject.slug}/`} class="inline-flex items-center gap-2 text-amber hover:text-amber-dark font-medium text-sm transition-colors mt-6">
+                View Full Project
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <div class="grid md:grid-cols-2 gap-8 mb-10">
+        {[urbanRetrofit, lowSlope].filter(Boolean).map((proj: any) => proj && (
+          <div class="rounded-2xl overflow-hidden bg-gray-50 group">
+            <div class="h-64 overflow-hidden">
+              <img src={proj.images[0]} alt={proj.name} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            </div>
+            <div class="p-7">
+              <span class="text-[#2d5a27] text-xs font-bold tracking-widest uppercase">Storm Guard</span>
+              <h3 class="text-gray-900 text-xl font-bold mt-2 mb-3">{proj.name}</h3>
+              <p class="text-gray-500 text-sm leading-relaxed mb-5">{proj.overview}</p>
+              <div class="flex gap-4 mb-5">
+                {proj.roofArea && (
+                  <div>
+                    <div class="text-gray-400 text-xs">Roof Area</div>
+                    <div class="font-semibold text-gray-800 text-sm">{proj.roofArea}</div>
+                  </div>
+                )}
+                {proj.capacity && (
+                  <div>
+                    <div class="text-gray-400 text-xs">Capacity</div>
+                    <div class="font-semibold text-gray-800 text-sm">{proj.capacity}</div>
+                  </div>
+                )}
+              </div>
+              <a href={`/projects/${proj.slug}/`} class="inline-flex items-center gap-2 text-amber hover:text-amber-dark font-medium text-sm transition-colors">View Full Project →</a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center">
+        <a href="/projects/" class="inline-flex items-center gap-2 border border-[#2d5a27] text-[#2d5a27] hover:bg-[#2d5a27] hover:text-white font-medium px-8 py-3.5 rounded-lg transition-colors">
+          View All Storm Guard Projects →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTALLATION VIDEOS -->
+  <section class="py-20 bg-[#0f1f0f]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <p class="text-amber text-sm font-semibold tracking-widest uppercase mb-3">Installation Evidence</p>
+        <h2 class="text-white text-4xl font-bold mb-4">See How It Goes Up</h2>
+        <p class="text-white/50 max-w-2xl mx-auto">Four installation clips from the factory team — sheet laying, seam locking, ridge and edge finishing, and the completed roof result.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {installVideos.map((vid) => (
+          <div class="relative rounded-2xl overflow-hidden bg-black aspect-video cursor-pointer group sg-video-wrapper">
+            <img src={vid.poster} alt={vid.label} class="w-full h-full object-cover" />
+            <div class="sg-play-overlay absolute inset-0 flex flex-col items-center justify-center bg-black/40">
+              <div class="w-14 h-14 bg-white/90 rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform mb-3">
+                <svg class="w-6 h-6 text-[#2d5a27] ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="text-white text-xs font-semibold text-center px-2">{vid.label}</span>
+            </div>
+            <video controls class="sg-video absolute inset-0 w-full h-full hidden" poster={vid.poster}>
+              <source src={vid.src} type="video/mp4" />
+            </video>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="py-16 md:py-24 bg-soft-green">
-    <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-8">
-      <div class="sunlit-card p-8">
-        <p class="sunlit-overline mb-4">Best Fit</p>
-        <h2 class="font-heading font-bold text-3xl mb-6">Choose Storm Guard When...</h2>
-        <ul class="space-y-3 text-slate">
-          {goodFit.map((item) => <li>✓ {item}</li>)}
-        </ul>
-      </div>
-      <div class="sunlit-card p-8">
-        <p class="sunlit-overline mb-4">Expectation Setting</p>
-        <h2 class="font-heading font-bold text-3xl mb-6">It May Not Be the First Choice When...</h2>
-        <ul class="space-y-3 text-slate">
-          {notIdeal.map((item) => <li>• {item}</li>)}
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-16 md:py-24 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <p class="sunlit-overline mb-4">Quotation Path</p>
-        <h2 class="sunlit-section-title text-3xl md:text-5xl">Start with What You Have</h2>
-      </div>
-      <div class="grid md:grid-cols-4 gap-5">
-        {process.map((item) => (
-          <div class="sunlit-card p-6">
-            <div class="text-sm font-heading font-bold text-deep-green mb-4">{item.step}</div>
-            <h3 class="font-heading font-bold text-charcoal mb-3">{item.title}</h3>
-            <p class="text-sm text-slate leading-relaxed">{item.desc}</p>
+  <!-- IMPACT RESISTANCE TEST -->
+  <section class="py-20 bg-[#1a2e1a]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-amber text-sm font-semibold tracking-widest uppercase mb-4">Quality Evidence</p>
+          <h2 class="text-white text-4xl font-bold mb-6 leading-tight">Impact Resistance<br/>Tested on Camera</h2>
+          <p class="text-white/60 text-lg mb-8 leading-relaxed">The Storm Guard active sheet is tested to resist 35mm hailstone impact. Watch the actual test footage — not a spec sheet claim.</p>
+          <div class="grid grid-cols-2 gap-4 mb-8">
+            {sharedActiveTilePerformance.map((item: any) => (
+              <div class="bg-white/10 rounded-xl p-4">
+                <div class="text-white/50 text-xs mb-1">{item.label}</div>
+                <div class="text-white font-semibold">{item.value}</div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section id="faq" class="py-16 md:py-24 bg-light-gray border-y border-border">
-    <div class="container mx-auto px-4 max-w-4xl">
-      <h2 class="sunlit-section-title text-3xl md:text-5xl mb-10 text-center">Storm Guard FAQ</h2>
-      <div class="space-y-4">
-        {faqs.map((faq) => (
-          <div class="sunlit-card p-6">
-            <h3 class="font-heading font-bold text-charcoal mb-2">{faq.question}</h3>
-            <p class="text-slate leading-relaxed">{faq.answer}</p>
+          <a href="/contact/" class="inline-flex items-center gap-2 bg-amber hover:bg-amber-dark text-gray-900 font-semibold px-7 py-3.5 rounded-lg transition-colors">Request Datasheet</a>
+        </div>
+        <div class="relative">
+          <div class="rounded-2xl overflow-hidden bg-black aspect-video relative cursor-pointer group sg-video-wrapper">
+            <img src="/videos/testing/Storm Guard 抗冲击-poster.webp" alt="Storm Guard impact resistance test" class="w-full h-full object-cover" />
+            <div class="sg-play-overlay absolute inset-0 flex items-center justify-center">
+              <div class="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
+                <svg class="w-8 h-8 text-[#2d5a27] ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+            <video controls class="sg-video absolute inset-0 w-full h-full hidden" poster="/videos/testing/Storm Guard 抗冲击-poster.webp">
+              <source src="/videos/testing/Storm Guard 抗冲击.mp4" type="video/mp4" />
+            </video>
           </div>
-        ))}
+          <div class="absolute -bottom-4 -right-4 bg-amber text-gray-900 text-xs font-bold px-4 py-2 rounded-lg shadow-lg">35mm Hail Test Passed</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="py-16 md:py-20 dark-green-gradient text-white">
-    <div class="container mx-auto px-4 text-center max-w-4xl">
-      <p class="uppercase tracking-[0.16em] text-white/70 font-bold text-xs mb-4">Low-pressure first step</p>
-      <h2 class="text-3xl md:text-5xl font-heading font-bold mb-5">Ask Whether Storm Guard Fits Your Roof</h2>
-      <p class="text-lg text-white/75 max-w-2xl mx-auto mb-8">Send your country, estimated roof area, photos, drawings or a simple product question. We will help review active/inactive coverage and factory quotation direction.</p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact/" class="sunlit-btn-primary">Ask About Storm Guard</a>
-        <a href="/projects/" class="border border-white/60 text-white rounded-full px-6 py-3 font-heading font-bold hover:bg-white/10">View Projects</a>
+  <!-- TECH SPECS TABLE -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <p class="text-[#2d5a27] text-sm font-semibold tracking-widest uppercase mb-3">Technical Specifications</p>
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Active Sheet Parameters</h2>
+        <p class="text-gray-500 max-w-2xl mx-auto">Key electrical and physical parameters for the Storm Guard active solar sheet. For full datasheet including I-V curves and installation tolerances, contact us.</p>
+      </div>
+      <div class="max-w-3xl mx-auto">
+        <div class="rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+          {[
+            { label: 'Product Line', value: spec.productLine },
+            { label: 'Active Element', value: spec.displayName },
+            { label: 'Power (Pmax)', value: spec.powerPmax },
+            { label: 'Module Size', value: spec.size },
+            { label: 'Effective Size', value: spec.effectiveSize },
+            { label: 'Weight', value: spec.weight },
+            { label: 'Cell Type', value: spec.cellType },
+            { label: 'Encapsulation', value: spec.encapsulation },
+            { label: 'Module Efficiency', value: spec.moduleEfficiency },
+            { label: 'Vpm / Imp', value: `${spec.vpm} / ${spec.imp}` },
+            { label: 'Voc / Isc', value: `${spec.voc} / ${spec.isc}` },
+            { label: 'Watts/m²', value: spec.wattsPerSquareMeter },
+            { label: 'Color', value: spec.color },
+          ].map((row, i) => (
+            <div class={`grid grid-cols-3 gap-4 px-6 py-4 ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50'} border-b border-gray-100 last:border-b-0`}>
+              <div class="font-semibold text-gray-700 text-sm">{row.label}</div>
+              <div class="col-span-2 text-gray-600 text-sm">{row.value}</div>
+            </div>
+          ))}
+        </div>
+        <div class="text-center mt-8">
+          <a href="/contact/" class="inline-flex items-center gap-2 bg-amber hover:bg-amber-dark text-gray-900 font-semibold px-7 py-3.5 rounded-lg transition-colors">
+            Request Full Datasheet
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- BEST FIT / NOT IDEAL -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <p class="text-[#2d5a27] text-sm font-semibold tracking-widest uppercase mb-3">Project Fit</p>
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Is Storm Guard Right for Your Project?</h2>
+        <p class="text-gray-500 max-w-2xl mx-auto">Storm Guard is engineered for specific project types. Understanding where it excels — and where Lumina Slate may be a better fit — helps you specify correctly.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-[#2d5a27] rounded-full flex items-center justify-center">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <h3 class="text-gray-900 text-xl font-bold">Choose Storm Guard When...</h3>
+          </div>
+          <ul class="space-y-4">
+            {[
+              'Large roof area (200m² and above) where cost per watt matters',
+              'Commercial, industrial or multi-unit residential projects',
+              'Low-slope or flat roofs where standing-seam waterproofing is required',
+              'Typhoon or extreme weather zones requiring maximum wind-uplift resistance',
+              'Projects where a modern metal roof look is preferred over glass tiles',
+              'Buyers who want a practical, engineering-first solar roof solution',
+            ].map(item => (
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 rounded-full bg-[#2d5a27]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div class="w-2 h-2 rounded-full bg-[#2d5a27]"></div>
+                </div>
+                <span class="text-gray-600 text-sm leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
+              <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="text-gray-900 text-xl font-bold">Consider Lumina Slate When...</h3>
+          </div>
+          <ul class="space-y-4">
+            {[
+              'High-end villas or heritage-sensitive roofs where glass tile aesthetics are required',
+              'Projects with strict architectural review or HOA approval processes',
+              'Buyers who prioritize premium appearance over cost efficiency',
+              'Steep-pitch roofs with complex geometry where glass tile layout is preferred',
+              'Projects where the "solar roof tile" look is a key selling point',
+            ].map(item => (
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div class="w-2 h-2 rounded-full bg-gray-400"></div>
+                </div>
+                <span class="text-gray-600 text-sm leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <div class="mt-6 pt-6 border-t border-gray-100">
+            <a href="/lumina-slate/" class="inline-flex items-center gap-2 text-[#2d5a27] hover:text-[#1a4d16] font-medium text-sm transition-colors">
+              View Lumina Slate →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARE CTA -->
+  <section class="py-12 bg-white border-y border-gray-100">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <p class="text-gray-500 text-sm mb-4">Not sure which product line fits your project?</p>
+      <a href="/system-overview/" class="inline-flex items-center gap-2 border border-[#2d5a27] text-[#2d5a27] hover:bg-[#2d5a27] hover:text-white font-medium px-8 py-3.5 rounded-lg transition-colors">
+        Compare Lumina Slate vs Storm Guard →
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="py-24 bg-[#0f1f0f] relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+      <img src="/images/projects/large-scale-commercial-complex/storm-guard-heavy-duty-solar-tiles-commercial-scale.webp" alt="" class="w-full h-full object-cover" />
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <p class="text-amber text-sm font-semibold tracking-widest uppercase mb-4">Get Started</p>
+      <h2 class="text-white text-4xl md:text-5xl font-bold mb-6 leading-tight">Ready to Specify<br/>Storm Guard?</h2>
+      <p class="text-white/60 text-lg mb-10 max-w-2xl mx-auto">We work directly with distributors, developers and installers. No middlemen. Request a sample, a datasheet, or a project-specific quote.</p>
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <a href="/contact/" class="inline-flex items-center gap-2 bg-amber hover:bg-amber-dark text-gray-900 font-semibold px-8 py-4 rounded-lg transition-colors text-lg">
+          Request Sample or Quote
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="/system-overview/" class="inline-flex items-center gap-2 border border-white/30 hover:border-white text-white font-medium px-8 py-4 rounded-lg transition-colors text-lg">View Supply Scope</a>
+      </div>
+      <div class="flex flex-wrap justify-center gap-8 text-white/40 text-sm">
+        <span>Factory Direct</span><span>·</span><span>B2B Only</span><span>·</span><span>Datasheet Available</span><span>·</span><span>Sample Supported</span><span>·</span><span>10+ Completed Projects</span>
+      </div>
+    </div>
+  </section>
+
 </Layout>
+
+<script is:inline>
+document.querySelectorAll('.sg-video-wrapper').forEach(function(wrapper) {
+  wrapper.addEventListener('click', function() {
+    var video = wrapper.querySelector('.sg-video');
+    var overlay = wrapper.querySelector('.sg-play-overlay');
+    if (video && overlay) {
+      video.style.display = 'block';
+      overlay.style.display = 'none';
+      video.play();
+    }
+  });
+});
+</script>
