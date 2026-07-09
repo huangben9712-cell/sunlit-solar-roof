@@ -1,0 +1,102 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const values = [
+  {
+    title: "Factory-Direct Supply",
+    desc: "We are not a trading company. We manufacture our BIPV systems, giving you direct access to factory pricing, production schedules, and quality control.",
+  },
+  {
+    title: "Complete System Scope",
+    desc: "We provide the full package: active solar elements, matching inactive tiles, and all necessary roofing accessories for a seamless, fully integrated installation.",
+  },
+  {
+    title: "B2B Project Focus",
+    desc: "Our entire process is built for professionals. We provide project-based quotes, export documentation, and dedicated technical support for developers and contractors.",
+  },
+  {
+    title: "Transparent Communication",
+    desc: "We provide clear, honest information on product specs, capabilities, and project requirements, ensuring there are no surprises.",
+  },
+];
+
+const steps = [
+  { title: "Project Inquiry", desc: "You send project country, roof area, roof drawing if available, preferred system and delivery destination." },
+  { title: "System Discussion", desc: "We discuss whether Lumina Slate or Storm Guard is more suitable based on appearance, budget and roof type." },
+  { title: "Scope and Quotation", desc: "We prepare the product scope around active elements, inactive coverage, accessories and packaging requirements." },
+  { title: "Documents and Coordination", desc: "We provide relevant datasheets, installation notes and other documents according to the project stage." },
+];
+---
+
+<Layout title="About Sunlit - BIPV Solar Roof Manufacturer">
+  <section class="bg-soft-green py-16 md:py-24">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl">
+      <p class="sunlit-overline mb-5">About Sunlit</p>
+      <h1 class="sunlit-section-title text-4xl md:text-5xl lg:text-6xl text-charcoal mb-6">
+        A B2B Manufacturer of Integrated Solar Roof Systems
+      </h1>
+      <p class="text-lg text-slate leading-relaxed max-w-3xl mx-auto">
+        We are a specialized China-based factory and export partner for B2B buyers sourcing complete BIPV (Building-Integrated Photovoltaic) roof systems.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <p class="sunlit-overline mb-4">Why Sunlit</p>
+        <h2 class="sunlit-section-title text-4xl md:text-5xl">
+          Your Direct Link to BIPV Manufacturing
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        {values.map((item, index) => (
+          <div class="flex items-start gap-6">
+            <div class="w-14 h-14 rounded-2xl bg-soft-green text-deep-green flex items-center justify-center shrink-0">
+              {index === 0 && <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-7h6v7"/><path d="M9 9h.01"/><path d="M12 9h.01"/><path d="M15 9h.01"/></svg>}
+              {index === 1 && <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 8 4.5v9L12 20l-8-4.5v-9L12 2Z"/><path d="M12 11 4.5 6.8"/><path d="M12 11l7.5-4.2"/><path d="M12 11v9"/></svg>}
+              {index === 2 && <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>}
+              {index === 3 && <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>}
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-xl text-charcoal mb-2">{item.title}</h3>
+              <p class="text-slate leading-relaxed">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-light-gray border-y border-border">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <p class="sunlit-overline mb-4">How We Work</p>
+        <h2 class="sunlit-section-title text-4xl md:text-5xl">
+          A Practical Process for Overseas Projects
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        {steps.map((step, index) => (
+          <div class="sunlit-card p-6">
+            <div class="w-10 h-10 rounded-full bg-soft-green text-deep-green flex items-center justify-center font-bold mb-4">{index + 1}</div>
+            <h3 class="font-heading font-bold text-charcoal mb-2">{step.title}</h3>
+            <p class="text-sm text-slate leading-relaxed">{step.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-green-gradient text-white py-16 md:py-20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+      <h2 class="font-heading text-3xl md:text-5xl font-bold mb-5">
+        Discuss a Solar Roof Project
+      </h2>
+      <p class="text-lg text-white/75 mb-8">
+        Send your project country, roof area, preferred system and roof drawing if available.
+      </p>
+      <a href="/contact/" class="sunlit-btn-primary">Contact Sunlit</a>
+    </div>
+  </section>
+</Layout>

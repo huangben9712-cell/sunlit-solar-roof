@@ -1,0 +1,32 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getRequestDocuments } from '../../data/resources';
+
+const requestDocs = getRequestDocuments();
+---
+
+<Layout title="Downloads - Sunlit Solar Roof" description="Technical documents, datasheets, and project files for active B2B solar roof projects.">
+  <section class="bg-soft-green py-16 md:py-20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl">
+      <p class="sunlit-overline mb-5">Downloads</p>
+      <h1 class="sunlit-section-title text-4xl md:text-5xl text-charcoal mb-6">Technical Documents</h1>
+      <p class="text-lg text-slate leading-relaxed max-w-3xl mx-auto">
+        Datasheets, installation guides, and project documents — available upon request for active project evaluation.
+      </p>
+    </div>
+  </section>
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {requestDocs.map((doc) => (
+          <div class="sunlit-card p-6">
+            <p class="text-sm font-heading font-bold text-deep-green mb-3">Request Document</p>
+            <h3 class="font-heading font-bold text-charcoal mb-2">{doc.title}</h3>
+            <p class="text-sm text-slate mb-5 leading-relaxed">{doc.summary}</p>
+            <a href="/contact/" class="font-bold text-deep-green hover:text-amber transition-colors text-sm">Request Document</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

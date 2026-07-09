@@ -1,0 +1,768 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const trustItems = [
+  {
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>`,
+    title: 'China Manufacturer',
+    desc: 'Direct factory. Consistent quality and reliable delivery.',
+  },
+  {
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>`,
+    title: 'Complete Roof Package',
+    desc: 'Active + inactive + accessories in one package.',
+  },
+  {
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`,
+    title: 'Project-Based Quote',
+    desc: 'Tailored to your roof, market and project requirements.',
+  },
+  {
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>`,
+    title: 'No Drawing Required First',
+    desc: 'Share basic info — we guide the right solution.',
+  },
+];
+
+const mentalModel = [
+  {
+    num: '01',
+    title: 'Generate Power',
+    label: 'Active PV Tiles or Sheets',
+    desc: 'High-efficiency solar tiles or sheets that generate clean power and integrate with your roof.',
+    img: '/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-solar-slate-installed-texture-close-up.webp',
+  },
+  {
+    num: '02',
+    title: 'Complete the Roof',
+    label: 'Matching Inactive Elements',
+    desc: 'Non-PV tiles and components matched in size, color and profile for a seamless, watertight roof.',
+    img: '/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-solar-roof-tiles-detail-decorative-vent.webp',
+  },
+  {
+    num: '03',
+    title: 'Close the Details',
+    label: 'Flashing, Ridge, Edge, Fixings',
+    desc: 'Purpose-designed flashings, ridge, edges and fixings for waterproofing, wind uplift and long-term durability.',
+    img: '/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-solar-slate-roof-tiles-xianghu-details.webp',
+  },
+  {
+    num: '04',
+    title: 'Support the Project',
+    label: 'Documents + Export Support',
+    desc: 'Technical documents, test reports, packaging, logistics and export support to keep your project moving.',
+    img: '/images/projects/beijing-new-world-lizun/sunlit-bipv-roof-villa-construction-site.webp',
+  },
+];
+
+const luminaFeatures = [
+  { icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M3 14h18M9 4v14M15 4v14"/></svg>`, label: 'Appearance', value: 'Slate-like, seamless, premium finish' },
+  { icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`, label: 'Material', value: 'Tempered glass with advanced PV cells' },
+  { icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`, label: 'Best fit', value: 'Villas, high-end homes, premium projects' },
+  { icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`, label: 'Price positioning', value: 'Premium' },
+];
+
+const stormFeatures = [
+  { icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`, label: 'Appearance', value: 'Standing-seam, modern, sleek' },
+  { icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`, label: 'Material', value: 'Al-Mg-Mn metal with PV laminate' },
+  { icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`, label: 'Best fit', value: 'Residential, commercial, large-area roofs' },
+  { icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`, label: 'Price positioning', value: 'Competitive' },
+];
+
+const supplyItems = [
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M3 14h18M9 4v14M15 4v14"/></svg>`,
+    title: 'Active PV Tiles / Sheets',
+    desc: 'Generate clean power from the sun',
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`,
+    title: 'Matching Inactive Roof Elements',
+    desc: 'Ensure a seamless, uniform roof appearance',
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
+    title: 'Flashing',
+    desc: 'Waterproof transitions for critical roof areas',
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`,
+    title: 'Ridge and Edge Pieces',
+    desc: 'Protect edges and ridges with precision',
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><path d="M8 6h8l-1 6H9L8 6z"/><path d="M9 12l-1 6h8l-1-6"/></svg>`,
+    title: 'Fixings',
+    desc: 'Engineered for strength, wind and snow loads',
+  },
+  {
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
+    title: 'Project Documents',
+    desc: 'Drawings, manuals and export support for smooth delivery',
+  },
+];
+
+const factorySupply = [
+  { icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>`, text: 'Active PV elements (tiles or sheets)' },
+  { icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`, text: 'Inactive roof elements (matching tiles/sheets)' },
+  { icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>`, text: 'Flashing, ridge and edge pieces' },
+  { icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="2" x2="12" y2="22"/><path d="M8 6h8l-2 8H10L8 6z"/></svg>`, text: 'Fixings and accessories' },
+  { icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>`, text: 'Project documents and reports' },
+  { icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>`, text: 'Packing and export support' },
+];
+
+const localScope = [
+  { icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`, text: 'Roofing labor and on-site installation' },
+  { icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>`, text: 'Electrical connection and local wiring' },
+  { icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>`, text: 'Permitting and local approvals' },
+  { icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>`, text: 'Structural verification (if required)' },
+  { icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>`, text: 'Crane / site coordination' },
+  { icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`, text: 'Final inspection and handover' },
+];
+
+const process = [
+  {
+    step: '01',
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
+    title: 'Share Basic Info',
+    desc: 'Tell us your country, roof type, project scale and timeline. Roof photos help, drawing is optional at first.',
+  },
+  {
+    step: '02',
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M3 14h18M9 4v14M15 4v14"/></svg>`,
+    title: 'Confirm Product Direction',
+    desc: 'We recommend suitable product family, roof structure fit and key technical considerations.',
+  },
+  {
+    step: '03',
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>`,
+    title: 'Review Supply Scope',
+    desc: 'We confirm what Sunlit supplies and what is handled locally — so expectations are aligned.',
+  },
+  {
+    step: '04',
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>`,
+    title: 'Receive Project-Based Quote',
+    desc: 'You receive a tailored quote with specifications, delivery options and estimated lead time.',
+  },
+];
+
+const whereNext = [
+  {
+    href: '/lumina-slate/',
+    img: '/images/projects/nanjing-nanshan-lake/sunlit-solar-slate-interlocking-texture.webp',
+    label: 'Explore Lumina Slate',
+  },
+  {
+    href: '/storm-guard/',
+    img: '/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-bipv-roof-scenic-harmony-xianghu-mountains.webp',
+    label: 'Explore Storm Guard',
+  },
+  {
+    href: '/contact/',
+    img: '/images/projects/beijing-new-world-lizun/sunlit-bipv-roof-villa-construction-site.webp',
+    label: 'Talk to Sunlit About Your Project',
+  },
+];
+
+const faqs = [
+  { q: 'Do I need a roof drawing to ask for pricing?', a: 'No. You can start with basic info: country, roof type, rough area and photos. We will help you move forward step by step before a drawing is needed.' },
+  { q: 'Do you supply inactive matching roof elements?', a: 'Yes. Matching inactive tiles or sheets are part of the standard factory supply package. They ensure a seamless, uniform roof appearance.' },
+  { q: 'Where can I see full technical parameters?', a: 'Full technical specifications are available on each product page and in downloadable datasheets. You can also request them directly.' },
+  { q: 'Can you support overseas distributors and installers?', a: 'Yes. We work with distributors, roofing contractors and project developers globally. Export packaging and documentation support is included.' },
+];
+
+const trustBar = [
+  { icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>`, title: 'China Manufacturer', desc: 'Direct factory, consistent quality and reliable delivery.' },
+  { icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>`, title: 'Project-Based Quotation', desc: 'Tailored to your roof, market and project requirements.' },
+  { icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>`, title: 'Export Support', desc: 'Documents, packing, logistics and customs guidance.' },
+  { icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`, title: 'Long-Term Cooperation', desc: 'We grow together with installers and partners.' },
+];
+---
+
+<Layout title="Factory Supply Scope — Sunlit Solar Roof" description="Understand what Sunlit supplies from the factory for solar roof projects: active PV tiles or sheets, inactive roof elements, accessories, documents and export support.">
+
+  <!-- ===== HERO ===== -->
+  <section class="bg-soft-green pt-16 pb-0 overflow-hidden">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-[1fr_380px] gap-10 items-start pb-16">
+        <!-- Left: headline + CTAs -->
+        <div>
+          <p class="sunlit-overline mb-4">Factory Supply Scope</p>
+          <h1 class="sunlit-section-title text-4xl md:text-5xl lg:text-[3.25rem] text-charcoal mb-5 leading-[1.08]">
+            Understand the<br>Roof Package Before<br>Asking for a Tile Price
+          </h1>
+          <p class="text-slate leading-relaxed mb-3 max-w-xl">
+            A solar roof project is more than active solar tiles or sheets. Sunlit supplies a complete roof package from the factory — including active PV elements, matching inactive roof elements, flashing, fixings, accessories, documents, and export support — so your roof performs, installs cleanly, and passes local requirements.
+          </p>
+          <div class="flex flex-wrap gap-3 mt-7">
+            <a href="/contact/" class="sunlit-btn-primary">Ask What Fits My Project →</a>
+            <a href="#scope-model" class="sunlit-btn-secondary">See the Supply Model →</a>
+            <a href="#compare" class="sunlit-btn-secondary">Compare Product Lines →</a>
+          </div>
+        </div>
+
+        <!-- Right: Quick Trust Check card -->
+        <div class="sunlit-card p-6 self-start">
+          <p class="sunlit-overline mb-5">Quick Trust Check</p>
+          <div class="space-y-4">
+            {trustItems.map((item) => (
+              <div class="flex gap-3 items-start">
+                <div class="flex-shrink-0 w-9 h-9 rounded-xl bg-soft-green text-deep-green flex items-center justify-center border border-border">
+                  <Fragment set:html={item.icon} />
+                </div>
+                <div>
+                  <p class="font-heading font-bold text-charcoal text-sm">{item.title}</p>
+                  <p class="text-xs text-slate leading-relaxed mt-0.5">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== A ROOF PACKAGE IN 4 PARTS ===== -->
+  <section id="scope-model" class="py-16 md:py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <p class="sunlit-overline mb-3">Simple Mental Model</p>
+        <h2 class="sunlit-section-title text-3xl md:text-4xl text-charcoal">A Roof Package in 4 Parts</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {mentalModel.map((item) => (
+          <div class="sunlit-card overflow-hidden flex flex-col">
+            <div class="p-6 flex-1">
+              <div class="w-9 h-9 rounded-full bg-deep-green text-white flex items-center justify-center font-heading font-bold text-sm mb-4">
+                {item.num}
+              </div>
+              <div class="w-px h-5 bg-border mx-0 mb-4"></div>
+              <h3 class="font-heading font-bold text-charcoal text-lg mb-1">{item.title}</h3>
+              <p class="text-xs font-heading font-semibold text-deep-green mb-3">{item.label}</p>
+              <p class="text-sm text-slate leading-relaxed">{item.desc}</p>
+            </div>
+            <div class="h-36 overflow-hidden">
+              <img
+                src={item.img}
+                alt={item.title}
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMPARE TWO PRODUCT FAMILIES ===== -->
+  <section id="compare" class="py-16 md:py-20 bg-light-gray border-y border-border">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10">
+        <p class="sunlit-overline mb-3">Factory Supply Scope</p>
+        <h2 class="sunlit-section-title text-3xl md:text-4xl text-charcoal mb-3">Compare the Two Product Families</h2>
+        <p class="text-slate max-w-2xl leading-relaxed">
+          Sunlit Solar Roof offers two distinct product families. <strong class="text-charcoal">Lumina Slate</strong> features premium glass tiles with slate-like aesthetics for high-end architecture. <strong class="text-charcoal">Storm Guard</strong> uses durable metal sheets with matched inactive elements for efficient, large-area installations.
+        </p>
+      </div>
+      <div class="grid lg:grid-cols-2 gap-6">
+        <!-- Lumina Slate -->
+        <div class="sunlit-card overflow-hidden">
+          <div class="h-52 overflow-hidden relative">
+            <img
+              src="/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-solar-slate-installed-texture-close-up.webp"
+              alt="Lumina Slate"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+          </div>
+          <div class="p-7">
+            <h3 class="font-heading font-bold text-2xl text-charcoal mb-1">Lumina Slate</h3>
+            <p class="text-sm text-slate mb-5">Premium glass solar roof tiles</p>
+            <p class="text-slate text-sm leading-relaxed mb-6">
+              Slate-like appearance with matching inactive glass elements. Designed for villas and high-end architecture that value timeless elegance.
+            </p>
+            <div class="space-y-2.5 mb-6">
+              {luminaFeatures.map((f) => (
+                <div class="flex items-center gap-2.5 text-sm">
+                  <span class="text-deep-green flex-shrink-0"><Fragment set:html={f.icon} /></span>
+                  <span class="text-charcoal font-heading font-semibold">{f.label}:</span>
+                  <span class="text-slate">{f.value}</span>
+                </div>
+              ))}
+            </div>
+            <a href="/lumina-slate/" class="sunlit-btn-secondary text-sm">View Lumina Slate →</a>
+          </div>
+        </div>
+
+        <!-- Storm Guard -->
+        <div class="sunlit-card overflow-hidden">
+          <div class="h-52 overflow-hidden relative">
+            <img
+              src="/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-bipv-roof-scenic-harmony-xianghu-mountains.webp"
+              alt="Storm Guard"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+          </div>
+          <div class="p-7">
+            <h3 class="font-heading font-bold text-2xl text-charcoal mb-1">Storm Guard</h3>
+            <p class="text-sm text-slate mb-5">Metal solar roof sheets</p>
+            <p class="text-slate text-sm leading-relaxed mb-6">
+              Metal standing-seam appearance with matching inactive metal elements. Built for residential, commercial, and large-area roof projects.
+            </p>
+            <div class="space-y-2.5 mb-6">
+              {stormFeatures.map((f) => (
+                <div class="flex items-center gap-2.5 text-sm">
+                  <span class="text-deep-green flex-shrink-0"><Fragment set:html={f.icon} /></span>
+                  <span class="text-charcoal font-heading font-semibold">{f.label}:</span>
+                  <span class="text-slate">{f.value}</span>
+                </div>
+              ))}
+            </div>
+            <a href="/storm-guard/" class="sunlit-btn-secondary text-sm">View Storm Guard →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHAT WE USUALLY SUPPLY ===== -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="sunlit-section-title text-3xl md:text-4xl text-charcoal">What We Usually Supply in the Factory Package</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {supplyItems.map((item) => (
+          <div class="sunlit-card p-6 flex gap-4 items-start">
+            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-soft-green text-deep-green flex items-center justify-center">
+              <Fragment set:html={item.icon} />
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-charcoal mb-1">{item.title}</h3>
+              <p class="text-sm text-slate leading-relaxed">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMPONENT LIBRARY WITH KEY SPECS PREVIEW ===== -->
+  <section class="py-16 md:py-20 bg-light-gray border-y border-border">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10">
+        <p class="sunlit-overline mb-3">Key Specs Preview</p>
+        <h2 class="sunlit-section-title text-3xl md:text-4xl text-charcoal">Component Library with Key Specs Preview</h2>
+      </div>
+
+      <!-- Tab switcher -->
+      <div id="comp-tabs" class="flex gap-3 mb-8">
+        <button
+          id="tab-lumina"
+          onclick="switchTab('lumina')"
+          class="px-5 py-2.5 rounded-full font-heading font-bold text-sm bg-deep-green text-white transition-all"
+        >Lumina Slate Components</button>
+        <button
+          id="tab-storm"
+          onclick="switchTab('storm')"
+          class="px-5 py-2.5 rounded-full font-heading font-bold text-sm bg-white border border-border text-slate hover:border-deep-green hover:text-deep-green transition-all"
+        >Storm Guard Components</button>
+      </div>
+
+      <!-- Lumina Slate Components -->
+      <div id="panel-lumina">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <!-- Active Glass PV Tile -->
+          <div class="sunlit-card p-5">
+            <div class="h-32 bg-soft-green rounded-xl mb-4 flex items-center justify-center">
+              <svg width="100" height="72" viewBox="0 0 100 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="16" width="92" height="50" rx="3" stroke="#1a3a2a" stroke-width="1.8" fill="none"/>
+                <line x1="4" y1="32" x2="96" y2="32" stroke="#1a3a2a" stroke-width="1.2"/>
+                <line x1="4" y1="48" x2="96" y2="48" stroke="#1a3a2a" stroke-width="1.2"/>
+                <line x1="35" y1="16" x2="35" y2="66" stroke="#1a3a2a" stroke-width="1.2"/>
+                <line x1="65" y1="16" x2="65" y2="66" stroke="#1a3a2a" stroke-width="1.2"/>
+                <circle cx="50" cy="8" r="4" stroke="#1a3a2a" stroke-width="1.5" fill="none"/>
+                <line x1="50" y1="12" x2="50" y2="16" stroke="#1a3a2a" stroke-width="1.5"/>
+                <line x1="44" y1="6" x2="40" y2="3" stroke="#1a3a2a" stroke-width="1.2"/>
+                <line x1="56" y1="6" x2="60" y2="3" stroke="#1a3a2a" stroke-width="1.2"/>
+              </svg>
+            </div>
+            <h4 class="font-heading font-bold text-charcoal mb-3">Active Glass PV Tile</h4>
+            <div class="border-t border-border pt-3">
+              <p class="text-xs font-heading font-bold text-deep-green uppercase tracking-wide mb-2">Key Specs Preview</p>
+              <div class="space-y-1 text-xs">
+                <div class="flex justify-between"><span class="text-slate">Size</span><span class="font-heading font-semibold text-charcoal">1240 × 390 mm</span></div>
+                <div class="flex justify-between"><span class="text-slate">Thickness</span><span class="font-heading font-semibold text-charcoal">6.2 mm</span></div>
+                <div class="flex justify-between"><span class="text-slate">Weight</span><span class="font-heading font-semibold text-charcoal">approx. 14.5 kg/m²</span></div>
+                <div class="flex justify-between"><span class="text-slate">Material</span><span class="font-heading font-semibold text-charcoal">Tempered glass</span></div>
+                <div class="flex justify-between"><span class="text-slate">Power</span><span class="font-heading font-semibold text-charcoal">70 W</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Matching Inactive Glass Tile -->
+          <div class="sunlit-card p-5">
+            <div class="h-32 bg-soft-green rounded-xl mb-4 flex items-center justify-center">
+              <svg width="100" height="72" viewBox="0 0 100 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="16" width="92" height="50" rx="3" stroke="#1a3a2a" stroke-width="1.8" fill="none"/>
+                <line x1="4" y1="32" x2="96" y2="32" stroke="#1a3a2a" stroke-width="1.2"/>
+                <line x1="4" y1="48" x2="96" y2="48" stroke="#1a3a2a" stroke-width="1.2"/>
+                <line x1="35" y1="16" x2="35" y2="66" stroke="#1a3a2a" stroke-width="1.2"/>
+                <line x1="65" y1="16" x2="65" y2="66" stroke="#1a3a2a" stroke-width="1.2"/>
+              </svg>
+            </div>
+            <h4 class="font-heading font-bold text-charcoal mb-3">Matching Inactive Glass Tile</h4>
+            <div class="border-t border-border pt-3">
+              <p class="text-xs font-heading font-bold text-deep-green uppercase tracking-wide mb-2">Key Specs Preview</p>
+              <div class="space-y-1 text-xs">
+                <div class="flex justify-between"><span class="text-slate">Size</span><span class="font-heading font-semibold text-charcoal">1240 × 390 mm</span></div>
+                <div class="flex justify-between"><span class="text-slate">Thickness</span><span class="font-heading font-semibold text-charcoal">6.2 mm</span></div>
+                <div class="flex justify-between"><span class="text-slate">Material</span><span class="font-heading font-semibold text-charcoal">Tempered glass</span></div>
+                <div class="flex justify-between"><span class="text-slate">Function</span><span class="font-heading font-semibold text-charcoal">Non-PV, matched</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Glass Ridge Tile -->
+          <div class="sunlit-card p-5">
+            <div class="h-32 bg-soft-green rounded-xl mb-4 flex items-center justify-center">
+              <svg width="100" height="72" viewBox="0 0 100 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 55 L50 20 L90 55" stroke="#1a3a2a" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+                <path d="M10 55 L90 55" stroke="#1a3a2a" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M50 20 L50 55" stroke="#1a3a2a" stroke-width="1" stroke-dasharray="4 2"/>
+                <path d="M30 38 L50 20 L70 38" stroke="#1a3a2a" stroke-width="1" fill="none" opacity="0.4"/>
+              </svg>
+            </div>
+            <h4 class="font-heading font-bold text-charcoal mb-3">Glass Ridge Tile</h4>
+            <div class="border-t border-border pt-3">
+              <p class="text-xs font-heading font-bold text-deep-green uppercase tracking-wide mb-2">Key Specs Preview</p>
+              <div class="space-y-1 text-xs">
+                <div class="flex justify-between"><span class="text-slate">Size</span><span class="font-heading font-semibold text-charcoal">1240 × 330 mm</span></div>
+                <div class="flex justify-between"><span class="text-slate">Thickness</span><span class="font-heading font-semibold text-charcoal">6.2 mm</span></div>
+                <div class="flex justify-between"><span class="text-slate">Material</span><span class="font-heading font-semibold text-charcoal">Tempered glass</span></div>
+                <div class="flex justify-between"><span class="text-slate">Function</span><span class="font-heading font-semibold text-charcoal">Ridge coverage</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Storm Guard Components -->
+      <div id="panel-storm" class="hidden">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <!-- Metal Solar Roof Sheet -->
+          <div class="sunlit-card p-5">
+            <div class="h-32 bg-soft-green rounded-xl mb-4 flex items-center justify-center">
+              <svg width="100" height="72" viewBox="0 0 100 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="20" width="92" height="36" rx="2" stroke="#1a3a2a" stroke-width="1.8" fill="none"/>
+                <line x1="4" y1="28" x2="96" y2="28" stroke="#1a3a2a" stroke-width="1"/>
+                <line x1="4" y1="48" x2="96" y2="48" stroke="#1a3a2a" stroke-width="1"/>
+                <path d="M20 20 L20 56" stroke="#1a3a2a" stroke-width="1.5"/>
+                <path d="M40 20 L40 56" stroke="#1a3a2a" stroke-width="1.5"/>
+                <path d="M60 20 L60 56" stroke="#1a3a2a" stroke-width="1.5"/>
+                <path d="M80 20 L80 56" stroke="#1a3a2a" stroke-width="1.5"/>
+                <circle cx="50" cy="10" r="3" stroke="#1a3a2a" stroke-width="1.5" fill="none"/>
+                <line x1="50" y1="13" x2="50" y2="20" stroke="#1a3a2a" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <h4 class="font-heading font-bold text-charcoal mb-3">Metal Solar Roof Sheet</h4>
+            <div class="border-t border-border pt-3">
+              <p class="text-xs font-heading font-bold text-deep-green uppercase tracking-wide mb-2">Key Specs Preview</p>
+              <div class="space-y-1 text-xs">
+                <div class="flex justify-between"><span class="text-slate">Size</span><span class="font-heading font-semibold text-charcoal">Project / model based</span></div>
+                <div class="flex justify-between"><span class="text-slate">Thickness</span><span class="font-heading font-semibold text-charcoal">0.7 – 0.8 mm</span></div>
+                <div class="flex justify-between"><span class="text-slate">Material</span><span class="font-heading font-semibold text-charcoal">Al-Mg-Mn metal</span></div>
+                <div class="flex justify-between"><span class="text-slate">Power</span><span class="font-heading font-semibold text-charcoal">Model dependent</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Matching Inactive Metal Sheet -->
+          <div class="sunlit-card p-5">
+            <div class="h-32 bg-soft-green rounded-xl mb-4 flex items-center justify-center">
+              <svg width="100" height="72" viewBox="0 0 100 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="20" width="92" height="36" rx="2" stroke="#1a3a2a" stroke-width="1.8" fill="none"/>
+                <line x1="4" y1="28" x2="96" y2="28" stroke="#1a3a2a" stroke-width="1"/>
+                <line x1="4" y1="48" x2="96" y2="48" stroke="#1a3a2a" stroke-width="1"/>
+                <path d="M20 20 L20 56" stroke="#1a3a2a" stroke-width="1.5"/>
+                <path d="M40 20 L40 56" stroke="#1a3a2a" stroke-width="1.5"/>
+                <path d="M60 20 L60 56" stroke="#1a3a2a" stroke-width="1.5"/>
+                <path d="M80 20 L80 56" stroke="#1a3a2a" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <h4 class="font-heading font-bold text-charcoal mb-3">Matching Inactive Metal Sheet</h4>
+            <div class="border-t border-border pt-3">
+              <p class="text-xs font-heading font-bold text-deep-green uppercase tracking-wide mb-2">Key Specs Preview</p>
+              <div class="space-y-1 text-xs">
+                <div class="flex justify-between"><span class="text-slate">Size</span><span class="font-heading font-semibold text-charcoal">Project / model based</span></div>
+                <div class="flex justify-between"><span class="text-slate">Thickness</span><span class="font-heading font-semibold text-charcoal">0.7 – 0.8 mm</span></div>
+                <div class="flex justify-between"><span class="text-slate">Material</span><span class="font-heading font-semibold text-charcoal">Al-Mg-Mn metal</span></div>
+                <div class="flex justify-between"><span class="text-slate">Function</span><span class="font-heading font-semibold text-charcoal">Non-PV, matched</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Metal Ridge Cap -->
+          <div class="sunlit-card p-5">
+            <div class="h-32 bg-soft-green rounded-xl mb-4 flex items-center justify-center">
+              <svg width="100" height="72" viewBox="0 0 100 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 52 L50 22 L90 52" stroke="#1a3a2a" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+                <path d="M10 52 L90 52" stroke="#1a3a2a" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M15 52 L50 28 L85 52" stroke="#1a3a2a" stroke-width="1" fill="none" opacity="0.35"/>
+              </svg>
+            </div>
+            <h4 class="font-heading font-bold text-charcoal mb-3">Metal Ridge Cap</h4>
+            <div class="border-t border-border pt-3">
+              <p class="text-xs font-heading font-bold text-deep-green uppercase tracking-wide mb-2">Key Specs Preview</p>
+              <div class="space-y-1 text-xs">
+                <div class="flex justify-between"><span class="text-slate">Size</span><span class="font-heading font-semibold text-charcoal">Project / model based</span></div>
+                <div class="flex justify-between"><span class="text-slate">Thickness</span><span class="font-heading font-semibold text-charcoal">0.7 – 0.8 mm</span></div>
+                <div class="flex justify-between"><span class="text-slate">Material</span><span class="font-heading font-semibold text-charcoal">Al-Mg-Mn metal</span></div>
+                <div class="flex justify-between"><span class="text-slate">Function</span><span class="font-heading font-semibold text-charcoal">Ridge coverage</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footnote -->
+      <div class="mt-8 flex items-start gap-3 p-4 rounded-2xl bg-white border border-border">
+        <div class="flex-shrink-0 w-7 h-7 rounded-full border border-border flex items-center justify-center text-slate text-xs font-bold">i</div>
+        <p class="text-sm text-slate leading-relaxed">
+          <strong class="text-charcoal">Key specs shown above are previews only.</strong><br>
+          Full technical specifications are available on each product page and in downloadable datasheets.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    function switchTab(tab) {
+      const lumina = document.getElementById('panel-lumina');
+      const storm = document.getElementById('panel-storm');
+      const tabLumina = document.getElementById('tab-lumina');
+      const tabStorm = document.getElementById('tab-storm');
+      if (tab === 'lumina') {
+        lumina.classList.remove('hidden');
+        storm.classList.add('hidden');
+        tabLumina.className = 'px-5 py-2.5 rounded-full font-heading font-bold text-sm bg-deep-green text-white transition-all';
+        tabStorm.className = 'px-5 py-2.5 rounded-full font-heading font-bold text-sm bg-white border border-border text-slate hover:border-deep-green hover:text-deep-green transition-all';
+      } else {
+        storm.classList.remove('hidden');
+        lumina.classList.add('hidden');
+        tabStorm.className = 'px-5 py-2.5 rounded-full font-heading font-bold text-sm bg-deep-green text-white transition-all';
+        tabLumina.className = 'px-5 py-2.5 rounded-full font-heading font-bold text-sm bg-white border border-border text-slate hover:border-deep-green hover:text-deep-green transition-all';
+      }
+    }
+  </script>
+
+  <!-- ===== SUPPLY SCOPE CLARIFIED (Factory vs Local) ===== -->
+  <section class="py-16 md:py-20 bg-light-gray border-y border-border">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10">
+        <p class="sunlit-overline mb-3">Supply Scope Clarified</p>
+        <h2 class="sunlit-section-title text-3xl md:text-4xl text-charcoal">
+          What We Usually Supply —<br class="hidden md:block"> and What Is Usually Handled Locally
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Factory Supply -->
+        <div class="sunlit-card p-7">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-11 h-11 rounded-xl bg-soft-green text-deep-green flex items-center justify-center">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-charcoal">Factory Supply Scope</h3>
+              <p class="text-xs text-slate">Supplied by Sunlit Solar Roof</p>
+            </div>
+          </div>
+          <div class="space-y-3">
+            {factorySupply.map((item) => (
+              <div class="flex items-center gap-3 text-sm text-slate">
+                <span class="text-deep-green flex-shrink-0"><Fragment set:html={item.icon} /></span>
+                {item.text}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Local Scope -->
+        <div class="sunlit-card p-7 border-amber/30" style="border-color: rgba(212,160,86,0.3);">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-11 h-11 rounded-xl bg-amber/10 text-amber flex items-center justify-center">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-charcoal" style="color: var(--amber-dark);">Usually Handled Locally</h3>
+              <p class="text-xs text-slate">Managed by customer or local partners</p>
+            </div>
+          </div>
+          <div class="space-y-3">
+            {localScope.map((item) => (
+              <div class="flex items-center gap-3 text-sm text-slate">
+                <span style="color: var(--amber);" class="flex-shrink-0"><Fragment set:html={item.icon} /></span>
+                {item.text}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW COOPERATION USUALLY STARTS ===== -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10">
+        <p class="sunlit-overline mb-3">Simple Steps, Clear Process</p>
+        <h2 class="sunlit-section-title text-3xl md:text-4xl text-charcoal">How Cooperation Usually Starts</h2>
+      </div>
+      <div class="grid lg:grid-cols-[1fr_280px] gap-6 items-start">
+        <!-- 4 steps -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {process.map((item, i) => (
+            <div class="sunlit-card p-5 relative">
+              <div class="w-9 h-9 rounded-full bg-deep-green text-white flex items-center justify-center font-heading font-bold text-sm mb-4">
+                {item.step}
+              </div>
+              <div class="text-deep-green mb-3">
+                <Fragment set:html={item.icon} />
+              </div>
+              <h3 class="font-heading font-bold text-charcoal mb-2 text-sm">{item.title}</h3>
+              <p class="text-xs text-slate leading-relaxed">{item.desc}</p>
+              {i < process.length - 1 && (
+                <div class="hidden lg:block absolute -right-3 top-9 w-6 h-px bg-border z-10"></div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <!-- No drawing yet card -->
+        <div class="sunlit-card overflow-hidden">
+          <div class="h-36 overflow-hidden">
+            <img
+              src="/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-solar-roof-tiles-detail-decorative-vent.webp"
+              alt="No drawing yet"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-5">
+            <div class="w-9 h-9 rounded-xl bg-soft-green text-deep-green flex items-center justify-center mb-3">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            </div>
+            <h3 class="font-heading font-bold text-charcoal mb-1">No drawing yet?</h3>
+            <p class="text-sm text-slate leading-relaxed">Start with roof photos, country, and rough roof size.</p>
+            <a href="/contact/" class="inline-flex items-center gap-1 text-sm font-heading font-bold text-deep-green mt-3 hover:underline">
+              Start the conversation →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHERE TO GO NEXT ===== -->
+  <section class="py-16 md:py-20 bg-soft-green border-t border-border">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10">
+        <p class="sunlit-overline mb-3">Explore More</p>
+        <h2 class="sunlit-section-title text-3xl md:text-4xl text-charcoal">Where to Go Next</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-5">
+        {whereNext.map((item) => (
+          <a href={item.href} class="sunlit-card overflow-hidden block group">
+            <div class="h-48 overflow-hidden">
+              <img
+                src={item.img}
+                alt={item.label}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-4 flex items-center justify-between">
+              <span class="font-heading font-bold text-charcoal group-hover:text-deep-green transition-colors">{item.label}</span>
+              <svg class="text-amber group-hover:translate-x-1 transition-transform flex-shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-[280px_1fr] gap-12 items-start">
+        <div>
+          <p class="sunlit-overline mb-3">Common Questions</p>
+          <h2 class="sunlit-section-title text-3xl text-charcoal">Frequently Asked Questions</h2>
+        </div>
+        <div class="divide-y divide-border">
+          {faqs.map((faq) => (
+            <details class="group py-4">
+              <summary class="flex items-center justify-between cursor-pointer font-heading font-bold text-charcoal list-none">
+                <span>{faq.q}</span>
+                <span class="ml-4 flex-shrink-0 w-6 h-6 rounded-full border border-border flex items-center justify-center text-slate group-open:rotate-45 transition-transform">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </span>
+              </summary>
+              <p class="text-slate text-sm leading-relaxed mt-3 pr-10">{faq.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA BANNER ===== -->
+  <section class="dark-green-gradient py-16 md:py-20 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 pointer-events-none">
+      <img
+        src="/images/projects/beijing-new-world-lizun/sunlit-bipv-roof-villa-construction-site.webp"
+        alt=""
+        class="w-full h-full object-cover"
+        loading="lazy"
+      />
+    </div>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-[1fr_auto] gap-8 items-center">
+        <div>
+          <p class="text-white/60 text-xs font-heading font-bold tracking-widest uppercase mb-3">Ready When You Are</p>
+          <h2 class="font-heading font-bold text-white text-3xl md:text-4xl leading-tight mb-3">
+            Start the Conversation,<br>Then We Define the Right Scope
+          </h2>
+          <p class="text-white/70 leading-relaxed max-w-lg">
+            You can start with simple information today. We will guide you step by step and review drawings later if available.
+          </p>
+        </div>
+        <div class="flex flex-col gap-3 min-w-[220px]">
+          <a href="/contact/" class="sunlit-btn-primary justify-center">Ask About My Project →</a>
+          <a href="/contact/" class="sunlit-btn-primary justify-center" style="background: var(--amber);">Get Factory Pricing →</a>
+        </div>
+      </div>
+
+      <!-- Trust Bar -->
+      <div class="mt-12 pt-8 border-t border-white/15 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {trustBar.map((item) => (
+          <div class="flex items-start gap-3">
+            <div class="text-white/70 flex-shrink-0 mt-0.5">
+              <Fragment set:html={item.icon} />
+            </div>
+            <div>
+              <p class="font-heading font-bold text-white text-sm">{item.title}</p>
+              <p class="text-white/60 text-xs leading-relaxed mt-0.5">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</Layout>

@@ -54,7 +54,7 @@ export const projects: Project[] = [
     roofArea: "227 sq.m",
     capacity: "10 kWp",
     status: "Reference",
-    images: ["/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-bipv-roof-scenic-harmony-xianghu-mountains.webp", "/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-solar-roof-tiles-detail-decorative-vent.webp", "/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-solar-slate-installed-texture-close-up.webp", "/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-solar-slate-roof-tiles-xianghu-details.webp"],
+    images: ["/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-bipv-solar-roof-aerial-view-hangzhou-xianghu.webp", "/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-solar-roof-tiles-detail-decorative-vent.webp", "/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-solar-slate-installed-texture-close-up.webp", "/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-solar-slate-roof-tiles-xianghu-details.webp"],
     sourceUrl: "https://www.sunlitsolarroof.com/project/hangzhou-xianghu-arcadia-villa/"
   },
   {

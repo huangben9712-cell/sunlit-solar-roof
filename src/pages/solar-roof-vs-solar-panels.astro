@@ -1,0 +1,356 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const specComparison = [
+  { spec: 'System type', solarRoof: 'Building-integrated (BIPV)', panels: 'Add-on (BAPV)' },
+  { spec: 'Roof function', solarRoof: 'IS the roof — waterproofs + generates', panels: 'Separate from roof' },
+  { spec: 'Appearance', solarRoof: 'Flush, architectural finish', panels: 'Visible rack and frame' },
+  { spec: 'Module efficiency', solarRoof: '14–17% (glass tile / metal sheet)', panels: '20–23% (standard panel)' },
+  { spec: 'Power per m²', solarRoof: '~100–130 W/m² (roof area)', panels: '~150–200 W/m² (panel area)' },
+  { spec: 'Installation', solarRoof: 'Replaces roof — one trade', panels: 'Added to existing roof — two trades' },
+  { spec: 'Roof penetrations', solarRoof: 'None — zero penetration design', panels: 'Mounting bolts through roof' },
+  { spec: 'Maintenance access', solarRoof: 'Standard roofing maintenance', panels: 'Panel + roof maintenance separately' },
+  { spec: 'Lifespan', solarRoof: '25–30 years (aligned with roof life)', panels: '25–30 years (panel) + roof separately' },
+  { spec: 'Best application', solarRoof: 'New build, re-roof, premium project', panels: 'Retrofit on existing roof' },
+  { spec: 'Cost vs roof + panels', solarRoof: 'Higher per watt, replaces roof cost', panels: 'Lower per watt, added to roof cost' },
+  { spec: 'Permitting complexity', solarRoof: 'Roof permit + electrical permit', panels: 'Electrical permit (roof permit if re-roof)' },
+];
+
+const useCases = [
+  {
+    title: 'Choose Solar Roof when…',
+    color: 'green',
+    items: [
+      'The roof needs replacing anyway — the cost delta shrinks significantly',
+      'Appearance matters — villas, resorts, premium residential, heritage areas',
+      'No visible hardware is a client requirement or planning condition',
+      'New construction — integrate from the start, no retrofit complexity',
+      'The project is in a market where solar roof aesthetics command a price premium',
+    ],
+  },
+  {
+    title: 'Choose Solar Panels when…',
+    color: 'gray',
+    items: [
+      'The existing roof is in good condition and has 10+ years of life remaining',
+      'Maximum power output per m² is the primary goal',
+      'Budget is the primary constraint and aesthetics are secondary',
+      'The roof is flat or very low slope (not suitable for solar roof tiles)',
+      'Quick retrofit with minimal structural work is required',
+    ],
+  },
+];
+
+const costBreakdown = [
+  { scenario: 'Solar panels on existing roof', roofCost: '—', solarCost: '$8,000–15,000', total: '$8,000–15,000', note: 'Roof not replaced' },
+  { scenario: 'New conventional roof + solar panels', roofCost: '$12,000–20,000', solarCost: '$8,000–15,000', total: '$20,000–35,000', note: 'Two separate systems' },
+  { scenario: 'Solar roof (replaces roof + generates)', roofCost: '—', solarCost: '$18,000–32,000', total: '$18,000–32,000', note: 'One integrated system' },
+];
+---
+
+<Layout
+  title="Solar Roof vs Solar Panels: Full Comparison — Sunlit Solar Roof"
+  description="Solar roof vs solar panels: cost, efficiency, aesthetics, application range and installation compared side by side with real data."
+>
+  <!-- BREADCRUMB -->
+  <section class="border-b border-gray-100 bg-white">
+    <div class="max-w-7xl mx-auto px-6 py-4 text-sm text-gray-500">
+      <a href="/" class="hover:text-[#2d5a27]">Home</a>
+      <span class="mx-2">/</span>
+      <span class="text-gray-800 font-medium">Solar Roof vs Solar Panels</span>
+    </div>
+  </section>
+
+  <!-- HERO -->
+  <section class="bg-[#0f1f0f] py-20 md:py-28 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+      <img
+        src="/images/projects/xuzhou-luxury-villa-the-ultimate-bipv-vs-bapv-contrast/sunlit-bipv-vs-bapv-solar-roof-comparison.webp"
+        alt=""
+        class="w-full h-full object-cover"
+      />
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl">
+        <p class="text-amber-400 text-sm font-bold tracking-widest uppercase mb-4">Comparison Guide</p>
+        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+          Solar Roof<br/>vs Solar Panels
+        </h1>
+        <p class="text-xl text-white/70 leading-relaxed mb-8">
+          Two ways to put solar on a building. One replaces the roof. One sits on top of it. The right choice depends on project type, budget position, and what the client values.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#comparison-table" class="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-gray-900 font-semibold px-6 py-3 rounded-lg transition-colors">
+            See Full Comparison
+          </a>
+          <a href="/resources/knowledge-base/what-is-solar-roof/" class="inline-flex items-center gap-2 border border-white/30 hover:border-white text-white font-semibold px-6 py-3 rounded-lg transition-colors">
+            What Is a Solar Roof? →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY DIFFERENCE STRIP -->
+  <section class="bg-white border-b border-gray-100 py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="text-center text-[#2d5a27] text-sm font-bold tracking-widest uppercase mb-8">The Core Difference</p>
+      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div class="rounded-2xl bg-[#f4f7f0] border border-[#2d5a27]/20 p-8 text-center">
+          <div class="w-16 h-16 rounded-full bg-[#2d5a27] flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+          </div>
+          <h2 class="text-xl font-bold text-gray-800 mb-3">Solar Roof</h2>
+          <p class="text-[#2d5a27] font-semibold mb-3">IS the roof</p>
+          <p class="text-gray-600 text-sm leading-relaxed">Active PV tiles replace conventional roofing material. The roof surface itself waterproofs the building and generates electricity simultaneously. No rack, no gap, no visible hardware.</p>
+        </div>
+        <div class="rounded-2xl bg-gray-50 border border-gray-200 p-8 text-center">
+          <div class="w-16 h-16 rounded-full bg-gray-400 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707" />
+            </svg>
+          </div>
+          <h2 class="text-xl font-bold text-gray-800 mb-3">Solar Panels</h2>
+          <p class="text-gray-500 font-semibold mb-3">Sit ON TOP of the roof</p>
+          <p class="text-gray-600 text-sm leading-relaxed">Standard PV modules mounted on a rack above an existing roof. The roof and the solar system are two separate components, installed and maintained independently.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISUAL COMPARISON -->
+  <section class="py-16 bg-[#f4f7f0]">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="text-[#2d5a27] text-sm font-bold tracking-widest uppercase mb-8 text-center">Visual Comparison</p>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="rounded-2xl overflow-hidden shadow-sm">
+          <div class="relative">
+            <img
+              src="/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-bipv-solar-roof-aerial-view-hangzhou-xianghu.webp"
+              alt="Solar roof — integrated, no visible hardware"
+              class="w-full h-64 object-cover"
+            />
+            <div class="absolute top-4 left-4 bg-[#2d5a27] text-white text-xs font-bold px-3 py-1.5 rounded-full">Solar Roof (BIPV)</div>
+          </div>
+          <div class="bg-white p-5">
+            <p class="font-semibold text-gray-800 mb-1">Hangzhou Xianghu Arcadia Villa</p>
+            <p class="text-sm text-gray-500">Lumina Slate glass solar tiles — flush finish, no visible rack or frame</p>
+          </div>
+        </div>
+        <div class="rounded-2xl overflow-hidden shadow-sm">
+          <div class="relative">
+            <img
+              src="/images/projects/xuzhou-luxury-villa-the-ultimate-bipv-vs-bapv-contrast/sunlit-bipv-vs-bapv-solar-roof-comparison.webp"
+              alt="BIPV vs BAPV comparison on same building"
+              class="w-full h-64 object-cover"
+            />
+            <div class="absolute top-4 left-4 bg-gray-700 text-white text-xs font-bold px-3 py-1.5 rounded-full">BIPV vs BAPV Contrast</div>
+          </div>
+          <div class="bg-white p-5">
+            <p class="font-semibold text-gray-800 mb-1">Xuzhou Luxury Villa</p>
+            <p class="text-sm text-gray-500">Same building — integrated solar roof (left) vs rack-mounted panels (right)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FULL SPEC TABLE -->
+  <section id="comparison-table" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl mb-12">
+        <p class="text-[#2d5a27] text-sm font-bold tracking-widest uppercase mb-4">Full Specification Comparison</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Side by Side</h2>
+        <p class="text-lg text-gray-600">Every major dimension compared with real data.</p>
+      </div>
+
+      <div class="overflow-x-auto rounded-2xl border border-gray-100 shadow-sm">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-[#f4f7f0]">
+              <th class="text-left px-6 py-4 font-bold text-gray-700 w-1/3">Specification</th>
+              <th class="text-left px-6 py-4 font-bold text-[#2d5a27]">Solar Roof (BIPV)</th>
+              <th class="text-left px-6 py-4 font-bold text-gray-600">Solar Panels (BAPV)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {specComparison.map((row, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}>
+                <td class="px-6 py-4 font-semibold text-gray-700">{row.spec}</td>
+                <td class="px-6 py-4 text-gray-800">{row.solarRoof}</td>
+                <td class="px-6 py-4 text-gray-600">{row.panels}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- COST BREAKDOWN -->
+  <section class="py-20 bg-[#f4f7f0]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl mb-12">
+        <p class="text-[#2d5a27] text-sm font-bold tracking-widest uppercase mb-4">Cost Reality</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Right Cost Comparison</h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Solar roof is often compared unfairly against solar panels alone. The correct comparison is solar roof vs (new roof + solar panels). When a roof replacement is already needed, the cost delta shrinks significantly.
+        </p>
+        <p class="text-sm text-gray-500 mt-3">* Indicative figures for a 150–200 m² residential project. Actual costs vary by market, product specification, and installation complexity.</p>
+      </div>
+
+      <div class="overflow-x-auto rounded-2xl border border-gray-100 shadow-sm">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-white">
+              <th class="text-left px-6 py-4 font-bold text-gray-700">Scenario</th>
+              <th class="text-left px-6 py-4 font-bold text-gray-700">Roof Cost</th>
+              <th class="text-left px-6 py-4 font-bold text-gray-700">Solar Cost</th>
+              <th class="text-left px-6 py-4 font-bold text-gray-700">Total</th>
+              <th class="text-left px-6 py-4 font-bold text-gray-700">Note</th>
+            </tr>
+          </thead>
+          <tbody>
+            {costBreakdown.map((row, i) => (
+              <tr class={i === 2 ? 'bg-[#f4f7f0] border-t-2 border-[#2d5a27]/20' : i % 2 === 0 ? 'bg-[#f4f7f0]' : 'bg-white'}>
+                <td class={`px-6 py-4 font-semibold ${i === 2 ? 'text-[#2d5a27]' : 'text-gray-700'}`}>{row.scenario}</td>
+                <td class="px-6 py-4 text-gray-600">{row.roofCost}</td>
+                <td class="px-6 py-4 text-gray-600">{row.solarCost}</td>
+                <td class={`px-6 py-4 font-bold ${i === 2 ? 'text-[#2d5a27]' : 'text-gray-800'}`}>{row.total}</td>
+                <td class="px-6 py-4 text-gray-500 text-xs">{row.note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASE GUIDE -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl mb-12">
+        <p class="text-[#2d5a27] text-sm font-bold tracking-widest uppercase mb-4">Decision Guide</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Which One Fits Your Project?</h2>
+        <p class="text-lg text-gray-600">Neither is universally better. The right choice depends on project context.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        {useCases.map((uc) => (
+          <div class={`rounded-2xl p-8 border ${uc.color === 'green' ? 'bg-[#f4f7f0] border-[#2d5a27]/20' : 'bg-gray-50 border-gray-200'}`}>
+            <h3 class={`text-xl font-bold mb-6 ${uc.color === 'green' ? 'text-[#2d5a27]' : 'text-gray-600'}`}>{uc.title}</h3>
+            <ul class="space-y-3">
+              {uc.items.map((item) => (
+                <li class="flex items-start gap-3">
+                  <span class={`mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold ${uc.color === 'green' ? 'bg-[#2d5a27] text-white' : 'bg-gray-300 text-gray-600'}`}>✓</span>
+                  <span class="text-gray-700 text-sm leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT PROOF -->
+  <section class="py-20 bg-[#f4f7f0]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl mb-12">
+        <p class="text-[#2d5a27] text-sm font-bold tracking-widest uppercase mb-4">Real Projects</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Solar Roofs in the Field</h2>
+        <p class="text-lg text-gray-600">Factory-supplied complete solar roof packages on delivered projects.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <a href="/projects/xuzhou-luxury-villa-the-ultimate-bipv-vs-bapv-contrast/" class="group rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow">
+          <div class="overflow-hidden h-56">
+            <img src="/images/projects/xuzhou-luxury-villa-the-ultimate-bipv-vs-bapv-contrast/sunlit-bipv-vs-bapv-solar-roof-comparison.webp" alt="BIPV vs BAPV comparison" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-5">
+            <p class="text-xs text-[#2d5a27] font-bold uppercase tracking-wider mb-1">Lumina Slate · BIPV vs BAPV Contrast</p>
+            <h3 class="font-bold text-gray-800">Xuzhou Luxury Villa</h3>
+            <p class="text-sm text-gray-500 mt-1">Same building — integrated solar roof vs rack-mounted panels side by side</p>
+          </div>
+        </a>
+        <a href="/projects/pioneer-residential-retrofit/" class="group rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow">
+          <div class="overflow-hidden h-56">
+            <img src="/images/projects/pioneer-residential-retrofit/retrofitted-solar-roof-urban-villa.webp" alt="Solar roof retrofit on urban villa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-5">
+            <p class="text-xs text-[#2d5a27] font-bold uppercase tracking-wider mb-1">Lumina Slate · Residential Retrofit</p>
+            <h3 class="font-bold text-gray-800">Pioneer Residential Retrofit</h3>
+            <p class="text-sm text-gray-500 mt-1">Re-roof project — existing roof replaced with complete solar roof system</p>
+          </div>
+        </a>
+      </div>
+      <div class="mt-8 text-center">
+        <a href="/projects/" class="inline-flex items-center gap-2 text-[#2d5a27] font-semibold hover:underline">
+          View all project references →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- B2B CTA -->
+  <section class="py-20 bg-[#0f1f0f] relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <img src="/images/projects/large-scale-commercial-complex/storm-guard-large-scale-bipv-integration-aerial-scaled.webp" alt="" class="w-full h-full object-cover" />
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <p class="text-amber-400 text-sm font-bold tracking-widest uppercase mb-4">Factory Supply · B2B</p>
+      <h2 class="text-white text-4xl md:text-5xl font-bold mb-6 leading-tight">
+        Decided on Solar Roof?<br/>We Supply the Complete Package.
+      </h2>
+      <p class="text-white/60 text-lg mb-10 max-w-2xl mx-auto">
+        Sunlit manufactures and supplies complete solar roof packages — glass tile line (Lumina Slate) and metal sheet line (Storm Guard) — factory direct to distributors, installers and developers in overseas markets.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <a href="/contact/" class="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-gray-900 font-semibold px-8 py-4 rounded-lg transition-colors text-lg">
+          Request Factory Pricing
+        </a>
+        <a href="/system-overview/" class="inline-flex items-center gap-2 border border-white/30 hover:border-white text-white font-semibold px-8 py-4 rounded-lg transition-colors text-lg">
+          See Supply Scope
+        </a>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
+        {[
+          { val: 'Glass + Metal', label: 'Two product lines' },
+          { val: '20+', label: 'Delivered projects' },
+          { val: 'IP68', label: 'Waterproof rating' },
+          { val: 'B2B', label: 'Factory direct' },
+        ].map((stat) => (
+          <div class="text-center">
+            <p class="text-white text-2xl font-bold">{stat.val}</p>
+            <p class="text-white/50 text-sm mt-1">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED READING -->
+  <section class="py-16 bg-white border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="text-[#2d5a27] text-sm font-bold tracking-widest uppercase mb-8">Continue Reading</p>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/resources/knowledge-base/what-is-solar-roof/" class="group rounded-2xl border border-gray-100 bg-[#f4f7f0] p-6 hover:border-[#2d5a27]/30 transition-colors">
+          <p class="text-xs text-[#2d5a27] font-bold uppercase tracking-wider mb-3">Explainer</p>
+          <h3 class="font-bold text-gray-800 group-hover:text-[#2d5a27] transition-colors mb-2">What Is a Solar Roof? Complete Guide</h3>
+          <p class="text-sm text-gray-600">How it works, what components it includes, and who it's for.</p>
+        </a>
+        <a href="/lumina-slate/" class="group rounded-2xl border border-gray-100 bg-[#f4f7f0] p-6 hover:border-[#2d5a27]/30 transition-colors">
+          <p class="text-xs text-[#2d5a27] font-bold uppercase tracking-wider mb-3">Product Line</p>
+          <h3 class="font-bold text-gray-800 group-hover:text-[#2d5a27] transition-colors mb-2">Lumina Slate: Premium Glass Solar Roof Tiles</h3>
+          <p class="text-sm text-gray-600">70W per tile · Mono PERC · Double glass · Slate-look finish.</p>
+        </a>
+        <a href="/storm-guard/" class="group rounded-2xl border border-gray-100 bg-[#f4f7f0] p-6 hover:border-[#2d5a27]/30 transition-colors">
+          <p class="text-xs text-[#2d5a27] font-bold uppercase tracking-wider mb-3">Product Line</p>
+          <h3 class="font-bold text-gray-800 group-hover:text-[#2d5a27] transition-colors mb-2">Storm Guard: Metal Solar Roof Sheets</h3>
+          <p class="text-sm text-gray-600">135W per sheet · Mono TOPCON · IP68 · Large-scale commercial.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

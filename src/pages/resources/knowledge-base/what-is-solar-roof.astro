@@ -1,0 +1,388 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const components = [
+  {
+    name: 'Active Solar Tile',
+    img: '/images/components/lumina-slate/active-solar-tile.webp',
+    desc: 'The power-generating element. Each tile contains monocrystalline PV cells encapsulated in double glass. Looks like a premium slate tile.',
+  },
+  {
+    name: 'Inactive Tile',
+    img: '/images/components/lumina-slate/inactive-half-tile-cuttable.webp',
+    desc: 'Non-generating tile with identical appearance to the active tile. Fills shaded areas, edges, and non-solar sections for a seamless roof.',
+  },
+  {
+    name: 'Ridge Tile',
+    img: '/images/components/lumina-slate/ridge-tile.webp',
+    desc: 'Covers and seals the roof peak. Toughened glass matching the tile system — no exposed metal ridge required.',
+  },
+  {
+    name: 'Vertical Flashing Strip',
+    img: '/images/components/lumina-slate/vertical-flashing-strip.webp',
+    desc: 'Seals the junction between the solar roof and vertical walls or dormers. Prevents water ingress at critical transition points.',
+  },
+  {
+    name: 'Eaves Starter',
+    img: '/images/components/lumina-slate/eaves-starter-drip-edge.webp',
+    desc: 'The first course at the eave line. Establishes the correct tile angle and directs water away from the fascia.',
+  },
+  {
+    name: 'Waterproof Membrane',
+    img: '/images/components/shared/waterproof-membrane.webp',
+    desc: 'Underlayer beneath the tile system. Provides a secondary waterproofing barrier independent of the tile surface.',
+  },
+];
+
+const comparisons = [
+  { label: 'Appearance', solarRoof: 'Integrated — looks like a premium roof', traditional: 'Panels sit on top of existing roof', panels: 'Visible rack-mounted panels' },
+  { label: 'Roof function', solarRoof: 'IS the roof — waterproofs and generates', traditional: 'Roof + panels are separate systems', panels: 'Roof + panels are separate systems' },
+  { label: 'Installation', solarRoof: 'Replace roof with solar roof system', traditional: 'Keep existing roof, add panels', panels: 'Keep existing roof, add panels' },
+  { label: 'Best for', solarRoof: 'New builds, re-roofs, premium projects', traditional: 'Retrofit on existing roofs', panels: 'Retrofit on existing roofs' },
+  { label: 'Aesthetics', solarRoof: 'Architecturally designed', traditional: 'Functional, visible hardware', panels: 'Functional, visible hardware' },
+  { label: 'Cost position', solarRoof: 'Higher upfront, replaces roof cost', traditional: 'Lower upfront, adds to roof cost', panels: 'Lower upfront, adds to roof cost' },
+];
+
+const faqs = [
+  {
+    q: 'Does a solar roof replace the entire roof?',
+    a: 'Yes. A solar roof system replaces the conventional roofing material entirely. The active and inactive tiles together form the weatherproof roof surface — there is no separate roof underneath.',
+  },
+  {
+    q: 'How much power does a solar roof generate?',
+    a: 'It depends on roof area, orientation, and local solar irradiance. A typical residential villa with 150–300 m² of south-facing roof area can generate 8–20 kWp, covering most or all of the household electricity demand.',
+  },
+  {
+    q: 'Is a solar roof more expensive than solar panels?',
+    a: 'The upfront cost per watt is higher than standard panels. However, a solar roof replaces the cost of a conventional roof, so the net premium is often smaller than it appears. For new builds or re-roofs, the comparison should be solar roof vs (new roof + solar panels).',
+  },
+  {
+    q: 'What is the difference between BIPV and a solar roof?',
+    a: '"BIPV" (Building Integrated Photovoltaics) is the technical category. A solar roof is one type of BIPV — specifically, photovoltaic elements integrated into the roof surface. Other BIPV applications include solar facades, skylights, and canopies.',
+  },
+  {
+    q: 'Can any roof use a solar roof system?',
+    a: 'Solar roof tiles work best on pitched roofs (typically 15°–60° slope). Metal solar roof sheets can handle lower slopes. Flat roofs are generally not suitable for integrated solar roof systems.',
+  },
+];
+---
+
+<Layout
+  title="What Is a Solar Roof? Complete Guide — Sunlit Solar Roof"
+  description="A solar roof integrates photovoltaic cells directly into the roof material. Learn how it works, what components it includes, and how it compares to solar panels."
+>
+  <!-- BREADCRUMB -->
+  <section class="border-b border-gray-100 bg-white">
+    <div class="max-w-7xl mx-auto px-6 py-4 text-sm text-gray-500">
+      <a href="/" class="hover:text-[#2d5a27]">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/resources/" class="hover:text-[#2d5a27]">Resources</a>
+      <span class="mx-2">/</span>
+      <span class="text-gray-800 font-medium">What Is a Solar Roof?</span>
+    </div>
+  </section>
+
+  <!-- HERO -->
+  <section class="bg-[#f4f7f0] py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-[1fr_420px] gap-12 items-center">
+      <div>
+        <p class="text-[#2d5a27] text-sm font-bold tracking-widest uppercase mb-4">Solar Roof Explained</p>
+        <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
+          What Is a Solar Roof?
+        </h1>
+        <p class="text-xl text-gray-600 leading-relaxed mb-8 max-w-2xl">
+          A solar roof integrates photovoltaic cells directly into the roof material — replacing conventional tiles or sheets rather than adding panels on top. The roof itself generates electricity.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#how-it-works" class="inline-flex items-center gap-2 bg-[#2d5a27] hover:bg-[#1e3d1a] text-white font-semibold px-6 py-3 rounded-lg transition-colors">
+            How It Works
+          </a>
+          <a href="/solar-roof-vs-solar-panels/" class="inline-flex items-center gap-2 border border-gray-300 hover:border-[#2d5a27] text-gray-700 hover:text-[#2d5a27] font-semibold px-6 py-3 rounded-lg transition-colors">
+            Compare vs Solar Panels →
+          </a>
+        </div>
+      </div>
+      <div class="rounded-2xl overflow-hidden shadow-lg">
+        <img
+          src="/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-bipv-solar-roof-aerial-view-hangzhou-xianghu.webp"
+          alt="Solar roof installed on villa — Hangzhou Xianghu Arcadia Villa"
+          class="w-full h-72 object-cover"
+        />
+        <div class="bg-white p-5 border-t border-gray-100">
+          <p class="text-sm text-gray-500 mb-1">Project Reference</p>
+          <p class="font-semibold text-gray-800">Hangzhou Xianghu Arcadia Villa</p>
+          <p class="text-sm text-gray-500">227 m² · 10 kWp · Lumina Slate glass solar tiles</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK ANSWER STRIP -->
+  <section class="bg-white border-b border-gray-100 py-10">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6">
+      <div class="rounded-xl bg-[#f4f7f0] border border-[#2d5a27]/10 p-6">
+        <p class="text-xs font-bold text-[#2d5a27] tracking-widest uppercase mb-2">01 — What it is</p>
+        <p class="font-semibold text-gray-800 mb-2">Roof + solar power in one system</p>
+        <p class="text-sm text-gray-600 leading-relaxed">Active PV tiles replace conventional roofing material. The roof surface itself generates electricity.</p>
+      </div>
+      <div class="rounded-xl bg-[#f4f7f0] border border-[#2d5a27]/10 p-6">
+        <p class="text-xs font-bold text-[#2d5a27] tracking-widest uppercase mb-2">02 — How it differs</p>
+        <p class="font-semibold text-gray-800 mb-2">Not panels on a roof — it is the roof</p>
+        <p class="text-sm text-gray-600 leading-relaxed">Solar panels are added on top of an existing roof. A solar roof replaces the roof entirely — no rack, no gap, no visible hardware.</p>
+      </div>
+      <div class="rounded-xl bg-[#f4f7f0] border border-[#2d5a27]/10 p-6">
+        <p class="text-xs font-bold text-[#2d5a27] tracking-widest uppercase mb-2">03 — Who it's for</p>
+        <p class="font-semibold text-gray-800 mb-2">New builds, re-roofs, premium projects</p>
+        <p class="text-sm text-gray-600 leading-relaxed">Best suited when a new roof is already needed, or when appearance is part of the project value — villas, resorts, premium residential.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl mb-14">
+        <p class="text-[#2d5a27] text-sm font-bold tracking-widest uppercase mb-4">How It Works</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-5">The Roof Surface Generates Power</h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Each active tile contains monocrystalline photovoltaic cells sealed between two layers of toughened glass. The tiles are wired in series and connected to a standard solar inverter — the same inverter used with conventional panels. Electricity flows to the building's distribution board and, optionally, to a battery or grid connection.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6 mb-16">
+        {[
+          { step: '01', title: 'Sunlight hits the tile surface', desc: 'PV cells in each active tile absorb photons and generate DC electricity.' },
+          { step: '02', title: 'DC electricity flows through wiring', desc: 'Tiles are connected in series strings. Wiring runs under the batten layer, invisible from outside.' },
+          { step: '03', title: 'Inverter converts DC to AC', desc: 'A standard solar inverter (string or micro) converts DC output to usable AC power.' },
+          { step: '04', title: 'Power used, stored, or exported', desc: 'AC power feeds the building. Surplus can charge batteries or export to the grid.' },
+        ].map((item) => (
+          <div class="rounded-2xl border border-gray-100 bg-[#f4f7f0] p-6">
+            <p class="text-3xl font-bold text-[#2d5a27]/20 mb-3">{item.step}</p>
+            <h3 class="font-bold text-gray-800 mb-2">{item.title}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- SYSTEM DIAGRAM IMAGE -->
+      <div class="rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+        <img
+          src="/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-bipv-roof-flush-skylight-details.webp"
+          alt="Solar roof tile installation detail showing tile integration and skylight"
+          class="w-full h-64 md:h-80 object-cover object-top"
+        />
+        <div class="bg-white px-6 py-4 border-t border-gray-100">
+          <p class="text-sm text-gray-500">Hangzhou Xianghu Arcadia Villa — skylight integration detail showing how active tiles meet structural features</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPONENTS EXPLODED VIEW -->
+  <section class="py-20 bg-[#f4f7f0]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl mb-14">
+        <p class="text-[#2d5a27] text-sm font-bold tracking-widest uppercase mb-4">System Components</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-5">Every Component Has a Role</h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          A solar roof is not just the active tiles. A complete system includes matching inactive elements, edge and ridge components, flashing, fixings, and underlayer — all designed to work together as a single weatherproof, power-generating roof.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {components.map((comp) => (
+          <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <div class="bg-gray-50 h-48 flex items-center justify-center p-6">
+              <img src={comp.img} alt={comp.name} class="max-h-36 max-w-full object-contain" />
+            </div>
+            <div class="p-5">
+              <h3 class="font-bold text-gray-800 mb-2">{comp.name}</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">{comp.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-10 text-center">
+        <a href="/system-overview/" class="inline-flex items-center gap-2 text-[#2d5a27] font-semibold hover:underline">
+          See the full component list for both product lines →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl mb-14">
+        <p class="text-[#2d5a27] text-sm font-bold tracking-widest uppercase mb-4">Quick Comparison</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-5">Solar Roof vs Solar Panels vs Traditional Roof</h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          The key distinction is integration. Solar panels are an addition to a roof. A solar roof is the roof.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto rounded-2xl border border-gray-100 shadow-sm">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-[#f4f7f0]">
+              <th class="text-left px-6 py-4 font-bold text-gray-700 w-1/4">Feature</th>
+              <th class="text-left px-6 py-4 font-bold text-[#2d5a27]">Solar Roof (BIPV)</th>
+              <th class="text-left px-6 py-4 font-bold text-gray-700">Solar Panels on Roof</th>
+              <th class="text-left px-6 py-4 font-bold text-gray-700">Traditional Roof</th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparisons.map((row, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}>
+                <td class="px-6 py-4 font-semibold text-gray-700">{row.label}</td>
+                <td class="px-6 py-4 text-gray-800">{row.solarRoof}</td>
+                <td class="px-6 py-4 text-gray-600">{row.panels}</td>
+                <td class="px-6 py-4 text-gray-600">{row.traditional}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-8 text-center">
+        <a href="/solar-roof-vs-solar-panels/" class="inline-flex items-center gap-2 bg-[#2d5a27] hover:bg-[#1e3d1a] text-white font-semibold px-6 py-3 rounded-lg transition-colors">
+          Full Comparison: Solar Roof vs Solar Panels →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT REFERENCES -->
+  <section class="py-20 bg-[#f4f7f0]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl mb-12">
+        <p class="text-[#2d5a27] text-sm font-bold tracking-widest uppercase mb-4">Real Installations</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What a Solar Roof Looks Like Installed</h2>
+        <p class="text-lg text-gray-600">Factory-supplied solar roofs on completed projects across China and overseas.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/projects/hangzhou-xianghu-arcadia-villa/" class="group rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow">
+          <div class="overflow-hidden h-52">
+            <img src="/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-bipv-solar-roof-aerial-view-hangzhou-xianghu.webp" alt="Hangzhou Xianghu Arcadia Villa solar roof" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-5">
+            <p class="text-xs text-[#2d5a27] font-bold uppercase tracking-wider mb-1">Lumina Slate · Residential</p>
+            <h3 class="font-bold text-gray-800">Hangzhou Xianghu Arcadia Villa</h3>
+            <p class="text-sm text-gray-500 mt-1">227 m² · 10 kWp</p>
+          </div>
+        </a>
+        <a href="/projects/beijing-new-world-lizun/" class="group rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow">
+          <div class="overflow-hidden h-52">
+            <img src="/images/projects/beijing-new-world-lizun/sunlit-solar-slate-roof-edge-finish-beijing.webp" alt="Beijing New World Lizun solar roof" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-5">
+            <p class="text-xs text-[#2d5a27] font-bold uppercase tracking-wider mb-1">Lumina Slate · Residential</p>
+            <h3 class="font-bold text-gray-800">Beijing New World Lizun</h3>
+            <p class="text-sm text-gray-500 mt-1">145 m² · 6 kWp</p>
+          </div>
+        </a>
+        <a href="/projects/large-scale-commercial-complex/" class="group rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow">
+          <div class="overflow-hidden h-52">
+            <img src="/images/projects/large-scale-commercial-complex/storm-guard-large-scale-bipv-integration-aerial-scaled.webp" alt="Large-scale commercial solar roof" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-5">
+            <p class="text-xs text-[#2d5a27] font-bold uppercase tracking-wider mb-1">Storm Guard · Commercial</p>
+            <h3 class="font-bold text-gray-800">Large-Scale Commercial Complex</h3>
+            <p class="text-sm text-gray-500 mt-1">1,500 m² · 150 kWp</p>
+          </div>
+        </a>
+      </div>
+      <div class="mt-8 text-center">
+        <a href="/projects/" class="inline-flex items-center gap-2 text-[#2d5a27] font-semibold hover:underline">
+          View all project references →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="mb-12">
+        <p class="text-[#2d5a27] text-sm font-bold tracking-widest uppercase mb-4">Common Questions</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="group rounded-2xl border border-gray-100 bg-[#f4f7f0] overflow-hidden">
+            <summary class="flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-gray-800 hover:text-[#2d5a27] transition-colors list-none">
+              {faq.q}
+              <span class="ml-4 text-[#2d5a27] text-xl font-light group-open:rotate-45 transition-transform duration-200">+</span>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+              {faq.a}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA — B2B PIVOT -->
+  <section class="py-20 bg-[#0f1f0f] relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <img src="/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-bipv-solar-roof-aerial-view-hangzhou-xianghu.webp" alt="" class="w-full h-full object-cover" />
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <p class="text-amber-400 text-sm font-bold tracking-widest uppercase mb-4">Factory Supply · B2B</p>
+      <h2 class="text-white text-4xl md:text-5xl font-bold mb-6 leading-tight">
+        Sourcing a Solar Roof<br/>for a Project or Market?
+      </h2>
+      <p class="text-white/60 text-lg mb-10 max-w-2xl mx-auto">
+        Sunlit is a China-based manufacturer supplying complete solar roof packages — active tiles, inactive coverage, trim, flashing and fixings — factory direct to distributors, installers and developers in overseas markets.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/contact/" class="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-gray-900 font-semibold px-8 py-4 rounded-lg transition-colors text-lg">
+          Request Factory Pricing
+        </a>
+        <a href="/system-overview/" class="inline-flex items-center gap-2 border border-white/30 hover:border-white text-white font-semibold px-8 py-4 rounded-lg transition-colors text-lg">
+          See Supply Scope
+        </a>
+      </div>
+      <div class="mt-12 grid grid-cols-3 gap-6 max-w-lg mx-auto">
+        <div class="text-center">
+          <p class="text-white text-2xl font-bold">2</p>
+          <p class="text-white/50 text-sm mt-1">Product Lines</p>
+        </div>
+        <div class="text-center border-x border-white/10">
+          <p class="text-white text-2xl font-bold">20+</p>
+          <p class="text-white/50 text-sm mt-1">Delivered Projects</p>
+        </div>
+        <div class="text-center">
+          <p class="text-white text-2xl font-bold">IP68</p>
+          <p class="text-white/50 text-sm mt-1">Waterproof Rating</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED READING -->
+  <section class="py-16 bg-white border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="text-[#2d5a27] text-sm font-bold tracking-widest uppercase mb-8">Continue Reading</p>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/solar-roof-vs-solar-panels/" class="group rounded-2xl border border-gray-100 bg-[#f4f7f0] p-6 hover:border-[#2d5a27]/30 transition-colors">
+          <p class="text-xs text-[#2d5a27] font-bold uppercase tracking-wider mb-3">Comparison Guide</p>
+          <h3 class="font-bold text-gray-800 group-hover:text-[#2d5a27] transition-colors mb-2">Solar Roof vs Solar Panels: Full Data Comparison</h3>
+          <p class="text-sm text-gray-600">Cost, efficiency, aesthetics, application range — side by side.</p>
+        </a>
+        <a href="/system-overview/" class="group rounded-2xl border border-gray-100 bg-[#f4f7f0] p-6 hover:border-[#2d5a27]/30 transition-colors">
+          <p class="text-xs text-[#2d5a27] font-bold uppercase tracking-wider mb-3">Supply Scope</p>
+          <h3 class="font-bold text-gray-800 group-hover:text-[#2d5a27] transition-colors mb-2">What Sunlit Supplies: The Complete Package</h3>
+          <p class="text-sm text-gray-600">Active tiles, inactive coverage, trim, flashing, fixings and documents — one factory, one shipment.</p>
+        </a>
+        <a href="/lumina-slate/" class="group rounded-2xl border border-gray-100 bg-[#f4f7f0] p-6 hover:border-[#2d5a27]/30 transition-colors">
+          <p class="text-xs text-[#2d5a27] font-bold uppercase tracking-wider mb-3">Product Line</p>
+          <h3 class="font-bold text-gray-800 group-hover:text-[#2d5a27] transition-colors mb-2">Lumina Slate: Premium Glass Solar Roof Tiles</h3>
+          <p class="text-sm text-gray-600">70W per tile · Mono PERC · Double glass · Slate-look finish.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
