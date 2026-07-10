@@ -135,7 +135,7 @@ const audiences = [
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
         {proofCards.map(card => (
           <a href={card.href} class="group rounded-2xl border border-gray-100 bg-white hover:border-[#2d5a27]/30 hover:shadow-md transition-all block p-7">
-            <div class="w-14 h-14 rounded-2xl bg-[#2d5a27]/8 flex items-center justify-center text-[#2d5a27] mb-5 group-hover:bg-[#2d5a27]/15 transition-colors" set:html={card.icon} />
+            <div class="text-[#2d5a27] mb-5" set:html={card.icon} />
             <p class="text-xs text-[#2d5a27] font-bold uppercase tracking-wider mb-2">{card.label}</p>
             <h3 class="text-gray-900 font-bold text-base mb-2">{card.title}</h3>
             <p class="text-gray-500 text-sm leading-relaxed">{card.desc}</p>
@@ -227,7 +227,7 @@ const audiences = [
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
         {audiences.map(item => (
           <div class="bg-white rounded-2xl p-6 border border-[#2d5a27]/10 hover:border-[#2d5a27]/30 hover:shadow-sm transition-all">
-            <div class="w-12 h-12 rounded-xl bg-[#2d5a27]/8 flex items-center justify-center text-[#2d5a27] mb-4" set:html={item.icon} />
+            <div class="text-[#2d5a27] mb-4" set:html={item.icon} />
             <h3 class="font-bold text-gray-900 text-base mb-2">{item.title}</h3>
             <p class="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
           </div>
