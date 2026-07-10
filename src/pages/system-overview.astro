@@ -74,8 +74,8 @@ const stormTrim = stormGuardComponents.filter((c: any) => c.group === 'trim-flas
             icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.5" class="w-10 h-10"><rect x="8" y="4" width="24" height="32" rx="2"/><path d="M16 4v32"/><path d="M32 12l8 4-8 4"/><path d="M14 12h8M14 18h8M14 24h8"/><path d="M32 36h8M36 32v8"/></svg>`,
           },
         ].map(item => (
-          <div class="rounded-2xl border border-gray-100 bg-white hover:border-[#2d5a27]/30 hover:shadow-md transition-all p-7">
-            <div class="text-[#2d5a27] mb-5" set:html={item.icon} />
+          <div class="sunlit-card p-6 text-center hover:-translate-y-1 transition-transform">
+            <div class="w-14 h-14 rounded-2xl bg-soft-green text-deep-green flex items-center justify-center mx-auto mb-5" set:html={item.icon} />
             <div class="text-gray-300 text-xs font-bold tracking-widest mb-2">{item.num}</div>
             <p class="text-xs text-[#2d5a27] font-bold uppercase tracking-wider mb-2">{item.label}</p>
             <h3 class="text-gray-900 font-bold text-lg mb-2">{item.title}</h3>
