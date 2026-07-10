@@ -69,7 +69,17 @@ const audiences = [
   <!-- ===== HERO ===== -->
   <section class="relative min-h-[90vh] flex items-end overflow-hidden">
     <div class="absolute inset-0">
-      <img src={ASSETS.luminaSlateHero} alt="Lumina Slate solar roof tiles on villa" class="w-full h-full object-cover" />
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        class="w-full h-full object-cover"
+        poster={ASSETS.luminaSlateHero}
+      >
+        <source src="/videos/hero/homepage-hero.mp4" type="video/mp4" />
+        <img src={ASSETS.luminaSlateHero} alt="Lumina Slate solar roof tiles on villa" class="w-full h-full object-cover" />
+      </video>
       <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-transparent"></div>
     </div>
     <div class="relative z-10 w-full pb-20 md:pb-28">
