@@ -55,4 +55,7 @@ DirectoryIndex index.html
   # Preserve direct links to the historical WordPress brochures.
   RewriteRule ^wp-content/uploads/2026/05/sunlit-lumina-slate-bipv-solar-roof-brochure-2026\.pdf$ https://www.sunlitsolarroof.com/downloads/lumina-slate-bipv-solar-roof-brochure-2026.pdf [R=301,L,NE]
   RewriteRule ^wp-content/uploads/2026/05/sunlit-storm-guard-bipv-solar-roof-brochure-2026\.pdf$ https://www.sunlitsolarroof.com/downloads/storm-guard-bipv-solar-roof-brochure-2026.pdf [R=301,L,NE]
+
+  # Search Console retains these submitted WordPress sitemap paths; consolidate them to the current Astro sitemap.
+  RewriteRule ^(?:sitemap_index|project-sitemap|post-sitemap|page-sitemap)\.xml$ https://www.sunlitsolarroof.com/sitemap.xml [R=301,L,NE]
 </IfModule>
