@@ -23,13 +23,15 @@ for html_path in sorted(DIST.rglob('*.html')):
         })
 
 missing = [record for record in records if not record['has_alt_attribute']]
+empty_alt = [record for record in records if record['has_alt_attribute'] and not record['alt'].strip()]
 article_images = [record for record in records if record['src'].startswith('/images/articles/')]
 article_missing = [record for record in article_images if not record['alt'].strip()]
 
 payload = {
     'total_compiled_img_tags': len(records),
     'img_tags_missing_alt_attribute': len(missing),
-    'img_tags_with_empty_alt': sum(1 for record in records if record['has_alt_attribute'] and not record['alt'].strip()),
+    'img_tags_with_empty_alt': len(empty_alt),
+    'empty_alt_records': empty_alt,
     'article_media_img_tags': len(article_images),
     'article_media_with_empty_alt': len(article_missing),
     'missing_alt_records': missing,

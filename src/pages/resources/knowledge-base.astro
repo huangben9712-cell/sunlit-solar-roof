@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import { getImageAlt } from '../../data/imageAltManifest';
 
 const publishedPosts = (await getCollection('articles'))
   .filter((post) => post.data.priority === 'P0' || post.data.priority === 'P1')
@@ -26,7 +27,7 @@ const featuredPost = publishedPosts.find((post) => post.data.priority === 'P0');
   <!-- Hero -->
   <section class="bg-charcoal relative overflow-hidden py-20 md:py-28">
     <div class="absolute inset-0 opacity-10">
-      <img src="/images/projects/large-scale-commercial-complex/storm-guard-large-scale-bipv-integration-aerial-scaled.webp" alt="" class="w-full h-full object-cover" />
+      <img src="/images/projects/large-scale-commercial-complex/storm-guard-large-scale-bipv-integration-aerial-scaled.webp" alt={getImageAlt('/images/projects/large-scale-commercial-complex/storm-guard-large-scale-bipv-integration-aerial-scaled.webp', 'Large-scale commercial solar roof installation')} class="w-full h-full object-cover" />
     </div>
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 max-w-4xl">
       <p class="text-xs font-heading font-bold uppercase tracking-widest text-white/40 mb-4">Resources</p>

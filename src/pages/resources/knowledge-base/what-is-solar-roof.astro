@@ -1,5 +1,6 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import { getImageAlt } from '../../../data/imageAltManifest';
 
 const components = [
   {
@@ -327,7 +328,7 @@ const faqs = [
   <!-- CTA — B2B PIVOT -->
   <section class="py-20 bg-[#0f1f0f] relative overflow-hidden">
     <div class="absolute inset-0 opacity-10">
-      <img src="/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-bipv-solar-roof-aerial-view-hangzhou-xianghu.webp" alt="" class="w-full h-full object-cover" />
+      <img src="/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-bipv-solar-roof-aerial-view-hangzhou-xianghu.webp" alt={getImageAlt('/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-bipv-solar-roof-aerial-view-hangzhou-xianghu.webp', 'Aerial view of a completed solar roof installation')} class="w-full h-full object-cover" />
     </div>
     <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
       <p class="text-amber-400 text-sm font-bold tracking-widest uppercase mb-4">Factory Supply · B2B</p>

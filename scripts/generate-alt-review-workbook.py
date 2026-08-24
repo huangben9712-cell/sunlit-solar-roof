@@ -24,6 +24,7 @@ PUBLIC = ROOT / 'public'
 DOCS = ROOT / 'docs'
 LEDGER = DOCS / 'wordpress-to-astro-image-alt-ledger.json'
 ARTICLE_MEDIA = DOCS / 'wordpress-article-media-migration.json'
+VISUAL_REVIEW = DOCS / 'visual-reviewed-image-alt.json'
 OUT = DOCS / 'Sunlit_Image_Alt_Manual_Review.xlsx'
 THUMB_DIR = DOCS / '.alt-review-thumbnails'
 
@@ -117,6 +118,7 @@ def main() -> None:
     THUMB_DIR.mkdir(parents=True)
     ledger = json.loads(LEDGER.read_text(encoding='utf-8'))
     article_data = json.loads(ARTICLE_MEDIA.read_text(encoding='utf-8'))
+    visual_alt = json.loads(VISUAL_REVIEW.read_text(encoding='utf-8'))['alt_by_path']
 
     base_assets = ledger['assets']
     article_assets = []
@@ -145,12 +147,12 @@ def main() -> None:
     overview.row_dimensions[1].height = 30
     overview.append([])
     notes = [
-        ('本工作簿怎么用', '每一行只对应一张 Astro 图片。请先打开“待人工复核 (56)”工作表；此处的图片在 WordPress 导出中没有精确文件名匹配，不能声称继承了旧站 alt。'),
+        ('本工作簿怎么用', '每一行只对应一张 Astro 图片。请先打开“视觉识别补充 alt (56)”工作表；这些图片在 WordPress 导出中没有精确文件名匹配，但已逐张进行本地图片视觉识别并预填可用英文 alt。'),
         ('缩略图', '第二列是实际保存在 Astro 项目中的图片缩略图，可直接目视确认内容。'),
         ('Astro 保存路径', '第三列是迁移后站点使用的 URL 路径；第四列是项目中的实际保存位置。'),
         ('WordPress 原 alt', '仅在文件名精确匹配且旧站存在有效 alt 时提供；它是迁移参考，不应因关键词不同而盲目保留。'),
-        ('建议/最终 alt', '“当前建议 alt”显示旧站有效 alt 或当前安全兜底；请把你确认后的版本填写在“你的最终 alt”。'),
-        ('处理决策', '请选择：保留 WordPress 原 alt、改用你的最终 alt、装饰性图片 alt=""、或待进一步确认。'),
+        ('建议/最终 alt', '“当前建议 alt”与“你的最终 alt”已预填 WordPress 原 alt 或视觉识别 alt。仅当你希望改写时再修改“你的最终 alt”。'),
+        ('处理决策', '请选择：保留 WordPress 原 alt、采用视觉识别 alt、改用你的最终 alt、装饰性图片 alt=""、或待进一步确认。'),
         ('重要边界', '编辑 Excel 不会自动改网站代码。你完成审核后，把工作簿发回给我，我会将“你的最终 alt”和决策同步到 Astro 数据模块。'),
     ]
     overview.append(['字段/步骤', '说明'])
@@ -175,7 +177,7 @@ def main() -> None:
     summary_rows = [
         ('Astro 原有本地图片', len(base_assets)),
         ('已精确继承有效 WordPress alt', sum(1 for item in base_assets if item['mapping_status'] == 'legacy_alt_inherited')),
-        ('需人工复核：无精确 WordPress 文件匹配', sum(1 for item in base_assets if item['mapping_status'] != 'legacy_alt_inherited')),
+        ('已通过视觉识别补充 alt', sum(1 for item in base_assets if item['mapping_status'] != 'legacy_alt_inherited')),
         ('已恢复的文章图片', len(article_assets)),
         ('工作簿总图片行数', len(base_assets) + len(article_assets)),
     ]
@@ -187,20 +189,22 @@ def main() -> None:
             cell.alignment = Alignment(vertical='top', wrap_text=True)
 
     headers = ['序号', '图片预览', 'Astro URL 路径', 'Astro 项目保存位置', '实际代码使用位置', 'WordPress 原上传路径', 'WordPress 原图片 alt', '迁移状态', '当前建议 alt', '你的最终 alt（请填）', '处理决策', '备注']
-    decision_validation = DataValidation(type='list', formula1='"保留 WordPress 原 alt,改用你的最终 alt,装饰性图片 alt=\"\",待进一步确认"', allow_blank=False)
+    decision_validation = DataValidation(type='list', formula1='"保留 WordPress 原 alt,采用视觉识别 alt,改用你的最终 alt,装饰性图片 alt=\"\",待进一步确认"', allow_blank=False)
 
-    review = workbook.create_sheet('待人工复核 (56)')
+    review = workbook.create_sheet('视觉识别补充 alt (56)')
     review.append(headers)
     review_assets = [asset for asset in base_assets if asset['mapping_status'] != 'legacy_alt_inherited']
     for index, asset in enumerate(review_assets, start=1):
-        suggested = ''
+        suggested = visual_alt.get(asset['astro_public_path'], '')
+        if not suggested:
+            raise RuntimeError(f"Missing visual-review alt for {asset['astro_public_path']}")
         values = [
             index, '', asset['astro_public_path'], asset['astro_file_path'], '\n'.join(usages.get(asset['astro_public_path'], ['未检测到直接引用'])),
             asset['wordpress_upload_path'] or '无精确 WordPress 匹配', asset['legacy_alt'] or '无',
-            '需人工复核：无精确 WordPress 文件匹配', suggested, '', '待进一步确认', '',
+            '无精确 WordPress 匹配；已完成本地视觉识别', suggested, suggested, '采用视觉识别 alt', '视觉识别来源：docs/visual-reviewed-image-alt.json',
         ]
         thumb = make_thumbnail(ROOT / asset['astro_file_path'], f'review-{index}')
-        add_row(review, index + 1, values, thumb, '待进一步确认', WARN_FILL)
+        add_row(review, index + 1, values, thumb, '采用视觉识别 alt', SUB_FILL)
     style_sheet(review, {'A': 7, 'B': 20, 'C': 58, 'D': 64, 'E': 35, 'F': 40, 'G': 50, 'H': 29, 'I': 46, 'J': 46, 'K': 26, 'L': 30})
     review.add_data_validation(decision_validation)
     decision_validation.add(f'K2:K{len(review_assets)+1}')
