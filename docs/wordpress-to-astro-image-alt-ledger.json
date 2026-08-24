@@ -1,0 +1,1959 @@
+{
+  "generated_from": "/home/ubuntu/migration/sunlitsolarroof.WordPress.2026-07-01.xml",
+  "rules": {
+    "legacy_alt_inherited": "Exact filename matched an existing WordPress attachment with meaningful alt text.",
+    "legacy_blank_or_generic_review_needed": "Exact filename matched, but WordPress alt was empty/generic or the filename suggests a decorative asset.",
+    "astro_asset_without_exact_wordpress_filename_match": "Local Astro asset has no exact basename match in the WordPress export; retain current rendered alt or review manually.",
+    "ambiguous_filename_requires_review": "More than one WordPress attachment shares this filename."
+  },
+  "summary": {
+    "wordpress_image_attachments": 569,
+    "astro_local_image_assets": 194,
+    "by_mapping_status": {
+      "astro_asset_without_exact_wordpress_filename_match": 56,
+      "legacy_alt_inherited": 138
+    }
+  },
+  "assets": [
+    {
+      "astro_public_path": "/images/components/lumina-slate/active-solar-tile.webp",
+      "astro_file_path": "public/images/components/lumina-slate/active-solar-tile.webp",
+      "filename": "active-solar-tile.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/components/lumina-slate/aluminum-valley-flashing.webp",
+      "astro_file_path": "public/images/components/lumina-slate/aluminum-valley-flashing.webp",
+      "filename": "aluminum-valley-flashing.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/components/lumina-slate/eaves-starter-drip-edge.webp",
+      "astro_file_path": "public/images/components/lumina-slate/eaves-starter-drip-edge.webp",
+      "filename": "eaves-starter-drip-edge.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/components/lumina-slate/flexible-flashing-roll.webp",
+      "astro_file_path": "public/images/components/lumina-slate/flexible-flashing-roll.webp",
+      "filename": "flexible-flashing-roll.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/components/lumina-slate/inactive-half-tile-cuttable.webp",
+      "astro_file_path": "public/images/components/lumina-slate/inactive-half-tile-cuttable.webp",
+      "filename": "inactive-half-tile-cuttable.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/components/lumina-slate/inactive-half-tile-uncuttable.webp",
+      "astro_file_path": "public/images/components/lumina-slate/inactive-half-tile-uncuttable.webp",
+      "filename": "inactive-half-tile-uncuttable.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/components/lumina-slate/inactive-quarter-tile.webp",
+      "astro_file_path": "public/images/components/lumina-slate/inactive-quarter-tile.webp",
+      "filename": "inactive-quarter-tile.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/components/lumina-slate/rake-tile.webp",
+      "astro_file_path": "public/images/components/lumina-slate/rake-tile.webp",
+      "filename": "rake-tile.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/components/lumina-slate/ridge-support-bracket.webp",
+      "astro_file_path": "public/images/components/lumina-slate/ridge-support-bracket.webp",
+      "filename": "ridge-support-bracket.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/components/lumina-slate/ridge-tile.webp",
+      "astro_file_path": "public/images/components/lumina-slate/ridge-tile.webp",
+      "filename": "ridge-tile.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/components/lumina-slate/ventilated-ridge-roll.webp",
+      "astro_file_path": "public/images/components/lumina-slate/ventilated-ridge-roll.webp",
+      "filename": "ventilated-ridge-roll.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/components/lumina-slate/vertical-flashing-strip.webp",
+      "astro_file_path": "public/images/components/lumina-slate/vertical-flashing-strip.webp",
+      "filename": "vertical-flashing-strip.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/components/lumina-slate/wind-uplift-clip.webp",
+      "astro_file_path": "public/images/components/lumina-slate/wind-uplift-clip.webp",
+      "filename": "wind-uplift-clip.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/components/shared/butyl-sealant-tape.webp",
+      "astro_file_path": "public/images/components/shared/butyl-sealant-tape.webp",
+      "filename": "butyl-sealant-tape.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/components/shared/foil-radiant-barrier.webp",
+      "astro_file_path": "public/images/components/shared/foil-radiant-barrier.webp",
+      "filename": "foil-radiant-barrier.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/components/shared/mc4-connector.webp",
+      "astro_file_path": "public/images/components/shared/mc4-connector.webp",
+      "filename": "mc4-connector.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/components/shared/roof-batten.webp",
+      "astro_file_path": "public/images/components/shared/roof-batten.webp",
+      "filename": "roof-batten.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/components/shared/waterproof-membrane.webp",
+      "astro_file_path": "public/images/components/shared/waterproof-membrane.webp",
+      "filename": "waterproof-membrane.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/components/storm-guard/active-solar-tile.webp",
+      "astro_file_path": "public/images/components/storm-guard/active-solar-tile.webp",
+      "filename": "active-solar-tile.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/components/storm-guard/dedicated-fastener.webp",
+      "astro_file_path": "public/images/components/storm-guard/dedicated-fastener.webp",
+      "filename": "dedicated-fastener.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/components/storm-guard/eaves-starter-drip-edge.webp",
+      "astro_file_path": "public/images/components/storm-guard/eaves-starter-drip-edge.webp",
+      "filename": "eaves-starter-drip-edge.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/components/storm-guard/flashing-board.webp",
+      "astro_file_path": "public/images/components/storm-guard/flashing-board.webp",
+      "filename": "flashing-board.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/components/storm-guard/gable-panel.webp",
+      "astro_file_path": "public/images/components/storm-guard/gable-panel.webp",
+      "filename": "gable-panel.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/components/storm-guard/gutter-board.webp",
+      "astro_file_path": "public/images/components/storm-guard/gutter-board.webp",
+      "filename": "gutter-board.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/components/storm-guard/matching-metal-tile.webp",
+      "astro_file_path": "public/images/components/storm-guard/matching-metal-tile.webp",
+      "filename": "matching-metal-tile.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/components/storm-guard/ridge-tile.webp",
+      "astro_file_path": "public/images/components/storm-guard/ridge-tile.webp",
+      "filename": "ridge-tile.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/factory/仓库出货区 (1).webp",
+      "astro_file_path": "public/images/factory/仓库出货区 (1).webp",
+      "filename": "仓库出货区 (1).webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/factory/仓库出货区 (2).webp",
+      "astro_file_path": "public/images/factory/仓库出货区 (2).webp",
+      "filename": "仓库出货区 (2).webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/factory/仓库出货区 (3).webp",
+      "astro_file_path": "public/images/factory/仓库出货区 (3).webp",
+      "filename": "仓库出货区 (3).webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/factory/实验室 (1).webp",
+      "astro_file_path": "public/images/factory/实验室 (1).webp",
+      "filename": "实验室 (1).webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/factory/实验室 (2).webp",
+      "astro_file_path": "public/images/factory/实验室 (2).webp",
+      "filename": "实验室 (2).webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/factory/实验室 (3).webp",
+      "astro_file_path": "public/images/factory/实验室 (3).webp",
+      "filename": "实验室 (3).webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/factory/样品区.webp",
+      "astro_file_path": "public/images/factory/样品区.webp",
+      "filename": "样品区.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/installation/storm-guard/3242c06590d2c61e8136049049fdfee.webp",
+      "astro_file_path": "public/images/installation/storm-guard/3242c06590d2c61e8136049049fdfee.webp",
+      "filename": "3242c06590d2c61e8136049049fdfee.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/installation/storm-guard/67c6e5ce79a8e59ce993b22c7bf5181.webp",
+      "astro_file_path": "public/images/installation/storm-guard/67c6e5ce79a8e59ce993b22c7bf5181.webp",
+      "filename": "67c6e5ce79a8e59ce993b22c7bf5181.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/installation/storm-guard/e22492b1a0126eb37079463e6ed6b2d.webp",
+      "astro_file_path": "public/images/installation/storm-guard/e22492b1a0126eb37079463e6ed6b2d.webp",
+      "filename": "e22492b1a0126eb37079463e6ed6b2d.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/installation/storm-guard/e65800c5b5edc91adc1f0edf0dde863.webp",
+      "astro_file_path": "public/images/installation/storm-guard/e65800c5b5edc91adc1f0edf0dde863.webp",
+      "filename": "e65800c5b5edc91adc1f0edf0dde863.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/projects/beijing-new-world-lizun/sunlit-bipv-mounting-system-wooden-battens-scaled.webp",
+      "astro_file_path": "public/images/projects/beijing-new-world-lizun/sunlit-bipv-mounting-system-wooden-battens-scaled.webp",
+      "filename": "sunlit-bipv-mounting-system-wooden-battens-scaled.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-bipv-mounting-system-wooden-battens-scaled.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-bipv-mounting-system-wooden-battens-scaled.webp",
+      "wordpress_attachment_id": "2570",
+      "legacy_alt": "Corrugated waterproof underlayment and wooden counter battens prepared for the BIPV mounting system."
+    },
+    {
+      "astro_public_path": "/images/projects/beijing-new-world-lizun/sunlit-bipv-mounting-system-wooden-battens.webp",
+      "astro_file_path": "public/images/projects/beijing-new-world-lizun/sunlit-bipv-mounting-system-wooden-battens.webp",
+      "filename": "sunlit-bipv-mounting-system-wooden-battens.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/projects/beijing-new-world-lizun/sunlit-bipv-roof-villa-construction-site.webp",
+      "astro_file_path": "public/images/projects/beijing-new-world-lizun/sunlit-bipv-roof-villa-construction-site.webp",
+      "filename": "sunlit-bipv-roof-villa-construction-site.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-bipv-roof-villa-construction-site.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-bipv-roof-villa-construction-site.webp",
+      "wordpress_attachment_id": "2571",
+      "legacy_alt": "A Beijing villa under construction featuring the newly installed Sunlit BIPV roof system."
+    },
+    {
+      "astro_public_path": "/images/projects/beijing-new-world-lizun/sunlit-invisible-solar-roof-waterproof-surface.webp",
+      "astro_file_path": "public/images/projects/beijing-new-world-lizun/sunlit-invisible-solar-roof-waterproof-surface.webp",
+      "filename": "sunlit-invisible-solar-roof-waterproof-surface.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-invisible-solar-roof-waterproof-surface.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-invisible-solar-roof-waterproof-surface.webp",
+      "wordpress_attachment_id": "2572",
+      "legacy_alt": "Water droplets on the waterproof surface of the invisible solar roof tiles, demonstrating excellent weather resistance."
+    },
+    {
+      "astro_public_path": "/images/projects/beijing-new-world-lizun/sunlit-solar-roof-installation-over-battens.webp",
+      "astro_file_path": "public/images/projects/beijing-new-world-lizun/sunlit-solar-roof-installation-over-battens.webp",
+      "filename": "sunlit-solar-roof-installation-over-battens.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-roof-installation-over-battens.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-roof-installation-over-battens.webp",
+      "wordpress_attachment_id": "2573",
+      "legacy_alt": "Installation of Sunlit solar roof tiles over the breathable wooden batten framework and underlayment."
+    },
+    {
+      "astro_public_path": "/images/projects/beijing-new-world-lizun/sunlit-solar-slate-roof-edge-finish-beijing.webp",
+      "astro_file_path": "public/images/projects/beijing-new-world-lizun/sunlit-solar-slate-roof-edge-finish-beijing.webp",
+      "filename": "sunlit-solar-slate-roof-edge-finish-beijing.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-slate-roof-edge-finish-beijing.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-slate-roof-edge-finish-beijing.webp",
+      "wordpress_attachment_id": "2574",
+      "legacy_alt": "Sleek edge finish of the Sunlit solar slate roof on a high-end Beijing residential project."
+    },
+    {
+      "astro_public_path": "/images/projects/beijing-new-world-lizun/sunlit-solar-tiles-neighborhood-integration.webp",
+      "astro_file_path": "public/images/projects/beijing-new-world-lizun/sunlit-solar-tiles-neighborhood-integration.webp",
+      "filename": "sunlit-solar-tiles-neighborhood-integration.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/projects/beijing-poly-longshang-luxury-villa-bipv-integration-on-complex-roof-geometry/sunlit-bipv-solar-roof-underlayment-installation.webp",
+      "astro_file_path": "public/images/projects/beijing-poly-longshang-luxury-villa-bipv-integration-on-complex-roof-geometry/sunlit-bipv-solar-roof-underlayment-installation.webp",
+      "filename": "sunlit-bipv-solar-roof-underlayment-installation.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-bipv-solar-roof-underlayment-installation.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-bipv-solar-roof-underlayment-installation.webp",
+      "wordpress_attachment_id": "2576",
+      "legacy_alt": "Installation process of the BIPV solar roof showing the specialized mounting battens and waterproof underlayment."
+    },
+    {
+      "astro_public_path": "/images/projects/beijing-poly-longshang-luxury-villa-bipv-integration-on-complex-roof-geometry/sunlit-lumina-slate-bipv-solar-roof-beijing-exterior.webp",
+      "astro_file_path": "public/images/projects/beijing-poly-longshang-luxury-villa-bipv-integration-on-complex-roof-geometry/sunlit-lumina-slate-bipv-solar-roof-beijing-exterior.webp",
+      "filename": "sunlit-lumina-slate-bipv-solar-roof-beijing-exterior.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-lumina-slate-bipv-solar-roof-beijing-exterior.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-lumina-slate-bipv-solar-roof-beijing-exterior.webp",
+      "wordpress_attachment_id": "2577",
+      "legacy_alt": "Exterior view of a luxury villa in Beijing featuring the Sunlit Lumina Slate invisible BIPV solar roof."
+    },
+    {
+      "astro_public_path": "/images/projects/beijing-poly-longshang-luxury-villa-bipv-integration-on-complex-roof-geometry/sunlit-solar-roof-mounting-structure-details.webp",
+      "astro_file_path": "public/images/projects/beijing-poly-longshang-luxury-villa-bipv-integration-on-complex-roof-geometry/sunlit-solar-roof-mounting-structure-details.webp",
+      "filename": "sunlit-solar-roof-mounting-structure-details.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-roof-mounting-structure-details.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-roof-mounting-structure-details.webp",
+      "wordpress_attachment_id": "2578",
+      "legacy_alt": "Exposed roof structure showing the aluminum batten framing for the Lumina Slate BIPV system."
+    },
+    {
+      "astro_public_path": "/images/projects/beijing-poly-longshang-luxury-villa-bipv-integration-on-complex-roof-geometry/sunlit-solar-roof-tiles-beijing-poly-details-1.webp",
+      "astro_file_path": "public/images/projects/beijing-poly-longshang-luxury-villa-bipv-integration-on-complex-roof-geometry/sunlit-solar-roof-tiles-beijing-poly-details-1.webp",
+      "filename": "sunlit-solar-roof-tiles-beijing-poly-details-1.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-roof-tiles-beijing-poly-details-1.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-roof-tiles-beijing-poly-details-1.webp",
+      "wordpress_attachment_id": "2579",
+      "legacy_alt": "Close-up details of the seamless multi-hip roof installation using Lumina Slate solar tiles."
+    },
+    {
+      "astro_public_path": "/images/projects/beijing-poly-longshang-luxury-villa-bipv-integration-on-complex-roof-geometry/sunlit-solar-roof-tiles-beijing-poly-details-2.webp",
+      "astro_file_path": "public/images/projects/beijing-poly-longshang-luxury-villa-bipv-integration-on-complex-roof-geometry/sunlit-solar-roof-tiles-beijing-poly-details-2.webp",
+      "filename": "sunlit-solar-roof-tiles-beijing-poly-details-2.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-roof-tiles-beijing-poly-details-2.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-roof-tiles-beijing-poly-details-2.webp",
+      "wordpress_attachment_id": "2580",
+      "legacy_alt": "Close-up view of the roof installation using Lumina Slate solar tiles solution."
+    },
+    {
+      "astro_public_path": "/images/projects/beijing-poly-longshang-luxury-villa-bipv-integration-on-complex-roof-geometry/sunlit-solar-slate-ridge-sealing-beijing.webp",
+      "astro_file_path": "public/images/projects/beijing-poly-longshang-luxury-villa-bipv-integration-on-complex-roof-geometry/sunlit-solar-slate-ridge-sealing-beijing.webp",
+      "filename": "sunlit-solar-slate-ridge-sealing-beijing.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-slate-ridge-sealing-beijing.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-slate-ridge-sealing-beijing.webp",
+      "wordpress_attachment_id": "2581",
+      "legacy_alt": "Waterproof ridge sealing and edge-to-edge modular fitting of Sunlit solar slate."
+    },
+    {
+      "astro_public_path": "/images/projects/beijing-poly-longshang-luxury-villa-bipv-integration-on-complex-roof-geometry/sunlit-solar-tiles-skylight-integration-beijing.webp",
+      "astro_file_path": "public/images/projects/beijing-poly-longshang-luxury-villa-bipv-integration-on-complex-roof-geometry/sunlit-solar-tiles-skylight-integration-beijing.webp",
+      "filename": "sunlit-solar-tiles-skylight-integration-beijing.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-tiles-skylight-integration-beijing.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-tiles-skylight-integration-beijing.webp",
+      "wordpress_attachment_id": "2582",
+      "legacy_alt": "Workers installing Lumina Slate solar tiles seamlessly around existing roof skylights."
+    },
+    {
+      "astro_public_path": "/images/projects/beijing-tanxiangshan-villa/sunlit-bipv-solar-roof-staggered-layout-beijing.webp",
+      "astro_file_path": "public/images/projects/beijing-tanxiangshan-villa/sunlit-bipv-solar-roof-staggered-layout-beijing.webp",
+      "filename": "sunlit-bipv-solar-roof-staggered-layout-beijing.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/projects/beijing-tanxiangshan-villa/sunlit-lumina-slate-bipv-roof-vs-traditional-tiles.webp",
+      "astro_file_path": "public/images/projects/beijing-tanxiangshan-villa/sunlit-lumina-slate-bipv-roof-vs-traditional-tiles.webp",
+      "filename": "sunlit-lumina-slate-bipv-roof-vs-traditional-tiles.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/projects/beijing-tanxiangshan-villa/sunlit-solar-roof-tiles-wiring-installation-1.webp",
+      "astro_file_path": "public/images/projects/beijing-tanxiangshan-villa/sunlit-solar-roof-tiles-wiring-installation-1.webp",
+      "filename": "sunlit-solar-roof-tiles-wiring-installation-1.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/projects/beijing-tanxiangshan-villa/sunlit-solar-slate-ridge-capping-skylight.webp",
+      "astro_file_path": "public/images/projects/beijing-tanxiangshan-villa/sunlit-solar-slate-ridge-capping-skylight.webp",
+      "filename": "sunlit-solar-slate-ridge-capping-skylight.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-slate-ridge-capping-skylight.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-slate-ridge-capping-skylight.webp",
+      "wordpress_attachment_id": "2586",
+      "legacy_alt": "Close-up of the DC wiring and structural battens before the final solar tiles are locked into place."
+    },
+    {
+      "astro_public_path": "/images/projects/beijing-tanxiangshan-villa/unlit-solar-roof-tiles-wiring-installation-2.webp",
+      "astro_file_path": "public/images/projects/beijing-tanxiangshan-villa/unlit-solar-roof-tiles-wiring-installation-2.webp",
+      "filename": "unlit-solar-roof-tiles-wiring-installation-2.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/projects/custom-red-bipv-solutions/colored-bipv-red-solar-roof-top-down.webp",
+      "astro_file_path": "public/images/projects/custom-red-bipv-solutions/colored-bipv-red-solar-roof-top-down.webp",
+      "filename": "colored-bipv-red-solar-roof-top-down.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/colored-bipv-red-solar-roof-top-down.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/colored-bipv-red-solar-roof-top-down.webp",
+      "wordpress_attachment_id": "2719",
+      "legacy_alt": "Top-down aerial view of a custom red BIPV roof, seamlessly blending active solar tiles with color-matched inactive roofing."
+    },
+    {
+      "astro_public_path": "/images/projects/custom-red-bipv-solutions/custom-red-solar-panels-close-up.webp",
+      "astro_file_path": "public/images/projects/custom-red-bipv-solutions/custom-red-solar-panels-close-up.webp",
+      "filename": "custom-red-solar-panels-close-up.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/custom-red-solar-panels-close-up.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/custom-red-solar-panels-close-up.webp",
+      "wordpress_attachment_id": "2720",
+      "legacy_alt": "Close-up view of the custom terracotta-colored solar panels and matching non-active tiles designed for heritage roofs."
+    },
+    {
+      "astro_public_path": "/images/projects/custom-red-bipv-solutions/heritage-style-red-solar-roofs-forest.webp",
+      "astro_file_path": "public/images/projects/custom-red-bipv-solutions/heritage-style-red-solar-roofs-forest.webp",
+      "filename": "heritage-style-red-solar-roofs-forest.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/heritage-style-red-solar-roofs-forest.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/heritage-style-red-solar-roofs-forest.webp",
+      "wordpress_attachment_id": "2721",
+      "legacy_alt": "Wide aerial shot of a forest resort featuring vibrant red solar roofs that strictly respect traditional architectural aesthetics."
+    },
+    {
+      "astro_public_path": "/images/projects/custom-red-bipv-solutions/integrated-red-solar-tiles-aerial.webp",
+      "astro_file_path": "public/images/projects/custom-red-bipv-solutions/integrated-red-solar-tiles-aerial.webp",
+      "filename": "integrated-red-solar-tiles-aerial.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/integrated-red-solar-tiles-aerial.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/integrated-red-solar-tiles-aerial.webp",
+      "wordpress_attachment_id": "2722",
+      "legacy_alt": "Close-up aerial view showing the precise integration of red solar tiles and ventilation systems on a complex roof structure."
+    },
+    {
+      "astro_public_path": "/images/projects/hangzhou-eco-tech-building/sunlit-bipv-roof-tiles-t-shape-intersection.webp",
+      "astro_file_path": "public/images/projects/hangzhou-eco-tech-building/sunlit-bipv-roof-tiles-t-shape-intersection.webp",
+      "filename": "sunlit-bipv-roof-tiles-t-shape-intersection.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-bipv-roof-tiles-t-shape-intersection.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-bipv-roof-tiles-t-shape-intersection.webp",
+      "wordpress_attachment_id": "2588",
+      "legacy_alt": "Aerial top-down view showing the precise T-shape intersection of the BIPV roof tiles on the tech demo building."
+    },
+    {
+      "astro_public_path": "/images/projects/hangzhou-eco-tech-building/sunlit-bipv-solar-roof-eco-building-hangzhou.webp",
+      "astro_file_path": "public/images/projects/hangzhou-eco-tech-building/sunlit-bipv-solar-roof-eco-building-hangzhou.webp",
+      "filename": "sunlit-bipv-solar-roof-eco-building-hangzhou.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-bipv-solar-roof-eco-building-hangzhou.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-bipv-solar-roof-eco-building-hangzhou.webp",
+      "wordpress_attachment_id": "2589",
+      "legacy_alt": "Aerial perspective of the Hangzhou eco-friendly tech building featuring a comprehensive BIPV solar roof."
+    },
+    {
+      "astro_public_path": "/images/projects/hangzhou-eco-tech-building/sunlit-invisible-solar-roofing-commercial-project.webp",
+      "astro_file_path": "public/images/projects/hangzhou-eco-tech-building/sunlit-invisible-solar-roofing-commercial-project.webp",
+      "filename": "sunlit-invisible-solar-roofing-commercial-project.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-invisible-solar-roofing-commercial-project.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-invisible-solar-roofing-commercial-project.webp",
+      "wordpress_attachment_id": "2590",
+      "legacy_alt": "Elevated street view of the commercial tech building showcasing the seamless invisible solar roofing design."
+    },
+    {
+      "astro_public_path": "/images/projects/hangzhou-eco-tech-building/sunlit-solar-roof-skylight-integration-hangzhou.webp",
+      "astro_file_path": "public/images/projects/hangzhou-eco-tech-building/sunlit-solar-roof-skylight-integration-hangzhou.webp",
+      "filename": "sunlit-solar-roof-skylight-integration-hangzhou.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-roof-skylight-integration-hangzhou.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-roof-skylight-integration-hangzhou.webp",
+      "wordpress_attachment_id": "2591",
+      "legacy_alt": "High-angle view highlighting the flush integration of large skylights within the solar roof system."
+    },
+    {
+      "astro_public_path": "/images/projects/hangzhou-eco-tech-building/sunlit-solar-slate-wood-structure-integration.webp",
+      "astro_file_path": "public/images/projects/hangzhou-eco-tech-building/sunlit-solar-slate-wood-structure-integration.webp",
+      "filename": "sunlit-solar-slate-wood-structure-integration.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-slate-wood-structure-integration.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-slate-wood-structure-integration.webp",
+      "wordpress_attachment_id": "2592",
+      "legacy_alt": "Front facade of the timber structure building, perfectly complemented by the modern Sunlit solar slate roof."
+    },
+    {
+      "astro_public_path": "/images/projects/hangzhou-eco-tech-building/sunlit-solar-tiles-steep-pitch-roof-application.webp",
+      "astro_file_path": "public/images/projects/hangzhou-eco-tech-building/sunlit-solar-tiles-steep-pitch-roof-application.webp",
+      "filename": "sunlit-solar-tiles-steep-pitch-roof-application.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-tiles-steep-pitch-roof-application.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-tiles-steep-pitch-roof-application.webp",
+      "wordpress_attachment_id": "2593",
+      "legacy_alt": "Close-up of the ultra-steep pitched tower roof successfully clad in Sunlit solar tiles, demonstrating secure installation."
+    },
+    {
+      "astro_public_path": "/images/projects/hangzhou-jiuxi-rose-garden/sunlit-bipv-solar-roof-european-mansion-jiuxi.webp",
+      "astro_file_path": "public/images/projects/hangzhou-jiuxi-rose-garden/sunlit-bipv-solar-roof-european-mansion-jiuxi.webp",
+      "filename": "sunlit-bipv-solar-roof-european-mansion-jiuxi.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-bipv-solar-roof-european-mansion-jiuxi.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-bipv-solar-roof-european-mansion-jiuxi.webp",
+      "wordpress_attachment_id": "2594",
+      "legacy_alt": "Front view of a luxurious European-style mansion in Jiuxi Rose Garden, equipped with a seamless Sunlit BIPV solar roof."
+    },
+    {
+      "astro_public_path": "/images/projects/hangzhou-jiuxi-rose-garden/sunlit-invisible-solar-slate-luxury-estate-exterior.webp",
+      "astro_file_path": "public/images/projects/hangzhou-jiuxi-rose-garden/sunlit-invisible-solar-slate-luxury-estate-exterior.webp",
+      "filename": "sunlit-invisible-solar-slate-luxury-estate-exterior.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-invisible-solar-slate-luxury-estate-exterior.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-invisible-solar-slate-luxury-estate-exterior.webp",
+      "wordpress_attachment_id": "2595",
+      "legacy_alt": "Wide exterior view of an ultra-luxury estate featuring a pristine lawn and a modern, invisible solar slate roof."
+    },
+    {
+      "astro_public_path": "/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-aesthetic-bipv-solar-roof-framed-by-trees.webp",
+      "astro_file_path": "public/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-aesthetic-bipv-solar-roof-framed-by-trees.webp",
+      "filename": "sunlit-aesthetic-bipv-solar-roof-framed-by-trees.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-aesthetic-bipv-solar-roof-framed-by-trees.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-aesthetic-bipv-solar-roof-framed-by-trees.webp",
+      "wordpress_attachment_id": "2596",
+      "legacy_alt": "The aesthetic Sunlit BIPV solar roof of a luxury residence, beautifully framed by tree leaves, demonstrating nature harmony."
+    },
+    {
+      "astro_public_path": "/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-bipv-roof-dormer-window-integration-details.webp",
+      "astro_file_path": "public/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-bipv-roof-dormer-window-integration-details.webp",
+      "filename": "sunlit-bipv-roof-dormer-window-integration-details.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-bipv-roof-dormer-window-integration-details.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-bipv-roof-dormer-window-integration-details.webp",
+      "wordpress_attachment_id": "2597",
+      "legacy_alt": "Wide aerial view of luxury villas in Hangzhou Xianghu featuring comprehensive Sunlit BIPV solar roofs integrated with the green landscape."
+    },
+    {
+      "astro_public_path": "/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-bipv-roof-flush-skylight-details.webp",
+      "astro_file_path": "public/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-bipv-roof-flush-skylight-details.webp",
+      "filename": "sunlit-bipv-roof-flush-skylight-details.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-bipv-roof-flush-skylight-details.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-bipv-roof-flush-skylight-details.webp",
+      "wordpress_attachment_id": "2598",
+      "legacy_alt": "A picturesque view of a villa with Sunlit BIPV roof harmonizing with the scenic Xianghu mountains and a bird in flight."
+    },
+    {
+      "astro_public_path": "/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-bipv-roof-scenic-harmony-xianghu-mountains.webp",
+      "astro_file_path": "public/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-bipv-roof-scenic-harmony-xianghu-mountains.webp",
+      "filename": "sunlit-bipv-roof-scenic-harmony-xianghu-mountains.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-bipv-roof-scenic-harmony-xianghu-mountains.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-bipv-roof-scenic-harmony-xianghu-mountains.webp",
+      "wordpress_attachment_id": "2599",
+      "legacy_alt": "Low-angle close-up of Sunlit BIPV roof tiles fitting seamlessly around a classic dormer window under a dramatic sky."
+    },
+    {
+      "astro_public_path": "/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-bipv-solar-roof-aerial-view-hangzhou-xianghu.webp",
+      "astro_file_path": "public/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-bipv-solar-roof-aerial-view-hangzhou-xianghu.webp",
+      "filename": "sunlit-bipv-solar-roof-aerial-view-hangzhou-xianghu.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-bipv-solar-roof-aerial-view-hangzhou-xianghu.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-bipv-solar-roof-aerial-view-hangzhou-xianghu.webp",
+      "wordpress_attachment_id": "2600",
+      "legacy_alt": "Detailed close-up of the watertight flashing and flush integration of a skylight cluster within the solar slate roof."
+    },
+    {
+      "astro_public_path": "/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-completed-solar-tile-roof-xianghu-villa.webp",
+      "astro_file_path": "public/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-completed-solar-tile-roof-xianghu-villa.webp",
+      "filename": "sunlit-completed-solar-tile-roof-xianghu-villa.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-completed-solar-tile-roof-xianghu-villa.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-completed-solar-tile-roof-xianghu-villa.webp",
+      "wordpress_attachment_id": "2601",
+      "legacy_alt": "Aerial perspective of the completed, sleek Sunlit solar tile roof on a grey brick villa in Xianghu Arcadia."
+    },
+    {
+      "astro_public_path": "/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-solar-roof-tiles-detail-decorative-vent.webp",
+      "astro_file_path": "public/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-solar-roof-tiles-detail-decorative-vent.webp",
+      "filename": "sunlit-solar-roof-tiles-detail-decorative-vent.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-roof-tiles-detail-decorative-vent.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-roof-tiles-detail-decorative-vent.webp",
+      "wordpress_attachment_id": "2602",
+      "legacy_alt": "Aerial view focusing on the precise integration of large skylights within the Sunlit solar slate roof system."
+    },
+    {
+      "astro_public_path": "/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-solar-slate-installed-texture-close-up.webp",
+      "astro_file_path": "public/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-solar-slate-installed-texture-close-up.webp",
+      "filename": "sunlit-solar-slate-installed-texture-close-up.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-slate-installed-texture-close-up.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-slate-installed-texture-close-up.webp",
+      "wordpress_attachment_id": "2603",
+      "legacy_alt": "Macro close-up showcasing the fine texture and interlocking details of the installed Sunlit solar slates."
+    },
+    {
+      "astro_public_path": "/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-solar-slate-roof-tiles-xianghu-details.webp",
+      "astro_file_path": "public/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-solar-slate-roof-tiles-xianghu-details.webp",
+      "filename": "sunlit-solar-slate-roof-tiles-xianghu-details.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-slate-roof-tiles-xianghu-details.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-slate-roof-tiles-xianghu-details.webp",
+      "wordpress_attachment_id": "2604",
+      "legacy_alt": "Close-up details of the seamless edge finish of Lumina Slate roof tiles on a traditional grey brick villa."
+    },
+    {
+      "astro_public_path": "/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-solar-slate-skylight-integration-aerial.webp",
+      "astro_file_path": "public/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-solar-slate-skylight-integration-aerial.webp",
+      "filename": "sunlit-solar-slate-skylight-integration-aerial.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-slate-skylight-integration-aerial.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-slate-skylight-integration-aerial.webp",
+      "wordpress_attachment_id": "2605",
+      "legacy_alt": "Detailed view of Sunlit solar roof tiles fitting around a traditional cross-shaped decorative roof vent."
+    },
+    {
+      "astro_public_path": "/images/projects/hangzhou-yunxi-diegu-villa/sunlit-bipv-solar-roof-luxury-villa-hangzhou.webp",
+      "astro_file_path": "public/images/projects/hangzhou-yunxi-diegu-villa/sunlit-bipv-solar-roof-luxury-villa-hangzhou.webp",
+      "filename": "sunlit-bipv-solar-roof-luxury-villa-hangzhou.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-bipv-solar-roof-luxury-villa-hangzhou.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-bipv-solar-roof-luxury-villa-hangzhou.webp",
+      "wordpress_attachment_id": "2606",
+      "legacy_alt": "Wide shot of a luxury villa in Hangzhou Yunxi Diegu, featuring the newly installed Sunlit BIPV solar roof surrounded by lush greenery."
+    },
+    {
+      "astro_public_path": "/images/projects/hangzhou-yunxi-diegu-villa/sunlit-invisible-solar-roof-installation-residential.webp",
+      "astro_file_path": "public/images/projects/hangzhou-yunxi-diegu-villa/sunlit-invisible-solar-roof-installation-residential.webp",
+      "filename": "sunlit-invisible-solar-roof-installation-residential.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-invisible-solar-roof-installation-residential.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-invisible-solar-roof-installation-residential.webp",
+      "wordpress_attachment_id": "2607",
+      "legacy_alt": "Close-up of the invisible solar roof installation on a residential building, showing sleek edge finishes and architectural integration."
+    },
+    {
+      "astro_public_path": "/images/projects/hangzhou-yunxi-diegu-villa/sunlit-solar-slate-multi-hip-roof-design.webp",
+      "astro_file_path": "public/images/projects/hangzhou-yunxi-diegu-villa/sunlit-solar-slate-multi-hip-roof-design.webp",
+      "filename": "sunlit-solar-slate-multi-hip-roof-design.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-slate-multi-hip-roof-design.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-slate-multi-hip-roof-design.webp",
+      "wordpress_attachment_id": "2608",
+      "legacy_alt": "View of the completed Sunlit solar slate roof, showcasing its flawless adaptation to a complex multi-hip architectural design and discreet vents."
+    },
+    {
+      "astro_public_path": "/images/projects/jiaxing-boutique-homestay/sunlit-bipv-solar-roof-homestay-jiaxing.webp",
+      "astro_file_path": "public/images/projects/jiaxing-boutique-homestay/sunlit-bipv-solar-roof-homestay-jiaxing.webp",
+      "filename": "sunlit-bipv-solar-roof-homestay-jiaxing.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-bipv-solar-roof-homestay-jiaxing.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-bipv-solar-roof-homestay-jiaxing.webp",
+      "wordpress_attachment_id": "2609",
+      "legacy_alt": "Wide view of a boutique homestay in Jiaxing featuring a modern Sunlit BIPV solar roof, contrasting with traditional green tile roofs in the background."
+    },
+    {
+      "astro_public_path": "/images/projects/jiaxing-boutique-homestay/sunlit-invisible-solar-slate-sleek-surface.webp",
+      "astro_file_path": "public/images/projects/jiaxing-boutique-homestay/sunlit-invisible-solar-slate-sleek-surface.webp",
+      "filename": "sunlit-invisible-solar-slate-sleek-surface.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-invisible-solar-slate-sleek-surface.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-invisible-solar-slate-sleek-surface.webp",
+      "wordpress_attachment_id": "2610",
+      "legacy_alt": "Low-angle view showcasing the sleek, continuous surface and premium aesthetic of the Lumina Slate invisible solar roof."
+    },
+    {
+      "astro_public_path": "/images/projects/jiaxing-boutique-homestay/sunlit-solar-roof-valley-flashing-details.webp",
+      "astro_file_path": "public/images/projects/jiaxing-boutique-homestay/sunlit-solar-roof-valley-flashing-details.webp",
+      "filename": "sunlit-solar-roof-valley-flashing-details.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-roof-valley-flashing-details.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-roof-valley-flashing-details.webp",
+      "wordpress_attachment_id": "2615",
+      "legacy_alt": "Detailed view of the precision valley flashing on the solar roof, ensuring perfect waterproofing for intersecting slopes."
+    },
+    {
+      "astro_public_path": "/images/projects/jiaxing-boutique-homestay/sunlit-solar-tiles-clean-energy-guesthouse.webp",
+      "astro_file_path": "public/images/projects/jiaxing-boutique-homestay/sunlit-solar-tiles-clean-energy-guesthouse.webp",
+      "filename": "sunlit-solar-tiles-clean-energy-guesthouse.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-tiles-clean-energy-guesthouse.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-tiles-clean-energy-guesthouse.webp",
+      "wordpress_attachment_id": "2611",
+      "legacy_alt": "A pristine expanse of Sunlit solar tiles installed on a guesthouse, providing clean energy without compromising architectural beauty."
+    },
+    {
+      "astro_public_path": "/images/projects/large-scale-commercial-complex/storm-guard-bipv-extreme-weather-water-shedding.webp",
+      "astro_file_path": "public/images/projects/large-scale-commercial-complex/storm-guard-bipv-extreme-weather-water-shedding.webp",
+      "filename": "storm-guard-bipv-extreme-weather-water-shedding.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/storm-guard-bipv-extreme-weather-water-shedding.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/storm-guard-bipv-extreme-weather-water-shedding.webp",
+      "wordpress_attachment_id": "2685",
+      "legacy_alt": "Demonstration of the Storm Guard solar roof efficiently shedding massive amounts of water during extreme torrential rain."
+    },
+    {
+      "astro_public_path": "/images/projects/large-scale-commercial-complex/storm-guard-heavy-duty-solar-tiles-commercial-scale.webp",
+      "astro_file_path": "public/images/projects/large-scale-commercial-complex/storm-guard-heavy-duty-solar-tiles-commercial-scale.webp",
+      "filename": "storm-guard-heavy-duty-solar-tiles-commercial-scale.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/storm-guard-heavy-duty-solar-tiles-commercial-scale.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/storm-guard-heavy-duty-solar-tiles-commercial-scale.webp",
+      "wordpress_attachment_id": "2686",
+      "legacy_alt": "Detailed aerial view of heavy-duty Storm Guard solar tiles seamlessly integrated into a massive commercial building complex."
+    },
+    {
+      "astro_public_path": "/images/projects/large-scale-commercial-complex/storm-guard-hurricane-resistant-solar-roof-construction-scaled.webp",
+      "astro_file_path": "public/images/projects/large-scale-commercial-complex/storm-guard-hurricane-resistant-solar-roof-construction-scaled.webp",
+      "filename": "storm-guard-hurricane-resistant-solar-roof-construction-scaled.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/storm-guard-hurricane-resistant-solar-roof-construction-scaled.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/storm-guard-hurricane-resistant-solar-roof-construction-scaled.webp",
+      "wordpress_attachment_id": "2687",
+      "legacy_alt": "Wide drone shot of a large-scale commercial site installing a hurricane-resistant Storm Guard solar roof system."
+    },
+    {
+      "astro_public_path": "/images/projects/large-scale-commercial-complex/storm-guard-large-scale-bipv-integration-aerial-scaled.webp",
+      "astro_file_path": "public/images/projects/large-scale-commercial-complex/storm-guard-large-scale-bipv-integration-aerial-scaled.webp",
+      "filename": "storm-guard-large-scale-bipv-integration-aerial-scaled.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/storm-guard-large-scale-bipv-integration-aerial-scaled.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/storm-guard-large-scale-bipv-integration-aerial-scaled.webp",
+      "wordpress_attachment_id": "2688",
+      "legacy_alt": "High-angle view showcasing the extensive coverage and impact-resistant design of the Storm Guard commercial solar roof."
+    },
+    {
+      "astro_public_path": "/images/projects/modern-minimalist-residence/bipv-flush-mount-solar-roof-surface.webp",
+      "astro_file_path": "public/images/projects/modern-minimalist-residence/bipv-flush-mount-solar-roof-surface.webp",
+      "filename": "bipv-flush-mount-solar-roof-surface.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/bipv-flush-mount-solar-roof-surface.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/bipv-flush-mount-solar-roof-surface.webp",
+      "wordpress_attachment_id": "2723",
+      "legacy_alt": "Close-up of the ultra-flat, highly reflective surface of the flush-mount BIPV solar roof, reflecting the sky."
+    },
+    {
+      "astro_public_path": "/images/projects/modern-minimalist-residence/modern-solar-roof-edge-integration-detail.webp",
+      "astro_file_path": "public/images/projects/modern-minimalist-residence/modern-solar-roof-edge-integration-detail.webp",
+      "filename": "modern-solar-roof-edge-integration-detail.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/modern-solar-roof-edge-integration-detail.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/modern-solar-roof-edge-integration-detail.webp",
+      "wordpress_attachment_id": "2724",
+      "legacy_alt": "Detailed view of the sleek edge integration and waterproof flashing on the modern horizontal solar roof."
+    },
+    {
+      "astro_public_path": "/images/projects/modern-minimalist-residence/seamless-horizontal-solar-roof-aerial.webp",
+      "astro_file_path": "public/images/projects/modern-minimalist-residence/seamless-horizontal-solar-roof-aerial.webp",
+      "filename": "seamless-horizontal-solar-roof-aerial.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/seamless-horizontal-solar-roof-aerial.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/seamless-horizontal-solar-roof-aerial.webp",
+      "wordpress_attachment_id": "2725",
+      "legacy_alt": "Aerial perspective of a modern residence featuring a seamless, horizontal-layout integrated solar roof."
+    },
+    {
+      "astro_public_path": "/images/projects/modern-minimalist-residence/sleek-solar-tiles-roof-ridge-finish.webp",
+      "astro_file_path": "public/images/projects/modern-minimalist-residence/sleek-solar-tiles-roof-ridge-finish.webp",
+      "filename": "sleek-solar-tiles-roof-ridge-finish.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sleek-solar-tiles-roof-ridge-finish.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sleek-solar-tiles-roof-ridge-finish.webp",
+      "wordpress_attachment_id": "2726",
+      "legacy_alt": "Clean architectural lines and a perfectly smooth finish at the roof ridge using modern interlocking solar tiles."
+    },
+    {
+      "astro_public_path": "/images/projects/modern-minimalist-residence/ultra-flat-bipv-roofing-system-skyline.webp",
+      "astro_file_path": "public/images/projects/modern-minimalist-residence/ultra-flat-bipv-roofing-system-skyline.webp",
+      "filename": "ultra-flat-bipv-roofing-system-skyline.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/ultra-flat-bipv-roofing-system-skyline.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/ultra-flat-bipv-roofing-system-skyline.webp",
+      "wordpress_attachment_id": "2727",
+      "legacy_alt": "Angled shot demonstrating the perfectly flush, uninterrupted dark plane of the modern BIPV roofing system."
+    },
+    {
+      "astro_public_path": "/images/projects/nanjing-nanshan-lake/sunlit-bipv-roof-gable-edge-finish.webp",
+      "astro_file_path": "public/images/projects/nanjing-nanshan-lake/sunlit-bipv-roof-gable-edge-finish.webp",
+      "filename": "sunlit-bipv-roof-gable-edge-finish.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-bipv-roof-gable-edge-finish.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-bipv-roof-gable-edge-finish.webp",
+      "wordpress_attachment_id": "2612",
+      "legacy_alt": "Close-up of the clean gable edge finish of the Sunlit BIPV roof against the sky, showing precise architectural lines."
+    },
+    {
+      "astro_public_path": "/images/projects/nanjing-nanshan-lake/sunlit-invisible-solar-tiles-nature-foreground.webp",
+      "astro_file_path": "public/images/projects/nanjing-nanshan-lake/sunlit-invisible-solar-tiles-nature-foreground.webp",
+      "filename": "sunlit-invisible-solar-tiles-nature-foreground.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-invisible-solar-tiles-nature-foreground.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-invisible-solar-tiles-nature-foreground.webp",
+      "wordpress_attachment_id": "2613",
+      "legacy_alt": "Sleek invisible solar tiles blending quietly with the natural surroundings of the Nanshan Lake resort."
+    },
+    {
+      "astro_public_path": "/images/projects/nanjing-nanshan-lake/sunlit-lumina-slate-surface-water-droplets.webp",
+      "astro_file_path": "public/images/projects/nanjing-nanshan-lake/sunlit-lumina-slate-surface-water-droplets.webp",
+      "filename": "sunlit-lumina-slate-surface-water-droplets.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-lumina-slate-surface-water-droplets.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-lumina-slate-surface-water-droplets.webp",
+      "wordpress_attachment_id": "2614",
+      "legacy_alt": "Low-angle view of the Lumina Slate solar roof surface, highlighting its excellent water-shedding properties."
+    },
+    {
+      "astro_public_path": "/images/projects/nanjing-nanshan-lake/sunlit-solar-roof-valley-flashing-details.webp",
+      "astro_file_path": "public/images/projects/nanjing-nanshan-lake/sunlit-solar-roof-valley-flashing-details.webp",
+      "filename": "sunlit-solar-roof-valley-flashing-details.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-roof-valley-flashing-details.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-roof-valley-flashing-details.webp",
+      "wordpress_attachment_id": "2615",
+      "legacy_alt": "Detailed view of the precision valley flashing on the solar roof, ensuring perfect waterproofing for intersecting slopes."
+    },
+    {
+      "astro_public_path": "/images/projects/nanjing-nanshan-lake/sunlit-solar-roof-villa-chimney-integration.webp",
+      "astro_file_path": "public/images/projects/nanjing-nanshan-lake/sunlit-solar-roof-villa-chimney-integration.webp",
+      "filename": "sunlit-solar-roof-villa-chimney-integration.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-roof-villa-chimney-integration.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-roof-villa-chimney-integration.webp",
+      "wordpress_attachment_id": "2616",
+      "legacy_alt": "High-angle view showcasing the seamless integration of the solar roof around a traditional red brick chimney."
+    },
+    {
+      "astro_public_path": "/images/projects/nanjing-nanshan-lake/sunlit-solar-roof-yellow-resort-villa-aerial.webp",
+      "astro_file_path": "public/images/projects/nanjing-nanshan-lake/sunlit-solar-roof-yellow-resort-villa-aerial.webp",
+      "filename": "sunlit-solar-roof-yellow-resort-villa-aerial.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-roof-yellow-resort-villa-aerial.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-roof-yellow-resort-villa-aerial.webp",
+      "wordpress_attachment_id": "2617",
+      "legacy_alt": "Aerial view of a vibrant yellow resort villa in Nanjing Nanshan Lake, beautifully topped with a modern dark solar roof."
+    },
+    {
+      "astro_public_path": "/images/projects/nanjing-nanshan-lake/sunlit-solar-slate-interlocking-texture.webp",
+      "astro_file_path": "public/images/projects/nanjing-nanshan-lake/sunlit-solar-slate-interlocking-texture.webp",
+      "filename": "sunlit-solar-slate-interlocking-texture.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-slate-interlocking-texture.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-slate-interlocking-texture.webp",
+      "wordpress_attachment_id": "2618",
+      "legacy_alt": "Macro shot of the interlocking texture of Sunlit solar slates, demonstrating robust weather resistance."
+    },
+    {
+      "astro_public_path": "/images/projects/nanjing-nanshan-lake/sunlit-solar-tiles-flat-roof-transition.webp",
+      "astro_file_path": "public/images/projects/nanjing-nanshan-lake/sunlit-solar-tiles-flat-roof-transition.webp",
+      "filename": "sunlit-solar-tiles-flat-roof-transition.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-tiles-flat-roof-transition.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-tiles-flat-roof-transition.webp",
+      "wordpress_attachment_id": "2619",
+      "legacy_alt": "Clean transition of the solar tile installation along the roof edge of the holiday villa."
+    },
+    {
+      "astro_public_path": "/images/projects/nanjing-shanshui-huamen-villa-custom-solar-integration-on-complex-rooflines/sunlit-bipv-roof-ridge-capping-system.webp",
+      "astro_file_path": "public/images/projects/nanjing-shanshui-huamen-villa-custom-solar-integration-on-complex-rooflines/sunlit-bipv-roof-ridge-capping-system.webp",
+      "filename": "sunlit-bipv-roof-ridge-capping-system.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-bipv-roof-ridge-capping-system.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-bipv-roof-ridge-capping-system.webp",
+      "wordpress_attachment_id": "2620",
+      "legacy_alt": "Detailed look at the custom ridge capping and modular layout of the BIPV roofing system during installation."
+    },
+    {
+      "astro_public_path": "/images/projects/nanjing-shanshui-huamen-villa-custom-solar-integration-on-complex-rooflines/sunlit-bipv-solar-roof-villa-blue-sky-nanjing.webp",
+      "astro_file_path": "public/images/projects/nanjing-shanshui-huamen-villa-custom-solar-integration-on-complex-rooflines/sunlit-bipv-solar-roof-villa-blue-sky-nanjing.webp",
+      "filename": "sunlit-bipv-solar-roof-villa-blue-sky-nanjing.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/projects/nanjing-shanshui-huamen-villa-custom-solar-integration-on-complex-rooflines/sunlit-invisible-solar-roof-residential-facade.webp",
+      "astro_file_path": "public/images/projects/nanjing-shanshui-huamen-villa-custom-solar-integration-on-complex-rooflines/sunlit-invisible-solar-roof-residential-facade.webp",
+      "filename": "sunlit-invisible-solar-roof-residential-facade.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/projects/nanjing-shanshui-huamen-villa-custom-solar-integration-on-complex-rooflines/sunlit-solar-roof-flashing-installation-details.webp",
+      "astro_file_path": "public/images/projects/nanjing-shanshui-huamen-villa-custom-solar-integration-on-complex-rooflines/sunlit-solar-roof-flashing-installation-details.webp",
+      "filename": "sunlit-solar-roof-flashing-installation-details.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-roof-flashing-installation-details.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-roof-flashing-installation-details.webp",
+      "wordpress_attachment_id": "2623",
+      "legacy_alt": "Close-up of the solar roof installation process, highlighting the precision flashing and watertight edge integration."
+    },
+    {
+      "astro_public_path": "/images/projects/nanjing-shanshui-huamen-villa-custom-solar-integration-on-complex-rooflines/sunlit-solar-slate-multi-hip-roof-dormer.webp",
+      "astro_file_path": "public/images/projects/nanjing-shanshui-huamen-villa-custom-solar-integration-on-complex-rooflines/sunlit-solar-slate-multi-hip-roof-dormer.webp",
+      "filename": "sunlit-solar-slate-multi-hip-roof-dormer.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-slate-multi-hip-roof-dormer.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-slate-multi-hip-roof-dormer.webp",
+      "wordpress_attachment_id": "2624",
+      "legacy_alt": "Detailed view of the multi-hip solar slate roof seamlessly integrating with unique triangular dormer windows."
+    },
+    {
+      "astro_public_path": "/images/projects/nanjing-shanshui-huamen-villa-custom-solar-integration-on-complex-rooflines/sunlit-solar-tiles-greenery-integration.webp",
+      "astro_file_path": "public/images/projects/nanjing-shanshui-huamen-villa-custom-solar-integration-on-complex-rooflines/sunlit-solar-tiles-greenery-integration.webp",
+      "filename": "sunlit-solar-tiles-greenery-integration.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-tiles-greenery-integration.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-tiles-greenery-integration.webp",
+      "wordpress_attachment_id": "2625",
+      "legacy_alt": "The dark, aesthetic Sunlit solar tiles perfectly complementing the lush green surroundings of the upscale residential community."
+    },
+    {
+      "astro_public_path": "/images/projects/pioneer-residential-retrofit/bipv-retrofit-integration-close-up.webp",
+      "astro_file_path": "public/images/projects/pioneer-residential-retrofit/bipv-retrofit-integration-close-up.webp",
+      "filename": "bipv-retrofit-integration-close-up.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/bipv-retrofit-integration-close-up.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/bipv-retrofit-integration-close-up.webp",
+      "wordpress_attachment_id": "2728",
+      "legacy_alt": "Close-up of an early pioneer BIPV retrofit, demonstrating the integration of solar modules with traditional roofing tiles."
+    },
+    {
+      "astro_public_path": "/images/projects/pioneer-residential-retrofit/residential-solar-roof-water-testing.webp",
+      "astro_file_path": "public/images/projects/pioneer-residential-retrofit/residential-solar-roof-water-testing.webp",
+      "filename": "residential-solar-roof-water-testing.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/residential-solar-roof-water-testing.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/residential-solar-roof-water-testing.webp",
+      "wordpress_attachment_id": "2729",
+      "legacy_alt": "Aerial view of the residential solar roof undergoing rigorous real-world water shedding and durability tests."
+    },
+    {
+      "astro_public_path": "/images/projects/pioneer-residential-retrofit/retrofitted-solar-roof-urban-villa.webp",
+      "astro_file_path": "public/images/projects/pioneer-residential-retrofit/retrofitted-solar-roof-urban-villa.webp",
+      "filename": "retrofitted-solar-roof-urban-villa.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/retrofitted-solar-roof-urban-villa.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/retrofitted-solar-roof-urban-villa.webp",
+      "wordpress_attachment_id": "2730",
+      "legacy_alt": "Aerial view of the residential solar roof undergoing rigorous real-world water shedding and durability tests."
+    },
+    {
+      "astro_public_path": "/images/projects/pioneer-residential-retrofit/solar-roof-durability-water-spray-test.webp",
+      "astro_file_path": "public/images/projects/pioneer-residential-retrofit/solar-roof-durability-water-spray-test.webp",
+      "filename": "solar-roof-durability-water-spray-test.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/solar-roof-durability-water-spray-test.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/solar-roof-durability-water-spray-test.webp",
+      "wordpress_attachment_id": "2731",
+      "legacy_alt": "Demonstrating the absolute waterproof reliability of the BIPV installation under simulated heavy rain conditions."
+    },
+    {
+      "astro_public_path": "/images/projects/pioneer-residential-retrofit/solar-roof-retrofit-panoramic-view.webp",
+      "astro_file_path": "public/images/projects/pioneer-residential-retrofit/solar-roof-retrofit-panoramic-view.webp",
+      "filename": "solar-roof-retrofit-panoramic-view.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/solar-roof-retrofit-panoramic-view.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/solar-roof-retrofit-panoramic-view.webp",
+      "wordpress_attachment_id": "2732",
+      "legacy_alt": "Panoramic view of a complex multi-slope roof successfully retrofitted with early-generation BIPV modules."
+    },
+    {
+      "astro_public_path": "/images/projects/pioneer-residential-retrofit/solar-tile-substructure-metal-framing.webp",
+      "astro_file_path": "public/images/projects/pioneer-residential-retrofit/solar-tile-substructure-metal-framing.webp",
+      "filename": "solar-tile-substructure-metal-framing.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/solar-tile-substructure-metal-framing.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/solar-tile-substructure-metal-framing.webp",
+      "wordpress_attachment_id": "2733",
+      "legacy_alt": "Construction phase showing the robust metal batten substructure used to secure the BIPV roof retrofit."
+    },
+    {
+      "astro_public_path": "/images/projects/premium-waterfront-estate/custom-mansion-bipv-roof-integration-aerial.webp",
+      "astro_file_path": "public/images/projects/premium-waterfront-estate/custom-mansion-bipv-roof-integration-aerial.webp",
+      "filename": "custom-mansion-bipv-roof-integration-aerial.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/custom-mansion-bipv-roof-integration-aerial.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/custom-mansion-bipv-roof-integration-aerial.webp",
+      "wordpress_attachment_id": "2734",
+      "legacy_alt": "Aerial view of a custom luxury waterfront mansion featuring a seamlessly integrated, multi-tiered black BIPV roof."
+    },
+    {
+      "astro_public_path": "/images/projects/premium-waterfront-estate/luxury-estate-solar-roof-architectural-harmony.webp",
+      "astro_file_path": "public/images/projects/premium-waterfront-estate/luxury-estate-solar-roof-architectural-harmony.webp",
+      "filename": "luxury-estate-solar-roof-architectural-harmony.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/luxury-estate-solar-roof-architectural-harmony.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/luxury-estate-solar-roof-architectural-harmony.webp",
+      "wordpress_attachment_id": "2735",
+      "legacy_alt": "High-angle shot showing the modern solar roof harmonizing perfectly with the premium estate and surrounding natural landscape."
+    },
+    {
+      "astro_public_path": "/images/projects/premium-waterfront-estate/multi-tiered-solar-roof-installation-workers.webp",
+      "astro_file_path": "public/images/projects/premium-waterfront-estate/multi-tiered-solar-roof-installation-workers.webp",
+      "filename": "multi-tiered-solar-roof-installation-workers.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/multi-tiered-solar-roof-installation-workers.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/multi-tiered-solar-roof-installation-workers.webp",
+      "wordpress_attachment_id": "2736",
+      "legacy_alt": "Workers fine-tuning the installation of solar tiles on a complex, multi-tiered luxury villa roofline."
+    },
+    {
+      "astro_public_path": "/images/projects/premium-waterfront-estate/premium-villa-bipv-construction-phase-front.webp",
+      "astro_file_path": "public/images/projects/premium-waterfront-estate/premium-villa-bipv-construction-phase-front.webp",
+      "filename": "premium-villa-bipv-construction-phase-front.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/premium-villa-bipv-construction-phase-front.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/premium-villa-bipv-construction-phase-front.webp",
+      "wordpress_attachment_id": "2737",
+      "legacy_alt": "Front elevation of the custom mansion during construction, showcasing the expansive and sleek modern solar roof."
+    },
+    {
+      "astro_public_path": "/images/projects/premium-waterfront-estate/seamless-black-solar-tiles-mansion-overview.webp",
+      "astro_file_path": "public/images/projects/premium-waterfront-estate/seamless-black-solar-tiles-mansion-overview.webp",
+      "filename": "seamless-black-solar-tiles-mansion-overview.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/seamless-black-solar-tiles-mansion-overview.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/seamless-black-solar-tiles-mansion-overview.webp",
+      "wordpress_attachment_id": "2738",
+      "legacy_alt": "Overview of the flawless edge-to-edge black solar tile coverage on a high-end custom architectural estate."
+    },
+    {
+      "astro_public_path": "/images/projects/premium-waterfront-estate/waterfront-mansion-solar-roof-under-construction.webp",
+      "astro_file_path": "public/images/projects/premium-waterfront-estate/waterfront-mansion-solar-roof-under-construction.webp",
+      "filename": "waterfront-mansion-solar-roof-under-construction.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/waterfront-mansion-solar-roof-under-construction.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/waterfront-mansion-solar-roof-under-construction.webp",
+      "wordpress_attachment_id": "2739",
+      "legacy_alt": "Drone view of the waterfront mansion's solar roof installation in progress, highlighting custom fitting on complex slopes."
+    },
+    {
+      "astro_public_path": "/images/projects/public-utility-infrastructure/bipv-substructure-rail-system-installation.webp",
+      "astro_file_path": "public/images/projects/public-utility-infrastructure/bipv-substructure-rail-system-installation.webp",
+      "filename": "bipv-substructure-rail-system-installation.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/bipv-substructure-rail-system-installation.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/bipv-substructure-rail-system-installation.webp",
+      "wordpress_attachment_id": "2745",
+      "legacy_alt": "Looking up the roof slope at the robust rail substructure prepared for the large-scale solar array."
+    },
+    {
+      "astro_public_path": "/images/projects/public-utility-infrastructure/commercial-solar-roof-installation-process.webp",
+      "astro_file_path": "public/images/projects/public-utility-infrastructure/commercial-solar-roof-installation-process.webp",
+      "filename": "commercial-solar-roof-installation-process.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/projects/public-utility-infrastructure/curved-bipv-roof-utility-infrastructure.webp",
+      "astro_file_path": "public/images/projects/public-utility-infrastructure/curved-bipv-roof-utility-infrastructure.webp",
+      "filename": "curved-bipv-roof-utility-infrastructure.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/curved-bipv-roof-utility-infrastructure.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/curved-bipv-roof-utility-infrastructure.webp",
+      "wordpress_attachment_id": "2747",
+      "legacy_alt": "Wide view of a massive curved BIPV roof installed on a public utility water treatment plant."
+    },
+    {
+      "astro_public_path": "/images/projects/public-utility-infrastructure/industrial-solar-roof-long-perspective.webp",
+      "astro_file_path": "public/images/projects/public-utility-infrastructure/industrial-solar-roof-long-perspective.webp",
+      "filename": "industrial-solar-roof-long-perspective.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/industrial-solar-roof-long-perspective.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/industrial-solar-roof-long-perspective.webp",
+      "wordpress_attachment_id": "2748",
+      "legacy_alt": "Long perspective shot showing the precise alignment of solar panels across the vast industrial roof expanse."
+    },
+    {
+      "astro_public_path": "/images/projects/public-utility-infrastructure/mega-watt-scale-curved-solar-roof-expanse.webp",
+      "astro_file_path": "public/images/projects/public-utility-infrastructure/mega-watt-scale-curved-solar-roof-expanse.webp",
+      "filename": "mega-watt-scale-curved-solar-roof-expanse.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/mega-watt-scale-curved-solar-roof-expanse.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/mega-watt-scale-curved-solar-roof-expanse.webp",
+      "wordpress_attachment_id": "2749",
+      "legacy_alt": "Expansive view of the mega-watt scale curved solar roof, demonstrating massive energy generation capacity."
+    },
+    {
+      "astro_public_path": "/images/projects/public-utility-infrastructure/non-penetrating-solar-mounting-clip-detail.webp",
+      "astro_file_path": "public/images/projects/public-utility-infrastructure/non-penetrating-solar-mounting-clip-detail.webp",
+      "filename": "non-penetrating-solar-mounting-clip-detail.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/non-penetrating-solar-mounting-clip-detail.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/non-penetrating-solar-mounting-clip-detail.webp",
+      "wordpress_attachment_id": "2750",
+      "legacy_alt": "Close-up of the specialized non-penetrating mounting clip ensuring a watertight seal for the BIPV system."
+    },
+    {
+      "astro_public_path": "/images/projects/public-utility-infrastructure/reflective-solar-roof-surface-water-plant.webp",
+      "astro_file_path": "public/images/projects/public-utility-infrastructure/reflective-solar-roof-surface-water-plant.webp",
+      "filename": "reflective-solar-roof-surface-water-plant.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/reflective-solar-roof-surface-water-plant.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/reflective-solar-roof-surface-water-plant.webp",
+      "wordpress_attachment_id": "2751",
+      "legacy_alt": "Sleek, reflective surface of the completed BIPV section on the large-scale water purification facility."
+    },
+    {
+      "astro_public_path": "/images/projects/public-utility-infrastructure/solar-installation-worker-utility-scale-project.webp",
+      "astro_file_path": "public/images/projects/public-utility-infrastructure/solar-installation-worker-utility-scale-project.webp",
+      "filename": "solar-installation-worker-utility-scale-project.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/solar-installation-worker-utility-scale-project.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/solar-installation-worker-utility-scale-project.webp",
+      "wordpress_attachment_id": "2752",
+      "legacy_alt": "Worker inspecting the boundary between the installed BIPV modules and the underlying green roof substructure."
+    },
+    {
+      "astro_public_path": "/images/projects/public-utility-infrastructure/sweeping-curve-bipv-architectural-design.webp",
+      "astro_file_path": "public/images/projects/public-utility-infrastructure/sweeping-curve-bipv-architectural-design.webp",
+      "filename": "sweeping-curve-bipv-architectural-design.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sweeping-curve-bipv-architectural-design.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sweeping-curve-bipv-architectural-design.webp",
+      "wordpress_attachment_id": "2753",
+      "legacy_alt": "Sweeping architectural curve of the utility building's roof, flawlessly integrated with modern solar modules."
+    },
+    {
+      "astro_public_path": "/images/projects/public-utility-infrastructure/wet-solar-panels-weather-resistance-test.webp",
+      "astro_file_path": "public/images/projects/public-utility-infrastructure/wet-solar-panels-weather-resistance-test.webp",
+      "filename": "wet-solar-panels-weather-resistance-test.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/wet-solar-panels-weather-resistance-test.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/wet-solar-panels-weather-resistance-test.webp",
+      "wordpress_attachment_id": "2754",
+      "legacy_alt": "Wet solar panel surface reflecting the industrial skyline, proving excellent drainage and weather resistance."
+    },
+    {
+      "astro_public_path": "/images/projects/shanghai-ansheng-huayuan-villa/sunlit-bipv-solar-slate-roof-ridge-close-up.webp",
+      "astro_file_path": "public/images/projects/shanghai-ansheng-huayuan-villa/sunlit-bipv-solar-slate-roof-ridge-close-up.webp",
+      "filename": "sunlit-bipv-solar-slate-roof-ridge-close-up.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-bipv-solar-slate-roof-ridge-close-up.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-bipv-solar-slate-roof-ridge-close-up.webp",
+      "wordpress_attachment_id": "2626",
+      "legacy_alt": "Close-up of the Sunlit solar slate roof ridge, highlighting the sleek, seamless surface and premium waterproof finish."
+    },
+    {
+      "astro_public_path": "/images/projects/shanghai-ansheng-huayuan-villa/sunlit-invisible-solar-roof-shanghai-villa-exterior.webp",
+      "astro_file_path": "public/images/projects/shanghai-ansheng-huayuan-villa/sunlit-invisible-solar-roof-shanghai-villa-exterior.webp",
+      "filename": "sunlit-invisible-solar-roof-shanghai-villa-exterior.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-invisible-solar-roof-shanghai-villa-exterior.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-invisible-solar-roof-shanghai-villa-exterior.webp",
+      "wordpress_attachment_id": "2627",
+      "legacy_alt": "Wide exterior view of a white luxury villa in Shanghai, contrasting its modern invisible solar roof with neighboring traditional tiles."
+    },
+    {
+      "astro_public_path": "/images/projects/shanghai-ansheng-huayuan-villa/sunlit-solar-roof-tiles-residential-upgrade-shanghai.webp",
+      "astro_file_path": "public/images/projects/shanghai-ansheng-huayuan-villa/sunlit-solar-roof-tiles-residential-upgrade-shanghai.webp",
+      "filename": "sunlit-solar-roof-tiles-residential-upgrade-shanghai.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/projects/shanghai-hongqiao-royal-villa/sunlit-bipv-solar-roof-luxury-villa-community-shanghai.webp",
+      "astro_file_path": "public/images/projects/shanghai-hongqiao-royal-villa/sunlit-bipv-solar-roof-luxury-villa-community-shanghai.webp",
+      "filename": "sunlit-bipv-solar-roof-luxury-villa-community-shanghai.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-bipv-solar-roof-luxury-villa-community-shanghai.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-bipv-solar-roof-luxury-villa-community-shanghai.webp",
+      "wordpress_attachment_id": "2629",
+      "legacy_alt": "Aerial view of the premium Hongqiao Royal Villa community in Shanghai, highlighting a modern Sunlit BIPV solar roof upgrading the neighborhood aesthetic."
+    },
+    {
+      "astro_public_path": "/images/projects/shanghai-hongqiao-royal-villa/sunlit-invisible-solar-roof-classic-architecture.webp",
+      "astro_file_path": "public/images/projects/shanghai-hongqiao-royal-villa/sunlit-invisible-solar-roof-classic-architecture.webp",
+      "filename": "sunlit-invisible-solar-roof-classic-architecture.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-invisible-solar-roof-classic-architecture.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-invisible-solar-roof-classic-architecture.webp",
+      "wordpress_attachment_id": "2630",
+      "legacy_alt": "Aesthetic integration of an invisible solar roof with classic architectural elements like stone facades, chimneys, and dormer windows."
+    },
+    {
+      "astro_public_path": "/images/projects/shanghai-hongqiao-royal-villa/sunlit-solar-slate-waterproof-surface-details.webp",
+      "astro_file_path": "public/images/projects/shanghai-hongqiao-royal-villa/sunlit-solar-slate-waterproof-surface-details.webp",
+      "filename": "sunlit-solar-slate-waterproof-surface-details.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-slate-waterproof-surface-details.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-slate-waterproof-surface-details.webp",
+      "wordpress_attachment_id": "2631",
+      "legacy_alt": "Close-up of the Lumina Slate solar roof surface with rain droplets, showcasing its premium waterproof texture and sleek finish."
+    },
+    {
+      "astro_public_path": "/images/projects/shanghai-hongqiao-royal-villa/sunlit-solar-tiles-hip-ridge-capping.webp",
+      "astro_file_path": "public/images/projects/shanghai-hongqiao-royal-villa/sunlit-solar-tiles-hip-ridge-capping.webp",
+      "filename": "sunlit-solar-tiles-hip-ridge-capping.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-tiles-hip-ridge-capping.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-tiles-hip-ridge-capping.webp",
+      "wordpress_attachment_id": "2632",
+      "legacy_alt": "Detailed view of the precise hip ridge capping on the Sunlit solar tile roof, ensuring seamless edge-to-edge protection."
+    },
+    {
+      "astro_public_path": "/images/projects/suzhou-urban-relay-station/sunlit-aesthetic-solar-power-for-urban-facilities.webp",
+      "astro_file_path": "public/images/projects/suzhou-urban-relay-station/sunlit-aesthetic-solar-power-for-urban-facilities.webp",
+      "filename": "sunlit-aesthetic-solar-power-for-urban-facilities.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-aesthetic-solar-power-for-urban-facilities.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-aesthetic-solar-power-for-urban-facilities.webp",
+      "wordpress_attachment_id": "2633",
+      "legacy_alt": "High-angle shot of the urban relay facility utilizing aesthetic solar power without compromising public space design."
+    },
+    {
+      "astro_public_path": "/images/projects/suzhou-urban-relay-station/sunlit-bipv-roofing-smart-city-station.webp",
+      "astro_file_path": "public/images/projects/suzhou-urban-relay-station/sunlit-bipv-roofing-smart-city-station.webp",
+      "filename": "sunlit-bipv-roofing-smart-city-station.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-bipv-roofing-smart-city-station.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-bipv-roofing-smart-city-station.webp",
+      "wordpress_attachment_id": "2634",
+      "legacy_alt": "Angled aerial view of the smart city station, showing the seamless dark BIPV roofing contrasting with the white structural frame."
+    },
+    {
+      "astro_public_path": "/images/projects/suzhou-urban-relay-station/sunlit-bipv-solar-roof-urban-infrastructure-suzhou.webp",
+      "astro_file_path": "public/images/projects/suzhou-urban-relay-station/sunlit-bipv-solar-roof-urban-infrastructure-suzhou.webp",
+      "filename": "sunlit-bipv-solar-roof-urban-infrastructure-suzhou.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-bipv-solar-roof-urban-infrastructure-suzhou.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-bipv-solar-roof-urban-infrastructure-suzhou.webp",
+      "wordpress_attachment_id": "2635",
+      "legacy_alt": "Aerial view of a modern urban relay station in Suzhou featuring a clean, integrated Sunlit BIPV solar roof."
+    },
+    {
+      "astro_public_path": "/images/projects/suzhou-urban-relay-station/sunlit-commercial-solar-roof-public-pavilion.webp",
+      "astro_file_path": "public/images/projects/suzhou-urban-relay-station/sunlit-commercial-solar-roof-public-pavilion.webp",
+      "filename": "sunlit-commercial-solar-roof-public-pavilion.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-commercial-solar-roof-public-pavilion.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-commercial-solar-roof-public-pavilion.webp",
+      "wordpress_attachment_id": "2636",
+      "legacy_alt": "Elevated view of a commercial public pavilion powered entirely by a flush-mounted solar roof."
+    },
+    {
+      "astro_public_path": "/images/projects/suzhou-urban-relay-station/sunlit-invisible-solar-tiles-top-down-view.webp",
+      "astro_file_path": "public/images/projects/suzhou-urban-relay-station/sunlit-invisible-solar-tiles-top-down-view.webp",
+      "filename": "sunlit-invisible-solar-tiles-top-down-view.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-invisible-solar-tiles-top-down-view.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-invisible-solar-tiles-top-down-view.webp",
+      "wordpress_attachment_id": "2637",
+      "legacy_alt": "Top-down aerial perspective highlighting the sleek rectangular footprint and hipped design of the invisible solar tiles."
+    },
+    {
+      "astro_public_path": "/images/projects/suzhou-urban-relay-station/sunlit-solar-roof-city-street-integration.webp",
+      "astro_file_path": "public/images/projects/suzhou-urban-relay-station/sunlit-solar-roof-city-street-integration.webp",
+      "filename": "sunlit-solar-roof-city-street-integration.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-roof-city-street-integration.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-roof-city-street-integration.webp",
+      "wordpress_attachment_id": "2638",
+      "legacy_alt": "Wide shot demonstrating how the modern solar roof elevates the city streetscape and harmonizes with urban planning."
+    },
+    {
+      "astro_public_path": "/images/projects/suzhou-urban-relay-station/sunlit-solar-roof-urban-landscape-contrast.webp",
+      "astro_file_path": "public/images/projects/suzhou-urban-relay-station/sunlit-solar-roof-urban-landscape-contrast.webp",
+      "filename": "sunlit-solar-roof-urban-landscape-contrast.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-roof-urban-landscape-contrast.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-roof-urban-landscape-contrast.webp",
+      "wordpress_attachment_id": "2639",
+      "legacy_alt": "Expansive urban landscape view contrasting the sleek public solar roof with cluttered traditional roofs in the background."
+    },
+    {
+      "astro_public_path": "/images/projects/suzhou-urban-relay-station/sunlit-solar-slate-roof-ridge-capping-details.webp",
+      "astro_file_path": "public/images/projects/suzhou-urban-relay-station/sunlit-solar-slate-roof-ridge-capping-details.webp",
+      "filename": "sunlit-solar-slate-roof-ridge-capping-details.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-slate-roof-ridge-capping-details.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-slate-roof-ridge-capping-details.webp",
+      "wordpress_attachment_id": "2640",
+      "legacy_alt": "Close-up of the waterproof ridge capping on the solar slate roof, ensuring urban durability and aesthetic appeal."
+    },
+    {
+      "astro_public_path": "/images/projects/suzhou-urban-relay-station/sunlit-solar-tiles-hip-roof-intersection.webp",
+      "astro_file_path": "public/images/projects/suzhou-urban-relay-station/sunlit-solar-tiles-hip-roof-intersection.webp",
+      "filename": "sunlit-solar-tiles-hip-roof-intersection.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-tiles-hip-roof-intersection.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-tiles-hip-roof-intersection.webp",
+      "wordpress_attachment_id": "2641",
+      "legacy_alt": "Detailed top-down shot of the precise hip roof intersection using modular solar tiles on a public building."
+    },
+    {
+      "astro_public_path": "/images/projects/urban-compact-home-retrofit/storm-guard-bipv-panel-installation-workers.webp",
+      "astro_file_path": "public/images/projects/urban-compact-home-retrofit/storm-guard-bipv-panel-installation-workers.webp",
+      "filename": "storm-guard-bipv-panel-installation-workers.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/storm-guard-bipv-panel-installation-workers.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/storm-guard-bipv-panel-installation-workers.webp",
+      "wordpress_attachment_id": "2692",
+      "legacy_alt": "Workers installing heavy-duty Storm Guard BIPV panels on a compact urban residential roof."
+    },
+    {
+      "astro_public_path": "/images/projects/urban-compact-home-retrofit/storm-guard-compact-urban-solar-roof-aerial.webp",
+      "astro_file_path": "public/images/projects/urban-compact-home-retrofit/storm-guard-compact-urban-solar-roof-aerial.webp",
+      "filename": "storm-guard-compact-urban-solar-roof-aerial.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/storm-guard-compact-urban-solar-roof-aerial.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/storm-guard-compact-urban-solar-roof-aerial.webp",
+      "wordpress_attachment_id": "2693",
+      "legacy_alt": "Aerial view of a compact, typhoon-resistant Storm Guard solar roof in a dense urban neighborhood."
+    },
+    {
+      "astro_public_path": "/images/projects/urban-compact-home-retrofit/storm-guard-solar-panel-profile-insulatio.webp",
+      "astro_file_path": "public/images/projects/urban-compact-home-retrofit/storm-guard-solar-panel-profile-insulatio.webp",
+      "filename": "storm-guard-solar-panel-profile-insulatio.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/storm-guard-solar-panel-profile-insulatio.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/storm-guard-solar-panel-profile-insulatio.webp",
+      "wordpress_attachment_id": "2694",
+      "legacy_alt": "Side profile close-up showing the robust interlocking design and underlying insulation of the Storm Guard system."
+    },
+    {
+      "astro_public_path": "/images/projects/urban-compact-home-retrofit/storm-guard-solar-roof-skylight-integration.webp",
+      "astro_file_path": "public/images/projects/urban-compact-home-retrofit/storm-guard-solar-roof-skylight-integration.webp",
+      "filename": "storm-guard-solar-roof-skylight-integration.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/storm-guard-solar-roof-skylight-integration.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/storm-guard-solar-roof-skylight-integration.webp",
+      "wordpress_attachment_id": "2695",
+      "legacy_alt": "Seamless and watertight integration of a large modern glass skylight within the durable Storm Guard solar roofing system."
+    },
+    {
+      "astro_public_path": "/images/projects/urban-compact-home-retrofit/storm-guard-urban-solar-retrofit-cityscape.webp",
+      "astro_file_path": "public/images/projects/urban-compact-home-retrofit/storm-guard-urban-solar-retrofit-cityscape.webp",
+      "filename": "storm-guard-urban-solar-retrofit-cityscape.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/storm-guard-urban-solar-retrofit-cityscape.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/storm-guard-urban-solar-retrofit-cityscape.webp",
+      "wordpress_attachment_id": "2696",
+      "legacy_alt": "A resilient Storm Guard solar roof retrofit on a small residential home, set against a backdrop of modern high-rise apartments."
+    },
+    {
+      "astro_public_path": "/images/projects/urban-eco-park/comprehensive-bipv-glass-canopy-maintenance.webp",
+      "astro_file_path": "public/images/projects/urban-eco-park/comprehensive-bipv-glass-canopy-maintenance.webp",
+      "filename": "comprehensive-bipv-glass-canopy-maintenance.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/comprehensive-bipv-glass-canopy-maintenance.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/comprehensive-bipv-glass-canopy-maintenance.webp",
+      "wordpress_attachment_id": "2711",
+      "legacy_alt": "Worker cleaning the transparent solar glass canopy of a comprehensive BIPV demo station in an urban park."
+    },
+    {
+      "astro_public_path": "/images/projects/urban-eco-park/comprehensive-bipv-pavilion-aerial-view.webp",
+      "astro_file_path": "public/images/projects/urban-eco-park/comprehensive-bipv-pavilion-aerial-view.webp",
+      "filename": "comprehensive-bipv-pavilion-aerial-view.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/comprehensive-bipv-pavilion-aerial-view.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/comprehensive-bipv-pavilion-aerial-view.webp",
+      "wordpress_attachment_id": "2712",
+      "legacy_alt": "Aerial view of the all-in-one BIPV pavilion, showcasing integrated solar tiles and a solar glass sunroom roof."
+    },
+    {
+      "astro_public_path": "/images/projects/urban-eco-park/comprehensive-bipv-smart-city-energy-station.webp",
+      "astro_file_path": "public/images/projects/urban-eco-park/comprehensive-bipv-smart-city-energy-station.webp",
+      "filename": "comprehensive-bipv-smart-city-energy-station.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/comprehensive-bipv-smart-city-energy-station.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/comprehensive-bipv-smart-city-energy-station.webp",
+      "wordpress_attachment_id": "2713",
+      "legacy_alt": "A smart city energy station utilizing a complete BIPV building envelope to achieve zero emissions."
+    },
+    {
+      "astro_public_path": "/images/projects/urban-eco-park/integrated-solar-facade-custom-design.webp",
+      "astro_file_path": "public/images/projects/urban-eco-park/integrated-solar-facade-custom-design.webp",
+      "filename": "integrated-solar-facade-custom-design.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/integrated-solar-facade-custom-design.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/integrated-solar-facade-custom-design.webp",
+      "wordpress_attachment_id": "2714",
+      "legacy_alt": "Ground view of the BIPV energy station featuring custom-printed solar glass facades blending with the environment."
+    },
+    {
+      "astro_public_path": "/images/projects/urban-eco-park/solar-curtain-wall-and-roof-integration.webp",
+      "astro_file_path": "public/images/projects/urban-eco-park/solar-curtain-wall-and-roof-integration.webp",
+      "filename": "solar-curtain-wall-and-roof-integration.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/solar-curtain-wall-and-roof-integration.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/solar-curtain-wall-and-roof-integration.webp",
+      "wordpress_attachment_id": "2715",
+      "legacy_alt": "High-angle view demonstrating the seamless integration of a black solar curtain wall and aesthetic solar roof tiles."
+    },
+    {
+      "astro_public_path": "/images/projects/urban-eco-park/solar-curtain-wall-vertical-bipv-facade.webp",
+      "astro_file_path": "public/images/projects/urban-eco-park/solar-curtain-wall-vertical-bipv-facade.webp",
+      "filename": "solar-curtain-wall-vertical-bipv-facade.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/solar-curtain-wall-vertical-bipv-facade.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/solar-curtain-wall-vertical-bipv-facade.webp",
+      "wordpress_attachment_id": "2716",
+      "legacy_alt": "Vertical solar curtain wall modules applied to the facade of the energy station, maximizing power generation."
+    },
+    {
+      "astro_public_path": "/images/projects/urban-eco-park/solar-energy-station-multi-module-installation.webp",
+      "astro_file_path": "public/images/projects/urban-eco-park/solar-energy-station-multi-module-installation.webp",
+      "filename": "solar-energy-station-multi-module-installation.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/solar-energy-station-multi-module-installation.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/solar-energy-station-multi-module-installation.webp",
+      "wordpress_attachment_id": "2717",
+      "legacy_alt": "Construction view of the energy station highlighting the multi-module BIPV setup: roof, canopy, and walls."
+    },
+    {
+      "astro_public_path": "/images/projects/urban-eco-park/urban-bipv-demo-station-ground-view.webp",
+      "astro_file_path": "public/images/projects/urban-eco-park/urban-bipv-demo-station-ground-view.webp",
+      "filename": "urban-bipv-demo-station-ground-view.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/urban-bipv-demo-station-ground-view.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/urban-bipv-demo-station-ground-view.webp",
+      "wordpress_attachment_id": "2718",
+      "legacy_alt": "Entrance view of the urban BIPV demonstration pavilion, transforming a standard utility building into an eco-landmark."
+    },
+    {
+      "astro_public_path": "/images/projects/urban-low-slope-extension/storm-guard-flat-roof-bipv-waterproof-surface.webp",
+      "astro_file_path": "public/images/projects/urban-low-slope-extension/storm-guard-flat-roof-bipv-waterproof-surface.webp",
+      "filename": "storm-guard-flat-roof-bipv-waterproof-surface.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/storm-guard-flat-roof-bipv-waterproof-surface.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/storm-guard-flat-roof-bipv-waterproof-surface.webp",
+      "wordpress_attachment_id": "2689",
+      "legacy_alt": "Wet surface of the Storm Guard flat roof BIPV system, demonstrating excellent drainage and waterproofing on a low-slope structure."
+    },
+    {
+      "astro_public_path": "/images/projects/urban-low-slope-extension/storm-guard-low-slope-solar-roof-installation.webp",
+      "astro_file_path": "public/images/projects/urban-low-slope-extension/storm-guard-low-slope-solar-roof-installation.webp",
+      "filename": "storm-guard-low-slope-solar-roof-installation.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/storm-guard-low-slope-solar-roof-installation.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/storm-guard-low-slope-solar-roof-installation.webp",
+      "wordpress_attachment_id": "2690",
+      "legacy_alt": "Wet surface of the Storm Guard flat roof BIPV system, demonstrating excellent drainage and waterproofing on a low-slope structure."
+    },
+    {
+      "astro_public_path": "/images/projects/urban-low-slope-extension/storm-guard-urban-flat-roof-solar-integration.webp",
+      "astro_file_path": "public/images/projects/urban-low-slope-extension/storm-guard-urban-flat-roof-solar-integration.webp",
+      "filename": "storm-guard-urban-flat-roof-solar-integration.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/storm-guard-urban-flat-roof-solar-integration.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/storm-guard-urban-flat-roof-solar-integration.webp",
+      "wordpress_attachment_id": "2691",
+      "legacy_alt": "Seamless flat roof solar integration using Storm Guard panels, replacing outdated roof structures in a dense urban landscape."
+    },
+    {
+      "astro_public_path": "/images/projects/us-coastal-community/coastal-community-bipv-aerial-overview.webp",
+      "astro_file_path": "public/images/projects/us-coastal-community/coastal-community-bipv-aerial-overview.webp",
+      "filename": "coastal-community-bipv-aerial-overview.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/coastal-community-bipv-aerial-overview.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/coastal-community-bipv-aerial-overview.webp",
+      "wordpress_attachment_id": "2740",
+      "legacy_alt": "Aerial overview of a coastal US residential community featuring multiple homes upgraded with sleek BIPV solar roofs."
+    },
+    {
+      "astro_public_path": "/images/projects/us-coastal-community/neighborhood-scale-solar-roof-deployment.webp",
+      "astro_file_path": "public/images/projects/us-coastal-community/neighborhood-scale-solar-roof-deployment.webp",
+      "filename": "neighborhood-scale-solar-roof-deployment.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/neighborhood-scale-solar-roof-deployment.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/neighborhood-scale-solar-roof-deployment.webp",
+      "wordpress_attachment_id": "2741",
+      "legacy_alt": "Waterfront aerial view showcasing a row of premium homes equipped with uniform, black solar tile roofs."
+    },
+    {
+      "astro_public_path": "/images/projects/us-coastal-community/solar-roof-standard-for-new-developments.webp",
+      "astro_file_path": "public/images/projects/us-coastal-community/solar-roof-standard-for-new-developments.webp",
+      "filename": "solar-roof-standard-for-new-developments.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/solar-roof-standard-for-new-developments.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/solar-roof-standard-for-new-developments.webp",
+      "wordpress_attachment_id": "2742",
+      "legacy_alt": "Street-level view of newly developed coastal homes, demonstrating how BIPV solar roofs enhance neighborhood curb appeal."
+    },
+    {
+      "astro_public_path": "/images/projects/us-coastal-community/us-coastal-villa-invisible-solar-roof.webp",
+      "astro_file_path": "public/images/projects/us-coastal-community/us-coastal-villa-invisible-solar-roof.webp",
+      "filename": "us-coastal-villa-invisible-solar-roof.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/us-coastal-villa-invisible-solar-roof.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/us-coastal-villa-invisible-solar-roof.webp",
+      "wordpress_attachment_id": "2743",
+      "legacy_alt": "A beautiful white coastal villa seamlessly integrating a dark, high-efficiency solar roof into its modern architecture."
+    },
+    {
+      "astro_public_path": "/images/projects/us-coastal-community/us-modern-home-bipv-facade-integration.webp",
+      "astro_file_path": "public/images/projects/us-coastal-community/us-modern-home-bipv-facade-integration.webp",
+      "filename": "us-modern-home-bipv-facade-integration.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/us-modern-home-bipv-facade-integration.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/us-modern-home-bipv-facade-integration.webp",
+      "wordpress_attachment_id": "2744",
+      "legacy_alt": "Front facade of a modern US home highlighting the clean, edge-to-edge finish of the Lumina Slate solar roof."
+    },
+    {
+      "astro_public_path": "/images/projects/usa-private-gymnasium/sunlit-bipv-solar-roof-gymnasium-aerial-usa-scaled.webp",
+      "astro_file_path": "public/images/projects/usa-private-gymnasium/sunlit-bipv-solar-roof-gymnasium-aerial-usa-scaled.webp",
+      "filename": "sunlit-bipv-solar-roof-gymnasium-aerial-usa-scaled.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-bipv-solar-roof-gymnasium-aerial-usa-scaled.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-bipv-solar-roof-gymnasium-aerial-usa-scaled.webp",
+      "wordpress_attachment_id": "2672",
+      "legacy_alt": "Aerial perspective of the sprawling USA gymnasium building featuring a full-coverage Lumina Slate BIPV solar roof."
+    },
+    {
+      "astro_public_path": "/images/projects/usa-private-gymnasium/sunlit-bipv-solar-roof-gymnasium-aerial-usa.webp",
+      "astro_file_path": "public/images/projects/usa-private-gymnasium/sunlit-bipv-solar-roof-gymnasium-aerial-usa.webp",
+      "filename": "sunlit-bipv-solar-roof-gymnasium-aerial-usa.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/projects/usa-private-gymnasium/sunlit-invisible-solar-roof-massive-expanse.webp",
+      "astro_file_path": "public/images/projects/usa-private-gymnasium/sunlit-invisible-solar-roof-massive-expanse.webp",
+      "filename": "sunlit-invisible-solar-roof-massive-expanse.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-invisible-solar-roof-massive-expanse.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-invisible-solar-roof-massive-expanse.webp",
+      "wordpress_attachment_id": "2673",
+      "legacy_alt": "Installation team conducting a pre-layout ground test of Lumina Slate solar tiles for precise alignment."
+    },
+    {
+      "astro_public_path": "/images/projects/usa-private-gymnasium/usa-gym-completed-bipv-roof-expanse.webp",
+      "astro_file_path": "public/images/projects/usa-private-gymnasium/usa-gym-completed-bipv-roof-expanse.webp",
+      "filename": "usa-gym-completed-bipv-roof-expanse.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/usa-gym-completed-bipv-roof-expanse.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/usa-gym-completed-bipv-roof-expanse.webp",
+      "wordpress_attachment_id": "2674",
+      "legacy_alt": "Elevated aerial view looking across the finished, modern Lumina Slate BIPV roof on the USA gymnasium."
+    },
+    {
+      "astro_public_path": "/images/projects/usa-private-gymnasium/usa-gym-solar-slate-installation-worker.webp",
+      "astro_file_path": "public/images/projects/usa-private-gymnasium/usa-gym-solar-slate-installation-worker.webp",
+      "filename": "usa-gym-solar-slate-installation-worker.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/usa-gym-solar-slate-installation-worker.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/usa-gym-solar-slate-installation-worker.webp",
+      "wordpress_attachment_id": "2676",
+      "legacy_alt": "Close-up construction shot of an installer manually positioning a large-format Lumina Slate solar tile on the roof."
+    },
+    {
+      "astro_public_path": "/images/projects/usa-private-gymnasium/usa-gymnasium-solar-roof-construction-scaffolding.webp",
+      "astro_file_path": "public/images/projects/usa-private-gymnasium/usa-gymnasium-solar-roof-construction-scaffolding.webp",
+      "filename": "usa-gymnasium-solar-roof-construction-scaffolding.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/usa-gymnasium-solar-roof-construction-scaffolding.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/usa-gymnasium-solar-roof-construction-scaffolding.webp",
+      "wordpress_attachment_id": "2675",
+      "legacy_alt": "Wide drone view of the large USA gymnasium under construction, showing scaffolding and active building site infrastructure."
+    },
+    {
+      "astro_public_path": "/images/projects/usa-private-gymnasium/usa-large-gym-invisible-solar-roof-facade.webp",
+      "astro_file_path": "public/images/projects/usa-private-gymnasium/usa-large-gym-invisible-solar-roof-facade.webp",
+      "filename": "usa-large-gym-invisible-solar-roof-facade.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/usa-large-gym-invisible-solar-roof-facade.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/usa-large-gym-invisible-solar-roof-facade.webp",
+      "wordpress_attachment_id": "2677",
+      "legacy_alt": "Complete architectural facade view showcasing the uniform, premium aesthetic of the invisible solar slate roofing."
+    },
+    {
+      "astro_public_path": "/images/projects/usa-private-gymnasium/usa-solar-roof-pre-installation-framing.webp",
+      "astro_file_path": "public/images/projects/usa-private-gymnasium/usa-solar-roof-pre-installation-framing.webp",
+      "filename": "usa-solar-roof-pre-installation-framing.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/usa-solar-roof-pre-installation-framing.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/usa-solar-roof-pre-installation-framing.webp",
+      "wordpress_attachment_id": "2678",
+      "legacy_alt": "Detailed view of the complex wooden batten sub-structure prepared for the large-scale solar tile installation."
+    },
+    {
+      "astro_public_path": "/images/projects/usa-private-gymnasium/usa-solar-roof-substructure-wooden-battens-scaled.webp",
+      "astro_file_path": "public/images/projects/usa-private-gymnasium/usa-solar-roof-substructure-wooden-battens-scaled.webp",
+      "filename": "usa-solar-roof-substructure-wooden-battens-scaled.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/usa-solar-roof-substructure-wooden-battens-scaled.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/usa-solar-roof-substructure-wooden-battens-scaled.webp",
+      "wordpress_attachment_id": "2679",
+      "legacy_alt": "Aerial look at the construction phase where the wooden framing meets the newly installed dark solar tiles."
+    },
+    {
+      "astro_public_path": "/images/projects/usa-private-gymnasium/usa-solar-roof-substructure-wooden-battens.webp",
+      "astro_file_path": "public/images/projects/usa-private-gymnasium/usa-solar-roof-substructure-wooden-battens.webp",
+      "filename": "usa-solar-roof-substructure-wooden-battens.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/projects/usa-private-gymnasium/usa-solar-tile-multi-slope-hip-valley-integration.webp",
+      "astro_file_path": "public/images/projects/usa-private-gymnasium/usa-solar-tile-multi-slope-hip-valley-integration.webp",
+      "filename": "usa-solar-tile-multi-slope-hip-valley-integration.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/usa-solar-tile-multi-slope-hip-valley-integration.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/usa-solar-tile-multi-slope-hip-valley-integration.webp",
+      "wordpress_attachment_id": "2680",
+      "legacy_alt": "Drone close-up showing the precise custom-cut integration of solar tiles at a complex multiple-slope roof intersection."
+    },
+    {
+      "astro_public_path": "/images/projects/xuzhou-luxury-villa-the-ultimate-bipv-vs-bapv-contrast/sunlit-bipv-roof-vent-pipe-integration.webp",
+      "astro_file_path": "public/images/projects/xuzhou-luxury-villa-the-ultimate-bipv-vs-bapv-contrast/sunlit-bipv-roof-vent-pipe-integration.webp",
+      "filename": "sunlit-bipv-roof-vent-pipe-integration.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-bipv-roof-vent-pipe-integration.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-bipv-roof-vent-pipe-integration.webp",
+      "wordpress_attachment_id": "2642",
+      "legacy_alt": "Detail shot of a roof vent pipe flawlessly integrated into the waterproof Sunlit BIPV roofing system."
+    },
+    {
+      "astro_public_path": "/images/projects/xuzhou-luxury-villa-the-ultimate-bipv-vs-bapv-contrast/sunlit-bipv-vs-bapv-solar-roof-comparison.webp",
+      "astro_file_path": "public/images/projects/xuzhou-luxury-villa-the-ultimate-bipv-vs-bapv-contrast/sunlit-bipv-vs-bapv-solar-roof-comparison.webp",
+      "filename": "sunlit-bipv-vs-bapv-solar-roof-comparison.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-bipv-vs-bapv-solar-roof-comparison.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-bipv-vs-bapv-solar-roof-comparison.webp",
+      "wordpress_attachment_id": "2643",
+      "legacy_alt": "Aerial comparison showing the aesthetic superiority of a seamless Sunlit BIPV solar roof against neighboring traditional BAPV rack-mounted panels."
+    },
+    {
+      "astro_public_path": "/images/projects/xuzhou-luxury-villa-the-ultimate-bipv-vs-bapv-contrast/sunlit-invisible-solar-roof-neighborhood-upgrade.webp",
+      "astro_file_path": "public/images/projects/xuzhou-luxury-villa-the-ultimate-bipv-vs-bapv-contrast/sunlit-invisible-solar-roof-neighborhood-upgrade.webp",
+      "filename": "sunlit-invisible-solar-roof-neighborhood-upgrade.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-invisible-solar-roof-neighborhood-upgrade.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-invisible-solar-roof-neighborhood-upgrade.webp",
+      "wordpress_attachment_id": "2644",
+      "legacy_alt": "A high-end residential neighborhood demonstrating how an invisible solar roof upgrades property appearance compared to bulky traditional panels."
+    },
+    {
+      "astro_public_path": "/images/projects/xuzhou-luxury-villa-the-ultimate-bipv-vs-bapv-contrast/sunlit-solar-slate-multi-hip-roof-installation.webp",
+      "astro_file_path": "public/images/projects/xuzhou-luxury-villa-the-ultimate-bipv-vs-bapv-contrast/sunlit-solar-slate-multi-hip-roof-installation.webp",
+      "filename": "sunlit-solar-slate-multi-hip-roof-installation.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-slate-multi-hip-roof-installation.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-slate-multi-hip-roof-installation.webp",
+      "wordpress_attachment_id": "2645",
+      "legacy_alt": "Top-down view of the multi-hip roof installation, showcasing the precise waterproof ridge capping of the solar slates."
+    },
+    {
+      "astro_public_path": "/images/projects/xuzhou-luxury-villa-the-ultimate-bipv-vs-bapv-contrast/sunlit-solar-tiles-flush-mount-design.webp",
+      "astro_file_path": "public/images/projects/xuzhou-luxury-villa-the-ultimate-bipv-vs-bapv-contrast/sunlit-solar-tiles-flush-mount-design.webp",
+      "filename": "sunlit-solar-tiles-flush-mount-design.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-tiles-flush-mount-design.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-tiles-flush-mount-design.webp",
+      "wordpress_attachment_id": "2646",
+      "legacy_alt": "Sleek, flush-mounted design of the Sunlit solar tiles delivering a clean, modern architectural aesthetic."
+    },
+    {
+      "astro_public_path": "/images/projects/yiwu-golf-villa/sunlit-bipv-solar-roof-brick-villa-yiwu.webp",
+      "astro_file_path": "public/images/projects/yiwu-golf-villa/sunlit-bipv-solar-roof-brick-villa-yiwu.webp",
+      "filename": "sunlit-bipv-solar-roof-brick-villa-yiwu.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-bipv-solar-roof-brick-villa-yiwu.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-bipv-solar-roof-brick-villa-yiwu.webp",
+      "wordpress_attachment_id": "2647",
+      "legacy_alt": "Modern Sunlit BIPV solar roof seamlessly integrated with a classic brick villa facade in Yiwu, maximizing energy output."
+    },
+    {
+      "astro_public_path": "/images/projects/yiwu-golf-villa/sunlit-invisible-solar-tiles-clean-surface-vent.webp",
+      "astro_file_path": "public/images/projects/yiwu-golf-villa/sunlit-invisible-solar-tiles-clean-surface-vent.webp",
+      "filename": "sunlit-invisible-solar-tiles-clean-surface-vent.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-invisible-solar-tiles-clean-surface-vent.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-invisible-solar-tiles-clean-surface-vent.webp",
+      "wordpress_attachment_id": "2648",
+      "legacy_alt": "Expansive, sleek surface of the installed invisible solar tiles featuring a flawlessly integrated roof vent."
+    },
+    {
+      "astro_public_path": "/images/projects/yiwu-golf-villa/sunlit-solar-roof-installation-underlayment-edge.webp",
+      "astro_file_path": "public/images/projects/yiwu-golf-villa/sunlit-solar-roof-installation-underlayment-edge.webp",
+      "filename": "sunlit-solar-roof-installation-underlayment-edge.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-roof-installation-underlayment-edge.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-roof-installation-underlayment-edge.webp",
+      "wordpress_attachment_id": "2649",
+      "legacy_alt": "Edge installation detail of the Sunlit solar roof showing the waterproof underlayment and structural transition."
+    },
+    {
+      "astro_public_path": "/images/projects/yiwu-golf-villa/sunlit-solar-slate-flashing-and-insulation-detail.webp",
+      "astro_file_path": "public/images/projects/yiwu-golf-villa/sunlit-solar-slate-flashing-and-insulation-detail.webp",
+      "filename": "sunlit-solar-slate-flashing-and-insulation-detail.webp",
+      "mapping_status": "legacy_alt_inherited",
+      "wordpress_upload_path": "2026/05/sunlit-solar-slate-flashing-and-insulation-detail.webp",
+      "wordpress_public_url": "https://www.sunlitsolarroof.com/wp-content/uploads/2026/05/sunlit-solar-slate-flashing-and-insulation-detail.webp",
+      "wordpress_attachment_id": "2650",
+      "legacy_alt": "Close-up of the solar slate installation showing the underlying silver insulation layer and edge flashing process."
+    },
+    {
+      "astro_public_path": "/images/shipping/12396c9bf48aa20316ba926d2f5206d5.webp",
+      "astro_file_path": "public/images/shipping/12396c9bf48aa20316ba926d2f5206d5.webp",
+      "filename": "12396c9bf48aa20316ba926d2f5206d5.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/shipping/57e4ef2b6e97c1498741c40e4e2897af.webp",
+      "astro_file_path": "public/images/shipping/57e4ef2b6e97c1498741c40e4e2897af.webp",
+      "filename": "57e4ef2b6e97c1498741c40e4e2897af.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/shipping/8879fe166b4b0f67455ca7409ba71e1e.webp",
+      "astro_file_path": "public/images/shipping/8879fe166b4b0f67455ca7409ba71e1e.webp",
+      "filename": "8879fe166b4b0f67455ca7409ba71e1e.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/shipping/a1e77cb3c75b8df9e4aede91087a4efd.webp",
+      "astro_file_path": "public/images/shipping/a1e77cb3c75b8df9e4aede91087a4efd.webp",
+      "filename": "a1e77cb3c75b8df9e4aede91087a4efd.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/shipping/d3b3b313d354d5508f412571138ccca5.webp",
+      "astro_file_path": "public/images/shipping/d3b3b313d354d5508f412571138ccca5.webp",
+      "filename": "d3b3b313d354d5508f412571138ccca5.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/shipping/d3e036bcf12e37f8d0560afac8c6ab56.webp",
+      "astro_file_path": "public/images/shipping/d3e036bcf12e37f8d0560afac8c6ab56.webp",
+      "filename": "d3e036bcf12e37f8d0560afac8c6ab56.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    },
+    {
+      "astro_public_path": "/images/shipping/e01a4bdd276c2261308c89b984c791e2.webp",
+      "astro_file_path": "public/images/shipping/e01a4bdd276c2261308c89b984c791e2.webp",
+      "filename": "e01a4bdd276c2261308c89b984c791e2.webp",
+      "mapping_status": "astro_asset_without_exact_wordpress_filename_match",
+      "wordpress_upload_path": "",
+      "wordpress_public_url": "",
+      "wordpress_attachment_id": "",
+      "legacy_alt": ""
+    }
+  ]
+}

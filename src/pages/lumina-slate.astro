@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { activeTileSpecs, sharedActiveTilePerformance } from '../data/productSpecs';
 import { luminaSlateComponents, sharedComponents } from '../data/componentAssets';
 import { projects } from '../data/projects';
+import { getInheritedImageAlt } from '../data/imageAltManifest';
 
 const spec = activeTileSpecs.luminaSlate;
 
@@ -145,7 +146,7 @@ const accessoryComponents = luminaSlateComponents.filter((c: any) => c.group ===
               const comp = luminaSlateComponents.find((c: any) => c.id === id);
               return comp ? (
                 <div class="bg-white rounded-xl flex items-center justify-center p-3">
-                  <img src={comp.image} alt={comp.name} class="w-full h-full object-contain" />
+                  <img src={comp.image} alt={getInheritedImageAlt(comp.image, comp.name)} class="w-full h-full object-contain" />
                 </div>
               ) : null;
             })}
@@ -191,7 +192,7 @@ const accessoryComponents = luminaSlateComponents.filter((c: any) => c.group ===
           {coreComponents.map((comp: any) => (
             <div class="bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-shadow">
               <div class="aspect-square bg-gray-50 flex items-center justify-center p-6">
-                <img src={comp.image} alt={comp.name} class="w-full h-full object-contain" />
+                <img src={comp.image} alt={getInheritedImageAlt(comp.image, comp.name)} class="w-full h-full object-contain" />
               </div>
               <div class="p-4">
                 <div class="font-semibold text-gray-900 text-sm mb-1">{comp.name}</div>
@@ -219,7 +220,7 @@ const accessoryComponents = luminaSlateComponents.filter((c: any) => c.group ===
           {trimComponents.map((comp: any) => (
             <div class="bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-shadow">
               <div class="aspect-square bg-gray-50 flex items-center justify-center p-5">
-                <img src={comp.image} alt={comp.name} class="w-full h-full object-contain" />
+                <img src={comp.image} alt={getInheritedImageAlt(comp.image, comp.name)} class="w-full h-full object-contain" />
               </div>
               <div class="p-4">
                 <div class="font-semibold text-gray-900 text-sm mb-1">{comp.name}</div>
@@ -237,7 +238,7 @@ const accessoryComponents = luminaSlateComponents.filter((c: any) => c.group ===
           {[...accessoryComponents, ...sharedComponents].map((comp: any) => (
             <div class="bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-shadow">
               <div class="aspect-square bg-gray-50 flex items-center justify-center p-5">
-                <img src={comp.image} alt={comp.name} class="w-full h-full object-contain" />
+                <img src={comp.image} alt={getInheritedImageAlt(comp.image, comp.name)} class="w-full h-full object-contain" />
               </div>
               <div class="p-4">
                 <div class="font-semibold text-gray-900 text-sm mb-1">{comp.name}</div>
@@ -276,7 +277,7 @@ const accessoryComponents = luminaSlateComponents.filter((c: any) => c.group ===
             <div class="md:col-span-2 overflow-hidden">
               <img
                 src="/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-completed-solar-tile-roof-xianghu-villa.webp"
-                alt={heroProject.title}
+                alt={getInheritedImageAlt('/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-completed-solar-tile-roof-xianghu-villa.webp', heroProject.name)}
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
             </div>
@@ -313,11 +314,11 @@ const accessoryComponents = luminaSlateComponents.filter((c: any) => c.group ===
         {[nanshan, beijing].filter(Boolean).map((proj: any) => proj && (
           <div class="rounded-2xl overflow-hidden bg-gray-50 group">
             <div class="h-64 overflow-hidden">
-              <img src={proj.images[0]} alt={proj.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <img src={proj.images[0]} alt={getInheritedImageAlt(proj.images[0], proj.name)} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
             </div>
             <div class="p-7">
               <span class="text-[#2d5a27] text-xs font-bold tracking-widest uppercase">Lumina Slate</span>
-              <h3 class="text-gray-900 text-xl font-bold mt-2 mb-3">{proj.title}</h3>
+              <h3 class="text-gray-900 text-xl font-bold mt-2 mb-3">{proj.name}</h3>
               <p class="text-gray-500 text-sm leading-relaxed mb-5">{proj.overview}</p>
               <div class="flex gap-4 mb-5">
                 {proj.roofArea && (
@@ -342,10 +343,10 @@ const accessoryComponents = luminaSlateComponents.filter((c: any) => c.group ===
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         {luminaProjects.filter((p: any) => !['hangzhou-xianghu-arcadia-villa', 'nanjing-nanshan-lake', 'beijing-new-world-lizun'].includes(p.slug)).slice(0, 4).map((proj: any) => (
           <a href={`/projects/${proj.slug}/`} class="group relative rounded-xl overflow-hidden aspect-[4/3]">
-            <img src={proj.images[0]} alt={proj.title} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+            <img src={proj.images[0]} alt={getInheritedImageAlt(proj.images[0], proj.name)} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-4">
-              <div class="text-white font-semibold text-sm leading-tight">{proj.title}</div>
+              <div class="text-white font-semibold text-sm leading-tight">{proj.name}</div>
               {proj.location && <div class="text-white/60 text-xs mt-1">{proj.location}</div>}
             </div>
           </a>

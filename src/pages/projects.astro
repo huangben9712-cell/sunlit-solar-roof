@@ -1,6 +1,7 @@
 ﻿---
 import Layout from '../layouts/Layout.astro';
 import { projects } from '../data/projects';
+import { getInheritedImageAlt } from '../data/imageAltManifest';
 
 const luminaProjects = projects.filter(p => p.system === 'Lumina Slate');
 const stormGuardProjects = projects.filter(p => p.system === 'Storm Guard');
@@ -38,7 +39,7 @@ const otherHero = otherProjects.find(p => p.images?.length)?.images?.[0] ?? lumi
           {luminaHero ? (
             <img
               src={luminaHero}
-              alt="Solar roof project reference"
+              alt={getInheritedImageAlt(luminaHero, 'Solar roof project reference')}
               class="w-full h-full object-cover object-center"
             />
           ) : (
@@ -117,7 +118,7 @@ const otherHero = otherProjects.find(p => p.images?.length)?.images?.[0] ?? lumi
           <div class="sunlit-card overflow-hidden">
             <div class="relative h-48 overflow-hidden">
               {line.img ? (
-                <img src={line.img} alt={line.label} class="w-full h-full object-cover" loading="lazy" />
+                <img src={line.img} alt={getInheritedImageAlt(line.img, line.label)} class="w-full h-full object-cover" loading="lazy" />
               ) : (
                 <div class="w-full h-full image-placeholder"></div>
               )}
@@ -160,7 +161,7 @@ const otherHero = otherProjects.find(p => p.images?.length)?.images?.[0] ?? lumi
                 <a href={`/projects/${project.slug}/`} class="sunlit-card overflow-hidden block group project-card" data-system={project.system} data-app={project.application}>
                   <div class="h-44 overflow-hidden">
                     {project.images?.[0] ? (
-                      <img src={project.images[0]} alt={project.name} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                      <img src={project.images[0]} alt={getInheritedImageAlt(project.images[0], project.name)} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
                     ) : (
                       <div class="h-44 image-placeholder"></div>
                     )}
@@ -184,7 +185,7 @@ const otherHero = otherProjects.find(p => p.images?.length)?.images?.[0] ?? lumi
                 <a href={`/projects/${project.slug}/`} class="sunlit-card overflow-hidden block group project-card" data-system={project.system} data-app={project.application}>
                   <div class="h-44 overflow-hidden">
                     {project.images?.[0] ? (
-                      <img src={project.images[0]} alt={project.name} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                      <img src={project.images[0]} alt={getInheritedImageAlt(project.images[0], project.name)} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
                     ) : (
                       <div class="h-44 image-placeholder"></div>
                     )}
@@ -219,7 +220,7 @@ const otherHero = otherProjects.find(p => p.images?.length)?.images?.[0] ?? lumi
                 <a href={`/projects/${project.slug}/`} class="sunlit-card overflow-hidden block group project-card" data-system={project.system} data-app={project.application}>
                   <div class="h-44 overflow-hidden">
                     {project.images?.[0] ? (
-                      <img src={project.images[0]} alt={project.name} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                      <img src={project.images[0]} alt={getInheritedImageAlt(project.images[0], project.name)} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
                     ) : (
                       <div class="h-44 image-placeholder"></div>
                     )}
@@ -243,7 +244,7 @@ const otherHero = otherProjects.find(p => p.images?.length)?.images?.[0] ?? lumi
                   <a href={`/projects/${project.slug}/`} class="sunlit-card overflow-hidden block group project-card" data-system={project.system} data-app={project.application}>
                     <div class="h-44 overflow-hidden">
                       {project.images?.[0] ? (
-                        <img src={project.images[0]} alt={project.name} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                        <img src={project.images[0]} alt={getInheritedImageAlt(project.images[0], project.name)} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
                       ) : (
                         <div class="h-44 image-placeholder"></div>
                       )}
@@ -280,7 +281,7 @@ const otherHero = otherProjects.find(p => p.images?.length)?.images?.[0] ?? lumi
                   <a href={`/projects/${project.slug}/`} class="sunlit-card overflow-hidden block group project-card" data-system={project.system} data-app={project.application}>
                     <div class="h-44 overflow-hidden">
                       {project.images?.[0] ? (
-                        <img src={project.images[0]} alt={project.name} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                        <img src={project.images[0]} alt={getInheritedImageAlt(project.images[0], project.name)} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
                       ) : (
                         <div class="h-44 image-placeholder"></div>
                       )}
@@ -303,7 +304,7 @@ const otherHero = otherProjects.find(p => p.images?.length)?.images?.[0] ?? lumi
                     <a href={`/projects/${project.slug}/`} class="sunlit-card overflow-hidden block group project-card" data-system={project.system} data-app={project.application}>
                       <div class="h-44 overflow-hidden">
                         {project.images?.[0] ? (
-                          <img src={project.images[0]} alt={project.name} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                          <img src={project.images[0]} alt={getInheritedImageAlt(project.images[0], project.name)} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
                         ) : (
                           <div class="h-44 image-placeholder"></div>
                         )}

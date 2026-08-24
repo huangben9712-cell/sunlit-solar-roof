@@ -1,8 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { blogPosts } from '../../data/blog';
+import { getCollection } from 'astro:content';
 
-const publishedPosts = blogPosts.filter(p => p.priority === 'P0' || p.priority === 'P1');
+const publishedPosts = (await getCollection('articles'))
+  .filter((post) => post.data.priority === 'P0' || post.data.priority === 'P1')
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const categories = [
   { key: 'Technical & Installation', label: 'Technical & Installation', desc: 'Installation guides, electrical system selection, and product specifications.' },
@@ -13,10 +15,10 @@ const categories = [
 
 const postsByCategory = categories.map(cat => ({
   ...cat,
-  posts: publishedPosts.filter(p => p.category === cat.key),
+  posts: publishedPosts.filter((post) => post.data.category === cat.key),
 })).filter(cat => cat.posts.length > 0);
 
-const featuredPost = publishedPosts.find(p => p.priority === 'P0');
+const featuredPost = publishedPosts.find((post) => post.data.priority === 'P0');
 ---
 
 <Layout title="Knowledge Base — Sunlit Solar Roof" description="Technical guides, market insights, and sourcing resources for B2B solar roof buyers. 13 articles covering installation, importing, ROI and product deep dives.">
@@ -82,12 +84,12 @@ const featuredPost = publishedPosts.find(p => p.priority === 'P0');
         <a href={`/articles/${featuredPost.slug}/`} class="group grid md:grid-cols-5 gap-8 items-center">
           <div class="md:col-span-3">
             <span class="inline-block text-xs font-heading font-bold text-deep-green bg-deep-green/10 px-3 py-1 rounded-full mb-4">
-              {featuredPost.category}
+              {featuredPost.data.category}
             </span>
             <h2 class="font-heading font-bold text-2xl md:text-3xl text-charcoal leading-tight mb-4 group-hover:text-deep-green transition-colors">
-              {featuredPost.title}
+              {featuredPost.data.title}
             </h2>
-            <p class="text-slate leading-relaxed mb-6 max-w-xl">{featuredPost.summary}</p>
+            <p class="text-slate leading-relaxed mb-6 max-w-xl">{featuredPost.data.description}</p>
             <span class="inline-flex items-center gap-2 font-heading font-bold text-deep-green group-hover:text-amber transition-colors">
               Read Article
               <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -97,8 +99,8 @@ const featuredPost = publishedPosts.find(p => p.priority === 'P0');
           </div>
           <div class="md:col-span-2 rounded-2xl overflow-hidden bg-charcoal aspect-video">
             <img
-              src="/images/projects/pioneer-residential-retrofit/retrofitted-solar-roof-urban-villa.webp"
-              alt={featuredPost.title}
+              src={featuredPost.data.cover?.src || '/images/projects/pioneer-residential-retrofit/retrofitted-solar-roof-urban-villa.webp'}
+              alt={featuredPost.data.cover?.alt || featuredPost.data.title}
               class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
             />
           </div>
@@ -128,11 +130,11 @@ const featuredPost = publishedPosts.find(p => p.priority === 'P0');
                 >
                   <div class="h-1.5 bg-deep-green/20 group-hover:bg-deep-green transition-colors duration-200"></div>
                   <div class="p-6">
-                    <p class="text-xs font-heading font-bold text-deep-green mb-3">{post.category}</p>
+                    <p class="text-xs font-heading font-bold text-deep-green mb-3">{post.data.category}</p>
                     <h3 class="font-heading font-bold text-lg text-charcoal leading-snug mb-3 group-hover:text-deep-green transition-colors">
-                      {post.title}
+                      {post.data.title}
                     </h3>
-                    <p class="text-sm text-slate leading-relaxed mb-5 line-clamp-3">{post.summary}</p>
+                    <p class="text-sm text-slate leading-relaxed mb-5 line-clamp-3">{post.data.description}</p>
                     <span class="inline-flex items-center gap-1.5 text-sm font-heading font-bold text-deep-green group-hover:text-amber transition-colors">
                       Read Article
                       <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

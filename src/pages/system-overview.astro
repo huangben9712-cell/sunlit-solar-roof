@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { activeTileSpecs, sharedActiveTilePerformance } from '../data/productSpecs';
 import { luminaSlateComponents, stormGuardComponents, sharedComponents } from '../data/componentAssets';
 import { projects } from '../data/projects';
+import { getInheritedImageAlt } from '../data/imageAltManifest';
 
 const luminaSpec = activeTileSpecs.luminaSlate;
 const stormSpec = activeTileSpecs.stormGuard;
@@ -180,7 +181,7 @@ const stormTrim = stormGuardComponents.filter((c: any) => c.group === 'trim-flas
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {luminaCore.concat(luminaTrim).slice(0, 10).map((comp: any) => (
             <div class="bg-gray-50 rounded-2xl overflow-hidden border border-gray-100">
-              <div class="bg-white p-4 flex items-center justify-center h-32"><img src={comp.image} alt={comp.name} class="max-h-full max-w-full object-contain" /></div>
+              <div class="bg-white p-4 flex items-center justify-center h-32"><img src={comp.image} alt={getInheritedImageAlt(comp.image, comp.name)} class="max-h-full max-w-full object-contain" /></div>
               <div class="p-3"><h4 class="text-gray-900 font-semibold text-xs mb-1">{comp.name}</h4><p class="text-gray-400 text-xs leading-relaxed line-clamp-2">{comp.shortDescription}</p></div>
             </div>
           ))}
@@ -197,7 +198,7 @@ const stormTrim = stormGuardComponents.filter((c: any) => c.group === 'trim-flas
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {stormCore.concat(stormTrim).slice(0, 7).map((comp: any) => (
             <div class="bg-gray-50 rounded-2xl overflow-hidden border border-gray-100">
-              <div class="bg-white p-4 flex items-center justify-center h-32"><img src={comp.image} alt={comp.name} class="max-h-full max-w-full object-contain" /></div>
+              <div class="bg-white p-4 flex items-center justify-center h-32"><img src={comp.image} alt={getInheritedImageAlt(comp.image, comp.name)} class="max-h-full max-w-full object-contain" /></div>
               <div class="p-3"><h4 class="text-gray-900 font-semibold text-xs mb-1">{comp.name}</h4><p class="text-gray-400 text-xs leading-relaxed line-clamp-2">{comp.shortDescription}</p></div>
             </div>
           ))}
@@ -214,7 +215,7 @@ const stormTrim = stormGuardComponents.filter((c: any) => c.group === 'trim-flas
         <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
           {sharedComponents.slice(0, 5).map((comp: any) => (
             <div class="bg-gray-50 rounded-2xl overflow-hidden border border-gray-100">
-              <div class="bg-white p-4 flex items-center justify-center h-28"><img src={comp.image} alt={comp.name} class="max-h-full max-w-full object-contain" /></div>
+              <div class="bg-white p-4 flex items-center justify-center h-28"><img src={comp.image} alt={getInheritedImageAlt(comp.image, comp.name)} class="max-h-full max-w-full object-contain" /></div>
               <div class="p-3"><h4 class="text-gray-900 font-semibold text-xs mb-1">{comp.name}</h4><p class="text-gray-400 text-xs leading-relaxed line-clamp-2">{comp.shortDescription}</p></div>
             </div>
           ))}
@@ -285,7 +286,7 @@ const stormTrim = stormGuardComponents.filter((c: any) => c.group === 'trim-flas
         {luminaProjects.map((proj: any) => (
           <a href={`/projects/${proj.slug}/`} class="rounded-2xl overflow-hidden group block">
             <div class="relative h-56 overflow-hidden">
-              <img src={proj.images[0]} alt={proj.name} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <img src={proj.images[0]} alt={getInheritedImageAlt(proj.images[0], proj.name)} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
               <div class="absolute bottom-4 left-5 right-5">
                 <span class="text-white/60 text-xs font-bold tracking-widest uppercase">Lumina Slate</span>
@@ -300,7 +301,7 @@ const stormTrim = stormGuardComponents.filter((c: any) => c.group === 'trim-flas
         {stormProjects.map((proj: any) => (
           <a href={`/projects/${proj.slug}/`} class="rounded-2xl overflow-hidden group block">
             <div class="relative h-56 overflow-hidden">
-              <img src={proj.images[0]} alt={proj.name} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <img src={proj.images[0]} alt={getInheritedImageAlt(proj.images[0], proj.name)} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
               <div class="absolute bottom-4 left-5 right-5">
                 <span class="text-amber text-xs font-bold tracking-widest uppercase">Storm Guard</span>

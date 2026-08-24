@@ -1,27 +1,26 @@
+import { getCollection } from 'astro:content';
+
 export async function GET() {
   const site = 'https://www.sunlitsolarroof.com';
   const pages = [
-    '', '/about/', '/contact/', '/supply-scope/',
+    '', '/about/', '/contact/', '/system-overview/',
     '/lumina-slate/', '/storm-guard/',
     '/projects/', '/articles/', '/resources/',
     '/resources/knowledge-base/', '/resources/downloads/',
-    '/privacy-policy/', '/thank-you/',
+    '/solar-roof-vs-solar-panels/', '/privacy-policy/',
   ];
 
-  // Dynamic: projects
   const { projects } = await import('../data/projects');
-  projects.forEach((p: any) => pages.push('/projects/' + p.slug + '/'));
+  projects.forEach((project: { slug: string }) => pages.push(`/projects/${project.slug}/`));
 
-  // Dynamic: articles
-  const { blogPosts } = await import('../data/blog');
-  blogPosts.forEach((b: any) => pages.push('/articles/' + b.slug + '/'));
+  const articles = await getCollection('articles');
+  articles.forEach((article) => pages.push(`/articles/${article.slug}/`));
 
-  // Dynamic: resources
   const { resources } = await import('../data/resources');
-  resources.forEach((r: any) => pages.push('/resources/' + r.slug + '/'));
+  resources.forEach((resource: { slug: string }) => pages.push(`/resources/${resource.slug}/`));
 
-  const urls = pages.map(p => (
-    `  <url><loc>${site}${p.replace(/\/+$/, '/')}</loc></url>`
+  const urls = [...new Set(pages)].map((path) => (
+    `  <url><loc>${site}${path.replace(/\/+$/, '/')}</loc></url>`
   )).join('\n');
 
   return new Response(

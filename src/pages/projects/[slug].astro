@@ -1,6 +1,7 @@
 ﻿---
 import Layout from '../../layouts/Layout.astro';
 import { projects } from '../../data/projects.ts';
+import { getInheritedImageAlt } from '../../data/imageAltManifest';
 
 export function getStaticPaths() {
   return projects.map((project) => ({ params: { slug: project.slug }, props: { project } }));
@@ -120,7 +121,7 @@ const icons: Record<string, string> = {
             {project.images?.[0] ? (
               <img
                 src={project.images[0]}
-                alt={project.name}
+                alt={getInheritedImageAlt(project.images[0], project.name)}
                 class="w-full h-[340px] md:h-[460px] object-cover"
               />
             ) : (
@@ -135,7 +136,7 @@ const icons: Record<string, string> = {
                 <div class="rounded-xl overflow-hidden">
                   <img
                     src={img}
-                    alt={`${project.name} — photo ${i + 2}`}
+                    alt={getInheritedImageAlt(img, `${project.name} — photo ${i + 2}`)}
                     class="w-full h-32 object-cover"
                     loading="lazy"
                   />
@@ -385,7 +386,7 @@ const icons: Record<string, string> = {
                 {rel.images?.[0] ? (
                   <img
                     src={rel.images[0]}
-                    alt={rel.name}
+                    alt={getInheritedImageAlt(rel.images[0], rel.name)}
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
                   />
