@@ -23,7 +23,20 @@ const relatedProjects = projects
   .filter(p => p.system === project.system && p.slug !== project.slug)
   .slice(0, 3);
 
-// Supply scope items for this project (based on system)
+const projectVisualOutcome = project.visualOutcome ??
+  `This ${project.application.toLowerCase()} reference records ${project.system} as the roof-integrated system for ${project.name}. Review the project facts and images with Sunlit when assessing a comparable roof.`;
+
+const figuresReferenceNote = clean(project.capacity) || annualOutput
+  ? "Capacity and annual output figures shown here are project-reference estimates. Confirm final performance for your roof geometry, irradiation and system design."
+  : "This page is a project reference. Confirm the applicable system configuration and specifications for your own roof with Sunlit.";
+
+const systemLink = project.system === 'Lumina Slate'
+  ? { href: '/lumina-slate/', label: 'Explore Lumina Slate solar roof tiles' }
+  : project.system === 'Storm Guard'
+    ? { href: '/storm-guard/', label: 'Explore Storm Guard standing-seam solar roofing' }
+    : { href: '/system-overview/', label: 'Explore Sunlit BIPV system options' };
+
+// System scope items for this project (based on system)
 const supplyScope = project.system === 'Lumina Slate'
   ? [
       { label: 'Active PV Tiles\n(Lumina Slate)', icon: 'grid' },
@@ -33,14 +46,23 @@ const supplyScope = project.system === 'Lumina Slate'
       { label: 'Fixings &\nAccessories', icon: 'tool' },
       { label: 'Project Documents\n& Drawings', icon: 'file' },
     ]
-  : [
-      { label: 'Active PV\nSheets', icon: 'grid' },
-      { label: 'Inactive Roof\nElements', icon: 'layers' },
-      { label: 'Flashing &\nWaterproofing', icon: 'shield' },
-      { label: 'Ridge & Edge\nPieces', icon: 'triangle' },
-      { label: 'Fixings &\nAccessories', icon: 'tool' },
-      { label: 'Project Documents\n& Drawings', icon: 'file' },
-    ];
+  : project.system === 'Storm Guard'
+    ? [
+        { label: 'Active PV\nSheets', icon: 'grid' },
+        { label: 'Inactive Roof\nElements', icon: 'layers' },
+        { label: 'Flashing &\nWaterproofing', icon: 'shield' },
+        { label: 'Ridge & Edge\nPieces', icon: 'triangle' },
+        { label: 'Fixings &\nAccessories', icon: 'tool' },
+        { label: 'Project Documents\n& Drawings', icon: 'file' },
+      ]
+    : [
+        { label: 'Active BIPV\nModules', icon: 'grid' },
+        { label: 'Matching Inactive\nElements', icon: 'layers' },
+        { label: 'Transitions &\nWater Management', icon: 'shield' },
+        { label: 'Edge & Interface\nComponents', icon: 'triangle' },
+        { label: 'Fixings &\nAccessories', icon: 'tool' },
+        { label: 'Project Documents\n& Drawings', icon: 'file' },
+      ];
 
 // SVG icon map
 const icons: Record<string, string> = {
@@ -232,7 +254,7 @@ const icons: Record<string, string> = {
 
             <!-- CTA -->
             <a href="/contact/" class="sunlit-btn-primary w-full text-center block mt-auto pt-6 text-sm">
-              Discuss Similar Project →
+              Discuss a Comparable Roof →
             </a>
           </div>
         </aside>
@@ -289,20 +311,16 @@ const icons: Record<string, string> = {
               </div>
             )}
 
-            <!-- Visual Outcome (derived from solution context if no dedicated field) -->
-            {clean(project.sunlitSolution) && (
-              <div class="flex gap-4">
-                <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-soft-green text-deep-green flex items-center justify-center">
-                  <Fragment set:html={icons.visual} />
-                </div>
-                <div>
-                  <h2 class="font-editorial font-bold text-charcoal text-xl mb-2">Visual Outcome</h2>
-                  <p class="text-slate text-sm leading-relaxed">
-                    The completed roof integrates seamlessly with the building's architecture. From the ground, the solar roof reads as a refined architectural finish — delivering clean energy without compromising curb appeal or the character of the property.
-                  </p>
-                </div>
+            <!-- Architectural outcome: project-specific where documented, with a factual reference fallback -->
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-soft-green text-deep-green flex items-center justify-center">
+                <Fragment set:html={icons.visual} />
               </div>
-            )}
+              <div>
+                <h2 class="font-editorial font-bold text-charcoal text-xl mb-2">Architectural Outcome</h2>
+                <p class="text-slate text-sm leading-relaxed">{projectVisualOutcome}</p>
+              </div>
+            </div>
           </div>
 
           <!-- Technical Notes -->
@@ -319,6 +337,10 @@ const icons: Record<string, string> = {
                     {item}
                   </div>
                 ))}
+              </div>
+              <div class="mt-5 pt-4 border-t border-border text-xs leading-relaxed text-slate">
+                <strong class="font-heading text-charcoal">Reference note:</strong> {figuresReferenceNote}
+                <a href={systemLink.href} class="ml-2 text-deep-green font-heading font-semibold hover:underline">{systemLink.label} →</a>
               </div>
               <!-- Decorative architectural roof line drawing -->
               <div class="absolute bottom-0 right-0 opacity-[0.07] pointer-events-none">
@@ -351,8 +373,9 @@ const icons: Record<string, string> = {
           <div class="mb-8">
             <div class="flex items-center gap-2 mb-5">
               <div class="w-6 h-0.5 bg-deep-green"></div>
-              <h2 class="font-editorial font-bold text-charcoal text-xl">Supply Scope Used in This Project</h2>
+              <h2 class="font-editorial font-bold text-charcoal text-xl">System Scope Referenced in This Project</h2>
             </div>
+            <p class="text-sm text-slate leading-relaxed mb-5 max-w-3xl">The project record identifies these roof-system categories. Exact quantities, interfaces and documents must be confirmed for the current roof design and local requirements.</p>
             <div class="grid grid-cols-3 sm:grid-cols-6 gap-4">
               {supplyScope.map(item => (
                 <div class="flex flex-col items-center text-center gap-2">
