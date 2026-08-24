@@ -1,12 +1,24 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-const projectDocs = [
+const publicDocuments = [
   {
-    title: 'Storm Guard technical datasheet',
-    description: 'Specification pack for the metal-sheet product line, shared when product fit and project conditions are understood.',
-    label: 'Project-stage document',
+    line: 'Glass tile line',
+    title: 'Lumina Slate product brochure',
+    description: 'An introduction to the premium double-glass BIPV tile line, including product construction, electrical parameters and the wider roof system.',
+    href: '/downloads/lumina-slate-bipv-solar-roof-brochure-2026.pdf',
+    filename: 'Sunlit-Lumina-Slate-BIPV-Solar-Roof-Brochure-2026.pdf',
   },
+  {
+    line: 'Metal sheet line',
+    title: 'Storm Guard product brochure',
+    description: 'An introduction to the standing-seam metal BIPV roof sheet line, including product construction, electrical parameters and system applications.',
+    href: '/downloads/storm-guard-bipv-solar-roof-brochure-2026.pdf',
+    filename: 'Sunlit-Storm-Guard-BIPV-Solar-Roof-Brochure-2026.pdf',
+  },
+];
+
+const projectDocs = [
   {
     title: 'Test reports and certificate copies',
     description: 'Relevant documents are selected against the country, tender, product line and verification requirement of your project.',
@@ -17,6 +29,11 @@ const projectDocs = [
     description: 'Prepared around roof area, layout, product selection, delivery destination and the stage of your enquiry.',
     label: 'Project-specific pack',
   },
+  {
+    title: 'Preliminary product and quotation pack',
+    description: 'A practical starting set for buyers who have shared building type, approximate roof area and delivery destination.',
+    label: 'Project-specific pack',
+  },
 ];
 
 const whatsappHref = `https://wa.me/8617729920083?text=${encodeURIComponent("Hi Sunlit, I need technical documents for a solar roof project. Country: __; roof area: __; building type: __; product line: __.")}`;
@@ -24,15 +41,15 @@ const whatsappHref = `https://wa.me/8617729920083?text=${encodeURIComponent("Hi 
 
 <Layout
   title="Solar Roof Download Center | Sunlit"
-  description="Download available solar roof datasheets and request project-stage technical documents from Sunlit."
+  description="Download Lumina Slate and Storm Guard product brochures, then request project-specific solar roof technical documents from Sunlit."
 >
   <section class="bg-soft-green py-16 md:py-24 border-b border-border">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
       <p class="sunlit-overline mb-5">Download Center</p>
       <div class="grid lg:grid-cols-[1.2fr_0.8fr] gap-10 items-end">
         <div>
-          <h1 class="sunlit-section-title text-4xl md:text-5xl lg:text-6xl text-charcoal mb-5">The documents you can download now — and the ones we prepare for a real project.</h1>
-          <p class="text-lg text-slate leading-relaxed max-w-2xl">Use the public datasheet to start your evaluation. For certificates, BOMs, installation material or export documents, tell us the scope so we can share the relevant version.</p>
+          <h1 class="sunlit-section-title text-4xl md:text-5xl lg:text-6xl text-charcoal mb-5">Start with the product line. Then request documents for the actual project.</h1>
+          <p class="text-lg text-slate leading-relaxed max-w-2xl">Both product brochures are available for direct download. For certificates, a preliminary BOM, packing details or installation material, share your project scope so we can send the relevant version.</p>
         </div>
         <div class="rounded-2xl border border-deep-green/10 bg-white/70 p-6">
           <p class="text-xs font-heading font-bold uppercase tracking-widest text-deep-green mb-3">Before you request a pack</p>
@@ -47,31 +64,32 @@ const whatsappHref = `https://wa.me/8617729920083?text=${encodeURIComponent("Hi 
       <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
         <div>
           <p class="sunlit-overline mb-3">Available now</p>
-          <h2 class="sunlit-section-title text-3xl md:text-4xl text-charcoal">Start with the public datasheet.</h2>
+          <h2 class="sunlit-section-title text-3xl md:text-4xl text-charcoal">Choose the brochure for the product line you are evaluating.</h2>
         </div>
-        <p class="text-sm text-slate max-w-sm">Only files that are genuinely available for direct download appear here.</p>
+        <p class="text-sm text-slate max-w-sm">Direct download · no form required · two official product brochures</p>
       </div>
 
-      <div class="max-w-2xl rounded-2xl border border-border bg-white overflow-hidden shadow-sm">
-        <div class="bg-charcoal p-7 md:p-8 text-white">
-          <div class="flex items-start justify-between gap-6">
-            <div>
-              <p class="text-xs font-heading font-bold uppercase tracking-widest text-white/50 mb-3">Glass tile line · PDF</p>
-              <h3 class="font-heading font-bold text-2xl md:text-3xl mb-3">Lumina Slate technical datasheet</h3>
-              <p class="text-sm leading-relaxed text-white/65 max-w-xl">Product dimensions, electrical parameters, material construction and an overview of the complete roof system.</p>
+      <div class="grid lg:grid-cols-2 gap-6">
+        {publicDocuments.map((document) => (
+          <article class="rounded-2xl border border-border bg-white overflow-hidden shadow-sm flex flex-col">
+            <div class="bg-charcoal p-7 md:p-8 text-white grow">
+              <div class="flex items-start justify-between gap-6">
+                <div>
+                  <p class="text-xs font-heading font-bold uppercase tracking-widest text-white/50 mb-3">{document.line} · PDF</p>
+                  <h3 class="font-heading font-bold text-2xl mb-3">{document.title}</h3>
+                  <p class="text-sm leading-relaxed text-white/65">{document.description}</p>
+                </div>
+                <div class="hidden sm:flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/10" aria-hidden="true">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M7 18a4.6 4.6 0 0 1-.88-9.116A5.5 5.5 0 0 1 17 10.5h.5a3.5 3.5 0 0 1 0 7H17m-5-7v9m0 0-3-3m3 3 3-3" /></svg>
+                </div>
+              </div>
             </div>
-            <div class="hidden sm:flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/10">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M7 18a4.6 4.6 0 0 1-.88-9.116A5.5 5.5 0 0 1 17 10.5h.5a3.5 3.5 0 0 1 0 7H17m-5-7v9m0 0-3-3m3 3 3-3" /></svg>
+            <div class="p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <a href={document.href} target="_blank" rel="noopener" class="text-sm font-heading font-bold text-deep-green hover:text-amber transition-colors">Preview PDF</a>
+              <a href={document.href} download={document.filename} class="inline-flex items-center justify-center gap-2 rounded-full bg-deep-green px-5 py-2.5 text-sm font-heading font-bold text-white hover:bg-deep-green/90 transition-colors">Download PDF <span aria-hidden="true">↓</span></a>
             </div>
-          </div>
-        </div>
-        <div class="p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <p class="text-sm text-slate">Direct download · no form required</p>
-          <div class="flex items-center gap-4">
-            <a href="/downloads/lumina-slate-technical-datasheet.pdf" target="_blank" rel="noopener" class="text-sm font-heading font-bold text-deep-green hover:text-amber transition-colors">Preview PDF</a>
-            <a href="/downloads/lumina-slate-technical-datasheet.pdf" download="Lumina-Slate-Technical-Datasheet.pdf" class="inline-flex items-center justify-center gap-2 rounded-full bg-deep-green px-5 py-2.5 text-sm font-heading font-bold text-white hover:bg-deep-green/90 transition-colors">Download PDF <span aria-hidden="true">↓</span></a>
-          </div>
-        </div>
+          </article>
+        ))}
       </div>
     </div>
   </section>
@@ -86,7 +104,7 @@ const whatsappHref = `https://wa.me/8617729920083?text=${encodeURIComponent("Hi 
       <div class="grid md:grid-cols-3 gap-5">
         {projectDocs.map((doc) => (
           <article class="rounded-2xl border border-border bg-white p-6">
-            <div class="w-11 h-11 rounded-2xl bg-soft-green text-deep-green flex items-center justify-center mb-5">
+            <div class="w-11 h-11 rounded-2xl bg-soft-green text-deep-green flex items-center justify-center mb-5" aria-hidden="true">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12h6m-3-3v6m9 0a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l2 2h5a2 2 0 0 1 2 2v8Z" /></svg>
             </div>
             <p class="text-xs font-heading font-bold uppercase tracking-widest text-deep-green mb-3">{doc.label}</p>
@@ -103,14 +121,14 @@ const whatsappHref = `https://wa.me/8617729920083?text=${encodeURIComponent("Hi 
       <div>
         <p class="sunlit-overline mb-3">Request the relevant pack</p>
         <h2 class="sunlit-section-title text-3xl md:text-4xl text-charcoal mb-4">Send four details. Get documents that move the project forward.</h2>
-        <p class="text-slate leading-relaxed">This is the fastest route for a Storm Guard datasheet, certification review, a preliminary BOM or installation material.</p>
+        <p class="text-slate leading-relaxed">This is the fastest route for certificates, a preliminary BOM, installation information, packing documents or a quotation for either product line.</p>
       </div>
       <div class="rounded-2xl border border-border bg-soft-green p-7 md:p-8">
         <ol class="space-y-4 mb-8">
           <li class="flex gap-4"><span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-deep-green text-xs font-heading font-bold text-white">1</span><div><p class="font-heading font-bold text-charcoal">Country and delivery destination</p><p class="text-sm text-slate mt-1">For certification, export and document relevance.</p></div></li>
           <li class="flex gap-4"><span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-deep-green text-xs font-heading font-bold text-white">2</span><div><p class="font-heading font-bold text-charcoal">Roof area and building type</p><p class="text-sm text-slate mt-1">For preliminary system and documentation scope.</p></div></li>
           <li class="flex gap-4"><span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-deep-green text-xs font-heading font-bold text-white">3</span><div><p class="font-heading font-bold text-charcoal">Product line or design preference</p><p class="text-sm text-slate mt-1">Lumina Slate, Storm Guard or help choosing between them.</p></div></li>
-          <li class="flex gap-4"><span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-deep-green text-xs font-heading font-bold text-white">4</span><div><p class="font-heading font-bold text-charcoal">What you need to verify</p><p class="text-sm text-slate mt-1">Datasheet, certificate, installation information, packing or quotation.</p></div></li>
+          <li class="flex gap-4"><span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-deep-green text-xs font-heading font-bold text-white">4</span><div><p class="font-heading font-bold text-charcoal">What you need to verify</p><p class="text-sm text-slate mt-1">Brochure, certificate, installation information, packing or quotation.</p></div></li>
         </ol>
         <a href={whatsappHref} target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 rounded-full bg-deep-green px-6 py-3.5 font-heading font-bold text-white hover:bg-deep-green/90 transition-colors">Request project documents on WhatsApp <span aria-hidden="true">→</span></a>
       </div>
