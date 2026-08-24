@@ -44,3 +44,9 @@ Astro 静态站已从经验证的 staging 发布到 Cloudways 生产应用。原
 ## 回滚与安全收尾
 
 如果必须回滚，可先在 Cloudways 使用本次发布前的按需备份，或将完整 WordPress 回滚归档恢复到站点根目录；恢复前应同时清理 Cloudways 与 Cloudflare 缓存。临时 Cloudways 应用级 SFTP 凭据和本地凭据文件只应在确认不再需要本轮运维访问后撤销/删除。撤销动作尚待最终确认。
+
+## 2026-08-24 安全清理更新
+
+生产临时应用级 SFTP 凭据已在 Cloudways 中删除，控制台确认该生产应用的 Application Credentials 列表为空。staging 的同类临时凭据及本地临时凭据/发布脚本仍在本次清理流程中，完成后应一并从控制台和本地环境移除。
+
+生产与 staging 两组临时应用级 SFTP 凭据均已在 Cloudways 控制台撤销，两个应用的 Application Credentials 列表均不再列出本轮临时用户。本地对应的凭据 JSON 文件和本轮仅用于上传、切换、验收的临时发布脚本也已删除；项目源代码、构建交接文档及无敏感信息的验收报告仍保留。
