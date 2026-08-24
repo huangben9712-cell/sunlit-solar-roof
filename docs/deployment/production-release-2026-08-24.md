@@ -54,3 +54,11 @@ Astro 静态站已从经验证的 staging 发布到 Cloudways 生产应用。原
 ## GA4 实时验证更新
 
 在停用浏览器中的跟踪拦截后，GA4 实时概览已收到正式网站的生产事件。报告显示首页与 Factory Pricing 页面浏览、`page_view`、`session_start`、`first_visit`、`user_engagement`、`click` 和 `whatsapp_click` 均已出现；本轮测试中 `whatsapp_click` 已记录 2 次，并显示在 GA4 的关键事件卡片中。由此确认 Astro 生产迁移后的 GA4 页面浏览和 WhatsApp 询盘测量链路可用，无需发布此前拟议的显式 `send_to` 修复。
+
+## FormSubmit email form release update
+
+The contact page now provides two qualified B2B inquiry paths: an email submission path handled by an activated FormSubmit alias and the existing pre-filled WhatsApp path. The email path was first tested in staging, then released as a single-file production increment (`public_html/contact/index.html`) after a production preflight, local rollback copy, atomic upload, file-hash verification, and Cloudways source-cache purge. Production delivery was confirmed by `info@sunlitsolarroof.com` with complete submitted fields.
+
+The production application-level SFTP credential for this increment was deleted in Cloudways. The matching staging credential is in the final cleanup step. No password, email recipient address, or private credential appears in this document.
+
+Cloudways confirmed deletion of both temporary application-level SFTP credentials used for the FormSubmit contact-form release: the production increment credential and the staging validation credential. Both application credential lists now show no data for this release scope. Local credential files and temporary deployment/test scripts remain queued for deletion after this audit update is committed.
