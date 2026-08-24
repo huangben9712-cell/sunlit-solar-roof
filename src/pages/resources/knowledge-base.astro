@@ -7,6 +7,7 @@ const articles = (await getCollection('articles'))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const categories = [
+  { key: 'System Fundamentals', label: 'Solar Roof System Basics', description: 'System scope, active elements, inactive coverage and product-selection fundamentals.' },
   { key: 'Technical & Installation', label: 'Technical & Installation', description: 'Installation, electrical systems and product specification.' },
   { key: 'Products & Case Studies', label: 'Products & Case Studies', description: 'Product deep dives and real project walkthroughs.' },
   { key: 'Importing & Sourcing', label: 'Importing & Sourcing', description: 'Supplier evaluation, importing and project logistics.' },

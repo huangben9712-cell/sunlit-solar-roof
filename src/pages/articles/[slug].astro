@@ -15,11 +15,30 @@ const relatedPosts = allPosts
   .slice(0, 3);
 const tocItems = headings.filter((heading) => heading.depth === 2);
 const formattedDate = post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+const formattedReviewDate = post.data.lastReviewed?.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+const author = post.data.author ?? 'Sunlit Solar Roof';
 const wordCount = post.body.split(/\s+/).filter(Boolean).length;
 const readingTime = Math.max(1, Math.ceil(wordCount / 200));
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.date.toISOString(),
+  dateModified: (post.data.lastReviewed ?? post.data.date).toISOString(),
+  mainEntityOfPage: new URL(`/articles/${post.slug}/`, Astro.site ?? 'https://www.sunlitsolarroof.com').href,
+  author: { '@type': 'Organization', name: author },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Sunlit Solar Roof',
+    logo: { '@type': 'ImageObject', url: 'https://www.sunlitsolarroof.com/sunlit-logo.png' },
+  },
+  ...(post.data.cover ? { image: new URL(post.data.cover.src, Astro.site ?? 'https://www.sunlitsolarroof.com').href } : {}),
+};
 ---
 
 <Layout title={`${post.data.title} — Sunlit Solar Roof`} description={post.data.description}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)}></script>
   <div id="reading-progress" class="fixed top-0 left-0 h-[3px] bg-deep-green w-0 z-50 transition-none"></div>
 
   <div class="border-b border-gray-100 bg-white">
@@ -34,13 +53,15 @@ const readingTime = Math.max(1, Math.ceil(wordCount / 200));
 
   <header class="bg-white pt-12 pb-0">
     <div class="max-w-[860px] mx-auto px-6">
-      <div class="flex items-center gap-3 mb-5 text-sm text-slate">
-        <span class="text-deep-green font-semibold">{post.data.category}</span>
-        <span class="text-gray-300">·</span>
-        <span>{formattedDate}</span>
-        <span class="text-gray-300">·</span>
-        <span>{readingTime} min read</span>
-      </div>
+        <div class="flex items-center gap-3 mb-5 text-sm text-slate flex-wrap">
+          <span class="text-deep-green font-semibold">{post.data.category}</span>
+          <span class="text-gray-300">·</span>
+          <span>Published by {author}</span>
+          <span class="text-gray-300">·</span>
+          <span>{formattedDate}</span>
+          <span class="text-gray-300">·</span>
+          <span>{readingTime} min read</span>
+        </div>
 
       <h1 class="font-heading font-bold text-[2.6rem] md:text-[3.2rem] text-charcoal leading-[1.1] mb-6 tracking-tight">
         {post.data.title}
@@ -82,12 +103,21 @@ const readingTime = Math.max(1, Math.ceil(wordCount / 200));
         <Content />
       </article>
 
+      {(post.data.reviewedBy || post.data.evidenceNote) && (
+        <aside class="mt-14 rounded-2xl border border-border bg-light-gray p-6 md:p-7" aria-label="Article source and review note">
+          <p class="text-xs font-heading font-bold uppercase tracking-widest text-deep-green mb-3">Article review note</p>
+          {post.data.reviewedBy && (
+            <p class="text-sm text-charcoal mb-2"><strong>Reviewed by:</strong> {post.data.reviewedBy}{formattedReviewDate ? ` · ${formattedReviewDate}` : ''}</p>
+          )}
+          {post.data.evidenceNote && <p class="text-sm text-slate leading-relaxed">{post.data.evidenceNote}</p>}
+        </aside>
+      )}
+
       <div class="mt-16 pt-8 border-t border-gray-100 flex flex-wrap items-center justify-between gap-4">
         <div>
-          <p class="text-xs text-slate/50 mb-1">Original WordPress source</p>
-          <a href={post.data.legacyUrl} target="_blank" rel="noopener" class="text-sm text-deep-green hover:underline break-all">{post.data.legacyUrl}</a>
+          <p class="text-sm text-slate">Explore guides, product documents and system explanations in the Resource Centre.</p>
         </div>
-        <a href="/articles/" class="sunlit-btn-secondary text-sm">← Back to Articles</a>
+        <a href="/resources/" class="sunlit-btn-secondary text-sm">Explore Resources →</a>
       </div>
     </div>
   </main>
@@ -125,7 +155,7 @@ const readingTime = Math.max(1, Math.ceil(wordCount / 200));
       <h2 class="font-heading font-bold text-3xl md:text-4xl mb-4 leading-tight">Ready to Move from Reading to a Real Project?</h2>
       <p class="text-white/70 text-lg mb-8 max-w-xl mx-auto">Share your roof area and location. We'll tell you which system fits and what to expect.</p>
       <div class="flex flex-wrap gap-4 justify-center">
-        <a href="/contact/" class="sunlit-btn-amber">Get a Free Consultation →</a>
+        <a href="/contact/" class="sunlit-btn-amber">Discuss a Project on WhatsApp →</a>
         <a href="/system-overview/" class="sunlit-btn-outline-white">Explore Supply Scope</a>
       </div>
     </div>

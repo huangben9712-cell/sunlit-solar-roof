@@ -7,10 +7,12 @@ export default defineConfig({
   integrations: [tailwind()],
   site: 'https://www.sunlitsolarroof.com',
   redirects: {
-    '/system-overview/': '/supply-scope/',
-    '/system-overview': '/supply-scope/',
-    '/solar-roofs/': '/supply-scope/',
-    '/invisible-solar-roof/': '/supply-scope/',
+    // /system-overview/ is the canonical Supply Scope page. Legacy discovery paths
+    // must point to it; never redirect the canonical page to a route that does not exist.
+    '/supply-scope/': '/system-overview/',
+    '/supply-scope': '/system-overview/',
+    '/solar-roofs/': '/system-overview/',
+    '/invisible-solar-roof/': '/system-overview/',
     '/lumina-slate-series/': '/lumina-slate/',
     '/storm-guard-series/': '/storm-guard/',
     '/contact-us/': '/contact/',
@@ -18,7 +20,8 @@ export default defineConfig({
     '/knowledges/': '/articles/',
     '/project/': '/projects/',
     '/import-solar-roof/': '/articles/import-solar-roof/',
-    '/what-is-a-solar-roof/': '/articles/what-is-a-solar-roof/',
+    '/what-is-a-solar-roof/': '/resources/knowledge-base/what-is-solar-roof/',
+    '/articles/what-is-a-solar-roof/': '/resources/knowledge-base/what-is-solar-roof/',
     '/solar-roof-roi-for-developers/': '/articles/solar-roof-roi-for-developers/',
     '/storm-guard-story/': '/articles/storm-guard-story/',
     '/lumina-slate-story/': '/articles/lumina-slate-story/',

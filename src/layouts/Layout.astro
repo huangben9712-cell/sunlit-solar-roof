@@ -7,14 +7,35 @@ interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  noindex?: boolean;
 }
 
-const { title, description = "Sunlit Solar Roof - China Solar Roof Tile Manufacturer", ogImage = "/images/og-default.webp" } = Astro.props;
+const {
+  title,
+  description = "Sunlit Solar Roof - China Solar Roof Tile Manufacturer",
+  ogImage = "/images/og-default.webp",
+  noindex = false,
+} = Astro.props;
 const pathname = Astro.url.pathname;
 const canonical = new URL(pathname, Astro.site ?? 'https://www.sunlitsolarroof.com').href;
-const gaId = "G-XXXXXXXXXX"; // Replace with your Google Analytics 4 Measurement ID
-const whatsappNumber = "8617729920083"; // Replace with your WhatsApp number (intl format, no +)
+const gaId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID?.trim() ?? '';
+const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER?.trim() || "8617729920083";
 const whatsappMessage = "Hi, I'm interested in your solar roof products.";
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Sunlit Solar Roof',
+  url: 'https://www.sunlitsolarroof.com/',
+  logo: 'https://www.sunlitsolarroof.com/sunlit-logo.png',
+  email: 'info@sunlitsolarroof.com',
+  description: 'China-based manufacturer supplying complete BIPV solar roof packages for distributors, installers, contractors and project developers.',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Changzhou',
+    addressRegion: 'Jiangsu',
+    addressCountry: 'CN',
+  },
+};
 ---
 
 <!doctype html>
@@ -27,8 +48,11 @@ const whatsappMessage = "Hi, I'm interested in your solar roof products.";
     <link rel="icon" type="image/png" sizes="512x512" href="/sunlit-icon-512.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex,follow" />}
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)}></script>
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -44,13 +68,47 @@ const whatsappMessage = "Hi, I'm interested in your solar roof products.";
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(ogImage, Astro.site ?? 'https://www.sunlitsolarroof.com').href} />
 
-    <!-- Google Analytics -->
-    <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', `${gaId}`);
+    {gaId && (
+      <>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
+        <script define:vars={{ gaId }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', gaId);
+        </script>
+      </>
+    )}
+    <script is:inline>
+      document.addEventListener('click', (event) => {
+        const target = event.target;
+        if (!(target instanceof Element)) return;
+        const link = target.closest('a');
+        if (!link) return;
+
+        const href = link.getAttribute('href') || '';
+        const label = (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 120);
+        const sendEvent = (name, params) => {
+          if (typeof window.gtag === 'function') window.gtag('event', name, params);
+        };
+
+        if (href.includes('wa.me/')) {
+          sendEvent('whatsapp_click', {
+            link_url: link.href,
+            link_text: label,
+            page_path: window.location.pathname,
+          });
+        }
+
+        if (/\.pdf(?:$|[?#])/i.test(href)) {
+          sendEvent('document_download', {
+            file_url: link.href,
+            link_text: label,
+            page_path: window.location.pathname,
+          });
+        }
+      });
     </script>
   </head>
   <body class="bg-white text-gray-900">

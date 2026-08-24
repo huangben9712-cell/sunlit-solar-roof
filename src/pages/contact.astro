@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER?.trim() || '8617729920083';
 ---
 
 <Layout title="Get Factory Pricing — Sunlit Solar Roof" description="Start a factory pricing conversation for complete solar roof systems. Lumina Slate glass tiles, Storm Guard metal sheets, inactive elements and accessories.">
@@ -69,7 +71,7 @@ import Layout from '../layouts/Layout.astro';
         <h2 class="font-heading font-bold text-2xl text-charcoal mb-2">Start the conversation</h2>
         <p class="text-sm text-slate mb-8">No full drawing required for the first message.</p>
 
-        <form class="space-y-4" method="POST" action="/thank-you/">
+        <form class="space-y-4" data-contact-whatsapp data-whatsapp-number={whatsappNumber}>
 
           <!-- Name + Email row -->
           <div class="grid grid-cols-2 gap-3">
@@ -155,7 +157,7 @@ import Layout from '../layouts/Layout.astro';
             type="submit"
             class="w-full bg-deep-green text-white font-heading font-bold py-3.5 rounded-full hover:bg-deep-green/90 transition-colors text-sm"
           >
-            Start Factory Pricing Conversation
+            Continue on WhatsApp
           </button>
 
           <!-- Useful info note -->
@@ -175,4 +177,43 @@ import Layout from '../layouts/Layout.astro';
 
   </div>
 
+  <script is:inline>
+    const contactForm = document.querySelector('[data-contact-whatsapp]');
+    if (contactForm instanceof HTMLFormElement) {
+      contactForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (!contactForm.reportValidity()) return;
+
+        const data = new FormData(contactForm);
+        const entries = [
+          ['Name', data.get('name')],
+          ['Email', data.get('email')],
+          ['Company', data.get('company')],
+          ['Project country / delivery region', data.get('country')],
+          ['Buyer type', data.get('buyerType')],
+          ['Product interest', data.get('productInterest')],
+          ['Project note', data.get('message')],
+        ].filter(([, value]) => typeof value === 'string' && value.trim());
+
+        const message = [
+          "Hi Sunlit, I would like to discuss a solar roof project.",
+          '',
+          ...entries.map(([label, value]) => `${label}: ${value}`),
+        ].join('\n');
+        const number = contactForm.dataset.whatsappNumber;
+        if (!number) return;
+
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'whatsapp_click', {
+            link_text: 'Contact form — Continue on WhatsApp',
+            page_path: window.location.pathname,
+            buyer_type: String(data.get('buyerType') || ''),
+            product_interest: String(data.get('productInterest') || ''),
+          });
+        }
+
+        window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
+      });
+    }
+  </script>
 </Layout>
