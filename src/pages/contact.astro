@@ -71,7 +71,12 @@ const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER?.trim() || '861772
         <h2 class="font-heading font-bold text-2xl text-charcoal mb-2">Start the conversation</h2>
         <p class="text-sm text-slate mb-8">No full drawing required for the first message.</p>
 
-        <form class="space-y-4" data-contact-whatsapp data-whatsapp-number={whatsappNumber}>
+        <form
+          class="space-y-4"
+          data-contact-inquiry
+          data-whatsapp-number={whatsappNumber}
+          data-formsubmit-recipient="info@sunlitsolarroof.com"
+        >
 
           <!-- Name + Email row -->
           <div class="grid grid-cols-2 gap-3">
@@ -152,13 +157,33 @@ const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER?.trim() || '861772
             ></textarea>
           </div>
 
-          <!-- Submit -->
-          <button
-            type="submit"
-            class="w-full bg-deep-green text-white font-heading font-bold py-3.5 rounded-full hover:bg-deep-green/90 transition-colors text-sm"
-          >
-            Continue on WhatsApp
-          </button>
+          <!-- Hidden anti-spam field. Legitimate visitors never see or fill this. -->
+          <div class="sr-only" aria-hidden="true">
+            <label for="contact-website">Website</label>
+            <input id="contact-website" name="_honey" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <!-- Two qualified contact paths: email capture and immediate WhatsApp conversation. -->
+          <div class="space-y-3 pt-1">
+            <button
+              type="submit"
+              data-email-submit
+              class="w-full bg-deep-green text-white font-heading font-bold py-3.5 rounded-full hover:bg-deep-green/90 disabled:cursor-wait disabled:opacity-60 transition-colors text-sm"
+            >
+              Send inquiry by email
+            </button>
+            <button
+              type="button"
+              data-whatsapp-button
+              class="w-full border border-deep-green text-deep-green font-heading font-bold py-3.5 rounded-full hover:bg-soft-green transition-colors text-sm"
+            >
+              Continue on WhatsApp
+            </button>
+            <p data-email-status class="hidden text-sm leading-relaxed" role="status" aria-live="polite"></p>
+            <p class="text-center text-xs text-slate/80 leading-relaxed">
+              Email sends your enquiry to our sales team. WhatsApp opens a pre-filled project message.
+            </p>
+          </div>
 
           <!-- Useful info note -->
           <div class="bg-soft-green rounded-xl p-4">
@@ -178,41 +203,119 @@ const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER?.trim() || '861772
   </div>
 
   <script is:inline>
-    const contactForm = document.querySelector('[data-contact-whatsapp]');
+    const contactForm = document.querySelector('[data-contact-inquiry]');
+
     if (contactForm instanceof HTMLFormElement) {
-      contactForm.addEventListener('submit', (event) => {
+      const emailButton = contactForm.querySelector('[data-email-submit]');
+      const whatsappButton = contactForm.querySelector('[data-whatsapp-button]');
+      const emailStatus = contactForm.querySelector('[data-email-status]');
+      const formSubmitRecipient = contactForm.dataset.formsubmitRecipient;
+
+      const setEmailStatus = (message, tone = 'success') => {
+        if (!(emailStatus instanceof HTMLElement)) return;
+        emailStatus.textContent = message;
+        emailStatus.classList.remove('hidden', 'text-deep-green', 'text-red-600');
+        emailStatus.classList.add(tone === 'error' ? 'text-red-600' : 'text-deep-green');
+      };
+
+      const getEntries = (data) => [
+        ['Name', data.get('name')],
+        ['Email', data.get('email')],
+        ['Company', data.get('company')],
+        ['Project country / delivery region', data.get('country')],
+        ['Buyer type', data.get('buyerType')],
+        ['Product interest', data.get('productInterest')],
+        ['Project note', data.get('message')],
+      ].filter(([, value]) => typeof value === 'string' && value.trim());
+
+      const sendAnalyticsEvent = (eventName, data, details = {}) => {
+        if (typeof window.gtag !== 'function') return;
+        window.gtag('event', eventName, {
+          page_path: window.location.pathname,
+          buyer_type: String(data.get('buyerType') || ''),
+          product_interest: String(data.get('productInterest') || ''),
+          ...details,
+        });
+      };
+
+      const openWhatsApp = () => {
+        if (!contactForm.reportValidity()) return;
+        const data = new FormData(contactForm);
+        const number = contactForm.dataset.whatsappNumber;
+        if (!number) return;
+
+        const message = [
+          'Hi Sunlit, I would like to discuss a solar roof project.',
+          '',
+          ...getEntries(data).map(([label, value]) => `${label}: ${value}`),
+        ].join('\n');
+
+        sendAnalyticsEvent('whatsapp_click', data, {
+          link_text: 'Contact form — Continue on WhatsApp',
+        });
+        window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
+      };
+
+      whatsappButton?.addEventListener('click', openWhatsApp);
+
+      contactForm.addEventListener('submit', async (event) => {
         event.preventDefault();
         if (!contactForm.reportValidity()) return;
 
         const data = new FormData(contactForm);
-        const entries = [
-          ['Name', data.get('name')],
-          ['Email', data.get('email')],
-          ['Company', data.get('company')],
-          ['Project country / delivery region', data.get('country')],
-          ['Buyer type', data.get('buyerType')],
-          ['Product interest', data.get('productInterest')],
-          ['Project note', data.get('message')],
-        ].filter(([, value]) => typeof value === 'string' && value.trim());
-
-        const message = [
-          "Hi Sunlit, I would like to discuss a solar roof project.",
-          '',
-          ...entries.map(([label, value]) => `${label}: ${value}`),
-        ].join('\n');
-        const number = contactForm.dataset.whatsappNumber;
-        if (!number) return;
-
-        if (typeof window.gtag === 'function') {
-          window.gtag('event', 'whatsapp_click', {
-            link_text: 'Contact form — Continue on WhatsApp',
-            page_path: window.location.pathname,
-            buyer_type: String(data.get('buyerType') || ''),
-            product_interest: String(data.get('productInterest') || ''),
-          });
+        if (String(data.get('_honey') || '').trim()) return;
+        if (!formSubmitRecipient || !(emailButton instanceof HTMLButtonElement)) {
+          setEmailStatus('Email submission is temporarily unavailable. Please use WhatsApp or write to info@sunlitsolarroof.com.', 'error');
+          return;
         }
 
-        window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
+        const originalLabel = emailButton.textContent;
+        emailButton.disabled = true;
+        emailButton.textContent = 'Sending your inquiry…';
+        if (emailStatus instanceof HTMLElement) emailStatus.classList.add('hidden');
+
+        const payload = {
+          name: String(data.get('name') || ''),
+          email: String(data.get('email') || ''),
+          company: String(data.get('company') || ''),
+          country: String(data.get('country') || ''),
+          buyer_type: String(data.get('buyerType') || ''),
+          product_interest: String(data.get('productInterest') || ''),
+          message: String(data.get('message') || ''),
+          _subject: 'New Sunlit website inquiry',
+          _template: 'table',
+          _replyto: String(data.get('email') || ''),
+          _honey: '',
+          source_page: window.location.href,
+        };
+
+        try {
+          const response = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(formSubmitRecipient)}`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json',
+            },
+            body: JSON.stringify(payload),
+          });
+
+          if (!response.ok) throw new Error('FormSubmit request failed');
+
+          setEmailStatus('Thanks — your inquiry has been sent. Our team will reply within 1 business day.');
+          sendAnalyticsEvent('email_form_submit', data, {
+            link_text: 'Contact form — Send inquiry by email',
+          });
+          contactForm.reset();
+        } catch (error) {
+          console.error('Email inquiry submission failed', error);
+          setEmailStatus('We could not send your inquiry. Please try again or continue on WhatsApp.', 'error');
+          sendAnalyticsEvent('email_form_error', data, {
+            link_text: 'Contact form — Send inquiry by email',
+          });
+        } finally {
+          emailButton.disabled = false;
+          emailButton.textContent = originalLabel;
+        }
       });
     }
   </script>
