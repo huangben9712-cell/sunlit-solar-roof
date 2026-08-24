@@ -50,3 +50,7 @@ Astro 静态站已从经验证的 staging 发布到 Cloudways 生产应用。原
 生产临时应用级 SFTP 凭据已在 Cloudways 中删除，控制台确认该生产应用的 Application Credentials 列表为空。staging 的同类临时凭据及本地临时凭据/发布脚本仍在本次清理流程中，完成后应一并从控制台和本地环境移除。
 
 生产与 staging 两组临时应用级 SFTP 凭据均已在 Cloudways 控制台撤销，两个应用的 Application Credentials 列表均不再列出本轮临时用户。本地对应的凭据 JSON 文件和本轮仅用于上传、切换、验收的临时发布脚本也已删除；项目源代码、构建交接文档及无敏感信息的验收报告仍保留。
+
+## GA4 实时验证更新
+
+在停用浏览器中的跟踪拦截后，GA4 实时概览已收到正式网站的生产事件。报告显示首页与 Factory Pricing 页面浏览、`page_view`、`session_start`、`first_visit`、`user_engagement`、`click` 和 `whatsapp_click` 均已出现；本轮测试中 `whatsapp_click` 已记录 2 次，并显示在 GA4 的关键事件卡片中。由此确认 Astro 生产迁移后的 GA4 页面浏览和 WhatsApp 询盘测量链路可用，无需发布此前拟议的显式 `send_to` 修复。
