@@ -1,75 +1,123 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { getPublicGuides, getRequestDocuments } from '../../data/resources';
+import { getImageAlt } from '../../data/imageAltManifest';
 
-const publicGuides = getPublicGuides();
-const requestDocs = getRequestDocuments();
+const whatsappHref = `https://wa.me/8617729920083?text=${encodeURIComponent("Hi Sunlit, I am evaluating a solar roof project and need help selecting the right documents.")}`;
+
+const startHere = [
+  {
+    eyebrow: 'Explainer guide',
+    title: 'What Is a Solar Roof?',
+    description: 'Understand how an integrated solar roof works, which components it includes, and when BIPV is the right approach.',
+    href: '/resources/knowledge-base/what-is-solar-roof/',
+    image: '/images/projects/hangzhou-xianghu-arcadia-villa/sunlit-bipv-solar-roof-aerial-view-hangzhou-xianghu.webp',
+  },
+  {
+    eyebrow: 'Comparison guide',
+    title: 'Solar Roof vs Solar Panels',
+    description: 'Compare roof function, appearance, installation and project fit before deciding which solar approach to specify.',
+    href: '/solar-roof-vs-solar-panels/',
+    image: '/images/projects/xuzhou-luxury-villa-the-ultimate-bipv-vs-bapv-contrast/sunlit-bipv-vs-bapv-solar-roof-comparison.webp',
+  },
+];
 ---
 
-<Layout title="Resources for Solar Roof Buyers" description="Practical guides and technical documents for overseas B2B buyers evaluating complete BIPV solar roof systems.">
-  <section class="bg-soft-green py-16 md:py-24">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl">
-      <p class="sunlit-overline mb-5">Buyer Resources</p>
-      <h1 class="sunlit-section-title text-4xl md:text-5xl lg:text-6xl text-charcoal mb-6">
-        Solar Roof Guides and Technical Documents
-      </h1>
-      <p class="text-lg text-slate leading-relaxed max-w-3xl mx-auto">
-        Practical resources for overseas buyers evaluating complete BIPV solar roof systems.
-      </p>
+<Layout
+  title="Solar Roof Resources for B2B Buyers | Sunlit"
+  description="Start with practical solar roof guides, then access the Sunlit Knowledge Base and project-stage technical documents."
+>
+  <section class="bg-soft-green py-16 md:py-24 border-b border-border">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+      <p class="sunlit-overline mb-5">Resource Centre</p>
+      <div class="grid lg:grid-cols-[1.25fr_0.75fr] gap-10 items-end">
+        <div>
+          <h1 class="sunlit-section-title text-4xl md:text-5xl lg:text-6xl text-charcoal mb-5">Make the next solar roof decision with confidence.</h1>
+          <p class="text-lg text-slate leading-relaxed max-w-2xl">
+            Start with the two essentials. Then move into the technical knowledge or documents that match your project stage.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-deep-green/10 bg-white/70 p-6">
+          <p class="text-xs font-heading font-bold uppercase tracking-widest text-deep-green mb-3">How to use this centre</p>
+          <p class="text-sm text-slate leading-relaxed">New to solar roofs? Begin below. Already working on a live project? Go straight to the Download Center or message our technical team.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="py-16 md:py-24 bg-white">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mb-12">
-        <p class="sunlit-overline mb-4">Public Guides</p>
-        <h2 class="sunlit-section-title text-3xl md:text-5xl text-charcoal">
-          Learn Before You Request a Quote
-        </h2>
+  <section class="py-16 md:py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-9">
+        <div>
+          <p class="sunlit-overline mb-3">Start here</p>
+          <h2 class="sunlit-section-title text-3xl md:text-4xl text-charcoal">Two guides before you compare products.</h2>
+        </div>
+        <p class="text-sm text-slate max-w-sm">These are permanent decision guides, not another navigation layer.</p>
       </div>
-      <div class="grid md:grid-cols-2 gap-6 max-w-5xl">
-        {publicGuides.map((guide) => (
-          <a href={`/resources/${guide.slug}/`} class="sunlit-card p-7 block group">
-            <p class="text-sm font-heading font-bold text-deep-green mb-3">Buyer Guide</p>
-            <h3 class="text-xl font-heading font-bold text-charcoal mb-3">{guide.title}</h3>
-            <p class="text-slate leading-relaxed mb-5">{guide.summary}</p>
-            <span class="font-bold text-deep-green group-hover:text-amber transition-colors">Read Guide</span>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        {startHere.map((guide) => (
+          <a href={guide.href} class="group overflow-hidden rounded-2xl border border-border bg-white transition-all duration-200 hover:-translate-y-0.5 hover:border-deep-green/35 hover:shadow-lg">
+            <div class="aspect-[16/8] overflow-hidden bg-light-gray">
+              <img
+                src={guide.image}
+                alt={getImageAlt(guide.image, guide.title)}
+                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6 md:p-7">
+              <p class="text-xs font-heading font-bold uppercase tracking-widest text-deep-green mb-3">{guide.eyebrow}</p>
+              <h3 class="font-heading font-bold text-2xl text-charcoal leading-tight mb-3 group-hover:text-deep-green transition-colors">{guide.title}</h3>
+              <p class="text-slate leading-relaxed mb-6">{guide.description}</p>
+              <span class="inline-flex items-center gap-2 text-sm font-heading font-bold text-deep-green group-hover:text-amber transition-colors">
+                Read guide
+                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-6-6 6 6-6 6" /></svg>
+              </span>
+            </div>
           </a>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="py-16 md:py-24 bg-light-gray border-y border-border">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mb-12">
-        <p class="sunlit-overline mb-4">Request Documents</p>
-        <h2 class="sunlit-section-title text-3xl md:text-5xl text-charcoal">
-          Technical Documents for Active Projects
-        </h2>
-      </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl">
-        {requestDocs.map((doc) => (
-          <div class="sunlit-card p-6">
-            <p class="text-sm font-heading font-bold text-deep-green mb-3">Request Document</p>
-            <h3 class="font-heading font-bold text-charcoal mb-2">{doc.title}</h3>
-            <p class="text-sm text-slate mb-5 leading-relaxed">{doc.summary}</p>
-            <a href="/contact/" class="font-bold text-deep-green hover:text-amber transition-colors text-sm">Request Document</a>
+  <section class="py-16 md:py-20 bg-light-gray border-y border-border">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+      <p class="sunlit-overline mb-3">Continue your research</p>
+      <h2 class="sunlit-section-title text-3xl md:text-4xl text-charcoal mb-9">Choose the resource that matches where you are.</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <a href="/resources/knowledge-base/" class="group rounded-2xl border border-border bg-white p-7 md:p-8 hover:border-deep-green/35 hover:shadow-md transition-all">
+          <div class="w-12 h-12 rounded-2xl bg-soft-green text-deep-green flex items-center justify-center mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5s3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18s-3.332.477-4.5 1.253" /></svg>
           </div>
-        ))}
+          <p class="text-xs font-heading font-bold uppercase tracking-widest text-deep-green mb-3">Learn and evaluate</p>
+          <h3 class="font-heading font-bold text-2xl text-charcoal mb-3 group-hover:text-deep-green transition-colors">Knowledge Base</h3>
+          <p class="text-slate leading-relaxed mb-6">Browse installation, sourcing, product and ROI articles. Every article now follows one image-led card format.</p>
+          <span class="font-heading font-bold text-sm text-deep-green group-hover:text-amber transition-colors">Browse all articles →</span>
+        </a>
+        <a href="/resources/downloads/" class="group rounded-2xl border border-border bg-white p-7 md:p-8 hover:border-deep-green/35 hover:shadow-md transition-all">
+          <div class="w-12 h-12 rounded-2xl bg-soft-green text-deep-green flex items-center justify-center mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14" /></svg>
+          </div>
+          <p class="text-xs font-heading font-bold uppercase tracking-widest text-deep-green mb-3">Specify and source</p>
+          <h3 class="font-heading font-bold text-2xl text-charcoal mb-3 group-hover:text-deep-green transition-colors">Download Center</h3>
+          <p class="text-slate leading-relaxed mb-6">Access available datasheets, understand which documents are project-specific, and request the right technical pack.</p>
+          <span class="font-heading font-bold text-sm text-deep-green group-hover:text-amber transition-colors">View documents →</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <section class="py-16 md:py-24 dark-green-gradient text-white">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
-      <h2 class="font-heading text-3xl md:text-5xl font-bold mb-5">
-        Need Documents for a Real Project?
-      </h2>
-      <p class="text-lg text-white/75 mb-8">
-        Send your project country, roof area and preferred system. We will point you to the right documents and next steps.
-      </p>
-      <a href="/contact/" class="sunlit-btn-primary">Request Documents</a>
+  <section class="py-16 md:py-20 bg-charcoal text-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl grid lg:grid-cols-[1fr_auto] gap-8 items-center">
+      <div>
+        <p class="text-xs font-heading font-bold uppercase tracking-widest text-white/45 mb-4">For an active project</p>
+        <h2 class="font-heading font-bold text-3xl md:text-4xl leading-tight mb-4">Need the right document pack, not another generic download?</h2>
+        <p class="text-white/65 leading-relaxed max-w-2xl">Send your country, roof area, building type and preferred product line. We will point you to the relevant datasheet, BOM, certification copy or quotation step.</p>
+      </div>
+      <a href={whatsappHref} target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 rounded-full bg-amber px-6 py-3.5 font-heading font-bold text-charcoal transition-colors hover:bg-amber/90 whitespace-nowrap">
+        Discuss on WhatsApp
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14m-6-6 6 6-6 6" /></svg>
+      </a>
     </div>
   </section>
 </Layout>

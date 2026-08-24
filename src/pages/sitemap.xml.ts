@@ -6,8 +6,8 @@ export async function GET() {
     '', '/about/', '/contact/', '/system-overview/',
     '/lumina-slate/', '/storm-guard/',
     '/projects/', '/articles/', '/resources/',
-    '/resources/knowledge-base/', '/resources/downloads/',
-    '/solar-roof-vs-solar-panels/', '/privacy-policy/',
+    '/resources/knowledge-base/', '/resources/knowledge-base/what-is-solar-roof/',
+    '/resources/downloads/', '/solar-roof-vs-solar-panels/', '/privacy-policy/',
   ];
 
   const { projects } = await import('../data/projects');
@@ -16,8 +16,8 @@ export async function GET() {
   const articles = await getCollection('articles');
   articles.forEach((article) => pages.push(`/articles/${article.slug}/`));
 
-  const { resources } = await import('../data/resources');
-  resources.forEach((resource: { slug: string }) => pages.push(`/resources/${resource.slug}/`));
+  // Legacy /resources/[slug]/ buyer-guide pages remain accessible for existing links,
+  // but are intentionally excluded until each page is reviewed and rebuilt for the new hub.
 
   const urls = [...new Set(pages)].map((path) => (
     `  <url><loc>${site}${path.replace(/\/+$/, '/')}</loc></url>`
