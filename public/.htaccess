@@ -1,0 +1,57 @@
+# Sunlit static Astro release: Apache/Cloudways migration rules.
+# This file is inert until the staged static directory becomes public_html.
+Options -Indexes
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Legacy system, product line, company and hub URLs.
+  RewriteRule ^supply-scope/?$ /system-overview/ [R=301,L,NE]
+  RewriteRule ^solar-roofs/?$ /system-overview/ [R=301,L,NE]
+  RewriteRule ^invisible-solar-roof/?$ /system-overview/ [R=301,L,NE]
+  RewriteRule ^lumina-slate-series/?$ /lumina-slate/ [R=301,L,NE]
+  RewriteRule ^storm-guard-series/?$ /storm-guard/ [R=301,L,NE]
+  RewriteRule ^contact-us/?$ /contact/ [R=301,L,NE]
+  RewriteRule ^about-us/?$ /about/ [R=301,L,NE]
+  RewriteRule ^knowledges/?$ /articles/ [R=301,L,NE]
+  RewriteRule ^project/?$ /projects/ [R=301,L,NE]
+
+  # Legacy WordPress articles and previous Astro article route.
+  RewriteRule ^sunlit-bipv-story/?$ /articles/sunlit-bipv-story/ [R=301,L,NE]
+  RewriteRule ^import-solar-roof/?$ /articles/import-solar-roof/ [R=301,L,NE]
+  RewriteRule ^solar-roof-electrical-system/?$ /articles/solar-roof-electrical-system/ [R=301,L,NE]
+  RewriteRule ^solar-roof-case-study/?$ /articles/solar-roof-case-study/ [R=301,L,NE]
+  RewriteRule ^what-is-a-solar-roof/?$ /resources/knowledge-base/what-is-solar-roof/ [R=301,L,NE]
+  RewriteRule ^articles/what-is-a-solar-roof/?$ /resources/knowledge-base/what-is-solar-roof/ [R=301,L,NE]
+  RewriteRule ^why-are-most-solar-roofs-black/?$ /articles/why-are-most-solar-roofs-black/ [R=301,L,NE]
+  RewriteRule ^solar-roof-roi-for-developers/?$ /articles/solar-roof-roi-for-developers/ [R=301,L,NE]
+  RewriteRule ^solar-roofing-business-model/?$ /articles/solar-roofing-business-model/ [R=301,L,NE]
+  RewriteRule ^storm-guard-story/?$ /articles/storm-guard-story/ [R=301,L,NE]
+  RewriteRule ^solar-system-categories/?$ /articles/solar-system-categories/ [R=301,L,NE]
+  RewriteRule ^future-of-solar-roofs/?$ /articles/future-of-solar-roofs/ [R=301,L,NE]
+  RewriteRule ^offshore-bipv-guide/?$ /articles/offshore-bipv-guide/ [R=301,L,NE]
+  RewriteRule ^lumina-slate-story/?$ /articles/lumina-slate-story/ [R=301,L,NE]
+  RewriteRule ^how-to-install-solar-roof/?$ /articles/how-to-install-solar-roof/ [R=301,L,NE]
+
+  # Legacy detail pages resolve to the matching live product section.
+  RewriteRule ^lumina-slate-series/lumina-slate-series-roof-base-layer-installation/?$ /lumina-slate/#installation-evidence [R=301,L,NE]
+  RewriteRule ^lumina-slate-series/lumina-slate-series-electrical-system/?$ /lumina-slate/#component-library [R=301,L,NE]
+  RewriteRule ^lumina-slate-series/lumina-slate-series-ridge-edge-tiles/?$ /lumina-slate/#component-library [R=301,L,NE]
+  RewriteRule ^lumina-slate-series/lumina-slate-series-main-roofing-tiles-installation/?$ /lumina-slate/#installation-evidence [R=301,L,NE]
+  RewriteRule ^storm-guard-series/storm-guard-series-roofing-tiles/?$ /storm-guard/#component-library [R=301,L,NE]
+  RewriteRule ^storm-guard-series/storm-guard-series-roof-base-layer/?$ /storm-guard/#installation-evidence [R=301,L,NE]
+  RewriteRule ^storm-guard-series/storm-guard-series-electrical-system/?$ /storm-guard/#component-library [R=301,L,NE]
+  RewriteRule ^storm-guard-series/storm-guard-series-ridge-edge-tiles/?$ /storm-guard/#component-library [R=301,L,NE]
+
+  # Retired WPML landing pages have an English canonical destination until maintained translations exist.
+  RewriteRule ^(?:osynligt-solcellstak-for-premiumprojekt|tetto-solare-invisibile-per-gli-edifici-di-pregio|techo-solar-invisible-para-promociones-premium|telhado-solar-invisivel-para-empreendimentos-de-luxo|onzichtbaar-zonnedak-voor-hoogwaardige-projecten|unsichtbares-solardach-fuer-premium-entwicklungen)/?$ /system-overview/ [R=301,L,NE]
+
+  # Old WordPress taxonomy and author archive paths.
+  RewriteRule ^category/(?:sourcing-guide|market-insights|case-studies|technical-installation)/?$ /articles/ [R=301,L,NE]
+  RewriteRule ^author/huangben/?$ /about/ [R=301,L,NE]
+
+  # Preserve direct links to the historical WordPress brochures.
+  RewriteRule ^wp-content/uploads/2026/05/sunlit-lumina-slate-bipv-solar-roof-brochure-2026\.pdf$ /downloads/lumina-slate-bipv-solar-roof-brochure-2026.pdf [R=301,L,NE]
+  RewriteRule ^wp-content/uploads/2026/05/sunlit-storm-guard-bipv-solar-roof-brochure-2026\.pdf$ /downloads/storm-guard-bipv-solar-roof-brochure-2026.pdf [R=301,L,NE]
+</IfModule>
