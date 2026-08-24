@@ -166,3 +166,15 @@ Reference: [Google Search Central — Site moves and URL changes](https://develo
 
 - The rewritten Download Center was visually verified on the local preview. It displays two equal public PDF cards: Lumina Slate product brochure and Storm Guard product brochure, each with preview and direct download actions. The project-specific document section remains separate so it does not misrepresent unavailable files as downloads.
 - The Storm Guard product hero was visually verified on the local preview. It retains the primary `Request Sample or Quote` action and component navigation, while adding the correct Storm Guard brochure download action.
+
+## Cloudways Web Rules Constraint (Staging Finding)
+
+The staging HTTP validation demonstrated that this application is served by Cloudways’ Nginx/Lightning behavior: the static `public_html/.htaccess` is delivered as a file but its `RewriteRule` directives are not executed for static paths. Cloudways’ official Web Rules documentation confirms that the platform provides Nginx-level redirect/rewrite rules through the application UI and that `.htaccess` is not compatible with Nginx-only Lightning applications. A permanent 301 rule requires the following UI fields: Action `Permanent Redirect (301)`, a Source path, a Destination path, `Keep Original Query String` set to true, and no condition for site-wide path mappings. Source: https://support.cloudways.com/en/articles/12597858-how-to-create-and-manage-web-rules-in-cloudways
+
+Cloudways currently limits Web Rules to 25 redirect/rewrite rules per application. The Sunlit migration has more than 25 changed legacy paths, so the staging/production plan must either consolidate only semantically safe exact-path mappings in Web Rules and use a suitable server-side facility for the remaining mappings, or use a Cloudways stack/configuration that supports the complete redirect policy. Do not launch with only Astro meta-refresh pages as a substitute for HTTP 301 responses.
+
+### Verified Hybrid-Stack Implementation
+
+The staging application was switched to Cloudways **Hybrid Stack** on 2026-08-24. This makes the release `.htaccess` active and removes the 25-rule Web Rules ceiling. In the production candidate, every migration `RewriteRule` uses an explicit `https://www.sunlitsolarroof.com/...` target. Relative redirect targets were rejected because the TLS-terminating proxy made Apache emit `http://` Locations, causing an avoidable second HTTP→HTTPS redirect. The staging test used an otherwise identical, staging-host-only copy of the rules and demonstrated one HTTPS 301 followed by a 200 final resource for the declared legacy mappings. Do not place the staging-host variant into Git or production.
+
+The official Apache documentation notes that, when TLS is terminated upstream, rewrite redirects must account for the proxy rather than relying on Apache's backend HTTPS state. The production rule set therefore uses explicit final HTTPS URLs instead of depending on the proxy's inferred scheme. Reference: https://httpd.apache.org/docs/current/rewrite/remapping.html
