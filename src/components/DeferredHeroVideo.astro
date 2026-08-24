@@ -1,0 +1,97 @@
+---
+interface Props {
+  poster: string;
+  posterAlt: string;
+  desktopSrc: string;
+  mobileSrc: string;
+  class?: string;
+  delayMs?: number;
+}
+
+const {
+  poster,
+  posterAlt,
+  desktopSrc,
+  mobileSrc,
+  class: className = '',
+  delayMs = 1400,
+} = Astro.props;
+---
+
+<div
+  class={`relative h-full w-full overflow-hidden ${className}`}
+  data-deferred-hero
+  data-desktop-src={desktopSrc}
+  data-mobile-src={mobileSrc}
+  data-delay-ms={delayMs}
+>
+  <img
+    src={poster}
+    alt={posterAlt}
+    class="absolute inset-0 h-full w-full object-cover"
+    fetchpriority="high"
+    decoding="async"
+  />
+  <video
+    muted
+    loop
+    playsinline
+    preload="none"
+    aria-hidden="true"
+    tabindex="-1"
+    class="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-700"
+    data-deferred-hero-video
+  ></video>
+</div>
+
+<script>
+  const heroWrappers = document.querySelectorAll<HTMLElement>('[data-deferred-hero]');
+
+  heroWrappers.forEach((wrapper) => {
+    const video = wrapper.querySelector<HTMLVideoElement>('[data-deferred-hero-video]');
+    if (!video || !('HTMLVideoElement' in window)) return;
+
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const connection = (navigator as Navigator & {
+      connection?: { saveData?: boolean; effectiveType?: string };
+    }).connection;
+    const slowConnection = connection?.effectiveType === 'slow-2g' || connection?.effectiveType === '2g';
+
+    // A static poster is the complete Hero experience for people who request less motion
+    // or reduced data transfer. The video is decorative and never required for comprehension.
+    if (mediaQuery.matches || connection?.saveData || slowConnection) return;
+
+    const mobile = window.matchMedia('(max-width: 767px)').matches;
+    const sourceUrl = mobile ? wrapper.dataset.mobileSrc : wrapper.dataset.desktopSrc;
+    const delay = Number(wrapper.dataset.delayMs || '1400');
+    if (!sourceUrl) return;
+
+    let started = false;
+    const startVideo = () => {
+      if (started) return;
+      started = true;
+
+      const source = document.createElement('source');
+      source.src = sourceUrl;
+      source.type = 'video/mp4';
+      video.appendChild(source);
+
+      video.addEventListener('canplay', () => {
+        video.play().then(() => video.classList.remove('opacity-0')).catch(() => {
+          // Keep the poster if autoplay is unavailable in the browser.
+        });
+      }, { once: true });
+      video.load();
+    };
+
+    const schedule = () => {
+      window.setTimeout(startVideo, delay);
+    };
+
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(schedule, { timeout: delay + 900 });
+    } else {
+      schedule();
+    }
+  });
+</script>
