@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const links = [
+  { href: '/system-overview/', label: 'Supply Scope' },
+  { href: '/lumina-slate/', label: 'Lumina Slate' },
+  { href: '/storm-guard/', label: 'Storm Guard' },
+  { href: '/projects/', label: 'Projects' },
+  { href: '/resources/', label: 'Resource Centre' },
+  { href: '/contact/', label: 'Contact' },
+];
+---
+
+<Layout
+  noindex
+  title="Page Not Found - Sunlit Solar Roof"
+  description="This page does not exist. Browse the Sunlit solar roof range, project references and technical resources instead."
+>
+  <section class="bg-soft-green py-20 md:py-32">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl">
+      <p class="sunlit-overline mb-4">404</p>
+      <h1 class="sunlit-section-title text-4xl md:text-5xl text-charcoal mb-4">This page has moved or never existed</h1>
+      <p class="text-lg text-slate leading-relaxed mb-8">
+        The link you followed may be out of date. Everything on this site is reachable from the pages below, or send us
+        your roof details and we will point you to the right document.
+      </p>
+
+      <ul class="grid sm:grid-cols-2 gap-3 mb-10">
+        {links.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class="flex items-center justify-between gap-3 rounded-xl border border-border bg-white px-5 py-4 text-charcoal font-semibold hover:border-deep-green hover:text-deep-green transition-colors"
+            >
+              {link.label}
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <div class="flex flex-wrap gap-4">
+        <a href="/" class="sunlit-btn-primary">Return to Homepage</a>
+        <a href="/contact/" class="sunlit-btn-secondary">Ask About a Project</a>
+      </div>
+    </div>
+  </section>
+</Layout>
