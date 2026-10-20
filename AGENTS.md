@@ -108,6 +108,8 @@ A build that succeeds locally can still be wrong in production if the hosting en
 
 **Planned:** Cloudflare Pages — static `dist/` output plus `public/_redirects` (Cloudflare redirect syntax) and `public/_headers`. Both redirect files are kept in the repo during the transition; each host reads only its own.
 
+Run `pnpm check:redirects` after touching any redirect; CI fails if `public/_redirects` stops covering `astro.config.mjs`. Full cutover checklist: `docs/cloudflare-pages-migration.md`.
+
 ## Documentation
 
 Full docs: https://docs.astro.build

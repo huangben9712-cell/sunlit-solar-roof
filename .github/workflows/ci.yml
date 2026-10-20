@@ -38,12 +38,17 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Verify redirect contract
+        run: pnpm check:redirects
+
       - name: Build
         run: pnpm build
 
       - name: Verify build output
         run: |
           test -f dist/index.html
-          test -f dist/sitemap-index.xml || test -f dist/sitemap.xml
+          test -f dist/sitemap.xml
           test -f dist/robots.txt
+          test -f dist/_redirects
+          test -f dist/_headers
           echo "pages: $(find dist -name '*.html' | wc -l)"
