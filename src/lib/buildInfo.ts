@@ -10,8 +10,16 @@
  * reports "local".
  */
 
-const commit = (import.meta.env.PUBLIC_BUILD_COMMIT ?? 'local').trim();
-const branch = (import.meta.env.PUBLIC_BUILD_BRANCH ?? 'local').trim();
+const commit = (
+  import.meta.env.PUBLIC_BUILD_COMMIT ??
+  process.env.CF_PAGES_COMMIT_SHA ??
+  'local'
+).trim();
+const branch = (
+  import.meta.env.PUBLIC_BUILD_BRANCH ??
+  process.env.CF_PAGES_BRANCH ??
+  'local'
+).trim();
 
 export const buildInfo = {
   commit: commit.slice(0, 12),
