@@ -104,6 +104,11 @@ Every line must be `301` with a single `https://www.sunlitsolarroof.com/...` tar
 - `/sitemap.xml` → 200, every listed URL returns 200 and is self-canonical
 - A known 404 path returns 404 (not the homepage, not a 200)
 
+**Build provenance**
+
+- `curl https://<host>/build-info.json` returns the commit you intended to deploy
+- `<meta name="build-commit">` in the HTML carries the same value
+
 **Analytics and conversion**
 
 - Page source contains `googletagmanager.com/gtag/js?id=G-…` with the real ID

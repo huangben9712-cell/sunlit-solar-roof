@@ -20,6 +20,8 @@ jobs:
       # silently ship a site without analytics or WhatsApp links.
       PUBLIC_GA_MEASUREMENT_ID: ${{ vars.PUBLIC_GA_MEASUREMENT_ID }}
       PUBLIC_WHATSAPP_NUMBER: ${{ vars.PUBLIC_WHATSAPP_NUMBER }}
+      PUBLIC_BUILD_COMMIT: ${{ github.sha }}
+      PUBLIC_BUILD_BRANCH: ${{ github.ref_name }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
