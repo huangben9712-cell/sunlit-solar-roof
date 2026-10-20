@@ -16,8 +16,9 @@
 
 - **This is an Astro project. Do NOT introduce React, Vue, Svelte, or any other UI framework.**
 - **Do NOT change the framework type. All pages use `.astro` files.**
-- **Run `git pull` before starting any work.**
-- **Run `git add -A && git commit -m "message" && git push` after completing work.**
+- **Run `git switch develop && git pull --ff-only` before starting any work.**
+- **Push to `develop` only — never directly to `main` (see Branch Strategy).**
+- **Run `pnpm build` and make it pass before committing.**
 - **All AI assistants work from `D:\sunlit` — this is the single source of truth.**
 
 ## Development
@@ -73,17 +74,39 @@ D:\sunlit\
 
 Component classes: `sunlit-card`, `sunlit-btn-primary`, `sunlit-btn-secondary`, `sunlit-overline`, `sunlit-section-title`, `dark-green-gradient`.
 
-## Collaboration Workflow
+## Branch Strategy (READ BEFORE PUSHING)
 
-1. `git pull` to get latest code
-2. Make changes following existing patterns
-3. `git add -A && git commit -m "descriptive message"`
-4. `git push` to share with other collaborators
-5. This repo is shared among: Manus, ChatGPT, opencode, and human developers
+| Branch | Role | Who writes to it |
+|--------|------|------------------|
+| `main` | **Production.** This is what the live site is built from. | Nobody directly. Only receives merges from `develop`. Protected on GitHub. |
+| `develop` | **Default branch and daily development.** All work lands here first. | Everyone, including AI assistants. |
+| `feature/*` | Optional, for large or risky changes. Merge back into `develop` via PR. | Anyone |
+
+Rules:
+
+1. **Never commit directly to `main`.** Branch protection rejects direct pushes; production changes only arrive through a merge from `develop`.
+2. **Work on `develop`.** Start with `git switch develop && git pull --ff-only`.
+3. **The build must pass before pushing:** `pnpm install --frozen-lockfile && pnpm build`. CI runs the same command on every push and PR; a red build does not get merged into `main`.
+4. **Promoting to production:** open a PR `develop` → `main` (or fast-forward merge after the owner confirms). Merge only with a green build.
+5. **Never force-push or delete `main` or `develop`.** If history must be rewritten, ask the owner first.
+6. This repo is shared among Manus, ChatGPT, opencode, DeepSeek Harness and human developers, so commit messages must say *what changed and why*, in English, following the existing `feat:` / `fix:` / `refactor:` / `docs:` / `seo:` / `deploy:` prefixes.
+
+## Build-Time Configuration (do not break production)
+
+The site is **fully static**. These variables are baked in at build time and are read from `.env` or the hosting environment:
+
+| Variable | Effect if missing |
+|---|---|
+| `PUBLIC_GA_MEASUREMENT_ID` | No GA4 tag is emitted; analytics silently stops reporting. |
+| `PUBLIC_WHATSAPP_NUMBER` | WhatsApp call-to-action links lose their destination. |
+
+A build that succeeds locally can still be wrong in production if the hosting environment does not define them. See `.env.example` for the expected names. Never commit real values.
 
 ## Deployment Target
 
-Cloudway hosting (B2B lead generation website for solar roof products).
+**Current:** Cloudways (Apache) hosting — static `dist/` output plus `public/.htaccess` for server redirects.
+
+**Planned:** Cloudflare Pages — static `dist/` output plus `public/_redirects` (Cloudflare redirect syntax) and `public/_headers`. Both redirect files are kept in the repo during the transition; each host reads only its own.
 
 ## Documentation
 

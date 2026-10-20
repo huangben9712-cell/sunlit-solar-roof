@@ -1,0 +1,49 @@
+name: Build
+
+on:
+  push:
+    branches: [develop, main]
+  pull_request:
+    branches: [develop, main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Astro build
+    runs-on: ubuntu-latest
+    env:
+      # Build-time public configuration. Defined as repository/organisation
+      # Actions variables; a missing value must fail loudly rather than
+      # silently ship a site without analytics or WhatsApp links.
+      PUBLIC_GA_MEASUREMENT_ID: ${{ vars.PUBLIC_GA_MEASUREMENT_ID }}
+      PUBLIC_WHATSAPP_NUMBER: ${{ vars.PUBLIC_WHATSAPP_NUMBER }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm build
+
+      - name: Verify build output
+        run: |
+          test -f dist/index.html
+          test -f dist/sitemap-index.xml || test -f dist/sitemap.xml
+          test -f dist/robots.txt
+          echo "pages: $(find dist -name '*.html' | wc -l)"
