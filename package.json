@@ -11,7 +11,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "check:redirects": "node scripts/check-redirects.mjs",
-    "verify": "node scripts/check-redirects.mjs && astro build",
+    "check:assets": "node scripts/check-asset-size.mjs",
+    "verify": "node scripts/check-redirects.mjs && astro build && node scripts/check-asset-size.mjs",
     "localize:project-images": "node scripts/localize-project-images.mjs",
     "organize:project-images": "node scripts/organize-project-images.mjs"
   },

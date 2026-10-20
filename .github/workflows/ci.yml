@@ -54,3 +54,6 @@ jobs:
           test -f dist/_redirects
           test -f dist/_headers
           echo "pages: $(find dist -name '*.html' | wc -l)"
+
+      - name: Verify asset size limits
+        run: pnpm check:assets
