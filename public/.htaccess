@@ -16,6 +16,7 @@ DirectoryIndex index.html
   RewriteRule ^contact-us/?$ https://www.sunlitsolarroof.com/contact/ [R=301,L,NE]
   RewriteRule ^about-us/?$ https://www.sunlitsolarroof.com/about/ [R=301,L,NE]
   RewriteRule ^knowledges/?$ https://www.sunlitsolarroof.com/articles/ [R=301,L,NE]
+  RewriteRule ^resources/knowledge-base/?$ https://www.sunlitsolarroof.com/articles/ [R=301,L,NE]
   RewriteRule ^project/?$ https://www.sunlitsolarroof.com/projects/ [R=301,L,NE]
 
   # Legacy WordPress articles and previous Astro article route.

@@ -175,3 +175,38 @@ a:active {
 .dark-green-gradient {
   background: radial-gradient(circle at top left, rgba(245,166,35,0.18), transparent 32%), linear-gradient(135deg, var(--deep-green-2), var(--deep-green));
 }
+
+/* Responsive data tables: allow long specifications to wrap instead of
+   forcing horizontal overflow inside a two-column grid. */
+.sunlit-mobile-grid,
+.sunlit-mobile-grid > *,
+.sunlit-data-row,
+.sunlit-data-row > * {
+  min-width: 0;
+}
+
+.sunlit-mobile-grid > *,
+.sunlit-data-value,
+.sunlit-data-row > * {
+  overflow-wrap: anywhere;
+}
+
+.sunlit-mobile-grid {
+  grid-template-columns: minmax(0, 1fr) !important;
+}
+
+.sunlit-table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sunlit-table-scroll table {
+  min-width: 40rem;
+}
+
+@media (max-width: 379px) {
+  .sunlit-mobile-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}

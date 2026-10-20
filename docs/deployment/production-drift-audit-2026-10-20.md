@@ -49,15 +49,17 @@ The knowledge-base redirect belongs to the same session: retiring the hub in fav
 1. **Article restored to git** — `src/content/articles/solar-roof-distributor-pilot-project.md`
    plus its cover image. Rendered text verified character-identical (5114 chars) to
    production; the image was downloaded byte-identical.
-2. **Knowledge base kept** (owner decision). Nothing in the repository redirects
-   `/resources/knowledge-base/`; the live redirect is a server-side artefact that must
-   not be reproduced. A deployment that replaces `public_html/.htaccess` with the
-   committed one removes it.
+2. **September redesign recovered into git** — see
+   `docs/deployment/september-redesign-recovery-2026-10-20.md`. The hub was not a stray
+   server rule after all: the September session merged the knowledge-base page into
+   `/articles/`, rewrote `/resources/`, reworked the `/system-overview/` layout and added
+   the table and analytics helpers. All of it is now in the repository and verified
+   text-identical to production on 54/54 URLs.
 3. **Build provenance added** — `/build-info.json` and `<meta name="build-commit">` now
    carry the commit every build came from, so "what is live?" is answerable in one
    request instead of an afternoon of forensics.
 4. **Redirect parity enforced** — `public/_redirects` regenerated from `astro.config.mjs`
-   (26 → 59 rules) and `scripts/check-redirects.mjs` fails CI on drift.
+   and `scripts/check-redirects.mjs` fails CI on drift.
 
 ## Remaining risk
 
@@ -71,9 +73,9 @@ close it:
   never by editing individual files on the server, and verify `/build-info.json`
   afterwards.
 
-## Open question for the owner
+## Resolved
 
-Is the knowledge-base hub page (`/resources/knowledge-base/`) still reachable from the
-main navigation on production? The nav links to it, the page exists in the build, and
-the server redirects it away — so a visitor clicking that menu item currently lands on
-the article list instead of the hub.
+The open question about the knowledge-base hub is settled: the September session retired
+it deliberately. Its content now lives at `/articles/`, the navigation points there, and
+`/resources/knowledge-base/` is a real 301 in `astro.config.mjs`, `public/_redirects` and
+`public/.htaccess`.

@@ -18,6 +18,7 @@ export default defineConfig({
     '/contact-us/': '/contact/',
     '/about-us/': '/about/',
     '/knowledges/': '/articles/',
+    '/resources/knowledge-base/': '/articles/',
     '/project/': '/projects/',
     '/import-solar-roof/': '/articles/import-solar-roof/',
     '/what-is-a-solar-roof/': '/resources/knowledge-base/what-is-solar-roof/',

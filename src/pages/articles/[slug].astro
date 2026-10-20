@@ -101,6 +101,17 @@ const articleSchema = {
 
       <article class="article-content">
         <Content />
+        <script is:inline>
+          document.querySelectorAll('.article-content table').forEach((table) => {
+            if (table.parentElement?.classList.contains('sunlit-table-scroll')) return;
+            const wrapper = document.createElement('div');
+            wrapper.className = 'sunlit-table-scroll my-8 rounded-xl border border-border';
+            wrapper.tabIndex = 0;
+            wrapper.setAttribute('aria-label', 'Scrollable comparison table');
+            table.parentNode?.insertBefore(wrapper, table);
+            wrapper.appendChild(table);
+          });
+        </script>
       </article>
 
       {(post.data.reviewedBy || post.data.evidenceNote) && (
