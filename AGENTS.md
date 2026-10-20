@@ -87,7 +87,7 @@ Rules:
 1. **Never commit directly to `main`.** Branch protection rejects direct pushes; production changes only arrive through a merge from `develop`.
 2. **Work on `develop`.** Start with `git switch develop && git pull --ff-only`.
 3. **The build must pass before pushing:** `pnpm install --frozen-lockfile && pnpm build`. CI runs the same command on every push and PR; a red build does not get merged into `main`.
-4. **Promoting to production:** open a PR `develop` → `main` (or fast-forward merge after the owner confirms). Merge only with a green build.
+4. **Promoting to production:** open a PR `develop` → `main` and merge it with a **merge commit**. Do not squash or rebase: both rewrite the commit SHAs, which leaves `develop` diverged from `main` and forces a reset afterwards (this already produced a split history once).
 5. **Never force-push or delete `main` or `develop`.** If history must be rewritten, ask the owner first.
 6. This repo is shared among Manus, ChatGPT, opencode, DeepSeek Harness and human developers, so commit messages must say *what changed and why*, in English, following the existing `feat:` / `fix:` / `refactor:` / `docs:` / `seo:` / `deploy:` prefixes.
 
