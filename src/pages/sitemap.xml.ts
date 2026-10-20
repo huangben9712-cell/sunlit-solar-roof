@@ -6,7 +6,7 @@ export async function GET() {
     '', '/about/', '/contact/', '/system-overview/',
     '/lumina-slate/', '/storm-guard/',
     '/projects/', '/articles/', '/resources/',
-    '/resources/knowledge-base/', '/resources/knowledge-base/what-is-solar-roof/',
+    '/resources/knowledge-base/what-is-solar-roof/',
     '/resources/downloads/', '/solar-roof-vs-solar-panels/', '/privacy-policy/',
   ];
 

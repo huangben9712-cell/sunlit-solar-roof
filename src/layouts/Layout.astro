@@ -20,6 +20,7 @@ const {
 const pathname = Astro.url.pathname;
 const canonical = new URL(pathname, Astro.site ?? 'https://www.sunlitsolarroof.com').href;
 const gaId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID?.trim() ?? '';
+const clarityId = import.meta.env.PUBLIC_CLARITY_ID?.trim() || 'wvnksr2cdj';
 const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER?.trim() || "8617729920083";
 const whatsappMessage = "Hi, I'm interested in your solar roof products.";
 const organizationSchema = {
@@ -78,10 +79,28 @@ const organizationSchema = {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           window.gtag = gtag;
+          window.__sunlitGaMeasurementId = gaId;
           gtag('js', new Date());
           gtag('config', gaId);
         </script>
       </>
+    )}
+    {clarityId && (
+      <script define:vars={{ clarityId }} is:inline>
+        (function(){
+          const id = clarityId;
+          ((window, document, namespace, tagName, projectId) => {
+            window[namespace] = window[namespace] || function () {
+              (window[namespace].q = window[namespace].q || []).push(arguments);
+            };
+            const script = document.createElement(tagName);
+            script.async = true;
+            script.src = `https://www.clarity.ms/tag/${projectId}`;
+            const firstScript = document.getElementsByTagName(tagName)[0];
+            firstScript?.parentNode?.insertBefore(script, firstScript);
+          })(window, document, 'clarity', 'script', id);
+        })();
+      </script>
     )}
     <script is:inline>
       document.addEventListener('click', (event) => {
@@ -93,7 +112,12 @@ const organizationSchema = {
         const href = link.getAttribute('href') || '';
         const label = (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 120);
         const sendEvent = (name, params) => {
-          if (typeof window.gtag === 'function') window.gtag('event', name, params);
+          if (typeof window.gtag !== 'function') return;
+          const measurementId = window.__sunlitGaMeasurementId;
+          window.gtag('event', name, {
+            ...(measurementId ? { send_to: measurementId } : {}),
+            ...params,
+          });
         };
 
         if (href.includes('wa.me/')) {

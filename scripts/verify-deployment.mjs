@@ -132,12 +132,17 @@ for (const [from, to, status] of redirectLines) {
 }
 record(`all ${redirectLines.length} redirects are single-hop ${redirectLines[0]?.[2] ?? '301'}`, redirectFailures.length === 0, redirectFailures.slice(0, 6).join(' | '));
 
-// 5. Knowledge base hub
+// 5. Retired knowledge-base hub: must be a single-hop redirect to /articles/
 try {
   const response = await get(`${base}/resources/knowledge-base/`, { redirect: 'manual' });
-  record('knowledge-base hub returns 200', response.status === 200, `HTTP ${response.status}`);
+  const location = response.headers.get('location') ?? '';
+  record(
+    'retired knowledge-base hub redirects to /articles/',
+    response.status === 301 && pathOf(location) === '/articles/',
+    `${response.status} ${location}`,
+  );
 } catch (error) {
-  record('knowledge-base hub returns 200', false, error.message);
+  record('retired knowledge-base hub redirects to /articles/', false, error.message);
 }
 
 // 6. 404 behaviour

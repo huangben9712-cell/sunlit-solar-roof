@@ -224,7 +224,9 @@ const faqs = [
       </div>
 
       <div class="overflow-x-auto rounded-2xl border border-gray-100 shadow-sm">
-        <table class="w-full text-sm">
+        <p class="mb-3 text-xs text-gray-500 sm:hidden">Swipe the table to compare all options →</p>
+        <div class="sunlit-table-scroll rounded-2xl border border-gray-100 shadow-sm">
+        <table class="w-full min-w-[48rem] text-sm">
           <thead>
             <tr class="bg-[#f4f7f0]">
               <th class="text-left px-6 py-4 font-bold text-gray-700 w-1/4">Feature</th>
@@ -244,6 +246,7 @@ const faqs = [
             ))}
           </tbody>
         </table>
+        </div>
       </div>
 
       <div class="mt-8 text-center">
