@@ -110,6 +110,16 @@ A build that succeeds locally can still be wrong in production if the hosting en
 
 Run `pnpm check:redirects` after touching any redirect; CI fails if `public/_redirects` stops covering `astro.config.mjs`. Full cutover checklist: `docs/cloudflare-pages-migration.md`.
 
+### Prove what is actually live
+
+Every build embeds the commit it came from. After any deployment:
+
+```bash
+curl -s https://www.sunlitsolarroof.com/build-info.json
+```
+
+It must report the commit you intended to ship. A `"commit": "local"` means the build was produced outside CI without `PUBLIC_BUILD_COMMIT`, which makes the deployment untraceable — treat that as a failed deploy and rebuild from a pushed commit. The same value is in every page's `<meta name="build-commit">`.
+
 ## Documentation
 
 Full docs: https://docs.astro.build
