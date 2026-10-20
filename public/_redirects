@@ -1,17 +1,55 @@
-/how-to-install-solar-roof/ /articles/how-to-install-solar-roof/ 301
-/what-is-a-solar-roof/ /articles/what-is-a-solar-roof/ 301
-/solar-roof-case-study/ /articles/solar-roof-case-study/ 301
-/lumina-slate-story/ /articles/lumina-slate-story/ 301
-/storm-guard-story/ /articles/storm-guard-story/ 301
-/offshore-bipv-guide/ /articles/offshore-bipv-guide/ 301
-/solar-roof-electrical-system/ /articles/solar-roof-electrical-system/ 301
+# Cloudflare Pages redirect rules (also valid for Netlify-style hosts).
+# Cloudways/Apache uses public/.htaccess instead; keep the two in sync.
+# Format: <from> <to> <status>. Max 2000 static rules. Fragments are dropped
+# on purpose: destination anchors are not part of the redirect contract.
+
+# --- Canonical product and section paths (mirrors astro.config.mjs) ---
+/supply-scope/ /system-overview/ 301
+/supply-scope /system-overview/ 301
+/solar-roofs/ /system-overview/ 301
+/invisible-solar-roof/ /system-overview/ 301
+/lumina-slate-series/ /lumina-slate/ 301
+/storm-guard-series/ /storm-guard/ 301
+/contact-us/ /contact/ 301
+/about-us/ /about/ 301
+/knowledges/ /articles/ 301
+/project/ /projects/ 301
 /import-solar-roof/ /articles/import-solar-roof/ 301
-/solar-system-categories/ /articles/solar-system-categories/ 301
+/what-is-a-solar-roof/ /resources/knowledge-base/what-is-solar-roof/ 301
+/articles/what-is-a-solar-roof/ /resources/knowledge-base/what-is-solar-roof/ 301
 /solar-roof-roi-for-developers/ /articles/solar-roof-roi-for-developers/ 301
-/future-of-solar-roofs/ /articles/future-of-solar-roofs/ 301
-/solar-roofing-business-model/ /articles/solar-roofing-business-model/ 301
+/storm-guard-story/ /articles/storm-guard-story/ 301
+/lumina-slate-story/ /articles/lumina-slate-story/ 301
+/how-to-install-solar-roof/ /articles/how-to-install-solar-roof/ 301
 /sunlit-bipv-story/ /articles/sunlit-bipv-story/ 301
+/solar-roof-electrical-system/ /articles/solar-roof-electrical-system/ 301
+/solar-roof-case-study/ /articles/solar-roof-case-study/ 301
 /why-are-most-solar-roofs-black/ /articles/why-are-most-solar-roofs-black/ 301
+/solar-roofing-business-model/ /articles/solar-roofing-business-model/ 301
+/solar-system-categories/ /articles/solar-system-categories/ 301
+/future-of-solar-roofs/ /articles/future-of-solar-roofs/ 301
+/offshore-bipv-guide/ /articles/offshore-bipv-guide/ 301
+/lumina-slate-series/lumina-slate-series-roof-base-layer-installation/ /lumina-slate/ 301
+/lumina-slate-series/lumina-slate-series-electrical-system/ /lumina-slate/ 301
+/lumina-slate-series/lumina-slate-series-ridge-edge-tiles/ /lumina-slate/ 301
+/lumina-slate-series/lumina-slate-series-main-roofing-tiles-installation/ /lumina-slate/ 301
+/storm-guard-series/storm-guard-series-roofing-tiles/ /storm-guard/ 301
+/storm-guard-series/storm-guard-series-roof-base-layer/ /storm-guard/ 301
+/storm-guard-series/storm-guard-series-electrical-system/ /storm-guard/ 301
+/storm-guard-series/storm-guard-series-ridge-edge-tiles/ /storm-guard/ 301
+/osynligt-solcellstak-for-premiumprojekt/ /system-overview/ 301
+/tetto-solare-invisibile-per-gli-edifici-di-pregio/ /system-overview/ 301
+/techo-solar-invisible-para-promociones-premium/ /system-overview/ 301
+/telhado-solar-invisivel-para-empreendimentos-de-luxo/ /system-overview/ 301
+/onzichtbaar-zonnedak-voor-hoogwaardige-projecten/ /system-overview/ 301
+/unsichtbares-solardach-fuer-premium-entwicklungen/ /system-overview/ 301
+/category/sourcing-guide/ /articles/ 301
+/category/market-insights/ /articles/ 301
+/category/case-studies/ /articles/ 301
+/category/technical-installation/ /articles/ 301
+/author/huangben/ /about/ 301
+
+# --- Legacy project detail paths ---
 /project/beijing-new-world-lizun/ /projects/beijing-new-world-lizun/ 301
 /project/hangzhou-xianghu-arcadia-villa/ /projects/hangzhou-xianghu-arcadia-villa/ 301
 /project/nanjing-nanshan-lake/ /projects/nanjing-nanshan-lake/ 301
@@ -20,7 +58,14 @@
 /project/usa-private-gymnasium/ /projects/usa-private-gymnasium/ 301
 /project/large-scale-commercial-complex/ /projects/large-scale-commercial-complex/ 301
 /project/us-coastal-community/ /projects/us-coastal-community/ 301
-/storm-guard-series/ /storm-guard/ 301
 /lumina-slate-series-main-roofing-tiles-installation/ /lumina-slate/ 301
-/contact-us/ /contact/ 301
-/knowledges/ /articles/ 301
+
+# --- Historical WordPress brochure PDFs ---
+/wp-content/uploads/2026/05/sunlit-lumina-slate-bipv-solar-roof-brochure-2026.pdf /downloads/lumina-slate-bipv-solar-roof-brochure-2026.pdf 301
+/wp-content/uploads/2026/05/sunlit-storm-guard-bipv-solar-roof-brochure-2026.pdf /downloads/storm-guard-bipv-solar-roof-brochure-2026.pdf 301
+
+# --- Retired WordPress sitemaps still held by Search Console ---
+/sitemap_index.xml /sitemap.xml 301
+/project-sitemap.xml /sitemap.xml 301
+/post-sitemap.xml /sitemap.xml 301
+/page-sitemap.xml /sitemap.xml 301
