@@ -129,7 +129,7 @@ export const mediaAssetGroups: MediaAssetGroup[] = [
     title: 'Nanshan Lake Lumina Slate Drone Footage',
     kind: 'video',
     evidenceType: 'aesthetic',
-    path: '/videos/projects/lumina-slate-nanshan-lake/南京南山湖航拍.mp4',
+    path: 'https://cdn.sunlitsolarroof.com/videos/projects/lumina-slate-nanshan-lake/南京南山湖航拍.mp4',
     description: 'Aerial drone footage for Lumina Slate project proof and premium visual storytelling.',
     recommendedPages: ['Lumina Slate', 'Projects', 'Project Detail'],
     ratingGuide: 'A',

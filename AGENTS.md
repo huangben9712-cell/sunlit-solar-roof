@@ -55,7 +55,8 @@ D:\sunlit\
 ## Media Guidelines
 
 - **Images**: Place in `public/images/projects/` or `public/images/products/`. Reference as `/images/projects/filename.webp`.
-- **Videos**: Place in `public/videos/`. Reference as `/videos/filename.mp4`. Use `<video autoplay loop muted playsinline>` for background videos.
+- **Videos**: Hosted on Cloudflare R2 — **never** put `.mp4` in `public/`. Keep the source file in `media/videos/` (archive, not built) and reference the CDN copy: `https://cdn.sunlitsolarroof.com/videos/...`. Poster images stay in `public/videos/`. Use `<video autoplay loop muted playsinline>` for background videos.
+- **Why**: Cloudflare Pages rejects files over 25 MiB and re-uploads the whole output on every deploy. `pnpm check:assets` enforces the limit in CI.
 - **Supported formats**: `.webp` (preferred), `.jpg`, `.png`, `.mp4`, `.webm`.
 
 ## Design System
