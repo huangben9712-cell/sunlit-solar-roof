@@ -55,7 +55,8 @@ D:\sunlit\
 ## Media Guidelines
 
 - **Images**: Place in `public/images/projects/` or `public/images/products/`. Reference as `/images/projects/filename.webp`.
-- **Videos**: Place in `public/videos/`. Reference as `/videos/filename.mp4`. Use `<video autoplay loop muted playsinline>` for background videos.
+- **Videos**: Hosted on Cloudflare R2 — **never** put `.mp4` in `public/`. Keep the source file in `media/videos/` (archive, not built) and reference the CDN copy: `https://cdn.sunlitsolarroof.com/videos/...`. Poster images stay in `public/videos/`. Use `<video autoplay loop muted playsinline>` for background videos.
+- **Why**: Cloudflare Pages rejects files over 25 MiB and re-uploads the whole output on every deploy. `pnpm check:assets` enforces the limit in CI.
 - **Supported formats**: `.webp` (preferred), `.jpg`, `.png`, `.mp4`, `.webm`.
 
 ## Design System
@@ -104,9 +105,9 @@ A build that succeeds locally can still be wrong in production if the hosting en
 
 ## Deployment Target
 
-**Current:** Cloudways (Apache) hosting — static `dist/` output plus `public/.htaccess` for server redirects.
+**Current:** Cloudflare Pages (Git integration, production branch `main`) — static `dist/` output plus `public/_redirects` and `public/_headers`. Every push to `main` deploys; every PR gets a preview URL.
 
-**Planned:** Cloudflare Pages — static `dist/` output plus `public/_redirects` (Cloudflare redirect syntax) and `public/_headers`. Both redirect files are kept in the repo during the transition; each host reads only its own.
+The apex `sunlitsolarroof.com` is served by a second Pages project, `sunlit-apex`, whose only content is `infra/apex-redirect/_redirects` (301 to `www`). See `docs/deployment/cloudflare-cutover-2026-10-22.md`. `public/.htaccess` is inert on Pages and can be deleted once the legacy host is cancelled.
 
 Run `pnpm check:redirects` after touching any redirect; CI fails if `public/_redirects` stops covering `astro.config.mjs`. Full cutover checklist: `docs/cloudflare-pages-migration.md`.
 
