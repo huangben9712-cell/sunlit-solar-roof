@@ -104,9 +104,9 @@ A build that succeeds locally can still be wrong in production if the hosting en
 
 ## Deployment Target
 
-**Current:** Cloudways (Apache) hosting — static `dist/` output plus `public/.htaccess` for server redirects.
+**Current:** Cloudflare Pages (Git integration, production branch `main`) — static `dist/` output plus `public/_redirects` and `public/_headers`. Every push to `main` deploys; every PR gets a preview URL.
 
-**Planned:** Cloudflare Pages — static `dist/` output plus `public/_redirects` (Cloudflare redirect syntax) and `public/_headers`. Both redirect files are kept in the repo during the transition; each host reads only its own.
+The apex `sunlitsolarroof.com` still redirects through the legacy Cloudways origin until its DNS record is moved — see `docs/deployment/cloudflare-cutover-2026-10-22.md`. `public/.htaccess` is kept only for that host and can be deleted once the apex is moved.
 
 Run `pnpm check:redirects` after touching any redirect; CI fails if `public/_redirects` stops covering `astro.config.mjs`. Full cutover checklist: `docs/cloudflare-pages-migration.md`.
 
