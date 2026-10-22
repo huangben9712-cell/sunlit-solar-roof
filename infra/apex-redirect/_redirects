@@ -1,0 +1,3 @@
+﻿# Apex host redirect. Cloudflare Pages answers every path on sunlitsolarroof.com
+# and sends it to the same path on www. Query strings are preserved.
+/* https://www.sunlitsolarroof.com/:splat 301

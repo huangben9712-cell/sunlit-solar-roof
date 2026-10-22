@@ -1,15 +1,16 @@
 # Cloudflare Pages cutover — 2026-10-22
 
-**Status: `www` is live on Cloudflare Pages. The apex still redirects through Cloudways
-and must be moved before the Cloudways subscription is cancelled.**
+**Status: complete. Both `www` and the apex are served by Cloudflare Pages. Cloudways is
+no longer in the request path.** The subscription can be cancelled once its
+`public_html` (which still holds the WordPress rollback archive) has been exported.
 
 ## What changed
 
 | Item | Before | After |
 |---|---|---|
 | `www.sunlitsolarroof.com` | `A 138.197.87.147` (Cloudways), proxied | `CNAME sunlit-solar-roof.pages.dev`, proxied |
-| Pages custom domain | none | `www.sunlitsolarroof.com` (active) |
-| `sunlitsolarroof.com` (apex) | `A 138.197.87.147` → Apache 301 to `www` | **unchanged** |
+| `sunlitsolarroof.com` (apex) | `A 138.197.87.147` → Apache 301 to `www` | `CNAME sunlit-apex.pages.dev`, proxied, 301 to `www` |
+| Pages custom domain | none | `www.sunlitsolarroof.com` on `sunlit-solar-roof` |
 | Mail (MX, SPF, DKIM, DMARC, `send`, `mail`, `go`) | — | **untouched** |
 
 The DNS snapshot taken immediately before the change is stored outside the repository in
@@ -29,30 +30,31 @@ The DNS snapshot taken immediately before the change is stored outside the repos
 There was a ~50 second window of HTTP 522 while the Pages custom domain certificate
 was provisioned. It resolved without intervention.
 
-## Remaining dependency on Cloudways
+## How the apex redirect is implemented
 
-The apex record still points at the Cloudways origin, which is what answers
-`sunlitsolarroof.com` with a 301 to `www`. Two things follow:
+The automation token could read Rulesets but not write them, so instead of a Redirect
+Rule the apex is served by a second, tiny Pages project: **`sunlit-apex`**.
 
-1. The site works correctly today; nothing needs to change urgently.
-2. **Cloudways cannot be cancelled while this is true** — cancelling it would drop the
-   apex hostname.
+- Source: `infra/apex-redirect/_redirects`, one rule — `/* https://www.sunlitsolarroof.com/:splat 301`
+- Deployed with `npx wrangler pages deploy infra/apex-redirect --project-name sunlit-apex --branch main`
+- Custom domain: `sunlitsolarroof.com`
+- DNS: `CNAME sunlitsolarroof.com -> sunlit-apex.pages.dev`, proxied
 
-To finish the migration, replace the apex record with `CNAME sunlit-solar-roof.pages.dev`
-(proxied) and add a **Redirect Rule** in Cloudflare:
+Verified behaviour (path and query string preserved, single hop):
 
-- Rule name: `apex to www`
-- If: `hostname eq "sunlitsolarroof.com"`
-- Then: Dynamic redirect, status **301**, expression
-  `concat("https://www.sunlitsolarroof.com", http.request.uri.path)`
-- Preserve query string: on
+```
+/                       -> 301 https://www.sunlitsolarroof.com/
+/lumina-slate/          -> 301 https://www.sunlitsolarroof.com/lumina-slate/
+/articles/?utm=x        -> 301 https://www.sunlitsolarroof.com/articles/?utm=x
+/nonexistent-page/      -> 301 https://www.sunlitsolarroof.com/nonexistent-page/
+```
 
-This needs either the dashboard (Rules → Redirect Rules) or a token with
-*Zone → Config → Edit*; the current automation token does not have it.
+If a Redirect Rule with the right permission ever becomes available, it can replace this
+project; until then the project is the mechanism, and it costs nothing on the free plan.
 
 ## Rollback
 
-Restore the two records from the DNS snapshot:
+Restore the two records from the DNS snapshot taken before the change:
 
 ```
 www  A  138.197.87.147  proxied
@@ -64,7 +66,12 @@ window.
 
 ## Before cancelling Cloudways
 
-1. Apex moved to Pages with the redirect rule above, and verified.
-2. Export the full Cloudways `public_html` — it still contains the hidden WordPress
-   rollback archive — plus any database dump, to local storage or object storage.
-3. Two to four weeks of stable Pages operation, checked against Search Console.
+The site no longer depends on Cloudways. What still does is the **data**: its
+`public_html` holds the hidden WordPress rollback archive.
+
+1. Export the full `public_html` (including the archive) plus any database dump, to local
+   storage or object storage. Application-level SFTP credentials were deleted in the
+   August release, so this needs the Cloudways panel or a newly created credential.
+2. Cancel the subscription.
+3. Leave `public/.htaccess` in the repository until nothing references it any more — it is
+   inert on Pages.
