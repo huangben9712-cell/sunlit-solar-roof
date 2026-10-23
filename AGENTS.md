@@ -107,7 +107,7 @@ A build that succeeds locally can still be wrong in production if the hosting en
 
 **Current:** Cloudflare Pages (Git integration, production branch `main`) — static `dist/` output plus `public/_redirects` and `public/_headers`. Every push to `main` deploys; every PR gets a preview URL.
 
-The apex `sunlitsolarroof.com` is served by a second Pages project, `sunlit-apex`, whose only content is `infra/apex-redirect/_redirects` (301 to `www`). See `docs/deployment/cloudflare-cutover-2026-10-22.md`. `public/.htaccess` is inert on Pages and can be deleted once the legacy host is cancelled.
+The apex `sunlitsolarroof.com` is served by a second Pages project, `sunlit-apex`, whose only content is `infra/apex-redirect/_redirects` (301 to `www`). See `docs/deployment/cloudflare-cutover-2026-10-22.md`. The legacy Cloudways host was cancelled on 2026-10-23 and `public/.htaccess` was removed with it — `public/_redirects` is now the only redirect source.
 
 Run `pnpm check:redirects` after touching any redirect; CI fails if `public/_redirects` stops covering `astro.config.mjs`. Full cutover checklist: `docs/cloudflare-pages-migration.md`.
 

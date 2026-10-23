@@ -61,7 +61,14 @@ function readCloudflareRules() {
 }
 
 function readApacheLiterals() {
-  const source = readFileSync(join(root, 'public', '.htaccess'), 'utf8');
+  // public/.htaccess was retired when the Cloudways origin was cancelled.
+  // Keep the comparison working if an Apache host is ever added back.
+  let source;
+  try {
+    source = readFileSync(join(root, 'public', '.htaccess'), 'utf8');
+  } catch {
+    return [];
+  }
   const paths = [];
   const re = /^\s*RewriteRule\s+\^([a-z0-9\-/._]+)\/\?\$\s/gim;
   let match;
