@@ -1,8 +1,9 @@
 # Cloudflare Pages cutover — 2026-10-22
 
-**Status: complete. Both `www` and the apex are served by Cloudflare Pages. Cloudways is
-no longer in the request path.** The subscription can be cancelled once its
-`public_html` (which still holds the WordPress rollback archive) has been exported.
+**Status: complete and closed out.** Both `www` and the apex are served by Cloudflare
+Pages. The Cloudways server and account were deleted on 2026-10-23 after the data backup
+described in `cloudways-backup-2026-10-23.md`. `public/.htaccess` was removed in the same
+change, so `public/_redirects` is now the only redirect source.
 
 ## What changed
 
